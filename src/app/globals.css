@@ -1,26 +1,80 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #0E1110;
+  --surface: #15191A;
+  --surface-elev: #1C2122;
+  --line: #262C2D;
+  --line-bright: #353C3D;
+  --text: #EDE6D7;
+  --text-dim: #8B9290;
+  --text-fade: #5C6361;
+  --accent: #C2885A;
+  --accent-glow: rgba(194, 136, 90, 0.16);
+  --accent-deep: #8E6238;
+  --warm: #1E1715;
+
+  --display: 'Fraunces', serif;
+  --sans: 'Manrope', system-ui, sans-serif;
+  --mono: 'JetBrains Mono', monospace;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.font-display {
+  /* Ye line Fraunces ko 'Display' mode mein daal degi (High Contrast) */
+  font-variation-settings: 'opsz' 144;
+  font-optical-sizing: auto;
+  /* Letter spacing ko yahan se bhi control kar sakte hain */
+  letter-spacing: -0.04em;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-weight: 400;
+  line-height: 1.55;
+  overflow-x: hidden;
+  background-image:
+    radial-gradient(circle at 20% 0%, rgba(194, 136, 90, 0.05), transparent 50%),
+    radial-gradient(circle at 80% 100%, rgba(194, 136, 90, 0.03), transparent 60%);
+}
+
+/* Subtle film grain */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 100;
+  mix-blend-mode: overlay;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.font-display-text {
+  font-family: var(--display);
+  font-variation-settings: 'opsz' 12;
+  font-optical-sizing: auto;
+  letter-spacing: 0.01em;
+  line-height: 1.5; 
 }
