@@ -177,7 +177,7 @@ export default function Hero() {
                 ].map((item, i) => (
                     <div
                         key={i}
-                        className={`pt-5 lg:pr-7 border-t border-white/10 ${i !== 3 ? "lg:border-r  border-white/10" : ""} space-y-5 mb-5`}
+                        className={`pt-5 lg:pr-7 border-t lg:border-t-0 border-white/10 ${i !== 3 ? "lg:border-r  border-white/10" : ""} space-y-5 mb-5`}
                     >
                         <div className="font-display font-light text-[clamp(32px,4vw,52px)] leading-none text-white mb-2">
                             {item.num}
