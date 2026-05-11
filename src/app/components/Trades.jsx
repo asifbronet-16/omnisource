@@ -31,7 +31,7 @@ const TradesSection = () => {
     return (
         <section
             id="trades"
-            className="py-[140px] px-12 bg-[var(--bg)] relative"
+            className="py-[140px] px-8 bg-[var(--bg)] relative"
         >
             <div className="max-w-[1240px] mx-auto">
 

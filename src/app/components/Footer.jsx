@@ -2,21 +2,13 @@ import React from "react";
 
 const Footer = () => {
     return (
-        <footer className="bg-[#080A0A] pt-[90px] px-12 pb-8 border-t border-white/10">
-
+        <footer className="bg-[#080A0A] pt-[90px] px-8 pb-8 border-t border-white/10">
             {/* TOP GRID */}
             <div
-                className="max-w-[1240px] mx-auto
-        grid grid-cols-[1.4fr_1fr_1fr_1.4fr]
-        max-lg:grid-cols-2
-        max-sm:grid-cols-1
-        gap-[60px]
-        pb-16 border-b border-white/10"
+                className="max-w-[1240px] mx-auto grid grid-cols-[1.4fr_1fr_1fr_1.4fr] max-lg:grid-cols-2 max-sm:grid-cols-1gap-[60px] pb-16 border-b border-white/10"
             >
-
                 {/* BRAND */}
                 <div>
-
                     <a href="#" className="flex items-center gap-3 text-white">
                         <div className="w-[30px] h-[30px]">
                             <svg
@@ -42,38 +34,20 @@ const Footer = () => {
                         </span>
                     </a>
 
-                    <p
-                        className="mt-[22px] mb-[26px]
-            font-display italic
-            text-[17px] leading-[1.4]
-            text-white/60"
-                    >
+                    <p className="mt-[22px] mb-[26px] font-display italic text-[17px] leading-[1.4] text-white/60">
                         "The best crew.
                         <br />
                         At your service."
                     </p>
-
-                    <p
-                        className="font-mono uppercase
-            text-[11px] leading-[1.7]
-            tracking-[0.12em]
-            text-white/40"
-                    >
+                    <p className="font-mono uppercase text-[11px] leading-[1.7] tracking-[0.12em] text-white/40">
                         DET License · Activity 4390008
                         <br />
                         Scaffolding Erecting &amp; Dismantling Contracting
                     </p>
                 </div>
-
                 {/* SERVICES */}
                 <div>
-                    <h5
-                        className="mb-[22px]
-            font-mono font-normal
-            uppercase tracking-[0.18em]
-            text-[11px]
-            text-[var(--accent)]"
-                    >
+                    <h5 className="mb-[22px] font-mono font-normal uppercase tracking-[0.18em] text-[11px] text-[var(--accent)]" >
                         Services
                     </h5>
 
@@ -86,11 +60,8 @@ const Footer = () => {
                             "Cleaning",
                         ].map((item) => (
                             <li key={item}>
-                                <a
-                                    href="#services"
-                                    className="text-[14px] text-white/60
-                  hover:text-[var(--accent)]
-                  transition-colors"
+                                <a href="#services"
+                                    className="text-[14px] text-white/60 hover:text-[var(--accent)] transition-colors"
                                 >
                                     {item}
                                 </a>
@@ -98,62 +69,43 @@ const Footer = () => {
                         ))}
                     </ul>
                 </div>
-
                 {/* COMPANY */}
                 <div>
-                    <h5
-                        className="mb-[22px]
-            font-mono font-normal
-            uppercase tracking-[0.18em]
-            text-[11px]
-            text-[var(--accent)]"
-                    >
+                    <h5 className="mb-[22px] font-mono font-normal uppercase tracking-[0.18em] text-[11px] text-[var(--accent)]">
                         Company
                     </h5>
 
                     <ul className="space-y-[11px]">
                         {[
-                            "How we work",
-                            "Standards",
-                            "Trades supplied",
-                            "Contact",
-                            "Careers",
+                            { label: "How we work", href: "#how" },
+                            { label: "Standards", href: "#standards" },
+                            { label: "Trades supplied", href: "#trades" },
+                            { label: "Contact", href: "#contact" },
+                            { label: "Careers", href: "/careers" },
                         ].map((item) => (
-                            <li key={item}>
-                                <a
-                                    href="#"
-                                    className="text-[14px] text-white/60
-                  hover:text-[var(--accent)]
-                  transition-colors"
+                            <li key={item.label}>
+                                <a href={item.href}
+                                    className="text-[14px] text-white/60 hover:text-[var(--accent)] transition-colors"
                                 >
-                                    {item}
+                                    {item.label}
                                 </a>
                             </li>
                         ))}
                     </ul>
                 </div>
-
                 {/* OFFICES */}
                 <div>
                     <h5
-                        className="mb-[22px]
-            font-mono font-normal
-            uppercase tracking-[0.18em]
-            text-[11px]
-            text-[var(--accent)]"
+                        className="mb-[22px] font-mono font-normal uppercase tracking-[0.18em] text-[11px] text-[var(--accent)]"
                     >
                         Reach us
                     </h5>
-
                     <div className="mb-[22px] text-[13px] leading-[1.55] text-white/60">
                         <strong
-                            className="block mb-1
-              font-display italic font-normal
-              text-[16px] text-white"
+                            className="block mb-1 font-display italic font-normal text-[16px] text-white"
                         >
                             Dubai
                         </strong>
-
                         Operations &amp; Headquarters
                         <br />
                         contact@omnisource.ae
@@ -163,13 +115,10 @@ const Footer = () => {
 
                     <div className="text-[13px] leading-[1.55] text-white/60">
                         <strong
-                            className="block mb-1
-              font-display italic font-normal
-              text-[16px] text-white"
+                            className="block mb-1 font-display italic font-normal text-[16px] text-white"
                         >
                             Abu Dhabi
                         </strong>
-
                         Mussafah operations
                         <br />
                         +971 2 ___ ____
@@ -179,16 +128,9 @@ const Footer = () => {
 
             {/* BOTTOM */}
             <div
-                className="max-w-[1240px] mx-auto
-        pt-8
-        flex flex-wrap items-center justify-between gap-4
-        font-mono text-[11px]
-        tracking-[0.1em]
-        text-white/40"
+                className="max-w-[1240px] mx-auto pt-8 flex flex-wrap items-center justify-between gap-4 font-mono text-[11px] tracking-[0.1em] text-white/40"
             >
-
                 <span>© 2026 Omni Source. All rights reserved.</span>
-
                 <div className="flex gap-5">
                     {["Privacy", "Terms", "License"].map((item) => (
                         <a
@@ -200,7 +142,6 @@ const Footer = () => {
                         </a>
                     ))}
                 </div>
-
             </div>
         </footer>
     );

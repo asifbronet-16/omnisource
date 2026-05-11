@@ -27,7 +27,7 @@ const HowSection = () => {
     return (
         <section
             id="how"
-            className="relative bg-[var(--warm)] border-y border-white/10 overflow-hidden"
+            className="relative bg-[var(--warm)] border-y border-white/10 overflow-hidden px-8"
         >
             {/* GLOW */}
             <div

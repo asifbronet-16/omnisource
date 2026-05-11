@@ -1,6 +1,6 @@
 export default function Hero() {
     return (
-        <header className="min-h-screen relative overflow-hidden flex flex-col justify-between px-12 pt-[180px] pb-20 bg-transparent">
+        <header className="min-h-screen relative overflow-hidden flex flex-col justify-between px-8 pt-[180px] pb-20 bg-transparent">
 
             {/* GRID BACKGROUND */}
             <div
@@ -155,19 +155,19 @@ export default function Hero() {
 
             {/* METRICS */}
             <div className="relative z-10 max-w-[1240px] mx-auto w-full mt-[130px]
-                grid grid-cols-4 border-t border-white/10 pt-10
+                grid  lg:grid-cols-4 lg:border-t border-white/10 pt-10
                 opacity-0 animate-[fadeUp_0.9s_ease_0.7s_forwards]">
                 {[
                     {
-                        num: "5·",
+                        num: "5",
                         desc: "Trade verticals from one source — scaffolding, MEP, HVAC, building maintenance, cleaning.",
                     },
                     {
-                        num: "7·",
+                        num: "7",
                         desc: "Days standard mobilisation. Faster on framework agreements.",
                     },
                     {
-                        num: "7·",
+                        num: "7",
                         desc: "Emirates served. Single point of contact across the UAE.",
                     },
                     {
@@ -177,11 +177,11 @@ export default function Hero() {
                 ].map((item, i) => (
                     <div
                         key={i}
-                        className={`pr-7 ${i !== 3 ? "border-r border-white/10" : ""}`}
+                        className={`pt-5 lg:pr-7 border-t border-white/10 ${i !== 3 ? "lg:border-r  border-white/10" : ""} space-y-5 mb-5`}
                     >
                         <div className="font-display font-light text-[clamp(32px,4vw,52px)] leading-none text-white mb-2">
                             {item.num}
-                            <em className="text-[var(--accent)] font-normal italic"> </em>
+                            <em className="text-accent font-normal italic">.</em>
                         </div>
                         <div className="text-[12.5px] leading-[1.5] text-white/60">
                             {item.desc}

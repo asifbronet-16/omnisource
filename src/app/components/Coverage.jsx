@@ -21,7 +21,7 @@ const pins = [
 
 const CoverageSection = () => {
     return (
-        <section className="bg-[var(--bg)] py-[130px] px-12">
+        <section className="bg-[var(--bg)] py-[130px] px-8">
             <div className="max-w-[1240px] mx-auto">
                 <div className="grid grid-cols-[1.4fr_1fr] max-lg:grid-cols-1 gap-[100px] items-center">
                     <div>
