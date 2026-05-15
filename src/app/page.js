@@ -1,27 +1,25 @@
-import CTASection from "./components/CallToAction";
-import CoverageSection from "./components/Coverage";
-import Footer from "./components/Footer";
-import Hero from "./components/Hero";
-import HowSection from "./components/How";
-import Navbar from "./components/Navbar";
-import Services from "./components/Services";
-import StandardsSection from "./components/Standard";
-import TradesSection from "./components/Trades";
-import TrustStrip from "./components/TrustStrip";
+import Hero from "./NewComponents/Hero";
+import WorkforceServices from "./NewComponents/Services";
+import TrustedSection from "./NewComponents/TrustedSection";
+import ClientMarquee from "./NewComponents/Marquee";
+import AboutStats from "./NewComponents/About";
+import ImpactSection from "./NewComponents/Impactsection";
+import Testimonials from "./NewComponents/Testimonials";
+import FAQ from "./NewComponents/FAQ";
+import Footer from "./NewComponents/Footer";
 
 export default function Home() {
   return (
     <>
-      <Navbar />
       <Hero />
-      <TrustStrip />
-      <Services />
-      <TradesSection />
-      <HowSection />
-      <CoverageSection />
-      <StandardsSection />
-      <CTASection />
-      <Footer />
+      <WorkforceServices />
+      <TrustedSection/>
+      <ClientMarquee/>
+      <AboutStats/>
+      <ImpactSection/>
+      <Testimonials/>
+      <FAQ/>
+      <Footer/>
     </>
   );
 };

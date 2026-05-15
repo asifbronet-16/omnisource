@@ -22,6 +22,16 @@ export default {
         display: 'var(--display)',
         sans: 'var(--sans)',
         mono: 'var(--mono)',
+        public: ['var(--font-public-sans)', 'sans-serif'],
+      },
+      keyframes: {
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+      },
+      animation: {
+        marquee: 'marquee 25s linear infinite',
       },
     },
   },
