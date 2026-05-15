@@ -71,7 +71,7 @@ const Testimonials = () => {
                     <p className="text-gray-500 text-xs uppercase tracking-wider">{item.role}</p>
                   </div>
                 </div>
-                <div className="text-red-600  font-serif"><Quote size={34} fill='red' /></div>
+                <div className="text-red-600  font-serif"><Quote size={36} fill='red' /></div>
               </div>
             </div>
           ))}
