@@ -2,22 +2,23 @@
 
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Target, Eye , Gem   } from 'lucide-react';
 
 const pillarData = [
     {
         title: "Mission",
         desc: "Deliver tailored staffing solutions that meet client needs, enhance productivity, and support sustainable business growth.",
-        icon: "🎯"
+        icon: Target
     },
     {
         title: "Vision",
         desc: "To be the leading provider of smart, reliable workforce solutions across construction, logistics, and maintenance industries.",
-        icon: "👁️"
+        icon: Eye
     },
     {
         title: "Values",
         desc: "Commitment, reliability, teamwork, innovation, and client focus in every staffing solution we deliver.",
-        icon: "💎"
+        icon: Gem
     }
 ];
 
@@ -85,7 +86,8 @@ const SolutionsSection = () => {
                                     className="flex flex-col items-center group relative"
                                 >
                                     <div className="text-4xl text-red-600 mb-6 transition-transform group-hover:scale-110 duration-300">
-                                        {item.icon}
+                                        {/* This is how you render the icon component dynamically */}
+                                        <item.icon size={48} strokeWidth={1.5} />
                                     </div>
                                     <h4 className="text-xl font-bold mb-4 tracking-tight">{item.title}</h4>
                                     <p className="text-gray-400 text-sm leading-relaxed font-light">
