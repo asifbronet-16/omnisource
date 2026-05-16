@@ -50,15 +50,6 @@ const TrustedSection = () => {
                     Our Story <span className="text-xl">↗</span>
                 </button>
             </div>
-
-            {/* Scroll to Top Button */}
-            <div className="absolute bottom-10 right-10 z-20">
-                <button className="bg-red-600 p-2 rounded-sm shadow-lg hover:bg-red-700 transition-all">
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 15l7-7 7 7" />
-                    </svg>
-                </button>
-            </div>
         </section>
     );
 };

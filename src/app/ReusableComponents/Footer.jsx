@@ -9,10 +9,10 @@ const Footer = () => {
             <div className="max-w-7xl mx-auto">
 
                 {/* Top Section: Logo, Contact & Links */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16 ">
 
                     {/* Column 1: Logo & Contact Info */}
-                    <div className="flex flex-col gap-8">
+                    <div className="flex flex-col gap-8 ">
                         <div className="flex items-center text-2xl font-black italic px-2">
                             <span className=" py-1 rounded-sm text-white">Omni</span>
                             <span className="tracking-tighter">Source</span>
@@ -37,16 +37,11 @@ const Footer = () => {
                         </div>
 
                         {/* Social Icons */}
-                        <div className="flex gap-4 opacity-70">
-                            <span className="hover:text-red-600 cursor-pointer transition-colors">Instagram</span>
-                            <span className="hover:text-red-600 cursor-pointer transition-colors">X</span>
-                            <span className="hover:text-red-600 cursor-pointer transition-colors">YouTube</span>
-                            <span className="hover:text-red-600 cursor-pointer transition-colors">WhatsApp</span>
-                        </div>
+                        
                     </div>
 
                     {/* Column 2: Company */}
-                    <div className="flex flex-col gap-6">
+                    <div className="flex flex-col gap-6 ">
                         <h4 className="text-red-600 text-sm font-bold uppercase tracking-widest">Company</h4>
                         <ul className="space-y-4 text-sm font-light text-gray-300">
                             <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
@@ -57,7 +52,7 @@ const Footer = () => {
                     </div>
 
                     {/* Column 3: Services */}
-                    <div className="flex flex-col gap-6">
+                    <div className="flex flex-col gap-6 ">
                         <h4 className="text-red-600 text-sm font-bold uppercase tracking-widest">Services</h4>
                         <ul className="space-y-4 text-sm font-light text-gray-300">
                             <li>Mechanical Manpower Supply</li>
@@ -70,11 +65,15 @@ const Footer = () => {
                     </div>
 
                     {/* Column 4: Resources */}
-                    <div className="flex flex-col gap-6">
-                        <h4 className="text-red-600 text-sm font-bold uppercase tracking-widest">Resources</h4>
+                    <div className="flex flex-col gap-6 ">
+                        <h4 className="text-red-600 text-sm font-bold uppercase tracking-widest">Social</h4>
                         <ul className="space-y-4 text-sm font-light text-gray-300">
-                            <li>Blog</li>
-                            <li>Careers</li>
+                            <div className="flex flex-col gap-4">
+                            <span className="hover:text-red-600 cursor-pointer transition-colors">Instagram</span>
+                            <span className="hover:text-red-600 cursor-pointer transition-colors">X</span>
+                            <span className="hover:text-red-600 cursor-pointer transition-colors">YouTube</span>
+                            <span className="hover:text-red-600 cursor-pointer transition-colors">WhatsApp</span>
+                        </div>
                         </ul>
                     </div>
                 </div>

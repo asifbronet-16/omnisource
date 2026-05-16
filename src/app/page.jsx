@@ -6,7 +6,6 @@ import AboutStats from "./NewComponents/HomePage/About";
 import ImpactSection from "./NewComponents/HomePage/Impactsection";
 import Testimonials from "./NewComponents/HomePage/Testimonials";
 import FAQ from "./NewComponents/HomePage/FAQ";
-import Footer from "./NewComponents/HomePage/Footer";
 import DualFeatureCarousel from "./NewComponents/HomePage/DualFeatureCarousel";
 
 export default function Home() {
@@ -21,7 +20,6 @@ export default function Home() {
       <DualFeatureCarousel/>
       <Testimonials/>
       <FAQ/>
-      <Footer/>
     </>
   );
 };

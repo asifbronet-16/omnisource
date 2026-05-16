@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from '../HomePage/Navbar';
+import Navbar from '../../ReusableComponents/Navbar';
 
 const AboutHero = () => {
     return (

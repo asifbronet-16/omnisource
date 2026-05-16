@@ -1,6 +1,6 @@
 "use client";
 import { ArrowUpRight, Sparkles } from 'lucide-react';
-import Navbar from './Navbar';
+import Navbar from '../../ReusableComponents/Navbar';
 export default function HeroSection() {
     return (
         <section className="relative w-full bg-cover bg-[25%_50%] lg:bg-[50%_50%] bg-no-repeat overflow-hidden"
@@ -9,7 +9,7 @@ export default function HeroSection() {
             }} >
             <Navbar />
             <section className="max-w-[100rem] mx-auto h-[90vh] lg:px-24 flex flex-col lg:flex-row-reverse  justify-between lg:gap-10 lg:pt-[7rem] bg-gradient-to-t from-black to-transparent">
-                <div className="relative w-full lg:w-2/3 h-full flex justify-end items-end bg bg-no-repeat bg-contain"
+                <div className="relative w-full lg:w-2/3 h-full min-h-[50vh] flex justify-end items-end bg-center bg-no-repeat bg-contain"
                     style={{
                         backgroundImage: `url('/assets/34ddfc6708e1b4afd4d7f951c61e2082551fc8cf-768x512.png a.webp')`,
                     }}>

@@ -27,7 +27,7 @@ const FAQ = () => {
     };
 
     return (
-        <section className="bg-black py-24 px-6 md:px-20 font-public-sans text-white">
+        <section id='faq' className="bg-black py-24 px-6 md:px-20 font-public-sans text-white">
             <div className="max-w-7xl mx-auto">
 
                 {/* Header */}
