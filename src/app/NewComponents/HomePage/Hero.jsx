@@ -4,10 +4,10 @@ import Navbar from '../../ReusableComponents/Navbar';
 export default function HeroSection() {
     return (
         <section className="w-full bg-cover bg-[25%_50%] lg:bg-[50%_50%] bg-no-repeat overflow-hidden z-20 bg-[#020b1e]"
-            // style={{
-            //     backgroundImage: `url('https://bestmanpower.ae/wp-content/uploads/2025/05/Hero-Section-1-1-scaled.webp')`
-            // }}
-             >
+        // style={{
+        //     backgroundImage: `url('https://bestmanpower.ae/wp-content/uploads/2025/05/Hero-Section-1-1-scaled.webp')`
+        // }}
+        >
             <Navbar />
             <section className="relative max-w-[100rem] mx-auto h-[95vh] lg:px-24 flex flex-col lg:flex-row justify-between lg:gap-10 pt-[6rem] lg:pt-[8rem] overflow-hidden">
 
@@ -21,13 +21,19 @@ export default function HeroSection() {
                         className="w-full h-full object-cover opacity-45"
                     >
                         <source src="/assets/videos/10202777-hd_3842_2160_30fps.mp4" type="video/mp4" />
-                         {/* <source src="https://www.pexels.com/download/video/30810784/" type="video/mp4" /> */}
+                        {/* <source src="https://www.pexels.com/download/video/30810784/" type="video/mp4" /> */}
                         Your browser does not support the video tag.
                     </video>
 
                     {/* Deep Branded Gradient Film Overlays for High Text Contrast */}
                     {/* <div className="absolute inset-0 bg-gradient-to-t from-[#020b1e] via-[#020b1e]/60 to-[#020b1e]/90 z-10" /> */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#020b1e] from-[45%] via-[#020b1e]/70 to-transparent hidden lg:block z-10" />
+                    <div className="absolute inset-0 z-10">
+                        {/* Bottom-to-Top Gradient: Makes the bottom solid navy to match the next section */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#020b1e] via-[#020b1e]/50 to-transparent" />
+
+                        {/* Optional: Keeps your existing Left-to-Right gradient for text readability on Desktop */}
+                        <div className="absolute inset-0 bg-gradient-to-r from-[#020b1e] from-[30%] via-transparent to-transparent hidden lg:block opacity-80" />
+                    </div>
                 </div>
 
                 {/* Content Container (placed carefully above backdrop at z-20) */}
