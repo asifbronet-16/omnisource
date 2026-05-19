@@ -30,10 +30,10 @@ const locations = [
 const ContactLocations = () => {
 
     return (
-        <section className="bg-black py-16 px-6 md:px-20 font-public-sans">
+        <section className="bg-[#020b1e] py-16 px-6 md:px-20 font-public-sans select-none">
             <div className="max-w-7xl mx-auto">
 
-                {/* Top Two Maps Grid */}
+                {/* Top Two Regional Branch Maps Grid (Abu Dhabi & Dubai) */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                     {locations.slice(0, 2).map((loc, i) => (
                         <motion.div
@@ -41,50 +41,68 @@ const ContactLocations = () => {
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="relative group rounded-xl overflow-hidden border border-white/10 bg-[#111]"
+                            className="relative group rounded-xl overflow-hidden border border-blue-900/20 bg-[#041232]/50 shadow-xl transition-all duration-300 hover:border-blue-900/40"
                         >
-                            {/* Header Overlay */}
-                            <div className="absolute top-4 left-4 right-4 z-20 flex justify-between items-start bg-white/90 backdrop-blur-md p-4 rounded-lg shadow-lg">
-                                <div>
-                                    <h4 className="text-black font-bold text-sm">{loc.plusCode}</h4>
-                                    <p className="text-gray-500 text-[10px] uppercase mt-1">{loc.address}</p>
+                            {/* Premium Frosted Floating Information Banner Overlay */}
+                            <div className="absolute top-4 left-4 right-4 z-20 flex justify-between items-start bg-[#041232]/90 backdrop-blur-md p-4 rounded-xl border border-blue-900/40 shadow-2xl">
+                                <div className="max-w-[70%]">
+                                    <h4 className="text-white font-bold text-sm tracking-tight truncate">{loc.plusCode}</h4>
+                                    <p className="text-slate-400 text-[10px] tracking-wide uppercase font-semibold mt-1 truncate">{loc.address}</p>
                                 </div>
-                                <div className="flex gap-2">
-                                    <button className="p-2 hover:bg-gray-100 rounded-full transition-colors"><ExternalLink size={16} className="text-gray-600" /></button>
-                                    <button className="p-2 hover:bg-gray-100 rounded-full transition-colors"><Navigation size={16} className="text-gray-600" /></button>
+                                <div className="flex gap-2 shrink-0">
+                                    <button
+                                        onClick={() => window.open(loc.mapUrl, '_blank')}
+                                        className="p-2 bg-[#020b1e]/60 border border-blue-900/30 text-slate-300 hover:text-white hover:bg-[#0f5cf2] hover:border-[#0f5cf2] rounded-lg transition-all duration-200"
+                                        title="View External Map"
+                                    >
+                                        <ExternalLink size={15} />
+                                    </button>
+                                    <button
+                                        className="p-2 bg-[#020b1e]/60 border border-blue-900/30 text-slate-300 hover:text-white hover:bg-[#0f5cf2] hover:border-[#0f5cf2] rounded-lg transition-all duration-200"
+                                        title="Get Directions"
+                                    >
+                                        <Navigation size={15} />
+                                    </button>
                                 </div>
                             </div>
 
-                            {/* Map Iframe with Grayscale Filter */}
+                            {/* Clean Full-Color High Fidelity Iframe */}
                             <iframe
                                 src={loc.mapUrl}
-                                className="w-full h-[300px] grayscale contrast-125 invert-[0.05] brightness-90"
+                                className="w-full h-[320px] relative z-10"
                                 style={{ border: 0 }}
                                 allowFullScreen=""
                                 loading="lazy"
+                                referrerPolicy="no-referrer-when-downgrade"
                             />
                         </motion.div>
                     ))}
                 </div>
 
-                {/* Bottom Wide Map (Sharjah/Full View) */}
+                {/* Bottom Wide Map Container (Sharjah Regional View) */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="relative group rounded-xl overflow-hidden border border-white/10 bg-[#111]"
+                    className="relative group rounded-xl overflow-hidden border border-blue-900/20 bg-[#041232]/50 shadow-xl transition-all duration-300 hover:border-blue-900/40"
                 >
-                    <div className="absolute top-6 left-6 z-20 bg-white/90 backdrop-blur-md px-6 py-3 rounded-lg shadow-lg flex items-center gap-3">
-                        <span className="text-black font-bold text-sm italic">Open in Maps</span>
-                        <ExternalLink size={14} className="text-black" />
-                    </div>
+                    {/* Action Hub Overlay Button */}
+                    <button
+                        onClick={() => window.open(locations[2].mapUrl, '_blank')}
+                        className="absolute top-6 left-6 z-20 bg-[#041232]/90 backdrop-blur-md border border-blue-900/40 px-5 py-2.5 rounded-xl shadow-2xl flex items-center gap-2.5 text-white text-sm font-bold transition-all duration-200 hover:bg-[#0f5cf2] hover:border-[#0f5cf2]"
+                    >
+                        <span>Open Sharjah Branch in Maps</span>
+                        <ExternalLink size={14} className="shrink-0" />
+                    </button>
 
+                    {/* Clean Full-Color Wide Horizon Iframe */}
                     <iframe
                         src={locations[2].mapUrl}
-                        className="w-full h-[350px] grayscale contrast-125 brightness-90"
+                        className="w-full h-[380px] relative z-10"
                         style={{ border: 0 }}
                         allowFullScreen=""
                         loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
                     />
                 </motion.div>
             </div>

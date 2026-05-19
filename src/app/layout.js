@@ -37,8 +37,8 @@ const publicSans = Public_Sans({
 });
 
 export const metadata = {
-  title: "Omni Source",
-  description: "Your Trusted Manpower Supplier in UAE. Quick, Quality Labor Solutions for All Industries.",
+  title: "OmniSource workforce solutions",
+  description: "One Source Every Trade",
 };
 
 export default function RootLayout({ children }) {

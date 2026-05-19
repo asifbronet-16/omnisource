@@ -13,55 +13,65 @@ const stats = [
 
 const AboutStats = () => {
     return (
-        <section className="bg-black text-white py-20 px-6 md:px-20 font-public-sans overflow-hidden">
+        <>
+        <section className="bg-[#020b1e] text-white py-20 px-6 md:px-20 font-public-sans overflow-hidden">
             <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
-
-                {/* Left Content */}
+                {/* Left Content Column */}
                 <div className="relative">
+                    {/* Brand Blue Grid Glitter Pattern overlay */}
                     <div
-                        className="absolute inset-0 z-0 opacity-30"
+                        className="absolute inset-0 z-0 opacity-15"
                         style={{
-                            backgroundImage: `radial-gradient(circle, #ffffff 1px, transparent 1px)`,
-                            backgroundSize: '40px 40px', // Adjust this to change the density of the glitter
+                            backgroundImage: `radial-gradient(circle, white 1.5px, transparent 1px)`,
+                            backgroundSize: '40px 40px',
                         }}
                     />
-                    {/* Background Outline Text */}
+                    
+                    {/* Background Watermarked Outline Year with Brand Tint */}
                     <span
-                        className="absolute -top-24 right-0 md:text-[220px] text-[150px] font-bold select-none pointer-events-none leading-none opacity-20 [text-stroke:2px_white] [-webkit-text-stroke:2px_white] text-transparent"
+                        className="absolute -top-24 right-0 md:text-[220px] text-[150px] font-extrabold select-none pointer-events-none leading-none opacity-30 [text-stroke:2px_#0f5cf2] [-webkit-text-stroke:2px_#0f5cf2] text-transparent"
                     >
                         2015
                     </span>
 
                     <div className="relative z-10">
-                        <div className="inline-block px-3 py-1 border border-white/20 rounded-sm mb-6 bg-white/5">
-                            <p className="text-[14px]  tracking-widest font-light">
-                                ✳ Bridging the Gap Between Skill and Demand
+                        {/* Branded Pill Tagline Container */}
+                        <div className="inline-block px-3 py-1.5 border border-blue-900/50 rounded-md mb-6 bg-[#0f5cf2]/10 backdrop-blur-sm">
+                            <p className="text-[12px] uppercase tracking-widest font-semibold text-blue-200">
+                                <span className="text-[#0f5cf2] mr-1">✳</span> Bridging the Gap Between Skill and Demand
                             </p>
                         </div>
-                        <h2 className="text-4xl md:text-5xl font-semibold leading-tight mb-4">
-                            Established to Connect Talent and <br />
-                            <span className="text-red-600">Opportunity Since</span>
+                        
+                        <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight mb-4">
+                            Established to Connect <br />
+                            Talent and <span className="text-[#0f5cf2]">Opportunity Since</span>
                         </h2>
-                        <p className="text-7xl md:text-9xl font-bold text-red-600">2015</p>
+                        
+                        <p className="text-7xl md:text-9xl font-black tracking-tighter text-[#0f5cf2] drop-shadow-lg shadow-blue-500/20">
+                            2015
+                        </p>
                     </div>
                 </div>
 
-                {/* Right Stats Grid */}
-                <div className="grid grid-cols-2 gap-4">
+                {/* Right Stats Dashboard Grid */}
+                <div className="grid grid-cols-2 gap-4 z-10">
                     {stats.map((stat, i) => (
                         <motion.div
                             key={i}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ delay: i * 0.1 }}
+                            transition={{ delay: i * 0.1, duration: 0.5 }}
                             viewport={{ once: true }}
-                            className={`border border-white/10 p-8 flex flex-col justify-center items-center text-center bg-[#050505] hover:border-red-600/50 transition-colors duration-500 ${stat.className}`}
+                            className={`border border-blue-900/20 p-8 flex flex-col justify-center items-center text-center bg-[#041232]/50 backdrop-blur-sm rounded-md hover:border-[#0f5cf2]/50 hover:bg-[#041232]/80 transition-all duration-500 ${stat.className}`}
                         >
-                            <h3 className={`text-4xl md:text-5xl font-bold mb-2 ${stat.color}`}>
+                            {/* Uses fallback brand color system if stat.color points to old red layout */}
+                            <h3 className={`text-4xl md:text-5xl font-extrabold mb-2 tracking-tight ${
+                                stat.color && !stat.color.includes('red') ? stat.color : 'text-white'
+                            }`}>
                                 {stat.value}
                             </h3>
-                            <p className="text-gray-400 text-sm font-light uppercase tracking-wide">
+                            <p className="text-slate-400 text-xs font-semibold uppercase tracking-widest">
                                 {stat.label}
                             </p>
                         </motion.div>
@@ -69,6 +79,7 @@ const AboutStats = () => {
                 </div>
             </div>
         </section>
+        </>
     );
 };
 

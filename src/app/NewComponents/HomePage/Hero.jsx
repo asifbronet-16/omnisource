@@ -3,42 +3,67 @@ import { ArrowUpRight, Sparkles } from 'lucide-react';
 import Navbar from '../../ReusableComponents/Navbar';
 export default function HeroSection() {
     return (
-        <section className="relative w-full bg-cover bg-[25%_50%] lg:bg-[50%_50%] bg-no-repeat overflow-hidden"
-            style={{
-                backgroundImage: `url('https://bestmanpower.ae/wp-content/uploads/2025/05/Hero-Section-1-1-scaled.webp')`
-            }} >
+        <section className="w-full bg-cover bg-[25%_50%] lg:bg-[50%_50%] bg-no-repeat overflow-hidden z-20 bg-[#020b1e]"
+            // style={{
+            //     backgroundImage: `url('https://bestmanpower.ae/wp-content/uploads/2025/05/Hero-Section-1-1-scaled.webp')`
+            // }}
+             >
             <Navbar />
-            <section className="max-w-[100rem] mx-auto h-[90vh] lg:px-24 flex flex-col lg:flex-row-reverse  justify-between lg:gap-10 lg:pt-[7rem] bg-gradient-to-t from-black to-transparent">
-                <div className="relative w-full lg:w-2/3 h-full min-h-[50vh] flex justify-end items-end bg-center bg-no-repeat bg-contain"
-                    style={{
-                        backgroundImage: `url('/assets/34ddfc6708e1b4afd4d7f951c61e2082551fc8cf-768x512.png a.webp')`,
-                    }}>
-                    <div className='absolute inset-x-0 inset-y-0 bg-gradient-to-t from-black from-15% via-transparent via-30% to-transparent to-90% z-10 ' />
+            <section className="relative max-w-[100rem] mx-auto h-[95vh] lg:px-24 flex flex-col lg:flex-row justify-between lg:gap-10 pt-[6rem] lg:pt-[8rem] overflow-hidden">
+
+                {/* Background Video Container Layer */}
+                <div className="absolute inset-0 w-full h-full z-0">
+                    <video
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="w-full h-full object-cover opacity-45"
+                    >
+                        <source src="/assets/videos/10202777-hd_3842_2160_30fps.mp4" type="video/mp4" />
+                         {/* <source src="https://www.pexels.com/download/video/30810784/" type="video/mp4" /> */}
+                        Your browser does not support the video tag.
+                    </video>
+
+                    {/* Deep Branded Gradient Film Overlays for High Text Contrast */}
+                    {/* <div className="absolute inset-0 bg-gradient-to-t from-[#020b1e] via-[#020b1e]/60 to-[#020b1e]/90 z-10" /> */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#020b1e] from-[45%] via-[#020b1e]/70 to-transparent hidden lg:block z-10" />
                 </div>
-                <div className="relative w-full lg:w-1/2 text-white text-center lg:text-start px-6 bg-black lg:bg-transparent">
-                    <div className="flex items-center gap-2 border border-zinc-800 bg-zinc-900/60 px-4 py-1.5 rounded-md w-fit mb-8 mx-auto lg:mx-0 mt-20">
-                        <Sparkles className="text-white" size={14} />
-                        <span className="text-xs text-gray-300 uppercase tracking-wider font-medium">Reliable Workforce, Delivered Right</span>
+
+                {/* Content Container (placed carefully above backdrop at z-20) */}
+                <div className="relative w-full lg:w-3/5 text-white text-center lg:text-start px-6 z-10 h-full flex flex-col justify-center items-center lg:items-start">
+
+                    {/* Badge Indicator Pill */}
+                    <div className="flex items-center gap-2 border border-blue-900/50  px-4 py-1.5 rounded-full w-fit mb-6 backdrop-blur-md">
+                        <Sparkles className="text-[#0f5cf2]" size={14} />
+                        <span className="text-xs text-blue-200 uppercase tracking-widest font-semibold">
+                            Reliable Workforce, Delivered Right
+                        </span>
                     </div>
 
-                    <h1 className="text-3xl lg:text-6xl font-bold leading-[1.1] mb-6">
+                    {/* Hero Display Header Text */}
+                    <h1 className="text-4xl lg:text-7xl font-extrabold leading-[1.1] mb-6 tracking-tight">
                         Top Manpower <br />
-                        <span className="text-white">Supplier in UAE</span>
+                        <span className="bg-gradient-to-r from-white via-gray-200 to-blue-500 bg-clip-text text-transparent">
+                            Supplier in UAE
+                        </span>
                     </h1>
 
-                    <p className="text-zinc-400 text-md lg:text-lg mb-10 max-w-lg leading-relaxed">
-                        Reliable manpower solutions in <span className="text-red-500 font-semibold">Abu Dhabi</span>,
-                        <span className="text-red-500 font-semibold"> Dubai</span> &
-                        <span className="text-red-500 font-semibold"> Sharjah</span> since 2015.
-                        Quick, quality labor supply for all industries.
+                    {/* Paragraph Content (Red highlights replaced with custom corporate brand blue tokens) */}
+                    <p className="text-slate-300 text-md lg:text-lg mb-10 max-w-xl leading-relaxed">
+                        Reliable manpower solutions in <span className="text-[#0f5cf2] font-semibold">Abu Dhabi</span>,
+                        <span className="text-[#0f5cf2] font-semibold"> Dubai</span> &
+                        <span className="text-[#0f5cf2] font-semibold"> Sharjah</span> since 2015.
+                        Quick, premium quality labor supply chains for all industries.
                     </p>
 
-                    <div className="flex flex-wrap gap-4 items-center justify-center lg:justify-start">
-                        <button className="flex items-center gap-2 bg-white text-black lg:px-10 lg:py-4 py-2.5 px-4 rounded-md font-bold hover:bg-zinc-200 transition shadow-lg">
+                    {/* Call to Actions Interaction Group */}
+                    <div className="flex flex-wrap gap-4 items-center justify-center lg:justify-start mb-16 lg:mb-0 w-full sm:w-auto">
+                        <button className="flex items-center justify-center gap-2 bg-[#0f5cf2] text-white lg:px-10 lg:py-4 py-3 px-6 rounded-md font-bold hover:bg-[#0c4ecf] transition duration-300 shadow-xl shadow-[#0f5cf2]/30 w-full sm:w-auto">
                             Hire Now <ArrowUpRight size={20} />
                         </button>
 
-                        <button className="border border-zinc-700 lg:px-10 lg:py-4 px-4 py-2.5 rounded-md font-bold text-white hover:bg-white/5 transition">
+                        <button className="border border-slate-700 bg-white/5 backdrop-blur-sm lg:px-10 lg:py-4 px-6 py-3 rounded-md font-bold text-white hover:bg-white/10 hover:border-slate-500 transition duration-300 w-full sm:w-auto">
                             Let's Talk
                         </button>
                     </div>

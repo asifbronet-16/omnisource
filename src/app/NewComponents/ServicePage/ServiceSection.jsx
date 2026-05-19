@@ -43,104 +43,65 @@ const services = [
 
 export default function ServiceSection() {
     return (
-        <section className="bg-black text-white py-20 px-6 lg:px-[7.5rem] max-w-[100rem]">
+        <section className="bg-[#020b1e] text-white py-20 px-6 lg:px-[7.5rem] w-full max-w-[100rem] mx-auto font-public-sans select-none">
+
             {/* Header Section */}
-            <div className="mb-12 flex flex-col items-center text-center">
-                <div className="inline-flex items-center gap-2 border border-zinc-800 bg-zinc-900/50 px-3 py-1 rounded-md mb-6 ">
-                    <span className="text-[10px] uppercase tracking-widest text-zinc-400 font-bold">
-                        ✱ Your Trusted Partner <span className='lg:inline hidden'>in Skilled Manpower Solutions</span>
-                    </span>
+            <div className="mb-14 flex flex-col items-center text-center">
+                <div className="inline-flex items-center gap-2 border border-blue-900/40 bg-[#041232]/60 px-4 py-1.5 rounded-full mb-6 backdrop-blur-sm">
+                    <p className="text-xs uppercase tracking-widest text-blue-200 font-semibold">
+                        <span className="text-[#0f5cf2] mr-1">✳</span> Your Trusted Partner <span className='lg:inline hidden'>in Skilled Manpower Solutions</span>
+                    </p>
                 </div>
-                <h2 className="text-3xl lg:text-5xl font-bold">
-                    Reliable <span className="text-red-600">Workforce Services</span>
+                <h2 className="text-3xl lg:text-5xl font-extrabold tracking-tight">
+                    Reliable <span className="text-[#0f5cf2]">Workforce Services</span>
                 </h2>
             </div>
 
-            {/* Grid Section */}
-            <div className="flex flex-wrap justify-center gap-4">
+            {/* Services Cards Flex/Grid Section */}
+            <div className="flex flex-wrap justify-center gap-6">
                 {services.map((service, index) => (
                     <div
                         key={index}
-                        // className={`group relative overflow-hidden rounded-sm cursor-pointer ${service.size === 'large' ? ' h-[400px]' : 'h-[400px]'
-                        //     }`}
-                        className={`group relative overflow-hidden rounded-sm cursor-pointer 
-                w-full 
-                md:w-[calc(50%-1rem)] 
-                lg:w-[calc(25%-1rem)] 
-                h-[400px] flex-shrink-0`}
+                        className="group relative overflow-hidden rounded-xl cursor-pointer w-full md:w-[calc(50%-0.75rem)] lg:w-[calc(25%-1.15rem)] h-[420px] flex-shrink-0 border border-blue-900/10 hover:border-blue-900/40 transition-all duration-300"
                     >
-                        {/* Image with overlay */}
+                        {/* Interactive Image Layer */}
                         <img
                             src={service.image}
                             alt={service.title}
-                            className="w-full h-full object-cover transition-transform duration-700"
+                            className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
 
+                        {/* Dynamic Multi-Stage Visual Gradients */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#020b1e] via-[#020b1e]/60 to-transparent opacity-90 transition-opacity duration-500 group-hover:opacity-95" />
+                        <div className="absolute inset-0 bg-[#0f5cf2]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
-                        <div className="absolute inset-0 px-8 overflow-hidden">
-                            {/* Sliding content */}
-                            <div
-                                className={`
-                                absolute bottom-0 left-0 right-0
-                       ${service.size === 'large' ? "translate-y-[7rem]" : "translate-y-[6rem]"} 
-                            group-hover:translate-y-0
-                                transition-transform duration-700 ease-out`}
-                            >
-                                <div className=" p-6  ">
-                                    <div className="">
+                        {/* Sliding Text Container Frame */}
+                        <div className="absolute inset-x-0 bottom-0 p-6 flex flex-col justify-end overflow-hidden h-full">
+                            <div className="transform translate-y-[4.5rem] group-hover:translate-y-0 transition-transform duration-500 ease-out">
 
-                                        <div className='flex items-start justify-between gap-6'>
-                                            <h3 className="
-                                                    text-xl lg:text-2xl font-semibold
-                                                    
-                                                    leading-tight
-                                                    mb-2
-                                                    "
-                                            >
-                                                {service.title}
-                                            </h3>
-                                            <div
-                                                className="
-                                                bg-white/10
-                                                backdrop-blur-md
-                                                border border-white/20
-                                                p-3 rounded-full
-                                                transition-all duration-300
-                                                group-hover:bg-red-600
-                                                group-hover:border-red-600
-                                                shrink-0
-                                                "
-                                            >
+                                {/* Card Row Header */}
+                                <div className="flex items-center justify-between gap-4 mb-4">
+                                    <h3 className="text-xl font-bold leading-tight tracking-tight text-white group-hover:text-blue-100 transition-colors duration-300">
+                                        {service.title}
+                                    </h3>
 
-                                                <ArrowRight size={20} className="text-white" />
-                                            </div>
-                                        </div>
-
-
-                                        <div
-                                        // className="
-                                        //     bg-white/10
-                                        //     backdrop-blur-md
-                                        //     border border-white/20
-                                        //     p-3 rounded-full
-                                        //     transition-all duration-300
-                                        //     group-hover:bg-red-600
-                                        //     group-hover:border-red-600
-                                        //     shrink-0
-                                        //     "
-                                        >
-                                            <p className="text-sm text-zinc-300 mt-8">
-                                                {service.desc}
-                                            </p>
-                                        </div>
+                                    {/* Action Arrow Bubble Rebranded to OmniSource Blue */}
+                                    <div className="w-9 h-9 flex items-center justify-center bg-white/10 backdrop-blur-md border border-white/20 rounded-full transition-all duration-500 group-hover:bg-[#0f5cf2] group-hover:border-[#0f5cf2] group-hover:rotate-[-45deg] shrink-0 shadow-lg">
+                                        <ArrowRight size={16} className="text-white" />
                                     </div>
                                 </div>
+
+                                {/* Slide-Up Content Text */}
+                                <p className="text-sm text-slate-300 font-normal leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-70">
+                                    {service.desc}
+                                </p>
+
                             </div>
                         </div>
+
                     </div>
                 ))}
             </div>
-        </section >
+        </section>
     );
 }

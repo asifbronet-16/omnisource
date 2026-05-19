@@ -11,57 +11,58 @@ const Navbar = () => {
     { name: "About us", href: "/about" },
     { name: "Services", href: "/services" },
     { name: "FAQ", href: "/#faq" },
-    
+
     { name: "Contact Us", href: "/contact" },
   ];
 
   return (
-    <nav className="relative flex items-center justify-between lg:px-20 px-6 py-6 w-full">
-      <div className="flex flex-col">
-        <Link href="/" className="flex items-center gap-3 text-white">
-          <div className="w-[30px] h-[30px]">
-            <svg viewBox="0 0 30 30" className="w-full h-full stroke-white fill-none" style={{ strokeWidth: 1.4 }}>
-              <circle cx="15" cy="15" r="3" fill="white" stroke="none" />
-              <line x1="15" y1="15" x2="2" y2="15" /><line x1="15" y1="15" x2="28" y2="15" />
-              <line x1="15" y1="15" x2="15" y2="2" /><line x1="15" y1="15" x2="15" y2="28" />
-              <line x1="15" y1="15" x2="5" y2="5" /><line x1="15" y1="15" x2="25" y2="25" />
-            </svg>
-          </div>
-          <span className="font-bold text-[22px] leading-none tracking-wide">
-            Omni <em className="italic font-normal text-gray-400">Source</em>
-          </span>
+      <nav className="relative top-0 left-0 right-0 z-50 flex items-center justify-between lg:px-20 px-6 py-6 w-full bg-transparent">
+
+        {/* Brand Logo Container */}
+        <div className="flex items-center">
+          <Link href="/" className="flex items-center gap-2 text-white group">
+            {/* Custom OmniSource 'S' Logo Glyph Graphic */}
+            <div className="relative w-8 h-8 flex items-center justify-center">
+              <svg viewBox="0 0 100 100" className="w-full h-full fill-none stroke-[#0f5cf2]" style={{ strokeWidth: 16, strokeLinecap: 'round' }}>
+                <path d="M 65,25 A 25,25 0 0,0 25,50 A 25,25 0 0,1 75,50 A 25,25 0 0,0 35,75" />
+              </svg>
+            </div>
+            <span className="font-bold text-[24px] tracking-tight text-white">
+              Omni<span className="text-[#0f5cf2]">Source</span>
+            </span>
+          </Link>
+        </div>
+
+        {/* Navigation Pill Container */}
+        <div className="hidden md:flex items-center border border-white rounded-full px-6 py-2 gap-6 bg-black/20 backdrop-blur-md">
+          {navLinks.map((link) => {
+            const isActive = pathname === link.href;
+            return (
+              <Link
+                key={link.name}
+                href={link.href}
+                className={`text-xs uppercase tracking-wider transition-colors duration-300 font-semibold ${isActive ? 'text-[#0f84f2]' : 'text-gray-200 hover:text-white'
+                  }`}
+              >
+                {link.name}
+              </Link>
+            );
+          })}
+        </div>
+
+        {/* Corporate Action Button */}
+        <Link
+          href="/contact"
+          className="hidden lg:flex items-center gap-2 bg-[#0f5cf2] hover:bg-[#0c4ecf] px-6 py-2.5 rounded-md text-white transition font-medium text-sm shadow-lg shadow-[#0f5cf2]/20"
+        >
+          <span>Contact Us</span>
+          <ArrowUpRight size={16} />
         </Link>
-      </div>
 
-      {/* Navigation Pill */}
-      <nav className="hidden md:flex items-center border border-zinc-600 rounded-full px-8 py-2 gap-8 bg-zinc-900/40 backdrop-blur-md">
-        {navLinks.map((link) => {
-          const isActive = pathname === link.href;
-
-          return (
-            <Link
-              key={link.name}
-              href={link.href}
-              className={`text-sm transition-all duration-300 font-medium ${isActive
-                  ? 'text-red-500'
-                  : 'text-white hover:text-red-400'
-                }`}
-            >
-              {link.name}
-            </Link>
-          );
-        })}
+        <div className="lg:hidden cursor-pointer">
+          <MenuIcon className="text-white" size={30} />
+        </div>
       </nav>
-
-      {/* Contact Button */}
-      <Link href="/contact" className="hidden lg:flex items-center gap-2 bg-zinc-800 border border-zinc-700 px-5 py-2.5 rounded-md text-white hover:bg-zinc-700 transition">
-        <span className="text-sm font-medium">Contact Us</span>
-        <ArrowUpRight size={16} />
-      </Link>
-      <div className="lg:hidden">
-        <MenuIcon className='text-white' size={34} />
-      </div>
-    </nav>
   );
 };
 

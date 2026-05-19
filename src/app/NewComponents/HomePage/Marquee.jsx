@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { motion, useMotionValue, useTransform, animate } from 'framer-motion';
+import { Users2 } from 'lucide-react';
 
 const logos = [
   { name: 'BM', src: '/logos/bm.png' },
@@ -25,55 +26,59 @@ const ClientMarquee = () => {
   }, []);
 
   return (
-    <div className="bg-black py-20 overflow-hidden font-public-sans text-white">
-      {/* Header with Animated Number */}
-      <div className="flex flex-col items-center mb-12">
-        <div className="text-3xl mb-2">
-          {/* Using a simple SVG icon as seen in your image */}
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-            <circle cx="9" cy="7" r="4" />
-            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-          </svg>
-        </div>
-        <h2 className="text-4xl font-light tracking-tight">
-          {displayCount}+ Clients
-        </h2>
-      </div>
+    <>
+      <div className="bg-[#020b1e] py-20 overflow-hidden font-public-sans text-white">
 
-      {/* 2. Seamless Infinite Marquee */}
-      <div className="relative flex border-y border-white/10 py-8">
-        <motion.div 
-          className="flex whitespace-nowrap"
-          animate={{
-            x: [0, -1035], // Adjust -1035 to exactly half the width of your total logo list
-          }}
-          transition={{
-            x: {
-              repeat: Infinity,
-              repeatType: "loop",
-              duration: 25,
-              ease: "linear",
-            },
-          }}
-        >
-          {/* Render the logos twice to ensure zero gaps */}
-          {[...logos, ...logos].map((logo, index) => (
-            <div 
-              key={index} 
-              className="flex items-center justify-center px-16 border-r border-white/10 h-16 min-w-[300px]"
-            >
-              <img 
-                src={logo.src} 
-                alt={logo.name} 
-                className="max-h-full w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" 
-              />
-            </div>
-          ))}
-        </motion.div>
+        {/* Header with Animated Number */}
+        <div className="flex flex-col items-center mb-12">
+          {/* Swapped to matching brand blue icon styling */}
+          <div className="text-3xl mb-3 text-[#0f5cf2] p-3 bg-[#0f5cf2]/10 rounded-full backdrop-blur-sm border border-blue-900/40">
+            <Users2 size={32} strokeWidth={1.5} />
+          </div>
+          <h2 className="text-4xl font-extrabold tracking-tight">
+            {displayCount}+ <span className="font-normal text-slate-300">Trusted Corporate Clients</span>
+          </h2>
+        </div>
+
+        {/* 2. Seamless Infinite Marquee with Corporate Framing */}
+        <div className="relative flex border-y border-blue-900/30 bg-[#041232]/30 py-8 backdrop-blur-sm">
+
+          {/* Left & Right fading masking elements to make the marquee merge smoothly into the margins */}
+          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#020b1e] to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#020b1e] to-transparent z-10 pointer-events-none" />
+
+          <motion.div
+            className="flex whitespace-nowrap"
+            animate={{
+              x: [0, -1035], // Adjust -1035 to exactly half the width of your total logo list
+            }}
+            transition={{
+              x: {
+                repeat: Infinity,
+                repeatType: "loop",
+                duration: 25,
+                ease: "linear",
+              },
+            }}
+          >
+            {/* Render the logos twice to ensure zero gaps */}
+            {[...logos, ...logos].map((logo, index) => (
+              <div
+                key={index}
+                className="flex items-center justify-center px-16 border-r border-blue-900/20 h-16 min-w-[300px] text-white"
+              >
+                <img
+                  src={logo.src}
+                  alt={logo.name}
+                  className="max-h-full w-auto object-contain grayscale invert opacity-60 hover:grayscale-0 hover:invert-0 hover:opacity-100 transition-all duration-300 text-white"
+                />
+              </div>
+            ))}
+          </motion.div>
+        </div>
       </div>
-    </div>
+    
+    </>
   );
 };
 

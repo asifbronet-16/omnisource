@@ -26,7 +26,7 @@ const sectors = [
         ),
         img: "/assets/icons/g2289.png.webp"
     },
-     {
+    {
         title: "Manufacturing",
         description: "Professionals skilled in advanced processes, driving efficient and compliant production.",
         icon: (
@@ -37,7 +37,7 @@ const sectors = [
         ),
         img: "/assets/icons/g3891.png.webp"
     },
-      {
+    {
         title: "MEP",
         description: "Skilled MEP workers for high-quality installation and maintenance of systems",
         icon: (
@@ -48,7 +48,7 @@ const sectors = [
         ),
         img: "/assets/icons/g15-1.png.webp"
     },
-       {
+    {
         title: "Facility Staffing",
         description: "Professionals skilled in advanced processes, driving efficient and compliant production.",
         icon: (
@@ -59,7 +59,7 @@ const sectors = [
         ),
         img: "/assets/icons/Group-1.png.webp"
     },
-       {
+    {
         title: "Logistics",
         description: "Professionals skilled in advanced processes, driving efficient and compliant production.",
         icon: (
@@ -76,70 +76,76 @@ const sectors = [
 
 const ImpactSection = () => {
     return (
-        <section className="relative min-h-screen w-full flex items-center py-24 overflow-hidden font-public-sans bg-black">
+        <section className="relative min-h-screen w-full flex items-center py-24 overflow-hidden font-public-sans bg-[#020b1e]">
 
-            {/* Background Image with Parallax & Overlay */}
+            {/* Background Video Container with Corporate Tint Overlay */}
             <div className="absolute inset-0 z-0">
                 <video
                     autoPlay
                     loop
                     muted
                     playsInline
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover opacity-40 mix-blend-luminosity"
                 >
                     <source src="/assets/videos/GettyImages-626932814-1.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
 
-                {/* Important: The Overlay Layer */}
-                {/* This ensures the video is dark enough for the white text to be readable */}
-                {/* <div className="absolute inset-0 bg-black/60 shadow-inner" /> */}
-                <div className="absolute inset-0 bg-gradient-to-b from-black via-black/80 to-black z-10" />
+                {/* OmniSource Branded Smooth Gradient Masking Layer */}
+                <div className="absolute inset-0 bg-gradient-to-b from-[#020b1e] via-[#020b1e]/85 to-[#020b1e] z-10" />
             </div>
-            
 
-            {/* Content */}
+            {/* Content Box (Z-indexed above backdrop layers) */}
             <div className="relative z-20 max-w-7xl mx-auto px-6 text-center">
 
-                {/* Header */}
+                {/* Header Container Layout */}
                 <div className="mb-20">
-                    <div className="inline-block px-4 py-1 border border-white/20 rounded-sm mb-6 bg-white/5 backdrop-blur-sm">
-                        <p className="text-[14px] tracking-[0.17em] text-white/80 font-light">
-                            ✳ Real People. Real Results. Real Difference.
+                    {/* Branded Pill Tagline updated to matching blue tones */}
+                    <div className="inline-block px-4 py-1.5 border border-blue-900/50 rounded-full mb-6 bg-[#0f5cf2]/10 backdrop-blur-sm">
+                        <p className="text-xs md:text-sm tracking-widest text-blue-200 font-semibold uppercase">
+                            <span className="text-[#0f5cf2] mr-1">✳</span> Real People. Real Results. Real Difference.
                         </p>
                     </div>
-                    <h2 className="text-4xl md:text-6xl font-semibold text-white mb-2">
+                    <h2 className="text-4xl md:text-6xl font-extrabold text-white mb-2 tracking-tight">
                         Where Our Manpower
                     </h2>
-                    <h3 className="text-4xl md:text-6xl font-bold text-red-600">
+                    <h3 className="text-4xl md:text-6xl font-black text-[#0f5cf2] drop-shadow-md tracking-tight">
                         Makes an Impact
                     </h3>
                 </div>
 
-                {/* Grid of Sectors */}
+                {/* Grid of Sectors Content mapping layer */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12 text-left">
                     {sectors.map((sector, index) => (
                         <motion.div
                             key={index}
                             initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
                             whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.5, ease: "easeOut" }}
                             viewport={{ once: true }}
                             className="flex gap-6 group"
                         >
-                            <div className="flex-shrink-0 mt-1 transition-transform group-hover:scale-110 duration-300">
-                                {/* Sector Icon */}
-                                <Image src={sector.img} width={50} height={50} alt={sector.title}/>
-                                {/* {sector.icon} */}
+                            {/* Icon Container with subtle brand blue color isolation layer */}
+                            <div className="flex-shrink-0 mt-1 transition-all group-hover:scale-110 duration-300 p-2 bg-[#041232]/60 rounded-md border border-blue-900/20 group-hover:border-[#0f5cf2]/40 h-fit">
+                                <Image
+                                    src={sector.img}
+                                    width={44}
+                                    height={44}
+                                    alt={sector.title}
+                                    className="object-contain grayscale-0 brightness-100 sepia-0 hue-rotate-[195deg] saturate-[300%] transition-all duration-300 group-hover:grayscale-0 group-hover:sepia-0 group-hover:brightness-100 hover:saturate-[500%]"
+                                />
                             </div>
-                            <div className="flex flex-col">
-                                <h4 className="text-2xl font-bold text-white mb-3 tracking-tight">
+
+                            <div className="flex flex-col w-full">
+                                <h4 className="text-2xl font-bold text-white mb-3 tracking-tight group-hover:text-blue-300 transition-colors duration-300">
                                     {sector.title}
                                 </h4>
-                                <p className="text-gray-400 font-light leading-relaxed max-w-sm">
+                                <p className="text-slate-400 font-normal leading-relaxed max-w-sm">
                                     {sector.description}
                                 </p>
-                                {/* The subtle horizontal line seen in your image */}
-                                <div className="mt-8 h-[1px] w-full bg-gradient-to-r from-white/20 to-transparent" />
+
+                                {/* Dynamic Gradient Separator Line - Shifted from White to fading Brand Blue */}
+                                <div className="mt-8 h-[1px] w-full bg-gradient-to-r from-[#0f5cf2]/30 via-[#0f5cf2]/5 to-transparent transition-all duration-500 group-hover:from-[#0f5cf2]/60" />
                             </div>
                         </motion.div>
                     ))}
