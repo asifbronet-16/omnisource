@@ -23,7 +23,7 @@ const Navbar = () => {
       ${scrolled ? "py-3" : "py-5"}`}
         >
             {/* BRAND */}
-            <a href="#" className="flex items-center gap-3 text-white">
+            <a href="#" className="flex items-center gap-3 text-skin-light">
                 <div className="w-[30px] h-[30px]">
                     <svg
                         viewBox="0 0 30 30"
@@ -57,7 +57,7 @@ const Navbar = () => {
                     <li key={label} className="relative group">
                         <a
                             href={href}
-                            className="text-[13.5px] font-medium tracking-[0.02em] text-white/60 hover:text-white transition"
+                            className="text-[13.5px] font-medium tracking-[0.02em] text-skin-light/60 hover:text-skin-light transition"
                         >
                             {label}
                         </a>

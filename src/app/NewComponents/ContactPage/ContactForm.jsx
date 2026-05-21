@@ -14,17 +14,17 @@ const ContactSection = () => {
     };
 
     return (
-        <section className="bg-[#020b1e] text-white py-24 px-6 md:px-20 font-public-sans overflow-hidden selection:bg-[#0f5cf2]/30">
+        <section className="bg-[#020b1e] text-skin-light py-24 px-6 md:px-20 font-public-sans overflow-hidden selection:bg-skin-logo/30">
 
             {/* Header Layout Section */}
             <div className="max-w-7xl mx-auto text-center mb-16">
-                <div className="inline-block px-4 py-1.5 border border-blue-900/50 rounded-full mb-6 bg-[#0f5cf2]/10 backdrop-blur-sm">
+                <div className="inline-block px-4 py-1.5 border border-blue-900/50 rounded-full mb-6 bg-skin-logo/10 backdrop-blur-sm">
                     <p className="text-xs uppercase tracking-widest text-blue-200 font-semibold">
-                        <span className="text-[#0f5cf2] mr-1">✳</span> Reach Us
+                        <span className="text-skin-logo mr-1">✳</span> Reach Us
                     </p>
                 </div>
                 <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight">
-                    Get in Touch <span className="text-[#0f5cf2]">With Us</span>
+                    Get in Touch <span className="text-skin-logo">With Us</span>
                 </h2>
             </div>
 
@@ -56,33 +56,33 @@ const ContactSection = () => {
 
                             {/* Abu Dhabi HQ */}
                             <div className="flex gap-4 group">
-                                <div className="w-10 h-10 border border-blue-900/40 rounded-xl flex items-center justify-center flex-shrink-0 bg-[#020b1e]/60 text-slate-400 group-hover:text-[#0f5cf2] group-hover:border-[#0f5cf2]/40 transition-colors duration-300">
+                                <div className="w-10 h-10 border border-blue-900/40 rounded-xl flex items-center justify-center flex-shrink-0 bg-[#020b1e]/60 text-slate-400 group-hover:text-skin-logo group-hover:border-skin-logo/40 transition-colors duration-300">
                                     <MapPin size={18} />
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-base text-white mb-1">Abu Dhabi</h4>
+                                    <h4 className="font-bold text-base text-skin-light mb-1">Abu Dhabi</h4>
                                     <p className="text-xs text-slate-400 leading-relaxed font-normal">Office No: 221, Al Fahim Building, Musaffah-4, P.O Box: 778356, Abu Dhabi, UAE</p>
                                 </div>
                             </div>
 
                             {/* Dubai Office */}
                             <div className="flex gap-4 group">
-                                <div className="w-10 h-10 border border-blue-900/40 rounded-xl flex items-center justify-center flex-shrink-0 bg-[#020b1e]/60 text-slate-400 group-hover:text-[#0f5cf2] group-hover:border-[#0f5cf2]/40 transition-colors duration-300">
+                                <div className="w-10 h-10 border border-blue-900/40 rounded-xl flex items-center justify-center flex-shrink-0 bg-[#020b1e]/60 text-slate-400 group-hover:text-skin-logo group-hover:border-skin-logo/40 transition-colors duration-300">
                                     <MapPin size={18} />
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-base text-white mb-1">Dubai</h4>
+                                    <h4 className="font-bold text-base text-skin-light mb-1">Dubai</h4>
                                     <p className="text-xs text-slate-400 leading-relaxed font-normal">Office No: 211, Al Mozna Building, Near Al Nahda Metro Station, P.O Box: 23013, Dubai, UAE</p>
                                 </div>
                             </div>
 
                             {/* Sharjah Branch */}
                             <div className="flex gap-4 group">
-                                <div className="w-10 h-10 border border-blue-900/40 rounded-xl flex items-center justify-center flex-shrink-0 bg-[#020b1e]/60 text-slate-400 group-hover:text-[#0f5cf2] group-hover:border-[#0f5cf2]/40 transition-colors duration-300">
+                                <div className="w-10 h-10 border border-blue-900/40 rounded-xl flex items-center justify-center flex-shrink-0 bg-[#020b1e]/60 text-slate-400 group-hover:text-skin-logo group-hover:border-skin-logo/40 transition-colors duration-300">
                                     <MapPin size={18} />
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-base text-white mb-1">Sharjah</h4>
+                                    <h4 className="font-bold text-base text-skin-light mb-1">Sharjah</h4>
                                     <p className="text-xs text-slate-400 leading-relaxed font-normal">BCC Building, Al Zahra's Street, P.O. Box: 77967, Sharjah, UAE</p>
                                 </div>
                             </div>
@@ -91,17 +91,17 @@ const ContactSection = () => {
                         {/* Email & Phone Contact Footer */}
                         <div className="flex flex-wrap gap-8 pt-8 border-t border-blue-900/20">
                             <div className="flex items-center gap-4 group">
-                                <div className="w-10 h-10 border border-blue-900/40 rounded-xl flex items-center justify-center bg-[#020b1e]/60 text-slate-400 group-hover:text-[#0f5cf2] group-hover:border-[#0f5cf2]/40 transition-colors duration-300">
+                                <div className="w-10 h-10 border border-blue-900/40 rounded-xl flex items-center justify-center bg-[#020b1e]/60 text-slate-400 group-hover:text-skin-logo group-hover:border-skin-logo/40 transition-colors duration-300">
                                     <Mail size={18} />
                                 </div>
-                                <span className="text-sm font-semibold text-slate-200 group-hover:text-white transition-colors duration-200">info@bestmanpower.ae</span>
+                                <span className="text-sm font-semibold text-slate-200 group-hover:text-skin-light transition-colors duration-200">info@bestmanpower.ae</span>
                             </div>
 
                             <div className="flex items-center gap-4 group">
-                                <div className="w-10 h-10 border border-blue-900/40 rounded-xl flex items-center justify-center bg-[#020b1e]/60 text-slate-400 group-hover:text-[#0f5cf2] group-hover:border-[#0f5cf2]/40 transition-colors duration-300">
+                                <div className="w-10 h-10 border border-blue-900/40 rounded-xl flex items-center justify-center bg-[#020b1e]/60 text-slate-400 group-hover:text-skin-logo group-hover:border-skin-logo/40 transition-colors duration-300">
                                     <Phone size={18} />
                                 </div>
-                                <div className="text-sm font-semibold text-slate-200 group-hover:text-white transition-colors duration-200 leading-tight space-y-0.5">
+                                <div className="text-sm font-semibold text-slate-200 group-hover:text-skin-light transition-colors duration-200 leading-tight space-y-0.5">
                                     <p>+971 26588663</p>
                                     <p>+971 565473850</p>
                                 </div>
@@ -116,7 +116,7 @@ const ContactSection = () => {
                             <input
                                 type="text"
                                 placeholder="Your Name"
-                                className="w-full bg-[#020b1e]/40 border border-blue-900/30 rounded-lg px-4 py-3 text-sm focus:border-[#0f5cf2] transition-colors outline-none text-white placeholder-slate-500"
+                                className="w-full bg-[#020b1e]/40 border border-blue-900/30 rounded-lg px-4 py-3 text-sm focus:border-skin-logo transition-colors outline-none text-skin-light placeholder-slate-500"
                                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                             />
                         </div>
@@ -126,7 +126,7 @@ const ContactSection = () => {
                             <input
                                 type="type"
                                 placeholder="Enter Your Mail"
-                                className="w-full bg-[#020b1e]/40 border border-blue-900/30 rounded-lg px-4 py-3 text-sm focus:border-[#0f5cf2] transition-colors outline-none text-white placeholder-slate-500"
+                                className="w-full bg-[#020b1e]/40 border border-blue-900/30 rounded-lg px-4 py-3 text-sm focus:border-skin-logo transition-colors outline-none text-skin-light placeholder-slate-500"
                                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                             />
                         </div>
@@ -136,14 +136,14 @@ const ContactSection = () => {
                             <textarea
                                 rows={4}
                                 placeholder="Enter Your Message"
-                                className="w-full bg-[#020b1e]/40 border border-blue-900/30 rounded-lg px-4 py-3 text-sm focus:border-[#0f5cf2] transition-colors outline-none text-white placeholder-slate-500 resize-none"
+                                className="w-full bg-[#020b1e]/40 border border-blue-900/30 rounded-lg px-4 py-3 text-sm focus:border-skin-logo transition-colors outline-none text-skin-light placeholder-slate-500 resize-none"
                                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                             />
                         </div>
 
                         <button
                             type="submit"
-                            className="w-full bg-[#0f5cf2] text-white font-bold py-4 rounded-lg shadow-lg shadow-[#0f5cf2]/20 hover:bg-[#0d52d6] active:scale-[0.99] transition-all duration-200"
+                            className="w-full bg-skin-logo text-skin-light font-bold py-4 rounded-lg shadow-lg shadow-skin-logo/20 hover:bg-[#0d52d6] active:scale-[0.99] transition-all duration-200"
                         >
                             Send Your Request
                         </button>

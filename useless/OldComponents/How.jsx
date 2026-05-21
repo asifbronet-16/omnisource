@@ -55,7 +55,7 @@ const HowSection = () => {
 
                             <h2 className="display font-display font-light leading-[1.02]
                                 tracking-[0.03em]
-                                text-[clamp(38px,5.8vw,80px)] text-white">
+                                text-[clamp(38px,5.8vw,80px)] text-skin-light">
                                 How we<br />
                                 <em className="text-[var(--accent)] italic font-normal">
                                     work with you.
@@ -63,7 +63,7 @@ const HowSection = () => {
                             </h2>
                         </div>
 
-                        <p className="text-[16px] leading-[1.6] text-white/60 max-w-[460px] ml-auto max-lg:ml-0">
+                        <p className="text-[16px] leading-[1.6] text-skin-light/60 max-w-[460px] ml-auto max-lg:ml-0">
                             A structured four-step engagement designed for principal subcontractors and main contractors
                             who need execution capacity without onboarding overhead. Compliant with UAE labour and contracting
                             frameworks from day one.
@@ -89,12 +89,12 @@ const HowSection = () => {
 
                                 {/* TITLE */}
                                 <h3 className="font-display text-[26px] leading-[1.15]
-                  tracking-[-0.015em] text-white mb-4">
+                  tracking-[-0.015em] text-skin-light mb-4">
                                     {s.title}
                                 </h3>
 
                                 {/* DESC */}
-                                <p className="text-[14.5px] leading-[1.6] text-white/60">
+                                <p className="text-[14.5px] leading-[1.6] text-skin-light/60">
                                     {s.desc}
                                 </p>
 

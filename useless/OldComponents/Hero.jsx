@@ -95,7 +95,7 @@ export default function Hero() {
                 </h1>
 
                 {/* SUBTEXT */}
-                <p className="max-w-[600px] text-[17.5px] leading-[1.55] text-white/60 mb-12
+                <p className="max-w-[600px] text-[17.5px] leading-[1.55] text-skin-light/60 mb-12
           opacity-0 animate-[fadeUp_0.9s_ease_0.4s_forwards] " >
                     Omni Source supplies certified crews and equipment to contractors and facility operators
                     across the United Arab Emirates — for cleaning, electromechanical, HVAC, building maintenance,
@@ -179,11 +179,11 @@ export default function Hero() {
                         key={i}
                         className={`pt-5 lg:pr-7 border-t lg:border-t-0 border-white/10 ${i !== 3 ? "lg:border-r  border-white/10" : ""} space-y-5 mb-5`}
                     >
-                        <div className="font-display font-light text-[clamp(32px,4vw,52px)] leading-none text-white mb-2">
+                        <div className="font-display font-light text-[clamp(32px,4vw,52px)] leading-none text-skin-light mb-2">
                             {item.num}
                             <em className="text-accent font-normal italic">.</em>
                         </div>
-                        <div className="text-[12.5px] leading-[1.5] text-white/60">
+                        <div className="text-[12.5px] leading-[1.5] text-skin-light/60">
                             {item.desc}
                         </div>
                     </div>

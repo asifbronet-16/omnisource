@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --bg: #0E1110;
+  /* --bg: #0E1110;
   --surface: #15191A;
   --surface-elev: #1C2122;
   --line: #262C2D;
@@ -14,19 +14,26 @@
   --accent: #C2885A;
   --accent-glow: rgba(194, 136, 90, 0.16);
   --accent-deep: #8E6238;
-  --warm: #1E1715;
+  --warm: #1E1715; */
 
-  --display: 'Fraunces', serif;
+  /* --display: 'Fraunces', serif;
   --sans: 'Manrope', system-ui, sans-serif;
-  --mono: 'JetBrains Mono', monospace;
-}
+  --mono: 'JetBrains Mono', monospace; */
+  --color-primary: #1b1a51;
+  --color-black: #000000;
+  --color-logo-color: #2d70f7;
+  --color-logo-hover: #0c4ecf;
+  --color-shadow-primary: 0f5cf2#;
+  --color-white: #ffffff;
+  --color-border-muted: #0f1d40;
+  --text-muted-light: #bfdbfe;
+  --color-bg-gradient: #020b1e;
 
-.font-display {
-  /* Ye line Fraunces ko 'Display' mode mein daal degi (High Contrast) */
-  font-variation-settings: 'opsz' 144;
-  font-optical-sizing: auto;
-  /* Letter spacing ko yahan se bhi control kar sakte hain */
-  letter-spacing: -0.04em;
+  --color-background: #040f21;
+  --color-bg-gradient-alpha: rgba(2, 11, 30, 0.5);
+  --color-badge-background: rgb(15 92 242 / 0.1);
+  --color-border-batch: rgb(30 58 138 / 0.5);
+  --color-border-hover: #0f5cf2;
 }
 
 
@@ -42,58 +49,62 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
+html[data-scroll-behavior="smooth"] {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: var(--bg);
+  /* background: var(--bg);
   color: var(--text);
   font-family: var(--sans);
   font-weight: 400;
-  line-height: 1.55;
+  line-height: 1.55; */
   overflow-x: hidden;
-  background-image:
+  /* background-image:
     radial-gradient(circle at 20% 0%, rgba(194, 136, 90, 0.05), transparent 50%),
-    radial-gradient(circle at 80% 100%, rgba(194, 136, 90, 0.03), transparent 60%);
+    radial-gradient(circle at 80% 100%, rgba(194, 136, 90, 0.03), transparent 60%); */
 }
 
 /* Subtle film grain */
 body::before {
-  content: '';
+  /* content: '';
   position: fixed;
   inset: 0;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   opacity: 0.5;
   pointer-events: none;
   z-index: 100;
-  mix-blend-mode: overlay;
+  mix-blend-mode: overlay; */
 }
 
 ::selection {
-  background: var(--accent);
-  color: var(--bg);
+  /* background: var(--accent);
+  color: var(--bg); */
 }
 
 /* ====== TYPOGRAPHY UTILITIES ====== */
 .display {
-  font-family: var(--display);
+  /* font-family: var(--display);
   font-weight: 400;
   letter-spacing: -0.02em;
-  line-height: 1.05;
+  line-height: 1.05; */
 }
 
 .eyebrow {
-  font-family: var(--mono);
+  /* font-family: var(--mono);
   font-size: 11px;
   font-weight: 400;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--accent); */
 }
 
 .label {
-  font-family: var(--mono);
+  /* font-family: var(--mono);
   font-size: 11px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--text-fade);
+  color: var(--text-fade); */
 }
 
 /* section {
@@ -102,23 +113,22 @@ body::before {
 } */
 
 .container {
-  max-width: 1240px;
-  margin: 0 auto;
+  /* max-width: 1240px;
+  margin: 0 auto; */
 }
 
 .font-display-text {
-  font-family: var(--display);
-  /* Use a lower optical size (around 12-18) for small text */
+  /* font-family: var(--display);
   font-variation-settings: 'opsz' 12;
   font-optical-sizing: auto;
   letter-spacing: 0.01em;
-  line-height: 1.5; /* Add a bit of breathing room */
+  line-height: 1.5;  */
 }
 
 
 /* ====== ANIMATIONS ====== */
 @keyframes fadeUp {
-  from {
+  /* from {
     opacity: 0;
     transform: translateY(24px);
   }
@@ -126,17 +136,17 @@ body::before {
   to {
     opacity: 1;
     transform: translateY(0);
-  }
+  } */
 }
 
 /* Reveal on scroll */
 .reveal {
-  opacity: 0;
+  /* opacity: 0;
   transform: translateY(28px);
-  transition: opacity 0.9s ease, transform 0.9s ease;
+  transition: opacity 0.9s ease, transform 0.9s ease; */
 }
 
 .reveal.in {
-  opacity: 1;
-  transform: translateY(0);
+  /* opacity: 1;
+  transform: translateY(0); */
 }

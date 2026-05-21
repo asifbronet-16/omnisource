@@ -14,7 +14,7 @@ const features = [
 
 const AboutUsSection = () => {
     return (
-        <section className="relative bg-[#020b1e] text-white py-24 px-6 md:px-20 font-public-sans overflow-hidden">
+        <section className="relative bg-[#020b1e] text-skin-light py-24 px-6 md:px-20 font-public-sans overflow-hidden">
 
             {/* Background City Silhouette (Right Aligned) */}
             <div className="absolute right-[10%] bottom-0 h-[65%] pointer-events-none select-none z-2 opacity-20 invert brightness-0 saturate-100 sepia-[100%] hue-rotate-[190deg] contrast-[250%]">
@@ -26,7 +26,7 @@ const AboutUsSection = () => {
             </div>
 
             {/* OmniSource Ambient Subtle Blue Bottom Glow */}
-            <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#0f5cf2]/10 from-20% via-transparent to-transparent z-0 pointer-events-none" />
+            <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-skin-logo/10 from-20% via-transparent to-transparent z-0 pointer-events-none" />
 
             <div className="relative z-10 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
 
@@ -65,9 +65,9 @@ const AboutUsSection = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.4 }}
-                        className="border border-[#0f5cf2]/30 bg-[#0f5cf2]/5 rounded-xl flex flex-col items-center justify-center p-6 text-center backdrop-blur-sm shadow-lg shadow-[#0f5cf2]/5"
+                        className="border border-skin-logo/30 bg-skin-logo/5 rounded-xl flex flex-col items-center justify-center p-6 text-center backdrop-blur-sm shadow-lg shadow-skin-logo/5"
                     >
-                        <h3 className="text-5xl md:text-6xl font-extrabold text-[#0f5cf2] mb-2 tracking-tight">10+</h3>
+                        <h3 className="text-5xl md:text-6xl font-extrabold text-skin-logo mb-2 tracking-tight">10+</h3>
                         <p className="text-xs md:text-sm uppercase tracking-widest font-semibold text-slate-300">Years Of Experience</p>
                     </motion.div>
                 </div>
@@ -80,15 +80,15 @@ const AboutUsSection = () => {
                         viewport={{ once: true }}
                     >
                         {/* Branded pill tag */}
-                        <div className="inline-block px-4 py-1.5 border border-blue-900/50 rounded-full mb-6 bg-[#0f5cf2]/10 backdrop-blur-sm">
+                        <div className="inline-block px-4 py-1.5 border border-blue-900/50 rounded-full mb-6 bg-skin-logo/10 backdrop-blur-sm">
                             <p className="text-xs uppercase tracking-widest text-blue-200 font-semibold">
-                                <span className="text-[#0f5cf2] mr-1">✳</span> Your Trusted Partner in Skilled Manpower Solutions.
+                                <span className="text-skin-logo mr-1">✳</span> Your Trusted Partner in Skilled Manpower Solutions.
                             </p>
                         </div>
 
                         <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight mb-6">
                             Why choose OmniSource for reliable <br />
-                            <span className="text-[#0f5cf2] italic font-bold">manpower supply in Dubai, Abu Dhabi & Sharjah?</span>
+                            <span className="text-skin-logo italic font-bold">manpower supply in Dubai, Abu Dhabi & Sharjah?</span>
                         </h2>
 
                         <p className="text-slate-300 font-normal leading-relaxed mb-10 max-w-2xl text-base">
@@ -107,12 +107,12 @@ const AboutUsSection = () => {
                                     className="flex items-center gap-3 group"
                                 >
                                     {/* OmniSource Branded Blue Feature Checked Circle */}
-                                    <div className="flex-shrink-0 w-5 h-5 bg-[#0f5cf2] rounded-full flex items-center justify-center p-1 group-hover:scale-110 group-hover:bg-blue-500 transition-all duration-300 shadow-md shadow-[#0f5cf2]/20">
-                                        <svg className="text-white w-full h-full" fill="currentColor" viewBox="0 0 24 24">
+                                    <div className="flex-shrink-0 w-5 h-5 bg-skin-logo rounded-full flex items-center justify-center p-1 group-hover:scale-110 group-hover:bg-blue-500 transition-all duration-300 shadow-md shadow-skin-logo/20">
+                                        <svg className="text-skin-light w-full h-full" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15l-5-5 1.41-1.41L10 13.17l7.59-7.59L19 7l-9 9z" />
                                         </svg>
                                     </div>
-                                    <span className="text-sm md:text-base font-semibold tracking-tight text-slate-100 group-hover:text-white transition-colors">
+                                    <span className="text-sm md:text-base font-semibold tracking-tight text-slate-100 group-hover:text-skin-light transition-colors">
                                         {feature}
                                     </span>
                                 </motion.div>

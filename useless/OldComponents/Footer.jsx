@@ -9,7 +9,7 @@ const Footer = () => {
             >
                 {/* BRAND */}
                 <div>
-                    <a href="#" className="flex items-center gap-3 text-white">
+                    <a href="#" className="flex items-center gap-3 text-skin-light">
                         <div className="w-[30px] h-[30px]">
                             <svg
                                 viewBox="0 0 30 30"
@@ -34,12 +34,12 @@ const Footer = () => {
                         </span>
                     </a>
 
-                    <p className="mt-[22px] mb-[26px] font-display italic text-[17px] leading-[1.4] text-white/60">
+                    <p className="mt-[22px] mb-[26px] font-display italic text-[17px] leading-[1.4] text-skin-light/60">
                         "The best crew.
                         <br />
                         At your service."
                     </p>
-                    <p className="font-mono uppercase text-[11px] leading-[1.7] tracking-[0.12em] text-white/40">
+                    <p className="font-mono uppercase text-[11px] leading-[1.7] tracking-[0.12em] text-skin-light/40">
                         DET License · Activity 4390008
                         <br />
                         Scaffolding Erecting &amp; Dismantling Contracting
@@ -61,7 +61,7 @@ const Footer = () => {
                         ].map((item) => (
                             <li key={item}>
                                 <a href="#services"
-                                    className="text-[14px] text-white/60 hover:text-[var(--accent)] transition-colors"
+                                    className="text-[14px] text-skin-light/60 hover:text-[var(--accent)] transition-colors"
                                 >
                                     {item}
                                 </a>
@@ -85,7 +85,7 @@ const Footer = () => {
                         ].map((item) => (
                             <li key={item.label}>
                                 <a href={item.href}
-                                    className="text-[14px] text-white/60 hover:text-[var(--accent)] transition-colors"
+                                    className="text-[14px] text-skin-light/60 hover:text-[var(--accent)] transition-colors"
                                 >
                                     {item.label}
                                 </a>
@@ -100,9 +100,9 @@ const Footer = () => {
                     >
                         Reach us
                     </h5>
-                    <div className="mb-[22px] text-[13px] leading-[1.55] text-white/60">
+                    <div className="mb-[22px] text-[13px] leading-[1.55] text-skin-light/60">
                         <strong
-                            className="block mb-1 font-display italic font-normal text-[16px] text-white"
+                            className="block mb-1 font-display italic font-normal text-[16px] text-skin-light"
                         >
                             Dubai
                         </strong>
@@ -113,9 +113,9 @@ const Footer = () => {
                         +971 4 ___ ____
                     </div>
 
-                    <div className="text-[13px] leading-[1.55] text-white/60">
+                    <div className="text-[13px] leading-[1.55] text-skin-light/60">
                         <strong
-                            className="block mb-1 font-display italic font-normal text-[16px] text-white"
+                            className="block mb-1 font-display italic font-normal text-[16px] text-skin-light"
                         >
                             Abu Dhabi
                         </strong>
@@ -128,7 +128,7 @@ const Footer = () => {
 
             {/* BOTTOM */}
             <div
-                className="max-w-[1240px] mx-auto pt-8 flex flex-wrap items-center justify-between gap-4 font-mono text-[11px] tracking-[0.1em] text-white/40"
+                className="max-w-[1240px] mx-auto pt-8 flex flex-wrap items-center justify-between gap-4 font-mono text-[11px] tracking-[0.1em] text-skin-light/40"
             >
                 <span>© 2026 Omni Source. All rights reserved.</span>
                 <div className="flex gap-5">

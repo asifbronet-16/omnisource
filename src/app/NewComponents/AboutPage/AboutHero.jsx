@@ -15,7 +15,7 @@ const AboutHero = () => {
 
             {/* OmniSource Gradient and Ambient Color Overlays */}
             <div className="absolute inset-0 bg-gradient-to-b from-[#020b1e]/40 via-[#020b1e]/80 to-[#020b1e]" />
-            <div className="absolute inset-0 bg-[#0f5cf2]/5 mix-blend-overlay" />
+            <div className="absolute inset-0 bg-skin-logo/5 mix-blend-overlay" />
             <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-[#020b1e] to-transparent z-10" />
 
             {/* Global Context Navigation Layout */}
@@ -27,19 +27,19 @@ const AboutHero = () => {
 
                     {/* Tiny Section Identifier */}
                     <div className="inline-flex items-center gap-2 px-3 py-1 border border-blue-900/40 rounded-full mb-4 bg-[#041232]/60 backdrop-blur-sm">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#0f5cf2] animate-pulse" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-skin-logo animate-pulse" />
                         <span className="text-[10px] uppercase tracking-[0.2em] text-blue-200 font-semibold">
                             Corporate Profile
                         </span>
                     </div>
 
                     {/* Main Page Title String */}
-                    <h1 className="text-4xl md:text-6xl font-extrabold text-white tracking-tight leading-none mb-3">
-                        About <span className="text-[#0f5cf2]">Us</span>
+                    <h1 className="text-4xl md:text-6xl font-extrabold text-skin-light tracking-tight leading-none mb-3">
+                        About <span className="text-skin-logo">Us</span>
                     </h1>
 
                     {/* Centered Decorative Accent Line */}
-                    <div className="w-12 h-1 bg-[#0f5cf2] mx-auto rounded-full" />
+                    <div className="w-12 h-1 bg-skin-logo mx-auto rounded-full" />
 
                 </div>
             </div>

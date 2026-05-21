@@ -13,13 +13,13 @@ export default function Home() {
     <>
       <Hero />
       <WorkforceServices />
-      <TrustedSection/>
-      <ClientMarquee/>
-      <AboutStats/>
+      <TrustedSection />
+      <ClientMarquee />
+      <AboutStats />
       <ImpactSection/>
       <DualFeatureCarousel/>
-      <Testimonials/>
-      <FAQ/>
+      <Testimonials />
+      <FAQ />
     </>
   );
 };

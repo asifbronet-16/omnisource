@@ -115,12 +115,12 @@ export default function ServiceDetailPage() {
             <div className="relative z-10 flex h-full items-center justify-center px-4 pt-12">
 
                 <div className="text-center ">
-                    <h1 className="text-3xl md:text-5xl font-bold text-white tracking-tight">
+                    <h1 className="text-3xl md:text-5xl font-bold text-skin-light tracking-tight">
                         Our Services
                     </h1>
                 </div>
             </div>
-            <section className="text-white py-12 md:py-24 px-4 md:px-20 font-public-sans min-h-screen relative">
+            <section className="text-skin-light py-12 md:py-24 px-4 md:px-20 font-public-sans min-h-screen relative">
                 {/* Outer wrapper switches flex layout on lg breakpoint */}
                 <div className="relative max-w-7xl mx-auto flex flex-col lg:flex-row-reverse gap-8 lg:gap-12 items-start">
 
@@ -142,8 +142,8 @@ export default function ServiceDetailPage() {
                                     key={tab.id}
                                     onClick={() => router.push(`/services/${tab.id}`)}
                                     className={`inline-block lg:block text-center lg:text-left px-4 lg:px-4 py-2.5 lg:py-4 rounded-sm transition-all duration-300 font-medium text-xs lg:text-sm border snap-center flex-shrink-0 lg:flex-shrink-1 ${isSelected
-                                        ? 'bg-[#3b0d0d] text-white border-red-600 shadow-md shadow-red-900/10'
-                                        : 'bg-[#120202] text-zinc-400 border-red-600 lg:border-red-800 hover:border-red-600 hover:text-white'
+                                        ? 'bg-[#3b0d0d] text-skin-light border-red-600 shadow-md shadow-red-900/10'
+                                        : 'bg-[#120202] text-zinc-400 border-red-600 lg:border-red-800 hover:border-red-600 hover:text-skin-light'
                                         }`}
                                 >
                                     {tab.menuTitle}

@@ -49,7 +49,7 @@ const TradesSection = () => {
 
                         <h2 className="font-display font-light leading-[1.02]
                             tracking-[-0.03em]
-                            text-[clamp(38px,5.2vw,88px)] text-white">
+                            text-[clamp(38px,5.2vw,88px)] text-skin-light">
                             Every trade.<br />
                             <em className="text-[var(--accent)] italic font-normal">
                                 Every certification.
@@ -57,7 +57,7 @@ const TradesSection = () => {
                         </h2>
                     </div>
 
-                    <p className="text-[16px] leading-[1.6] text-white/60 max-w-[460px] ml-auto max-lg:ml-0">
+                    <p className="text-[16px] leading-[1.6] text-skin-light/60 max-w-[460px] ml-auto max-lg:ml-0">
                         From a single helper to a sixty-strong shutdown crew — every position is sourced, certified,
                         and deployed under our supervision. Trakhees, OSHA, NEBOSH, CISRS, IPAF and EIAC-aligned
                         wherever scope demands.

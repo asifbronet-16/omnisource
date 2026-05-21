@@ -44,7 +44,7 @@ const itemVariants = {
 const SolutionsSection = () => {
     return (
         <>
-        <section className="bg-[#020b1e] text-white font-public-sans overflow-hidden">
+        <section className="bg-[#020b1e] text-skin-light font-public-sans overflow-hidden">
 
             {/* Top Section: Solutions Pillars */}
             <div className="relative pt-24 pb-20 px-6">
@@ -75,13 +75,13 @@ const SolutionsSection = () => {
                     {/* Section Tag Pill */}
                     <motion.div variants={itemVariants} className="inline-block px-4 py-1.5 border border-blue-900/40 rounded-full mb-6 bg-[#041232]/60 backdrop-blur-sm">
                         <p className="text-xs tracking-widest text-blue-200 font-semibold">
-                            <span className="text-[#0f5cf2] mr-1">✳</span> Scaling Success Together
+                            <span className="text-skin-logo mr-1">✳</span> Scaling Success Together
                         </p>
                     </motion.div>
 
                     {/* Section Header Title */}
                     <motion.h2 variants={itemVariants} className="text-4xl md:text-5xl font-extrabold mb-20 tracking-tight">
-                        Solutions Built <span className="text-[#0f5cf2]">Around You</span>
+                        Solutions Built <span className="text-skin-logo">Around You</span>
                     </motion.h2>
 
                     {/* Pillars Grid */}
@@ -93,10 +93,10 @@ const SolutionsSection = () => {
                                     className="flex flex-col items-center group relative p-6 border border-transparent hover:border-blue-900/20 hover:bg-[#041232]/30 rounded-xl transition-all duration-300 backdrop-blur-[2px]"
                                 >
                                     {/* Icon Box with OmniSource Blue Realignment */}
-                                    <div className="text-4xl text-[#0f5cf2] mb-6 transition-transform group-hover:scale-110 duration-300 drop-shadow-[0_4px_12px_rgba(15,92,242,0.2)]">
+                                    <div className="text-4xl text-skin-logo mb-6 transition-transform group-hover:scale-110 duration-300 drop-shadow-[0_4px_12px_rgba(15,92,242,0.2)]">
                                         <item.icon size={48} strokeWidth={1.5} />
                                     </div>
-                                    <h4 className="text-xl font-bold mb-4 tracking-tight text-white">{item.title}</h4>
+                                    <h4 className="text-xl font-bold mb-4 tracking-tight text-skin-light">{item.title}</h4>
                                     <p className="text-slate-400 text-sm leading-relaxed font-normal">
                                         {item.desc}
                                     </p>
@@ -133,7 +133,7 @@ const SolutionsSection = () => {
                     <motion.button
                         whileHover={{ scale: 1.03 }}
                         whileTap={{ scale: 0.98 }}
-                        className="bg-[#0f5cf2] text-white px-7 py-3.5 w-fit rounded-lg flex items-center gap-2 hover:bg-[#0a46b9] shadow-lg shadow-[#0f5cf2]/20 transition-all text-sm font-bold tracking-wide"
+                        className="bg-skin-logo text-skin-light px-7 py-3.5 w-fit rounded-lg flex items-center gap-2 hover:bg-[#0a46b9] shadow-lg shadow-skin-logo/20 transition-all text-sm font-bold tracking-wide"
                     >
                         Connect With Us <span className="text-base">↗</span>
                     </motion.button>

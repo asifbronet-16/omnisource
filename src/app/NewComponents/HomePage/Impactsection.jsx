@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Badge from '../../ReusableComponents/Badge';
 
 const sectors = [
     {
@@ -76,7 +77,7 @@ const sectors = [
 
 const ImpactSection = () => {
     return (
-        <section className="relative min-h-screen w-full flex items-center py-24 overflow-hidden font-public-sans bg-[#020b1e]">
+        <section className="relative isolate  min-h-screen w-full flex items-center py-24 overflow-hidden font-public-sans bg-skin-background">
 
             {/* Background Video Container with Corporate Tint Overlay */}
             <div className="absolute inset-0 z-0">
@@ -92,7 +93,12 @@ const ImpactSection = () => {
                 </video>
 
                 {/* OmniSource Branded Smooth Gradient Masking Layer */}
-                <div className="absolute inset-0 bg-gradient-to-b from-[#020b1e] via-[#020b1e]/85 to-[#020b1e] z-10" />
+                {/* <div className="absolute inset-0 bg-gradient-to-b from-[#020b1e] via-[#020b1e]/85 to-[#020b1e] z-10" /> */}
+                <div className="absolute inset-0 z-10">
+                    {/* Bottom-to-Top Gradient: Makes the bottom solid navy to match the next section */}
+                    <div className="absolute inset-0 bg-gradient-primary" />
+                    <div className="absolute inset-0 bg-gradient-left hidden lg:block" />
+                </div>
             </div>
 
             {/* Content Box (Z-indexed above backdrop layers) */}
@@ -101,15 +107,13 @@ const ImpactSection = () => {
                 {/* Header Container Layout */}
                 <div className="mb-20">
                     {/* Branded Pill Tagline updated to matching blue tones */}
-                    <div className="inline-block px-4 py-1.5 border border-blue-900/50 rounded-full mb-6 bg-[#0f5cf2]/10 backdrop-blur-sm">
-                        <p className="text-xs md:text-sm tracking-widest text-blue-200 font-semibold uppercase">
-                            <span className="text-[#0f5cf2] mr-1">✳</span> Real People. Real Results. Real Difference.
-                        </p>
+                    <div className='mx-auto w-fit'>
+                        <Badge text={"Real People. Real Results. Real Difference."} />
                     </div>
-                    <h2 className="text-4xl md:text-6xl font-extrabold text-white mb-2 tracking-tight">
+                    <h2 className="text-4xl md:text-6xl font-extrabold text-skin-light mb-2 tracking-tight">
                         Where Our Manpower
                     </h2>
-                    <h3 className="text-4xl md:text-6xl font-black text-[#0f5cf2] drop-shadow-md tracking-tight">
+                    <h3 className="text-4xl md:text-6xl font-black text-skin-logo drop-shadow-md tracking-tight">
                         Makes an Impact
                     </h3>
                 </div>
@@ -126,7 +130,7 @@ const ImpactSection = () => {
                             className="flex gap-6 group"
                         >
                             {/* Icon Container with subtle brand blue color isolation layer */}
-                            <div className="flex-shrink-0 mt-1 transition-all group-hover:scale-110 duration-300 p-2 bg-[#041232]/60 rounded-md border border-blue-900/20 group-hover:border-[#0f5cf2]/40 h-fit">
+                            <div className="flex-shrink-0 mt-1 transition-all group-hover:scale-110 duration-300 p-2 bg-[#041232]/60 rounded-md border border-blue-900/20 group-hover:border-skin-logo/40 h-fit">
                                 <Image
                                     src={sector.img}
                                     width={44}
@@ -137,7 +141,7 @@ const ImpactSection = () => {
                             </div>
 
                             <div className="flex flex-col w-full">
-                                <h4 className="text-2xl font-bold text-white mb-3 tracking-tight group-hover:text-blue-300 transition-colors duration-300">
+                                <h4 className="text-2xl font-bold text-skin-light mb-3 tracking-tight group-hover:text-blue-300 transition-colors duration-300">
                                     {sector.title}
                                 </h4>
                                 <p className="text-slate-400 font-normal leading-relaxed max-w-sm">
@@ -145,7 +149,7 @@ const ImpactSection = () => {
                                 </p>
 
                                 {/* Dynamic Gradient Separator Line - Shifted from White to fading Brand Blue */}
-                                <div className="mt-8 h-[1px] w-full bg-gradient-to-r from-[#0f5cf2]/30 via-[#0f5cf2]/5 to-transparent transition-all duration-500 group-hover:from-[#0f5cf2]/60" />
+                                <div className="mt-8 h-[1px] w-full bg-gradient-to-r from-skin-logo/30 via-skin-logo/5 to-transparent transition-all duration-500 group-hover:from-skin-logo/60" />
                             </div>
                         </motion.div>
                     ))}

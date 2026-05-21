@@ -88,7 +88,7 @@ const StandardsSection = () => {
                         </div>
 
                         <h2 className="font-display font-light text-[clamp(38px,5.2vw,76px)]
-              leading-[1.02] tracking-[-0.03em] text-white">
+              leading-[1.02] tracking-[-0.03em] text-skin-light">
                             The standard,<br />
                             <em className="text-[var(--accent)] italic font-normal">
                                 sourced.
@@ -96,7 +96,7 @@ const StandardsSection = () => {
                         </h2>
                     </div>
 
-                    <p className="text-[16px]  leading-[1.6] text-white/50 max-w-[460px] ml-auto max-lg:ml-0">
+                    <p className="text-[16px]  leading-[1.6] text-skin-light/50 max-w-[460px] ml-auto max-lg:ml-0">
                         Every engagement runs under documented compliance. Our paperwork is the reason main contractors
                         and Tier 1 vendor compliance teams keep us on file.
                     </p>
@@ -127,12 +127,12 @@ const StandardsSection = () => {
 
                             {/* TITLE */}
                             <h4 className="font-display-text text-[22px] leading-[1.2]
-                tracking-[-0.015em] text-white mb-3">
+                tracking-[-0.015em] text-skin-light mb-3">
                                 {item.title}
                             </h4>
 
                             {/* DESC */}
-                            <p className="text-[14px] leading-[1.6] text-white/60">
+                            <p className="text-[14px] leading-[1.6] text-skin-light/60">
                                 {item.desc}
                             </p>
 

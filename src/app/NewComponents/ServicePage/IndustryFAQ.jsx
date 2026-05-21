@@ -30,19 +30,19 @@ const IndustryFAQ = () => {
     const [activeId, setActiveId] = useState("1");
 
     return (
-        <section className="bg-[#020b1e] text-white py-24 px-6 md:px-20 font-public-sans selection:bg-[#0f5cf2]/30">
+        <section className="bg-[#020b1e] text-skin-light py-24 px-6 md:px-20 font-public-sans selection:bg-skin-logo/30">
             <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
                 {/* Left Side: Content Box (Stays anchored during scroll) */}
                 <div className="lg:sticky lg:top-28">
-                    <div className="inline-block px-4 py-1.5 border border-blue-900/50 rounded-full mb-6 bg-[#0f5cf2]/10 backdrop-blur-sm">
+                    <div className="inline-block px-4 py-1.5 border border-blue-900/50 rounded-full mb-6 bg-skin-logo/10 backdrop-blur-sm">
                         <p className="text-xs uppercase tracking-widest text-blue-200 font-semibold">
-                            <span className="text-[#0f5cf2] mr-1">✳</span> Frequently Asked Questions
+                            <span className="text-skin-logo mr-1">✳</span> Frequently Asked Questions
                         </p>
                     </div>
                     <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight mb-6">
                         Top Manpower Company in UAE <br />
-                        <span className="text-[#0f5cf2] italic font-bold">for Skilled & Unskilled <br /> Workforce</span>
+                        <span className="text-skin-logo italic font-bold">for Skilled & Unskilled <br /> Workforce</span>
                     </h2>
                     <p className="text-slate-300 font-normal leading-relaxed max-w-lg text-base">
                         We provide tailored staffing solutions across industries, focusing on operational reliability, regulatory compliance, and long-term partnerships you can completely count on.
@@ -58,7 +58,7 @@ const IndustryFAQ = () => {
                             <div
                                 key={item.id}
                                 className={`group rounded-xl border transition-all duration-300 overflow-hidden ${isOpen
-                                        ? "border-[#0f5cf2]/40 bg-[#041232]"
+                                        ? "border-skin-logo/40 bg-[#041232]"
                                         : "border-blue-900/20 bg-[#041232]/50 hover:border-blue-900/40"
                                     }`}
                             >
@@ -67,14 +67,14 @@ const IndustryFAQ = () => {
                                     className="w-full flex items-center justify-between p-6 text-left focus:outline-none"
                                     aria-expanded={isOpen}
                                 >
-                                    <span className={`text-sm md:text-base font-bold pr-4 transition-colors duration-300 ${isOpen ? "text-[#0f5cf2]" : "text-slate-100 group-hover:text-white"
+                                    <span className={`text-sm md:text-base font-bold pr-4 transition-colors duration-300 ${isOpen ? "text-skin-logo" : "text-slate-100 group-hover:text-skin-light"
                                         }`}>
                                         {item.id}. {item.question}
                                     </span>
 
                                     {/* Animated Modern Chevron Icon */}
                                     <div className={`flex-shrink-0 w-6 h-6 flex items-center justify-center rounded-full border transition-all duration-300 ${isOpen
-                                            ? "border-[#0f5cf2] bg-[#0f5cf2]/10 text-[#0f5cf2] rotate-180"
+                                            ? "border-skin-logo bg-skin-logo/10 text-skin-logo rotate-180"
                                             : "border-slate-600 text-slate-400 group-hover:text-slate-200 group-hover:border-slate-400"
                                         }`}>
                                         <svg

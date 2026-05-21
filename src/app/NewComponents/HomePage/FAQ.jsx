@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Badge from '../../ReusableComponents/Badge';
 
 const faqData = [
     {
@@ -27,29 +28,25 @@ const FAQ = () => {
     };
 
     return (
-        <section id="faq" className="bg-[#020b1e] py-24 px-6 md:px-20 font-public-sans text-white">
+        <section id="faq" className="bg-skin-background py-24 px-6 md:px-20 font-public-sans text-skin-light">
             <div className="max-w-6xl mx-auto">
 
                 {/* Header Title Space */}
                 <div className="text-center mb-16">
-                    <div className="inline-block px-4 py-1.5 border border-blue-900/50 rounded-full mb-6 bg-[#0f5cf2]/10 backdrop-blur-sm">
-                        <p className="text-xs tracking-[0.2em] text-blue-200 font-semibold uppercase">
-                            <span className="text-[#0f5cf2] mr-1">✳</span> Clarity and Operational Compliance
-                        </p>
-                    </div>
-                    <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight text-white">
-                        Frequently Asked <span className="text-[#0f5cf2]">Questions</span>
+                    <div className='w-fit mx-auto'><Badge text={"Clarity and Operational Compliance"}/></div>
+                    <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight text-skin-light">
+                        Frequently Asked <span className="text-skin-logo">Questions</span>
                     </h2>
                 </div>
 
                 {/* Premium Corporate Accordion Container */}
-                <div className="border border-blue-900/30 rounded-lg bg-[#041232]/20 backdrop-blur-sm overflow-hidden shadow-xl shadow-black/20">
+                <div className="border border-skin-subtle rounded-lg bg-skin-primaryCard backdrop-blur-sm overflow-hidden shadow-xl shadow-glow">
                     {faqData.map((item, index) => {
                         const isOpen = activeIndex === index;
                         return (
                             <div
                                 key={index}
-                                className={`border-b border-blue-900/20 last:border-b-0 transition-colors duration-300 ${isOpen ? 'bg-[#041232]/40' : ''
+                                className={`border-b border-skin-subtle last:border-b-0 transition-colors duration-300 ${isOpen ? 'bg-skin-backgrounHighlight' : ''
                                     }`}
                             >
                                 <button
@@ -58,13 +55,13 @@ const FAQ = () => {
                                 >
                                     <div className="flex items-center gap-4">
                                         {/* Branded Dynamic Math Control Indicator */}
-                                        <span className={`text-xl font-medium transition-colors duration-300 ${isOpen ? 'text-[#0f5cf2]' : 'text-slate-400 group-hover:text-white'
+                                        <span className={`text-xl font-medium transition-colors duration-300 ${isOpen ? 'text-skin-light' : 'text-light group-hover:text-skin-light'
                                             }`}>
                                             {isOpen ? '−' : '+'}
                                         </span>
 
                                         {/* Question Label Heading string */}
-                                        <span className={`text-base md:text-lg font-bold tracking-tight transition-colors duration-300 ${isOpen ? 'text-[#0f5cf2]' : 'text-white group-hover:text-blue-300'
+                                        <span className={`text-base md:text-lg font-bold tracking-tight transition-colors duration-300 ${isOpen ? 'text-skin-light' : 'text-skin-light group-hover:text-skin-mutedLight'
                                             }`}>
                                             {item.question}
                                         </span>
@@ -79,9 +76,9 @@ const FAQ = () => {
                                             animate={{ height: "auto", opacity: 1 }}
                                             exit={{ height: 0, opacity: 0 }}
                                             transition={{ duration: 0.25, ease: "easeInOut" }}
-                                            className="overflow-hidden border-t border-blue-900/10 bg-[#020b1e]/30"
+                                            className="overflow-hidden border-t border-skin-subtle bg-skin-backgroundHighlight"
                                         >
-                                            <div className="px-14 pb-6 pt-4 text-slate-300 font-normal text-sm md:text-base leading-relaxed max-w-5xl">
+                                            <div className="px-14 pb-6 pt-4 text-skin-light font-normal text-sm md:text-base leading-relaxed max-w-5xl">
                                                 {item.answer}
                                             </div>
                                         </motion.div>

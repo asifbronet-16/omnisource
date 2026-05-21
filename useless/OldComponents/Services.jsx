@@ -55,14 +55,14 @@ const ServicesSection = () => {
                                 Services
                             </span>
                         </div>
-                        <h2 className="font-display font-light leading-[1.0] tracking-[-0.03em] text-[clamp(38px,5.2vw,82px)] text-white">
+                        <h2 className="font-display font-light leading-[1.0] tracking-[-0.03em] text-[clamp(38px,5.2vw,82px)] text-skin-light">
                             One source.<br />
                             <em className="text-[var(--accent)] font-normal italic">
                                 Every trade.
                             </em>
                         </h2>
                     </div>
-                    <p className="text-[16px] leading-[1.6] text-white/60 max-w-[460px] ml-auto max-lg:ml-0">
+                    <p className="text-[16px] leading-[1.6] text-skin-light/60 max-w-[460px] ml-auto max-lg:ml-0">
                         Each service is delivered as specialist subcontracting — your scope, our crew, our equipment,
                         our supervisor on site. Engagements scale from short surge support to full work packages on framework agreements.
                     </p>
@@ -91,10 +91,10 @@ const ServicesSection = () => {
                                 <h3 className="text-[var(--accent)] font-mono text-sm mb-2">
                                     Service {activeService.num}
                                 </h3>
-                                <h2 className="text-4xl font-display text-white mb-6 lg:text-6xl">
+                                <h2 className="text-4xl font-display text-skin-light mb-6 lg:text-6xl">
                                     {activeService.title}
                                 </h2>
-                                <p className="text-white/60 text-lg leading-relaxed max-w-[700px] mb-8 lg:text-white/90">
+                                <p className="text-skin-light/60 text-lg leading-relaxed max-w-[700px] mb-8 lg:text-skin-light/90">
                                     {activeService.desc}
                                 </p>
 
@@ -103,7 +103,7 @@ const ServicesSection = () => {
                                     {activeService.tags.map((t) => (
                                         <span
                                             key={t}
-                                            className="font-mono text-[10px] uppercase tracking-widest text-white/40 px-4 py-2 border border-white/5 rounded-full bg-white/[0.02] lg:bg-black/40 lg:text-white lg:border-white/20"
+                                            className="font-mono text-[10px] uppercase tracking-widest text-skin-light/40 px-4 py-2 border border-white/5 rounded-full bg-white/[0.02] lg:bg-black/40 lg:text-skin-light lg:border-white/20"
                                         >
                                             {t}
                                         </span>
@@ -118,7 +118,7 @@ const ServicesSection = () => {
                     {/* <div className="col-span-12 lg:col-span-4 order-1 lg:order-2">
                         <div className="flex flex-col border border-white/10 rounded-sm overflow-hidden">
                             <div className="bg-white/5 p-6 border-b border-white/10">
-                                <h4 className="text-white font-display text-xl">Our Services</h4>
+                                <h4 className="text-skin-light font-display text-xl">Our Services</h4>
                             </div>
                             {services.map((s, i) => (
                                 <button
@@ -127,7 +127,7 @@ const ServicesSection = () => {
                                     className={`relative flex items-center justify-between p-6 text-left transition-all duration-300 group
                                         ${activeIndex === i
                                             ? "bg-[var(--accent)]/10 text-[var(--accent)]"
-                                            : "bg-transparent text-white/50 hover:bg-white/[0.03] hover:text-white"
+                                            : "bg-transparent text-skin-light/50 hover:bg-white/[0.03] hover:text-skin-light"
                                         }
                                         ${i !== services.length - 1 ? "border-b border-white/10" : ""}
                                     `}
@@ -153,7 +153,7 @@ const ServicesSection = () => {
                         >
                             {/* Header - Hidden on mobile to save horizontal space */}
                             <div className="hidden lg:block bg-white/5 p-6 border-b border-white/10">
-                                <h4 className="text-white font-display text-2xl">Select from Our Services</h4>
+                                <h4 className="text-skin-light font-display text-2xl">Select from Our Services</h4>
                             </div>
 
                             {services.map((s, i) => (
@@ -163,7 +163,7 @@ const ServicesSection = () => {
                                     className={`relative flex items-center justify-between p-2.5 lg:p-4 text-left transition-all duration-300 group whitespace-nowrap lg:whitespace-normal
                                     ${activeIndex === i
                                             ? "bg-[var(--accent)]/10 text-[var(--accent)]"
-                                            : "bg-transparent text-white/50 hover:bg-white/[0.03] hover:text-white"
+                                            : "bg-transparent text-skin-light/50 hover:bg-white/[0.03] hover:text-skin-light"
                                     } ${i !== services.length - 1 ? "border-r lg:border-r-0 lg:border-b border-white/10" : ""}`}
                                 >
                                     {/* Active Indicator: Bottom bar on mobile, Left bar on desktop */}

@@ -32,13 +32,13 @@ const CoverageSection = () => {
                             </span>
                         </div>
                         <h2 className="font-display font-light text-[clamp(38px,6vw,80px)]
-                            leading-[0.95] tracking-[-0.05em] text-white mb-8">
+                            leading-[0.95] tracking-[-0.05em] text-skin-light mb-8">
                             Across all<br />    
                             <em className="text-[var(--accent)] italic font-normal">
                                 seven emirates.
                             </em>
                         </h2>
-                        <p className="text-[16px] leading-[1.6] text-white/60 max-w-[520px] mb-9 font-sans">
+                        <p className="text-[16px] leading-[1.6] text-skin-light/60 max-w-[520px] mb-9 font-sans">
                             Headquartered in Dubai with mobilisation pipelines into Abu Dhabi, Sharjah, and the Northern Emirates.
                             Crews sourced through our Kerala recruitment network, processed through Dubai operations, and deployed
                             under UAE labour-law-compliant payroll.
@@ -48,7 +48,7 @@ const CoverageSection = () => {
                             {emirates.map((item) => (
                                 <li
                                     key={item}
-                                    className="text-[22px] font-normal text-white/60 cursor-default
+                                    className="text-[22px] font-normal text-skin-light/60 cursor-default
                                   hover:text-[var(--accent)] transition
                                    font-display-text"
                                 >
@@ -68,7 +68,7 @@ const CoverageSection = () => {
                     >
 
                         {/* LABELS */}
-                        <span className="absolute top-4 left-5 font-mono text-[10.5px] tracking-[0.18em] text-white/40">
+                        <span className="absolute top-4 left-5 font-mono text-[10.5px] tracking-[0.18em] text-skin-light/40">
                             UAE
                         </span>
 
@@ -95,7 +95,7 @@ const CoverageSection = () => {
 
                                 {/* LABEL */}
                                 <span className="absolute left-5 top-[-4px] font-mono text-[10px]
-                  tracking-[0.12em] text-white whitespace-nowrap">
+                  tracking-[0.12em] text-skin-light whitespace-nowrap">
                                     {p.label}
                                 </span>
                             </div>

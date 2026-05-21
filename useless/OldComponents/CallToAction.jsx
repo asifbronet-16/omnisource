@@ -35,7 +35,7 @@ const CTASection = () => {
           text-[clamp(40px,6.4vw,92px)]
           leading-[1.02]
           tracking-[-0.035em]
-          text-white
+          text-skin-light
           mb-7"
                 >
                     Need crew
@@ -49,7 +49,7 @@ const CTASection = () => {
                 {/* TEXT */}
                 <p
                     className="max-w-[560px] mx-auto mb-11
-          text-[16.5px] leading-[1.6] text-white/60"
+          text-[16.5px] leading-[1.6] text-skin-light/60"
                 >
                     Tell us the trade, the site, and the duration. We will confirm
                     availability, scope, and rate within 24 hours.
@@ -92,10 +92,10 @@ const CTASection = () => {
             px-5 py-[11px]
             border border-white/10
             bg-transparent
-            text-white
+            text-skin-light
             text-[13px] font-semibold tracking-[0.02em]
             transition-all duration-200
-            hover:border-white hover:text-white"
+            hover:border-white hover:text-skin-light"
                     >
                         Call operations
 

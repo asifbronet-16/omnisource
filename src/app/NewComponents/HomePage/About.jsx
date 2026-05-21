@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import Badge from '../../ReusableComponents/Badge';
 
 const stats = [
     { label: 'Manpower', value: '5,000+', color: 'text-red-600', className: 'md:col-span-1 md:w-54 md:ml-auto h-28 mt-auto ' },
@@ -14,7 +15,7 @@ const stats = [
 const AboutStats = () => {
     return (
         <>
-        <section className="bg-[#020b1e] text-white py-20 px-6 md:px-20 font-public-sans overflow-hidden">
+        <section className="bg-skin-background text-skin-light py-20 px-6 md:px-20 font-public-sans overflow-hidden">
             <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
                 {/* Left Content Column */}
@@ -37,18 +38,14 @@ const AboutStats = () => {
 
                     <div className="relative z-10">
                         {/* Branded Pill Tagline Container */}
-                        <div className="inline-block px-3 py-1.5 border border-blue-900/50 rounded-md mb-6 bg-[#0f5cf2]/10 backdrop-blur-sm">
-                            <p className="text-[12px] uppercase tracking-widest font-semibold text-blue-200">
-                                <span className="text-[#0f5cf2] mr-1">✳</span> Bridging the Gap Between Skill and Demand
-                            </p>
-                        </div>
+                        <Badge text={"Bridging the Gap Between Skill and Demand"}/>
                         
                         <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight mb-4">
                             Established to Connect <br />
-                            Talent and <span className="text-[#0f5cf2]">Opportunity Since</span>
+                            Talent and <span className="text-skin-">Opportunity Since</span>
                         </h2>
                         
-                        <p className="text-7xl md:text-9xl font-black tracking-tighter text-[#0f5cf2] drop-shadow-lg shadow-blue-500/20">
+                        <p className="text-7xl md:text-9xl font-black tracking-tighter text-skin-logo drop-shadow-lg shadow-blue-500/20">
                             2015
                         </p>
                     </div>
@@ -63,11 +60,11 @@ const AboutStats = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: i * 0.1, duration: 0.5 }}
                             viewport={{ once: true }}
-                            className={`border border-blue-900/20 p-8 flex flex-col justify-center items-center text-center bg-[#041232]/50 backdrop-blur-sm rounded-md hover:border-[#0f5cf2]/50 hover:bg-[#041232]/80 transition-all duration-500 ${stat.className}`}
+                            className={`border border-skin-subtle p-8 flex flex-col justify-center items-center text-center bg-skin-backgroundHighlight backdrop-blur-sm rounded-md hover:border-skin-logo/50 hover:bg-skin-primary transition-all duration-500 ${stat.className}`}
                         >
                             {/* Uses fallback brand color system if stat.color points to old red layout */}
                             <h3 className={`text-4xl md:text-5xl font-extrabold mb-2 tracking-tight ${
-                                stat.color && !stat.color.includes('red') ? stat.color : 'text-white'
+                                stat.color && !stat.color.includes('red') ? stat.color : 'text-skin-light'
                             }`}>
                                 {stat.value}
                             </h3>

@@ -51,13 +51,13 @@ const DualFeatureCarousel = () => {
     );
 
     return (
-        <section className="bg-[#020b1e] py-14 overflow-hidden font-public-sans select-none">
+        <section className="bg-skin-background py-14 overflow-hidden font-public-sans select-none">
             <div className="embla" ref={emblaRef}>
                 <div className="flex gap-6 px-6">
                     {slides.map((slide, index) => (
                         <div
                             key={index}
-                            className="relative flex-[0_0_85%] md:flex-[0_0_65%] min-h-[500px] rounded-md overflow-hidden group cursor-grab active:cursor-grabbing border border-blue-900/10 bg-[#041232]"
+                            className="relative flex-[0_0_85%] md:flex-[0_0_65%] min-h-[500px] rounded-md overflow-hidden group cursor-grab active:cursor-grabbing border border-skin-badgeBorder bg-primary"
                         >
                             {/* Background Image with Zoom and Desaturate Blend Effect */}
                             <img
@@ -68,14 +68,14 @@ const DualFeatureCarousel = () => {
 
                             {/* OmniSource Signature Deep Blue Masking Overlay Layers */}
                             <div className="absolute inset-0 bg-gradient-to-r from-[#020b1e] via-[#020b1e]/70 to-transparent z-10 transition-opacity duration-300 group-hover:opacity-90" />
-                            <div className="absolute inset-0 bg-[#0f5cf2]/10 mix-blend-overlay z-10" />
+                            <div className="absolute inset-0 bg-[#2d70f7]/40 mix-blend-overlay z-10" />
 
                             {/* Content Container Layer (Z-indexed above gradient overlays) */}
-                            <div className="relative z-20 h-full flex flex-col justify-center p-8 md:p-16 text-white max-w-2xl">
-                                <h2 className="text-3xl md:text-5xl font-extrabold mb-6 tracking-tight leading-tight group-hover:text-blue-300 transition-colors duration-300 text-blue-300">
+                            <div className="relative z-20 h-full flex flex-col justify-center p-8 md:p-16 text-skin-light max-w-2xl">
+                                <h2 className="text-3xl md:text-5xl font-extrabold mb-6 tracking-tight leading-tight group-hover:text-skin-light transition-colors duration-300 text-skin-mutedLight">
                                     {slide.title}
                                 </h2>
-                                <p className="text-base md:text-lg font-normal text-slate-200 leading-relaxed">
+                                <p className="text-base md:text-lg font-normal text-skin-light leading-relaxed">
                                     {slide.description}
                                 </p>
                             </div>

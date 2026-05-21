@@ -3,7 +3,7 @@ import React from "react";
 const TrustStrip = () => {
     return (
         <section className="px-8 py-[38px] border-y border-white/10 bg-black/20">
-            <div className="max-w-[1240px] mx-auto flex flex-wrap items-center justify-between gap-y-6 gap-x-9 text-[12.5px] text-white/60">
+            <div className="max-w-[1240px] mx-auto flex flex-wrap items-center justify-between gap-y-6 gap-x-9 text-[12.5px] text-skin-light/60">
 
                 {/* LABEL */}
                 <span className="text-[var(--accent)] font-medium">
