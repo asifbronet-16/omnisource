@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import Badge from '../../ReusableComponents/Badge';
 
 const features = [
     "Customized Staffing Solutions",
@@ -14,7 +15,7 @@ const features = [
 
 const AboutUsSection = () => {
     return (
-        <section className="relative bg-[#020b1e] text-skin-light py-24 px-6 md:px-20 font-public-sans overflow-hidden">
+        <section className="relative bg-skin-background text-skin-light py-24 px-6 md:px-20 font-public-sans overflow-hidden">
 
             {/* Background City Silhouette (Right Aligned) */}
             <div className="absolute right-[10%] bottom-0 h-[65%] pointer-events-none select-none z-2 opacity-20 invert brightness-0 saturate-100 sepia-[100%] hue-rotate-[190deg] contrast-[250%]">
@@ -36,7 +37,7 @@ const AboutUsSection = () => {
                         initial={{ opacity: 0, x: -30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        className="row-span-2 rounded-xl overflow-hidden border border-blue-900/20"
+                        className="row-span-2 rounded-xl overflow-hidden border border-skin-badgeBorder"
                     >
                         <img
                             src="/assets/14331-1.webp"
@@ -50,7 +51,7 @@ const AboutUsSection = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        className="rounded-xl overflow-hidden h-36 md:h-40 border border-blue-900/20"
+                        className="rounded-xl overflow-hidden h-36 md:h-40 border border-skin-badgeBorder"
                     >
                         <img
                             src="/assets/181-1.webp"
@@ -68,7 +69,7 @@ const AboutUsSection = () => {
                         className="border border-skin-logo/30 bg-skin-logo/5 rounded-xl flex flex-col items-center justify-center p-6 text-center backdrop-blur-sm shadow-lg shadow-skin-logo/5"
                     >
                         <h3 className="text-5xl md:text-6xl font-extrabold text-skin-logo mb-2 tracking-tight">10+</h3>
-                        <p className="text-xs md:text-sm uppercase tracking-widest font-semibold text-slate-300">Years Of Experience</p>
+                        <p className="text-xs md:text-sm uppercase tracking-widest font-semibold text-skin-light">Years Of Experience</p>
                     </motion.div>
                 </div>
 
@@ -84,6 +85,9 @@ const AboutUsSection = () => {
                             <p className="text-xs uppercase tracking-widest text-blue-200 font-semibold">
                                 <span className="text-skin-logo mr-1">✳</span> Your Trusted Partner in Skilled Manpower Solutions.
                             </p>
+                        </div>
+                        <div className='w-fit mx-auto'>
+                        <Badge text="Your Trusted Partner in Skilled Manpower Solutions."/>
                         </div>
 
                         <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight mb-6">
