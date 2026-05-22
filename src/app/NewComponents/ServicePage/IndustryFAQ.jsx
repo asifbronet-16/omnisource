@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Badge from '../../ReusableComponents/Badge';
 
 const faqData = [
     {
@@ -30,15 +31,13 @@ const IndustryFAQ = () => {
     const [activeId, setActiveId] = useState("1");
 
     return (
-        <section className="bg-[#020b1e] text-skin-light py-24 px-6 md:px-20 font-public-sans selection:bg-skin-logo/30">
+        <section className="bg-skin-background text-skin-light py-24 px-6 md:px-20 font-public-sans selection:bg-skin-logo/30">
             <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
                 {/* Left Side: Content Box (Stays anchored during scroll) */}
                 <div className="lg:sticky lg:top-28">
-                    <div className="inline-block px-4 py-1.5 border border-blue-900/50 rounded-full mb-6 bg-skin-logo/10 backdrop-blur-sm">
-                        <p className="text-xs uppercase tracking-widest text-blue-200 font-semibold">
-                            <span className="text-skin-logo mr-1">✳</span> Frequently Asked Questions
-                        </p>
+                    <div className='w-fit mx-auto lg:mx-0'>
+                    <Badge text={"Frequently Asked Questions"}/>
                     </div>
                     <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight mb-6">
                         Top Manpower Company in UAE <br />
@@ -58,8 +57,8 @@ const IndustryFAQ = () => {
                             <div
                                 key={item.id}
                                 className={`group rounded-xl border transition-all duration-300 overflow-hidden ${isOpen
-                                        ? "border-skin-logo/40 bg-[#041232]"
-                                        : "border-blue-900/20 bg-[#041232]/50 hover:border-blue-900/40"
+                                        ? "border-skin-borderHover  bg-skin-primaryCard"
+                                        : "border-skin-badgeBorder  bg-skin-backgroundHighlight hover:border-skin-borderHover"
                                     }`}
                             >
                                 <button
@@ -67,15 +66,15 @@ const IndustryFAQ = () => {
                                     className="w-full flex items-center justify-between p-6 text-left focus:outline-none"
                                     aria-expanded={isOpen}
                                 >
-                                    <span className={`text-sm md:text-base font-bold pr-4 transition-colors duration-300 ${isOpen ? "text-skin-logo" : "text-slate-100 group-hover:text-skin-light"
+                                    <span className={`text-sm md:text-base font-bold pr-4 transition-colors duration-300 ${isOpen ? "text-skin-logo" : "text-skin-light group-hover:text-skin-light"
                                         }`}>
                                         {item.id}. {item.question}
                                     </span>
 
                                     {/* Animated Modern Chevron Icon */}
                                     <div className={`flex-shrink-0 w-6 h-6 flex items-center justify-center rounded-full border transition-all duration-300 ${isOpen
-                                            ? "border-skin-logo bg-skin-logo/10 text-skin-logo rotate-180"
-                                            : "border-slate-600 text-slate-400 group-hover:text-slate-200 group-hover:border-slate-400"
+                                            ? "border-skin-badgeBorder bg-skin-background text-skin-logo rotate-180"
+                                            : "border-skin-muted  text-skin-light group-hover:text-skin-muted group-hover:border-skin-badgeBorder"
                                         }`}>
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
@@ -98,7 +97,7 @@ const IndustryFAQ = () => {
                                             exit={{ height: 0, opacity: 0 }}
                                             transition={{ duration: 0.25, ease: "easeInOut" }}
                                         >
-                                            <div className="px-6 pb-6 text-sm text-slate-300 font-normal leading-relaxed border-t border-blue-900/20 pt-4 bg-[#020b1e]/40">
+                                            <div className="px-6 pb-6 text-sm text-skin-light font-normal leading-relaxed border-t border-skin-subtle pt-4 bg-skin-backgroundHighlight">
                                                 {item.answer}
                                             </div>
                                         </motion.div>

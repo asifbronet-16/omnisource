@@ -81,8 +81,8 @@ const AboutUsSection = () => {
                         viewport={{ once: true }}
                     >
                         {/* Branded pill tag */}
-                        <div className="inline-block px-4 py-1.5 border border-blue-900/50 rounded-full mb-6 bg-skin-logo/10 backdrop-blur-sm">
-                            <p className="text-xs uppercase tracking-widest text-blue-200 font-semibold">
+                        <div className="inline-block px-4 py-1.5 border border-skin-muted rounded-full mb-6 bg-skin-logo/10 backdrop-blur-sm">
+                            <p className="text-xs uppercase tracking-widest text-skin-muted font-semibold">
                                 <span className="text-skin-logo mr-1">✳</span> Your Trusted Partner in Skilled Manpower Solutions.
                             </p>
                         </div>
@@ -111,12 +111,12 @@ const AboutUsSection = () => {
                                     className="flex items-center gap-3 group"
                                 >
                                     {/* OmniSource Branded Blue Feature Checked Circle */}
-                                    <div className="flex-shrink-0 w-5 h-5 bg-skin-logo rounded-full flex items-center justify-center p-1 group-hover:scale-110 group-hover:bg-blue-500 transition-all duration-300 shadow-md shadow-skin-logo/20">
+                                    <div className="flex-shrink-0 w-5 h-5 bg-skin-logo rounded-full flex items-center justify-center p-1 group-hover:scale-110 group-hover:bg-skin-hover transition-all duration-300 shadow-md shadow-glow">
                                         <svg className="text-skin-light w-full h-full" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15l-5-5 1.41-1.41L10 13.17l7.59-7.59L19 7l-9 9z" />
                                         </svg>
                                     </div>
-                                    <span className="text-sm md:text-base font-semibold tracking-tight text-slate-100 group-hover:text-skin-light transition-colors">
+                                    <span className="text-sm md:text-base font-semibold tracking-tight text-skin-light group-hover:text-skin-light transition-colors">
                                         {feature}
                                     </span>
                                 </motion.div>

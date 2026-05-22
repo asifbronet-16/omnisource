@@ -1,8 +1,27 @@
 "use client";
 
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
 import { MapPin, Mail, Phone } from 'lucide-react';
+import Badge from '../../ReusableComponents/Badge';
+import { ContactCard, ContactInfoItem, FormField } from './ContactComponents';
+
+const offices = [
+    {
+        city: "Abu Dhabi",
+        address:
+            "Office No: 221, Al Fahim Building, Musaffah-4, P.O Box: 778356, Abu Dhabi, UAE",
+    },
+    {
+        city: "Dubai",
+        address:
+            "Office No: 211, Al Mozna Building, Near Al Nahda Metro Station, P.O Box: 23013, Dubai, UAE",
+    },
+    {
+        city: "Sharjah",
+        address:
+            "BCC Building, Al Zahra's Street, P.O. Box: 77967, Sharjah, UAE",
+    },
+];
 
 const ContactSection = () => {
     const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -12,16 +31,19 @@ const ContactSection = () => {
         console.log("Form Submitted:", formData);
         // Add your email logic here
     };
+    const handleChange = (e) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value,
+        });
+    };
 
     return (
-        <section className="bg-[#020b1e] text-skin-light py-24 px-6 md:px-20 font-public-sans overflow-hidden selection:bg-skin-logo/30">
-
+        <section className="bg-skin-background text-skin-light py-24 px-6 md:px-20 font-public-sans overflow-hidden selection:bg-skin-logo/30">
             {/* Header Layout Section */}
             <div className="max-w-7xl mx-auto text-center mb-16">
-                <div className="inline-block px-4 py-1.5 border border-blue-900/50 rounded-full mb-6 bg-skin-logo/10 backdrop-blur-sm">
-                    <p className="text-xs uppercase tracking-widest text-blue-200 font-semibold">
-                        <span className="text-skin-logo mr-1">✳</span> Reach Us
-                    </p>
+                <div className='w-fit mx-auto'>
+                    <Badge text={"Reach Us"} />
                 </div>
                 <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight">
                     Get in Touch <span className="text-skin-logo">With Us</span>
@@ -29,7 +51,7 @@ const ContactSection = () => {
             </div>
 
             {/* Main Interactive Corporate Contact Card */}
-            <div className="relative max-w-7xl mx-auto bg-[#041232]/60 rounded-2xl border border-blue-900/20 backdrop-blur-md overflow-hidden p-8 md:p-16 shadow-2xl">
+            <div className="relative max-w-7xl mx-auto bg-skin-backgroundHighlight rounded-2xl border border-skin-subtle backdrop-blur-md overflow-hidden p-8 md:p-16 shadow-2xl">
 
                 {/* Background Skyline Vector Silhouette */}
                 <div className="absolute right-0 bottom-0 w-1/3 h-full opacity-5 pointer-events-none select-none z-0">
@@ -46,100 +68,71 @@ const ContactSection = () => {
                     <div className="space-y-12">
                         <div>
                             <h3 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">Connect With Us Now</h3>
-                            <p className="text-slate-300 font-normal leading-relaxed max-w-md text-sm md:text-base">
+                            <p className="text-skin-light font-normal leading-relaxed max-w-md text-sm md:text-base">
                                 Reach out today for quick, reliable staffing solutions tailored specifically to your project requirements and workforce operational timelines.
                             </p>
                         </div>
 
                         {/* Location Addresses Grid */}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-
-                            {/* Abu Dhabi HQ */}
-                            <div className="flex gap-4 group">
-                                <div className="w-10 h-10 border border-blue-900/40 rounded-xl flex items-center justify-center flex-shrink-0 bg-[#020b1e]/60 text-slate-400 group-hover:text-skin-logo group-hover:border-skin-logo/40 transition-colors duration-300">
-                                    <MapPin size={18} />
-                                </div>
-                                <div>
-                                    <h4 className="font-bold text-base text-skin-light mb-1">Abu Dhabi</h4>
-                                    <p className="text-xs text-slate-400 leading-relaxed font-normal">Office No: 221, Al Fahim Building, Musaffah-4, P.O Box: 778356, Abu Dhabi, UAE</p>
-                                </div>
-                            </div>
-
-                            {/* Dubai Office */}
-                            <div className="flex gap-4 group">
-                                <div className="w-10 h-10 border border-blue-900/40 rounded-xl flex items-center justify-center flex-shrink-0 bg-[#020b1e]/60 text-slate-400 group-hover:text-skin-logo group-hover:border-skin-logo/40 transition-colors duration-300">
-                                    <MapPin size={18} />
-                                </div>
-                                <div>
-                                    <h4 className="font-bold text-base text-skin-light mb-1">Dubai</h4>
-                                    <p className="text-xs text-slate-400 leading-relaxed font-normal">Office No: 211, Al Mozna Building, Near Al Nahda Metro Station, P.O Box: 23013, Dubai, UAE</p>
-                                </div>
-                            </div>
-
-                            {/* Sharjah Branch */}
-                            <div className="flex gap-4 group">
-                                <div className="w-10 h-10 border border-blue-900/40 rounded-xl flex items-center justify-center flex-shrink-0 bg-[#020b1e]/60 text-slate-400 group-hover:text-skin-logo group-hover:border-skin-logo/40 transition-colors duration-300">
-                                    <MapPin size={18} />
-                                </div>
-                                <div>
-                                    <h4 className="font-bold text-base text-skin-light mb-1">Sharjah</h4>
-                                    <p className="text-xs text-slate-400 leading-relaxed font-normal">BCC Building, Al Zahra's Street, P.O. Box: 77967, Sharjah, UAE</p>
-                                </div>
-                            </div>
+                            {offices.map((office, index) => (
+                                <ContactCard
+                                    key={index}
+                                    icon={MapPin}
+                                    title={office.city}
+                                >
+                                    <p className="text-xs text-slate-400 leading-relaxed font-normal">
+                                        {office.address}
+                                    </p>
+                                </ContactCard>
+                            ))}
                         </div>
 
                         {/* Email & Phone Contact Footer */}
-                        <div className="flex flex-wrap gap-8 pt-8 border-t border-blue-900/20">
-                            <div className="flex items-center gap-4 group">
-                                <div className="w-10 h-10 border border-blue-900/40 rounded-xl flex items-center justify-center bg-[#020b1e]/60 text-slate-400 group-hover:text-skin-logo group-hover:border-skin-logo/40 transition-colors duration-300">
-                                    <Mail size={18} />
-                                </div>
-                                <span className="text-sm font-semibold text-slate-200 group-hover:text-skin-light transition-colors duration-200">info@bestmanpower.ae</span>
-                            </div>
+                        <div className="flex flex-wrap gap-8 pt-8 border-t border-skin-borderHover">
 
-                            <div className="flex items-center gap-4 group">
-                                <div className="w-10 h-10 border border-blue-900/40 rounded-xl flex items-center justify-center bg-[#020b1e]/60 text-slate-400 group-hover:text-skin-logo group-hover:border-skin-logo/40 transition-colors duration-300">
-                                    <Phone size={18} />
-                                </div>
-                                <div className="text-sm font-semibold text-slate-200 group-hover:text-skin-light transition-colors duration-200 leading-tight space-y-0.5">
+                            <ContactInfoItem icon={Mail}>
+                                <span>info@bestmanpower.ae</span>
+                            </ContactInfoItem>
+
+                            <ContactInfoItem icon={Phone}>
+                                <div className="space-y-0.5">
                                     <p>+971 26588663</p>
                                     <p>+971 565473850</p>
                                 </div>
-                            </div>
+                            </ContactInfoItem>
+
                         </div>
                     </div>
 
                     {/* Right Column: Rebranded Premium Form */}
                     <form onSubmit={handleSubmit} className="space-y-5">
-                        <div className="space-y-2">
-                            <label className="text-[10px] uppercase tracking-widest text-slate-400 font-bold">Name</label>
-                            <input
-                                type="text"
-                                placeholder="Your Name"
-                                className="w-full bg-[#020b1e]/40 border border-blue-900/30 rounded-lg px-4 py-3 text-sm focus:border-skin-logo transition-colors outline-none text-skin-light placeholder-slate-500"
-                                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                            />
-                        </div>
 
-                        <div className="space-y-2">
-                            <label className="text-[10px] uppercase tracking-widest text-slate-400 font-bold">Email</label>
-                            <input
-                                type="type"
-                                placeholder="Enter Your Mail"
-                                className="w-full bg-[#020b1e]/40 border border-blue-900/30 rounded-lg px-4 py-3 text-sm focus:border-skin-logo transition-colors outline-none text-skin-light placeholder-slate-500"
-                                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                            />
-                        </div>
+                        <FormField
+                            label="Name"
+                            name="name"
+                            placeholder="Your Name"
+                            value={formData.name}
+                            onChange={handleChange}
+                        />
 
-                        <div className="space-y-2">
-                            <label className="text-[10px] uppercase tracking-widest text-slate-400 font-bold">Message</label>
-                            <textarea
-                                rows={4}
-                                placeholder="Enter Your Message"
-                                className="w-full bg-[#020b1e]/40 border border-blue-900/30 rounded-lg px-4 py-3 text-sm focus:border-skin-logo transition-colors outline-none text-skin-light placeholder-slate-500 resize-none"
-                                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                            />
-                        </div>
+                        <FormField
+                            label="Email"
+                            name="email"
+                            type="email"
+                            placeholder="Enter Your Mail"
+                            value={formData.email}
+                            onChange={handleChange}
+                        />
+
+                        <FormField
+                            label="Message"
+                            name="message"
+                            textarea
+                            placeholder="Enter Your Message"
+                            value={formData.message}
+                            onChange={handleChange}
+                        />
 
                         <button
                             type="submit"
@@ -147,6 +140,7 @@ const ContactSection = () => {
                         >
                             Send Your Request
                         </button>
+
                     </form>
                 </div>
             </div>

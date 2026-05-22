@@ -1,5 +1,5 @@
 "use client";
-import { ArrowUpRight, Sparkles } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import Navbar from '../../ReusableComponents/Navbar';
 import Badge from '../../ReusableComponents/Badge';
 export default function HeroSection() {

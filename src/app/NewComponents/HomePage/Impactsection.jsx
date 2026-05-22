@@ -7,72 +7,48 @@ import Badge from '../../ReusableComponents/Badge';
 
 const sectors = [
     {
-        title: "Oil & Gas",
-        description: "Skilled manpower for onshore and offshore operations, focused on safety and precision.",
-        icon: (
-            <svg className="w-10 h-10 text-red-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z" />
-            </svg>
-        ),
-        img: "/assets/icons/g15-removebg-preview.png.webp"
-    },
-    {
         title: "Civil Construction",
-        description: "Expert labor for civil projects, delivering quality work on time and within budget.",
+        description: "WPS-compliant, mobilization-ready manpower including certified scaffolders, masons, foremen, and support crews for infrastructure and fit-out contractors.",
         icon: (
-            <svg className="w-10 h-10 text-red-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <rect x="3" y="3" width="18" height="18" rx="2" />
-                <path d="M9 3v18M15 3v18M3 9h18M3 15h18" />
+            <svg className="w-10 h-10 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M2 11a10 10 0 0 1 20 0v2H2v-2z" />
+                <path d="M12 2v9M5 4.5l5 4M19 4.5l-5 4" />
+                <path d="M2 13h20v2H2z" />
             </svg>
         ),
         img: "/assets/icons/g2289.png.webp"
     },
     {
-        title: "Manufacturing",
-        description: "Professionals skilled in advanced processes, driving efficient and compliant production.",
+        title: "MEP Services",
+        description: "Comprehensive technical workforces covering commercial and industrial electricians, HVAC technicians, pipe fitters, and specialized MEP supervisors.",
         icon: (
-            <svg className="w-10 h-10 text-red-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <rect x="3" y="3" width="18" height="18" rx="2" />
-                <path d="M9 3v18M15 3v18M3 9h18M3 15h18" />
-            </svg>
-        ),
-        img: "/assets/icons/g3891.png.webp"
-    },
-    {
-        title: "MEP",
-        description: "Skilled MEP workers for high-quality installation and maintenance of systems",
-        icon: (
-            <svg className="w-10 h-10 text-red-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <rect x="3" y="3" width="18" height="18" rx="2" />
-                <path d="M9 3v18M15 3v18M3 9h18M3 15h18" />
+            <svg className="w-10 h-10 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
             </svg>
         ),
         img: "/assets/icons/g15-1.png.webp"
     },
     {
-        title: "Facility Staffing",
-        description: "Professionals skilled in advanced processes, driving efficient and compliant production.",
+        title: "Facilities & Cleaning Staffing",
+        description: "Trained corporate and site personnel from general janitors and housekeeping attendants to highly specialized rope-access facade cleaners.",
         icon: (
-            <svg className="w-10 h-10 text-red-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <rect x="3" y="3" width="18" height="18" rx="2" />
-                <path d="M9 3v18M15 3v18M3 9h18M3 15h18" />
+            <svg className="w-10 h-10 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1" />
             </svg>
         ),
         img: "/assets/icons/Group-1.png.webp"
     },
     {
-        title: "Logistics",
-        description: "Professionals skilled in advanced processes, driving efficient and compliant production.",
+        title: "Machinery & Equipment Rental",
+        description: "Flexible, dependable fleet rental options including wheel loaders, excavators, dump trucks, cranes, and access solutions across all project scopes.",
         icon: (
-            <svg className="w-10 h-10 text-red-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <rect x="3" y="3" width="18" height="18" rx="2" />
-                <path d="M9 3v18M15 3v18M3 9h18M3 15h18" />
+            <svg className="w-10 h-10 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M5 2h14M12 2v8M12 10a3 3 0 0 0-3 3v2a2 2 0 0 0 4 0v-2a1 1 0 0 1 2 0v1" />
+                <circle cx="12" cy="10" r="1" fill="currentColor" />
             </svg>
         ),
         img: "/assets/icons/Group.png.webp"
-    },
-
-    // Add Manufacturing and MEP entries here...
+    }
 ];
 
 const ImpactSection = () => {
@@ -130,7 +106,7 @@ const ImpactSection = () => {
                             className="flex gap-6 group"
                         >
                             {/* Icon Container with subtle brand blue color isolation layer */}
-                            <div className="flex-shrink-0 mt-1 transition-all group-hover:scale-110 duration-300 p-2 bg-[#041232]/60 rounded-md border border-blue-900/20 group-hover:border-skin-logo/40 h-fit">
+                            <div className="flex-shrink-0 mt-1 transition-all group-hover:scale-110 duration-300 p-2 bg-[#041232]/60 rounded-md border border-skin-subtle group-hover:border-skin-borderHover h-fit">
                                 <Image
                                     src={sector.img}
                                     width={44}
