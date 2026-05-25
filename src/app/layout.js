@@ -3,6 +3,7 @@ import "./globals.css";
 import ScrollToTop from "./ReusableComponents/ScrollToTop";
 import Footer from "./ReusableComponents/Footer";
 import ScrollOnNavigation from "./ReusableComponents/ScrollOnNavigation";
+import WhatsAppButton from "./ReusableComponents/WhatsAppButton";
 
 const fraunces = Fraunces({
   subsets: ['latin'],
@@ -37,7 +38,7 @@ const publicSans = Public_Sans({
 });
 
 export const metadata = {
-  title: "OmniSource workforce solutions",
+  title: "OmniSource Workforce Solutions",
   description: "One Source Every Trade",
 };
 
@@ -53,6 +54,7 @@ export default function RootLayout({ children }) {
         {children}
         <Footer/>
         <ScrollToTop />
+        <WhatsAppButton/>
       </body>
     </html>
   );

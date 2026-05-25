@@ -69,14 +69,19 @@ export default function Footer() {
                         <h4 className="text-skin-logo text-sm font-bold uppercase tracking-widest">Solutions</h4>
                         <ul className="space-y-4 text-sm font-normal text-skin-light">
                             {[
-                                'Mechanical Manpower Supply',
-                                'Civil Manpower Supply',
-                                'Electrical Manpower Supply',
-                                'Oil & Gas Workforce Deployments',
-                                'Infrastructure & Logistics Personnel',
-                                'Industrial Cleaning Manpower',
+                                { label: 'Civil Construction Manpower Supply', id: 'civil-construction' },
+                                { label: 'MEP Manpower Supply', id: 'mep' },
+                                { label: 'Cleaning Manpower Supply', id: 'cleaning' },
+                                { label: 'Machinery & Equipment Rental', id: 'machinery-rental' },
                             ].map((solution, i) => (
-                                <li key={i} className="hover:text-skin-light transition-colors cursor-default">{solution}</li>
+                                <li key={i}>
+                                    <Link
+                                        href={`/services/${solution.id}`}
+                                        className="hover:text-skin-light transition-colors"
+                                    >
+                                        {solution.label}
+                                    </Link>
+                                </li>
                             ))}
                         </ul>
                     </div>
@@ -118,7 +123,7 @@ export default function Footer() {
 
                 {/* Bottom Section */}
                 <div className="text-center text-xs text-skin-mutedLight font-normal tracking-wide">
-                    © Copyright {currentYear}, All Rights Reserved by OmniSource Industrial Solutions.
+                    © Copyright {currentYear}, All Rights Reserved by OmniSource Workforce Solutions.
                 </div>
             </div>
         </footer>

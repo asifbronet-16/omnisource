@@ -10,7 +10,7 @@ export default function HeroSection() {
         // }}
         >
             <Navbar />
-            <section className="relative max-w-[100rem] mx-auto h-[95vh] lg:px-24 flex flex-col lg:flex-row justify-between lg:gap-10 pt-[6rem] lg:pt-[8rem] overflow-hidden">
+            <section className="relative min-h-[95vh] lg:px-24 flex flex-col lg:flex-row justify-between lg:gap-10 pt-[10rem] lg:py-[8rem] overflow-hidden">
 
                 {/* Background Video Container Layer */}
                 <div className="absolute inset-0 w-full h-full z-0">
@@ -38,35 +38,33 @@ export default function HeroSection() {
                 <div className="relative w-full lg:w-3/5 text-skin-light text-center lg:text-start px-6 z-10 h-full flex flex-col justify-center items-center lg:items-start">
 
                     {/* Badge Indicator Pill */}
-                    <Badge text={"Reliable Workforce, Delivered Right"}/>
+                    <Badge text={"One source, Every trade"}/>
 
                     {/* Hero Display Header Text */}
                     <h1 className="text-4xl lg:text-7xl font-extrabold leading-[1.1] mb-6 tracking-tight">
-                        Top Manpower <br />
+                       Best Workforce  <br />
                         <span className="bg-text-gradient-right bg-clip-text text-transparent">
-                            Supplier in UAE
+                            Solutions In UAE
                         </span>
                     </h1>
 
                     {/* Paragraph Content (Red highlights replaced with custom corporate brand blue tokens) */}
-                    <p className="text-slate-300 text-md lg:text-lg mb-10 max-w-xl leading-relaxed">
-                        Reliable manpower solutions in <span className="text-skin-logo font-semibold">Abu Dhabi</span>,
+                    <p className="text-slate-300 text-xl lg:text-2xl mb-10 max-w-xl leading-relaxed">
+                        {/* Reliable manpower solutions in <span className="text-skin-logo font-semibold">Abu Dhabi</span>,
                         <span className="text-skin-logo font-semibold"> Dubai</span> &
                         <span className="text-skin-logo font-semibold"> Sharjah</span> since 2015.
-                        Quick, premium quality labor supply chains for all industries.
+                        Quick, premium quality labor supply chains for all industries. */}
+                        Reliable workforce solutions in <span className="text-skin-logo font-bold">UAE</span> for all industries. We are your source for every trade. Skilled and experienced labour for all  <span className="text-skin-logo font-bold">Industries</span>
                     </p>
-
                     {/* Call to Actions Interaction Group */}
                     <div className="flex flex-wrap gap-4 items-center justify-center lg:justify-start mb-16 lg:mb-0 w-full sm:w-auto">
                         <button className="flex items-center justify-center gap-2 bg-skin-logo text-skin-light lg:px-10 lg:py-4 py-3 px-6 rounded-md font-bold hover:bg-skin-logoHover transition duration-300 shadow-xl shadow-glow/30 w-full sm:w-auto">
-                            Hire Now <ArrowUpRight size={20} />
+                           Get a Quote <ArrowUpRight size={20} />
                         </button>
-
                         <button className="border border-slate-700 bg-white/5 backdrop-blur-sm lg:px-10 lg:py-4 px-6 py-3 rounded-md font-bold text-skin-light hover:bg-white/10 hover:border-slate-500 transition duration-300 w-full sm:w-auto">
-                            Let's Talk
+                            Let's Connect
                         </button>
                     </div>
-
                 </div>
             </section>
         </section>

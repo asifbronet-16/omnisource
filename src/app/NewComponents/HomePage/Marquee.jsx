@@ -5,12 +5,14 @@ import { motion, useMotionValue, useTransform, animate } from 'framer-motion';
 import { Users2 } from 'lucide-react';
 
 const logos = [
-  { name: 'BM', src: '/logos/bm.png' },
-  { name: 'Al Tayer', src: '/logos/al-tayer.png' },
-  { name: 'Al-Futtaim', src: '/logos/al-futtaim.png' },
-  { name: 'Acciona', src: '/logos/acciona.png' },
-  { name: 'ASGC', src: '/logos/asgc.png' },
-  { name: 'Siemens', src: '/logos/siemens.png' },
+  { src: "/assets/icons/splash building-ts1633320180.svg", name: "Splash Building Contracting" },
+  { src: "/assets/icons/logo.png", name: "City Night Contracting LLC" },
+  { src: "/assets/icons/al-tayer-logo.jpg", name: "Al Tayer" },
+  { src: "/assets/icons/SP__Lulu-Group-International.png", name: "LULU Group International" },
+  { src: "/assets/icons/Be-Bright-Dark-logo.webp", name: "BeBright" },
+  { src: "/assets/icons/ferrari-logo-png_seeklogo-53764.png", name: "Ferrari" },
+  { src: "/assets/icons/images.png", name: "Samsung" },
+
 ];
 
 const ClientMarquee = () => {
@@ -35,8 +37,8 @@ const ClientMarquee = () => {
           <div className="text-3xl mb-3 text-skin-ogo p-3 bg-skin-backgroundHighlight rounded-full backdrop-blur-sm border border-blue-900/40">
             <Users2 size={32} strokeWidth={1.5} />
           </div>
-          <h2 className="text-4xl font-extrabold tracking-tight">
-            {displayCount}+ <span className="font-normal text-skin-light">Trusted Corporate Clients</span>
+          <h2 className="text-6xl font-extrabold tracking-tight">
+            <span className="font-normal text-skin-light">Trusted Corporate Clients</span>
           </h2>
         </div>
 
@@ -47,37 +49,23 @@ const ClientMarquee = () => {
           <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#020b1e] to-transparent z-10 pointer-events-none" />
           <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#020b1e] to-transparent z-10 pointer-events-none" />
 
-          <motion.div
-            className="flex whitespace-nowrap"
-            animate={{
-              x: [0, -1035], // Adjust -1035 to exactly half the width of your total logo list
-            }}
-            transition={{
-              x: {
-                repeat: Infinity,
-                repeatType: "loop",
-                duration: 25,
-                ease: "linear",
-              },
-            }}
-          >
-            {/* Render the logos twice to ensure zero gaps */}
-            {[...logos, ...logos].map((logo, index) => (
+          <div className="grid grid-cols-4 lg:grid-cols-7 gap-4 px-28 mx-auto">
+            {logos.map((logo, index) => (
               <div
                 key={index}
-                className="flex items-center justify-center px-16 border-r border-blue-900/20 h-16 min-w-[300px] text-skin-light"
+                className="flex items-center justify-center border-r border-blue-900/20 h-16 px-4"
               >
                 <img
                   src={logo.src}
                   alt={logo.name}
-                  className="max-h-full w-auto object-contain grayscale invert opacity-60 hover:grayscale-0 hover:invert-0 hover:opacity-100 transition-all duration-300 text-skin-light"
+                  className="h-24 w-32 object-contain grayscale invert opacity-60 hover:grayscale-0 hover:invert-0 hover:opacity-100 transition-all duration-300"
                 />
               </div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </div>
-    
+
     </>
   );
 };

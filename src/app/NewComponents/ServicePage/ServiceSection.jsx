@@ -1,30 +1,35 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import Badge from '../../ReusableComponents/Badge';
+import Link from 'next/link';
 
 const services = [
     {
+        id: "civil",
         title: "Civil Construction Manpower Supply",
-        desc: "We supply WPS-compliant, mobilization-ready civil crews, including certified scaffolders, masons, foremen, civil helpers, and site support crews for UAE  infrastructure projects.",
-        image: "/assets/613abbe4031ec20143e3c09723d69fed345224c51-1.jpg",
+        desc: "We supply WPS-compliant, mobilization-ready civil crews, including certified scaffolders, masons, foremen, civil helpers, and site support crews for UAE infrastructure projects.",
+        image: "/assets/magnific_change-the-uniform-and-he_2961257177.jpeg",
         size: "large"
     },
     {
+        id: "mep",
         title: "MEP Manpower Supply",
         desc: "Comprehensive MEP workforce solutions spanning industrial and commercial electricians, HVAC and A/C technicians, duct installers, pipe fitters, mechanical helpers, and MEP supervisors.",
-        image: "/assets/60d8be36ab7a39eb906f3ca71602084cce2ca178-1111-1.jpg.webp", // Repurposed for broader MEP
+        image: "/assets/construction-workers-inspecting-hvac-installation-commercial-building.jpg.jpeg",
         size: "large"
     },
     {
+        id: "cleaning",
         title: "Cleaning Manpower Supply",
         desc: "Trained and screened personnel across unskilled, semi-skilled, and skilled cleaning roles—ranging from general cleaners and janitors to rope access facade cleaners and marble polishing technicians.",
         image: "/assets/3fb526ea01f56148e88686a88dae1df58e931f782122-1.jpg",
         size: "small"
     },
     {
+        id: "machinery",
         title: "Machinery & Equipment Rental",
         desc: "Dependable, flexible rental options supporting all construction and industrial scopes. Our fleet includes wheel loaders, mini excavators, dump trucks, terrain cranes, forklifts, and boom/spider lifts.",
-        image: "/assets/c-csxxX-1.png.webp", // Replace with a machinery/equipment asset when available
+        image: "/assets/magnific_change-the-uniform-and-he_2967867875.png",
         size: "small"
     }
 ];
@@ -42,45 +47,40 @@ export default function ServiceSection() {
                 </h2>
             </div>
             {/* Services Cards Flex/Grid Section */}
-            <div className="flex flex-wrap justify-center gap-6">
+            <div className="grid lg:grid-cols-4 grid-cols-2 gap-4 ">
                 {services.map((service, index) => (
-                    <div
+                    <Link
                         key={index}
-                        className="group relative overflow-hidden rounded-xl cursor-pointer w-full md:w-[calc(50%-0.75rem)] lg:w-[calc(25%-1.15rem)] h-[420px] flex-shrink-0 border border-blue-900/10 hover:border-blue-900/40 transition-all duration-300 "
+                        className="group relative overflow-hidden rounded-md cursor-pointer border border-skin-subtle bg-skin-primaryCard lg:h-96 md:h-72 h-60"
+                        href={`/services/${service.id}`}
                     >
-                        {/* Interactive Image Layer */}
+                        {/* Image Layer with Zoom Hover Animation */}
                         <img
                             src={service.image}
                             alt={service.title}
-                            className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         />
-                        {/* Dynamic Multi-Stage Visual Gradients */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#020b1e] via-[#020b1e]/60 to-transparent opacity-90 transition-opacity duration-500 group-hover:opacity-95" />
-                        <div className="absolute inset-0 bg-skin-logo/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-                        {/* Sliding Text Container Frame */}
-                        <div className="absolute inset-x-0 bottom-0 p-6 flex flex-col justify-end overflow-hidden h-full">
-                            <div className="transform translate-y-[4.5rem] group-hover:translate-y-0 transition-transform duration-500 ease-out">
-
-                                {/* Card Row Header */}
-                                <div className="flex items-center justify-between gap-4 mb-4">
-                                    <h3 className="text-xl font-bold leading-tight tracking-tight text-skin-light group-hover:text-skin-logo transition-colors duration-300">
+                        {/* Subtle Premium Gradient Overlay Layer */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#020b1e] via-[#020b1e]/70 to-transparent" />
+                        {/* Content wrapper — grows upward on hover */}
+                        <div className="absolute bottom-0 left-0 right-0 h-20 lg:h-28 group-hover:h-[13rem] lg:group-hover:h-[15rem] overflow-hidden transition-all duration-500 ease-out bg-gradient-to-t from-[#020b1e] via-[#020b1e]/80 to-transparent">
+                            <div className="lg:p-6 p-3">
+                                {/* Heading always visible */}
+                                <div className="flex items-center justify-between lg:gap-6 gap-0.5">
+                                    <h3 className="text-[clamp(0.75rem,2vw,1.5rem)] font-bold leading-tight mb-2 tracking-tight text-white transition-colors">
                                         {service.title}
                                     </h3>
-
-                                    {/* Action Arrow Bubble Rebranded to OmniSource Blue */}
-                                    <div className="w-9 h-9 flex items-center justify-center bg-skin-primary backdrop-blur-md border border-skin-subtle rounded-full transition-all duration-500 group-hover:bg-skin-logo group-hover:border-skin-logo group-hover:rotate-[-45deg] shrink-0 shadow-lg">
-                                        <ArrowRight size={16} className="text-skin-light" />
+                                    <div className="bg-skin-primary backdrop-blur-md border border-skin-logo lg:p-3 p-1.5 rounded-full transition-all duration-300 group-hover:bg-skin-logo group-hover:border-skin-borderHover group-hover:scale-110 shadow-lg shrink-0">
+                                        <ArrowRight className="text-white lg:h-5 lg:w-5 h-3 w-3" />
                                     </div>
                                 </div>
-
-                                {/* Slide-Up Content Text */}
-                                <p className="text-sm text-skin-light font-normal leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-70 line-clamp-5">
+                                {/* Paragraph revealed on hover */}
+                                <p className="text-xs sm:text-sm text-gray-300 leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200">
                                     {service.desc}
                                 </p>
-
                             </div>
                         </div>
-                    </div>
+                    </Link>
                 ))}
             </div>
         </section>

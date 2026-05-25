@@ -1,6 +1,6 @@
 "use client"
 import Link from 'next/link';
-import { ArrowUpRight, MenuIcon } from 'lucide-react';
+import { ArrowUpRight, MenuIcon, X } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
@@ -9,7 +9,7 @@ import { useEffect, useState } from 'react';
 const Navbar = () => {
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isDesktop, setIsDesktop] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
     { name: "Home", href: "/" },
@@ -38,22 +38,19 @@ const Navbar = () => {
     };
   }, []);
   useEffect(() => {
-    // Check if window is defined (prevents SSR/Next.js crashes)
-    if (typeof window === 'undefined') return;
-    // 1024px matches Tailwind's 'lg' breakpoint. Change to 768px for 'md' if preferred.
-    const mediaQuery = window.matchMedia('(min-width: 1024px)');
-    // Set initial value
-    setIsDesktop(mediaQuery.matches);
-    // Listen for window resizing
-    const handler = (e) => setIsDesktop(e.matches);
-    mediaQuery.addEventListener('change', handler);
-    // Clean up listener on component unmount
-    return () => mediaQuery.removeEventListener('change', handler);
-  }, []);
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
 
   return (
     <nav
-      className={`fixed top-0 inset-x-0 z-[100] flex items-center justify-between lg:px-24 px-4 lg:py-4 py-4 w-full transition-colors duration-300 ${isScrolled ? "bg-skin-primary shadow-md" : "bg-transparent"}`}>
+      className={`fixed top-0 inset-x-0 z-[100] flex items-center justify-between lg:px-24 sm:px-4 px-2 lg:py-4 py-4 w-full transition-colors duration-300 ${isScrolled ? "bg-skin-primary shadow-md" : "bg-transparent"}`}>
 
       {/* Brand Logo Container */}
       <div className="flex items-center">
@@ -68,7 +65,7 @@ const Navbar = () => {
             width={2048}
             height={354}
             priority
-            className="hidden lg:block h-8 w-auto"
+            className="hidden lg:block lg:h-12 lg:w-64 w-auto h-10"
           />
 
           {/* Mobile Logo */}
@@ -76,19 +73,19 @@ const Navbar = () => {
             src={
               isScrolled
                 ? "/assets/icons/OmniSource-White.png"
-                : "/assets/icons/OmniSource-black.png"
+                : "/assets/icons/OmniSource-Black.png"
             }
             alt="OmniSource Logo"
             width={2048}
             height={354}
             priority
-            className="block lg:hidden h-8 w-auto"
+            className="block lg:hidden lg:h-12 lg:w-64 w-auto h-10"
           />
         </Link>
       </div>
 
       {/* Navigation Pill Container */}
-      <div className="hidden md:flex items-center rounded-full px-6 py-2.5 gap-6 bg-skin-light backdrop-blur-md">
+      <div className="hidden lg:flex items-center rounded-full px-6 py-2.5 gap-6 bg-skin-light backdrop-blur-md">
         {navLinks.map((link) => {
           const isActive = pathname === link.href;
           return (
@@ -107,14 +104,85 @@ const Navbar = () => {
       {/* Corporate Action Button */}
       <Link
         href="/contact"
-        className="hidden lg:flex items-center gap-2 bg-skin-logo hover:bg-[#0c4ecf] px-6 py-2.5 rounded-md text-skin-light transition font-medium text-md shadow-lg shadow-glow/20"
+        className="hidden lg:flex items-center gap-2 bg-skin-logo hover:bg-skin-logoHover px-6 py-2.5 rounded-md text-skin-light transition font-medium text-md shadow-lg shadow-glow/20"
       >
         <span>Contact Us</span>
         <ArrowUpRight size={16} />
       </Link>
 
-      <div className="lg:hidden cursor-pointer">
+      <div
+        className="lg:hidden cursor-pointer p-1"
+        onClick={() => setIsOpen(true)}
+      >
         <MenuIcon className={`${isScrolled ? "text-skin-light" : "text-skin-dark"}`} size={28} />
+      </div>
+      <div
+        className={`fixed inset-0 bg-black/50 backdrop-blur-sm z-[150] transition-opacity duration-300 lg:hidden ${isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+          }`}
+        onClick={() => setIsOpen(false)}
+      />
+      {/* Slide-out Sidebar Panel */}
+      <div
+        className={`fixed top-0 right-0 h-full w-[75%] bg-skin-primary shadow-2xl z-[200] transform transition-transform duration-300 ease-in-out lg:hidden flex flex-col p-6 ${isOpen ? "translate-x-0" : "translate-x-full"
+          }`}
+      >
+        <button
+          onClick={() => setIsOpen(false)}
+          className="p-1 rounded-full hover:bg-skin-backgroundHighlight text-skin-light transition absolute top-4 right-4"
+        >
+          <X size={24} />
+        </button>
+        {/* Top bar inside the drawer containing logo alignment / exit button */}
+        <div className="flex items-center justify-between mb-8 mt-10">
+          <Image
+            src={"/assets/icons/OmniSource-White.png"}
+            alt="OmniSource Logo"
+            width={2048}
+            height={354}
+            priority
+            className="block lg:hidden h-12 w-auto"
+          />
+
+        </div>
+
+        {/* Mobile Navigation Links List */}
+        {/* Mobile Navigation Links List */}
+        <div className="flex flex-col gap-4 flex-1">
+          {navLinks.map((link) => {
+            const isActive = pathname === link.href;
+            return (
+              <Link
+                key={link.name}
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                className={`group w-fit  relative tracking-wide text-lg font-semibold transition-colors duration-300 py-2 ${isActive ? 'text-skin-light' : 'text-skin-light hover:text-skin-logo'
+                  }`}
+              >
+                {link.name}
+
+                {/* Animated Underline Span */}
+                <span
+                  className={`absolute bottom-0 left-0 h-[2px]  transition-all duration-300 ease-out-expo ${isActive
+                      ? 'w-full bg-skin-light' // Full width if active
+                      : 'w-0 group-hover:w-full bg-skin-logo' // Starts at 0, grows to 100% on hover
+                    }`}
+                />
+              </Link>
+            );
+          })}
+        </div>
+
+        {/* Drawer Footer Call To Action Block */}
+        <div className="mt-auto border-t border-skin-badgeBorder pt-4">
+          <Link
+            href="/contact"
+            onClick={() => setIsOpen(false)}
+            className="gap-2 flex items-center justify-center bg-skin-logo hover:bg-skin-logoHover px-6 py-2.5 rounded-md text-skin-light transition font-medium text-md shadow-lg shadow-glow"
+          >
+            <span>Get in Touch</span>
+            <ArrowUpRight size={18} />
+          </Link>
+        </div>
       </div>
     </nav>
   );
