@@ -37,7 +37,7 @@ const ClientMarquee = () => {
           <div className="text-3xl mb-3 text-skin-ogo p-3 bg-skin-backgroundHighlight rounded-full backdrop-blur-sm border border-blue-900/40">
             <Users2 size={32} strokeWidth={1.5} />
           </div>
-          <h2 className="text-6xl font-extrabold tracking-tight">
+          <h2 className="text-4xl font-extrabold tracking-tight">
             <span className="font-normal text-skin-light">Trusted Corporate Clients</span>
           </h2>
         </div>
@@ -49,11 +49,11 @@ const ClientMarquee = () => {
           <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#020b1e] to-transparent z-10 pointer-events-none" />
           <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#020b1e] to-transparent z-10 pointer-events-none" />
 
-          <div className="grid grid-cols-4 lg:grid-cols-7 gap-4 px-28 mx-auto">
+          <div className="grid grid-cols-3 lg:grid-cols-7 gap-4 lg:px-28 px-10 mx-auto">
             {logos.map((logo, index) => (
               <div
                 key={index}
-                className="flex items-center justify-center border-r border-blue-900/20 h-16 px-4"
+                className="flex items-center justify-center h-16 px-4"
               >
                 <img
                   src={logo.src}
