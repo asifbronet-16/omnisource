@@ -104,7 +104,7 @@ export const WorkforceFeature = () => {
                     <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-[#0f1d42] via-[#0f1d42]/90 to-transparent pointer-events-none" />
 
                     {/* Dark Glassmorphism container layer */}
-                    <div className="relative z-10 max-w-lg  bg-slate-950/60 backdrop-blur-md border border-slate-800/40 p-6 md:p-8 rounded-2xl shadow-2xl space-y-6 border-l-blue-500/20 md:w-[75%] ">
+                    <div className="relative z-10 max-w-lg  bg-slate-950/60 backdrop-blur-md border border-slate-800/40 p-6 md:p-8 rounded-2xl shadow-2xl space-y-6 border-l-blue-500/20 md:w-[60%] ">
 
                         {/* Top decorative accent bar */}
                         <div className="w-6 h-[2px] bg-blue-500" />
