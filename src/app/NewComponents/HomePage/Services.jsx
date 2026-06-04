@@ -6,23 +6,23 @@ import Link from 'next/link';
 const services = [
     {
         id: "civil",
-        title: "Civil Construction Manpower Supply",
+        title: "Civil Construction Workforce Solutions",
         desc: "We supply WPS-compliant, mobilization-ready civil crews, including certified scaffolders, masons, foremen, civil helpers, and site support crews for UAE infrastructure projects.",
         image: "/assets/magnific_change-the-uniform-and-he_2961257177.jpeg",
         size: "large"
     },
     {
         id: "mep",
-        title: "MEP Manpower Supply",
+        title: "MEP Workforce Solutions",
         desc: "Comprehensive MEP workforce solutions spanning industrial and commercial electricians, HVAC and A/C technicians, duct installers, pipe fitters, mechanical helpers, and MEP supervisors.",
         image: "/assets/construction-workers-inspecting-hvac-installation-commercial-building.jpg.jpeg",
         size: "large"
     },
     {
         id: "cleaning",
-        title: "Cleaning Manpower Supply",
+        title: "Cleaning Workforce Solutions",
         desc: "Trained and screened personnel across unskilled, semi-skilled, and skilled cleaning roles—ranging from general cleaners and janitors to rope access facade cleaners and marble polishing technicians.",
-        image: "/assets/3fb526ea01f56148e88686a88dae1df58e931f782122-1.jpg",
+        image: "/assets/Picture1.jpg",
         size: "small"
     },
     {

@@ -36,7 +36,7 @@ const IndustryFAQ = () => {
 
                 {/* Left Side: Content Box (Stays anchored during scroll) */}
                 <div className="lg:sticky lg:top-28">
-                    <div className='w-fit mx-auto lg:mx-0'>
+                    <div className=' mx-auto lg:mx-0'>
                     <Badge text={"Frequently Asked Questions"}/>
                     </div>
                     <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight mb-6">

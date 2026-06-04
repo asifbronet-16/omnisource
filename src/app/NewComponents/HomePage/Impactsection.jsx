@@ -28,6 +28,18 @@ const sectors = [
         ),
         img: "/assets/icons/g15-1.png.webp"
     },
+
+    {
+        title: "Machinery & Equipment Rental",
+        description: "Flexible, dependable fleet rental options including wheel loaders, excavators, dump trucks, cranes, and access solutions across all project scopes.",
+        icon: (
+            <svg className="w-10 h-10 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M5 2h14M12 2v8M12 10a3 3 0 0 0-3 3v2a2 2 0 0 0 4 0v-2a1 1 0 0 1 2 0v1" />
+                <circle cx="12" cy="10" r="1" fill="currentColor" />
+            </svg>
+        ),
+        img: "/assets/icons/Group.png.webp"
+    },
     {
         title: "Facilities & Cleaning Staffing",
         description: "Trained corporate and site personnel from general janitors and housekeeping attendants to highly specialized rope-access facade cleaners.",
@@ -39,8 +51,8 @@ const sectors = [
         img: "/assets/icons/Group-1.png.webp"
     },
     {
-        title: "Machinery & Equipment Rental",
-        description: "Flexible, dependable fleet rental options including wheel loaders, excavators, dump trucks, cranes, and access solutions across all project scopes.",
+        title: "Manufacturing & Industrial",
+        description: "Skilled production-ready manpower including machine operators, assembly line workers, quality control inspectors, warehouse staff, and shift supervisors for factories, plants, and industrial facilities across all manufacturing sectors.",
         icon: (
             <svg className="w-10 h-10 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M5 2h14M12 2v8M12 10a3 3 0 0 0-3 3v2a2 2 0 0 0 4 0v-2a1 1 0 0 1 2 0v1" />
@@ -78,20 +90,21 @@ const ImpactSection = () => {
             </div>
 
             {/* Content Box (Z-indexed above backdrop layers) */}
-            <div className="relative z-20 max-w-7xl mx-auto px-6 text-center">
+            <div className="relative z-20  mx-auto px-6 text-center">
 
                 {/* Header Container Layout */}
                 <div className="mb-20">
                     {/* Branded Pill Tagline updated to matching blue tones */}
-                    <div className='mx-auto w-fit'>
+                    <div className='mx-auto'>
                         <Badge text={"Real People. Real Results. Real Difference."} />
                     </div>
                     <h2 className="text-4xl md:text-6xl font-extrabold text-skin-light mb-2 tracking-tight">
-                        Where Our Manpower
+                        Industries
+                        <span className="text-4xl md:text-6xl font-black text-skin-logo drop-shadow-md tracking-tight">
+                            {" We Power"}
+                        </span>
                     </h2>
-                    <h3 className="text-4xl md:text-6xl font-black text-skin-logo drop-shadow-md tracking-tight">
-                        Makes an Impact
-                    </h3>
+
                 </div>
 
                 {/* Grid of Sectors Content mapping layer */}

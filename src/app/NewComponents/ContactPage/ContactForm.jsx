@@ -6,21 +6,22 @@ import Badge from '../../ReusableComponents/Badge';
 import { ContactCard, ContactInfoItem, FormField } from './ContactComponents';
 
 const offices = [
-    {
-        city: "Abu Dhabi",
-        address:
-            "Office No: 221, Al Fahim Building, Musaffah-4, P.O Box: 778356, Abu Dhabi, UAE",
-    },
+    // {
+    //     city: "Abu Dhabi",
+    //     address:
+    //         "Office No: 221, Al Fahim Building, Musaffah-4, P.O Box: 778356, Abu Dhabi, UAE",
+    // },
     {
         city: "Dubai",
         address:
-            "Office No: 211, Al Mozna Building, Near Al Nahda Metro Station, P.O Box: 23013, Dubai, UAE",
+            "Office No: 801, Block B, Centurion Star Tower,  Near Deira City Centre Metro Station, Dubai, UAE",
     },
-    {
-        city: "Sharjah",
-        address:
-            "BCC Building, Al Zahra's Street, P.O. Box: 77967, Sharjah, UAE",
-    },
+
+    // {
+    //     city: "Sharjah",
+    //     address:
+    //         "BCC Building, Al Zahra's Street, P.O. Box: 77967, Sharjah, UAE",
+    // },
 ];
 
 const ContactSection = () => {
@@ -42,9 +43,9 @@ const ContactSection = () => {
         <section className="bg-skin-background text-skin-light py-24 px-6 md:px-20 font-public-sans overflow-hidden selection:bg-skin-logo/30">
             {/* Header Layout Section */}
             <div className="max-w-7xl mx-auto text-center mb-16">
-                <div className='w-fit mx-auto'>
+                {/* <div className=' mx-auto'>
                     <Badge text={"Reach Us"} />
-                </div>
+                </div> */}
                 <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight">
                     Get in Touch <span className="text-skin-logo">With Us</span>
                 </h2>
@@ -92,13 +93,13 @@ const ContactSection = () => {
                         <div className="flex flex-wrap gap-8 pt-8 border-t border-skin-borderHover">
 
                             <ContactInfoItem icon={Mail}>
-                                <span>info@bestmanpower.ae</span>
+                                <span>jasim@omnisource.global</span>
                             </ContactInfoItem>
 
                             <ContactInfoItem icon={Phone}>
                                 <div className="space-y-0.5">
-                                    <p>+971 26588663</p>
-                                    <p>+971 565473850</p>
+                                    <p>+971 50 344 1039</p>
+                                    {/* <p>+971 565473850</p> */}
                                 </div>
                             </ContactInfoItem>
 

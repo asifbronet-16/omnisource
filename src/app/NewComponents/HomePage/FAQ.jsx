@@ -6,16 +6,20 @@ import Badge from '../../ReusableComponents/Badge';
 
 const faqData = [
     {
-        question: "What is a manpower supply company in Abu Dhabi?",
-        answer: "A manpower supply company in Abu Dhabi provides skilled, semi-skilled, and unskilled workers to businesses across various industries. These companies help employers meet their workforce needs efficiently by supplying highly trained professionals for construction, maintenance, hospitality, oil & gas, and other sectors in compliance with UAE labor laws."
+        question: "How quickly can OmniSource mobilize workers for my project ?",
+        answer: "We maintain a ready pool of vetted, document-complete workers across all trades. For standard requests, we can mobilize within 24–72 hours. For large-scale deployments, our team works with your timeline from day one to ensure zero delays on-site."
     },
     {
-        question: "Do you offer manpower solutions in Abu Dhabi, UAE?",
-        answer: "Yes, we provide comprehensive manpower solutions across Abu Dhabi and the wider UAE, ensuring businesses have access to the right talent at the right time."
+        question: "Are all OmniSource workers WPS-compliant and legally documented?",
+        answer: "Yes. Every worker we supply is fully compliant with UAE labor law, including valid visas, Emirates ID, MOHRE contracts, and WPS-registered salaries. You take on zero compliance risk when you work with us."
     },
     {
-        question: "What are manpower supply services?",
-        answer: "Manpower supply services involve the recruitment, vetting, and placement of workers on a temporary or permanent basis to fulfill specific project requirements."
+        question: "What trades and industries does OmniSource supply manpower for?",
+        answer: "We supply skilled and semi-skilled workers across Civil Construction, MEP Services, Facilities & Cleaning, Manufacturing, and Machinery Operations. From masons and electricians to quality inspectors and machine operators — if your site needs it, we are the source for it."
+    },
+     {
+        question: "What makes OmniSource different from other manpower companies in the UAE?",
+        answer: "We don't just fill headcounts — we match the right worker to the right role with full accountability from mobilization to performance. With dedicated account managers, full compliance handling, and multi-trade capability under one roof, OmniSource operates as an extension of your team, not just a supplier."
     },
     // Add the remaining questions from your list here...
 ];
@@ -33,7 +37,9 @@ const FAQ = () => {
 
                 {/* Header Title Space */}
                 <div className="text-center mb-16">
-                    <div className='w-fit mx-auto'><Badge text={"Clarity and Operational Compliance"}/></div>
+                    <div className='mx-auto'>
+                        <Badge text={"Clarity and Operational Compliance"}/>
+                    </div>
                     <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight text-skin-light">
                         Frequently Asked <span className="text-skin-logo">Questions</span>
                     </h2>

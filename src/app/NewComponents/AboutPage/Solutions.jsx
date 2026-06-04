@@ -75,7 +75,7 @@ const SolutionsSection = () => {
                     >
                         {/* Section Tag Pill */}
                         <motion.div variants={itemVariants}>
-                            <div className='w-fit mx-auto'><Badge text={"Scaling Success Together"}/></div>
+                            <div className=' mx-auto'><Badge text={"Scaling Success Together"}/></div>
                         
                         </motion.div>
 

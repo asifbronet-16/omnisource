@@ -25,14 +25,9 @@ const ServiceHero = () => {
 
 
             {/* Page Header Content Container */}
-            <div className="relative z-20 flex h-full items-center justify-center px-4 pt-16">
+            <div className="relative z-20 flex flex-col h-full items-center justify-center px-4 pt-16">
+                <Badge text="What We Do"/>
                 <div className="text-center">
-
-                    {/* Tiny Section Identifier */}
-                    <div className='w-fit mx-auto'>
-                        <Badge text="What We Do"/>
-                    </div>
-
                     {/* Main Page Title String */}
                     <h1 className="text-4xl md:text-6xl font-extrabold text-skin-light tracking-tight leading-none mb-3">
                         Our <span className="text-skin-logo">Services</span>

@@ -47,7 +47,7 @@ const Testimonials = () => {
 
         {/* Header Content */}
         <div className="text-center mb-16">
-          <div className='mx-auto w-fit'>
+          <div className='mx-auto'>
             <Badge text={"Voices That Reflect Our Commitment"} /></div>
 
           <h2 className="text-4xl md:text-6xl font-extrabold text-skin-light tracking-tight">

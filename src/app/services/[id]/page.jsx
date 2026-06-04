@@ -103,7 +103,7 @@ export default function ServiceDetailPage() {
                 {/* Page Header Content */}
                 <div className="relative z-30 flex h-full items-center justify-center px-4 pt-16">
                     <div className="text-center">
-                        <div className="w-fit mx-auto">
+                        <div className=" mx-auto">
                             <Badge text={"Certified Across Every Trade"} />
                         </div>
                         <h1 className="text-4xl md:text-6xl font-extrabold text-skin-light tracking-tight leading-none mb-3">

@@ -9,19 +9,24 @@ export default function Footer() {
         {
             icon: <Phone size={16} />,
             label: 'Phone Enquiries',
-            values: ['+971 2 658 8663', '+971 56 547 3850'],
+            values: [
+                { text: '+971 50 344 1039', href: 'tel:+971503441039' }
+            ],
         },
         {
             icon: <Mail size={16} />,
             label: 'Email Channels',
-            values: ['info@omnisource.ae'],
+            values: [
+                { text: 'jasim@omnisource.global', href: 'mailto:jasim@omnisource.global' }
+            ],
         },
     ];
 
     const locations = [
-        { title: 'Abu Dhabi Headquarters', desc: 'Office No: 221, Al Fahim Building, Musaffah-4, P.O Box: 778356, Abu Dhabi, UAE' },
-        { title: 'Dubai Operational Hub', desc: 'Office No: 211, Al Mozna Building, Near Al Nahda Metro Station, P.O Box: 23013, Dubai, UAE' },
-        { title: 'Sharjah Regional Branch', desc: 'BCC Building, Al Zahra\'s Street P.O. Box: 77967, Sharjah, UAE' },
+        // { title: 'Abu Dhabi Headquarters', desc: 'Office No: 221, Al Fahim Building, Musaffah-4, P.O Box: 778356, Abu Dhabi, UAE' },
+        { title: 'Dubai Headquarters', desc: 'Office No: 801, Block B, Centurion Star Tower,  Near Deira City Centre Metro Station, Dubai, UAE' },
+        
+        // { title: 'Sharjah Regional Branch', desc: 'BCC Building, Al Zahra\'s Street P.O. Box: 77967, Sharjah, UAE' },
     ];
 
     return (
@@ -37,11 +42,21 @@ export default function Footer() {
                         <div className="space-y-6">
                             {contacts.map((c, i) => (
                                 <div key={i} className="flex items-start gap-4 group">
-                                    <div className="text-skin-logo mt-1 p-2 bg-skin-logo/10 rounded-md border border-blue-900/30">{c.icon}</div>
+                                    <div className="text-skin-logo mt-1 p-2 bg-skin-logo/10 rounded-md border border-blue-900/30">
+                                        {c.icon}
+                                    </div>
                                     <div>
-                                        <p className="text-slate-400 text-xs font-bold uppercase tracking-widest mb-1">{c.label}</p>
+                                        <p className="text-slate-400 text-xs font-bold uppercase tracking-widest mb-1">
+                                            {c.label}
+                                        </p>
                                         {c.values.map((v, j) => (
-                                            <p key={j} className="text-sm font-normal text-slate-200 hover:text-skin-light transition-colors">{v}</p>
+                                            <a
+                                                key={j}
+                                                href={v.href}
+                                                className="block text-sm font-normal text-slate-200 hover:text-skin-light transition-colors duration-200 cursor-pointer"
+                                            >
+                                                {v.text}
+                                            </a>
                                         ))}
                                     </div>
                                 </div>

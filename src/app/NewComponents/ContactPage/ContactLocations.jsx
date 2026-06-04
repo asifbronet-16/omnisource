@@ -5,13 +5,7 @@ import { motion } from 'framer-motion';
 import { ExternalLink, Navigation } from 'lucide-react';
 
 const locations = [
-    {
-        city: "Abu Dhabi",
-        plusCode: "9G99+763",
-        address: "9G99+763 - Abu Dhabi - United Arab Emirates",
-        mapUrl: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14545.922114407875!2d54.4950341!3d24.3123048!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e419808a383d3%3A0x6475659728329606!2s9G99%2B763!5e0!3m2!1sen!2sae!4v1715788000000!5m2!1sen!2sae",
-        isWide: false
-    },
+
     {
         city: "Dubai",
         plusCode: "79FC+5M6",
@@ -19,13 +13,7 @@ const locations = [
         mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.2323789035677!2d55.3725!3d25.28!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDE2JzQ4LjAiTiA1NcKwMjInMjEuMCJF!5e0!3m2!1sen!2sae!4v1715788000000!5m2!1sen!2sae",
         isWide: false
     },
-    {
-        city: "Sharjah",
-        plusCode: "Sharjah Branch",
-        address: "BCC Building, Al Zahra's Street - Sharjah",
-        mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115401.55403061793!2d55.342111!3d25.328456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5f5f5f5f5f5f%3A0x5f5f5f5f5f5f5f5f!2sSharjah!5e0!3m2!1sen!2sae!4v1715788000000!5m2!1sen!2sae",
-        isWide: true
-    }
+
 ];
 const ContactLocations = () => {
 
@@ -34,8 +22,8 @@ const ContactLocations = () => {
             <div className="max-w-7xl mx-auto">
 
                 {/* Top Two Regional Branch Maps Grid (Abu Dhabi & Dubai) */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                    {locations.slice(0, 2).map((loc, i) => (
+                <div className="grid grid-cols-1 gap-6 mb-6">
+                    {locations.map((loc, i) => (
                         <motion.div
                             key={i}
                             initial={{ opacity: 0, y: 20 }}
@@ -96,14 +84,7 @@ const ContactLocations = () => {
                     </button>
 
                     {/* Clean Full-Color Wide Horizon Iframe */}
-                    <iframe
-                        src={locations[2].mapUrl}
-                        className="w-full h-[380px] relative z-10"
-                        style={{ border: 0 }}
-                        allowFullScreen=""
-                        loading="lazy"
-                        referrerPolicy="no-referrer-when-downgrade"
-                    />
+                  
                 </motion.div>
             </div>
         </section>

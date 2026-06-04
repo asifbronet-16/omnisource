@@ -5,15 +5,15 @@ import { motion } from 'framer-motion';
 import Badge from '../../ReusableComponents/Badge';
 import Image from 'next/image';
 
-const stats = [
-    { label: 'Manpower', value: '5,000+', color: 'text-red-600', className: 'md:col-span-1 md:w-54 md:ml-auto h-28 mt-auto ' },
-    { label: 'Years Of Experience', value: '10+', color: 'text-red-600', className: 'md:col-span-1 rounded-tr-[100px] ' },
-    { label: 'Happy Clients', value: '1,000+', color: 'text-red-600', className: 'md:col-span-1' },
-    { label: 'Project completed', value: '1,500+', color: 'text-red-600', className: 'md:col-span-1' },
-    { label: 'Ongoing Projects', value: '200+', color: 'text-red-600', className: 'col-span-2' },
-];
+// const stats = [
+//     { label: 'Manpower', value: '5,000+', color: 'text-red-600', className: 'md:col-span-1 md:w-54 md:ml-auto h-28 mt-auto ' },
+//     { label: 'Years Of Experience', value: '10+', color: 'text-red-600', className: 'md:col-span-1 rounded-tr-[100px] ' },
+//     { label: 'Happy Clients', value: '1,000+', color: 'text-red-600', className: 'md:col-span-1' },
+//     { label: 'Project completed', value: '1,500+', color: 'text-red-600', className: 'md:col-span-1' },
+//     { label: 'Ongoing Projects', value: '200+', color: 'text-red-600', className: 'col-span-2' },
+// ];
 
-const AboutStats = () => {
+const SourceAndDeploy = () => {
     return (
         <>
             <section className="bg-skin-background text-skin-light py-20 px-6 md:px-20 font-public-sans overflow-hidden">
@@ -115,20 +115,32 @@ const AboutStats = () => {
                             One Source, Every Trade – For All Industries.
                         </p> */}
                         <h2 className="text-4xl md:text-6xl font-extrabold text-skin-light tracking-tight">
-                            The trusted workforce solutions company in the <span className='text-skin-logo'>UAE</span> 
+                            We source, screen and deploy{" "}
+                            <span className="text-skin-logo">
+                                verified, skilled & experienced
+                            </span>{" "}
+                            trade labor
                         </h2>
                         <h3 className="text-2xl md:text-3xl font-black text-skin-logo drop-shadow-md tracking-tight">
-                           One Source, Every Trade – For All Industries.
+                            One Source, Every Trade – For All Industries.
                         </h3>
 
                         <p className="text-base text-skin-light leading-relaxed">
-                            OmniSource is a UAE-based workforce solutions company serving commercial,
-                            construction, facilities management, retail, hospitality and industrial
-                            sectors across Dubai, Sharjah, Ajman and Abu Dhabi.
+                            OmniSource is a UAE-based workforce solutions company serving{" "}
+                            <span className="font-bold">
+                                commercial, construction, facilities management, retail, hospitality
+                            </span>
+                            , and <span className="font-bold">industrial</span> sectors across Dubai,
+                            Sharjah, Ajman and Abu Dhabi.
                         </p>
 
                         <p className="text-base text-skin-light leading-relaxed">
-                            We source, screen, and deploy verified, skilled and experienced trade
+                            We <span className="font-bold">source</span>,{" "}
+                            <span className="font-bold">screen</span>, and{" "}
+                            <span className="font-bold">deploy</span>{" "}
+                            <span className="font-bold text-skin-logo">verified</span>,{" "}
+                            <span className="font-bold text-skin-logo">skilled</span>, and{" "}
+                            <span className="font-bold text-skin-logo">experienced</span> trade
                             labor — managing every stage from workforce planning and candidate
                             mobilization, through on-site deployment and documentation, to ongoing
                             compliance and after-placement support. Every client engagement is
@@ -149,4 +161,4 @@ const AboutStats = () => {
     );
 };
 
-export default AboutStats;
+export default SourceAndDeploy;

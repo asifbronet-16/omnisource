@@ -20,12 +20,11 @@ const ContactHome = () => {
                 <div className="absolute inset-0 bg-gradient-left hidden lg:block" />
             </div>
             {/* Page Header Content Container */}
-            <div className="relative z-20 flex h-full items-center justify-center px-4 pt-16">
+            <div className="relative z-20 flex flex-col h-full items-center justify-center px-4 pt-16">
+                <Badge text={"Get in Touch"}/>
                 <div className="text-center">
                     {/* Context Identity Tag */}
-                    <div className='mx-auto w-fit'>
-                      <Badge text={"Get in Touch"}/>
-                    </div>
+                  
                     {/* Main Section Header String */}
                     <h1 className="text-4xl md:text-6xl font-extrabold text-skin-light tracking-tight leading-none mb-3">
                         Contact <span className="text-skin-logo">Us</span>

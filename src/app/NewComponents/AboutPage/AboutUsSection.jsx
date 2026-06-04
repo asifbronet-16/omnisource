@@ -81,12 +81,12 @@ const AboutUsSection = () => {
                         viewport={{ once: true }}
                     >
                         {/* Branded pill tag */}
-                        <div className="inline-block px-4 py-1.5 border border-skin-muted rounded-full mb-6 bg-skin-logo/10 backdrop-blur-sm">
+                        {/* <div className="inline-block px-4 py-1.5 border border-skin-muted rounded-full mb-6 bg-skin-logo/10 backdrop-blur-sm">
                             <p className="text-xs uppercase tracking-widest text-skin-muted font-semibold">
                                 <span className="text-skin-logo mr-1">✳</span> Your Trusted Partner in Skilled Manpower Solutions.
                             </p>
-                        </div>
-                        <div className='w-fit mx-auto'>
+                        </div> */}
+                        <div className=' mx-auto'>
                         <Badge text="Your Trusted Partner in Skilled Manpower Solutions."/>
                         </div>
 
