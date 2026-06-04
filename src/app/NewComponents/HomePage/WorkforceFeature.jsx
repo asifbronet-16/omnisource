@@ -31,23 +31,25 @@ export const WorkforceFeature = () => {
     ];
 
     return (
-        <div className="w-full min-h-screen bg-[#020617] text-white p-4 md:p-8 flex flex-col justify-between font-sans selection:bg-blue-500/30">
+        <div className="w-full  bg-skin-background text-skin-light p-4 md:p-8 flex flex-col justify-between font-sans lg:px-24">
             {/* 2-Column Main Section */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-7xl w-full mx-auto flex-grow items-stretch mb-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-8xl w-full mx-auto flex-grow items-stretch mb-10">
 
                 {/* ================= LEFT CARD ================= */}
                 <div className="relative overflow-hidden rounded-2xl border border-slate-800/50 bg-[#070d1e] p-8 md:p-12 flex flex-col justify-between shadow-2xl">
-                    {/* Background image overlay mimicking image_e7f53f.png worker */}
+                    {/* Background image overlay - Fixed size unit and applied clean right-side framing */}
                     <div
-                        className="absolute inset-0 bg-contain bg-no-repeat bg-right opacity-90 pointer-events-none"
-                        style={{ backgroundImage: `url('/assets/Picture5.jpg')` }}
+                        className="absolute inset-0 bg-no-repeat opacity-90 pointer-events-none bg-[35%]"
+                        style={{ backgroundImage: `url('/assets/WorkforceFeature1.jpeg')` }}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#070d1e] via-[#070d1e]/70 to-transparent pointer-events-none" />
+
+                    {/* Clean gradient fallback to ensure text legibility over darker image assets */}
+                    <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-[#0f1d42] via-[#0f1d42]/90 to-transparent pointer-events-none" />
 
                     {/* Top text content cluster */}
                     <div className="relative z-10 space-y-6 max-w-xl">
                         {/* Logo placeholder matching layout */}
-                        <div className="flex items-center gap-1.5 text-2xl font-bold tracking-tight">
+                        <div className="flex items-center text-2xl font-bold tracking-tight">
                             <span className="text-white">Omni</span>
                             <span className="text-blue-500 font-extrabold">Source</span>
                         </div>
@@ -93,16 +95,16 @@ export const WorkforceFeature = () => {
                 </div>
 
                 {/* ================= RIGHT CARD ================= */}
-                <div className="relative overflow-hidden rounded-2xl border border-slate-800/50 bg-[#040814] p-8 md:p-12 flex flex-col justify-center shadow-2xl">
+                <div className="relative overflow-hidden rounded-2xl border border-slate-800/50 bg-[#040814] p-6 md:p-8 flex flex-col justify-center items-start shadow-2xl">
                     {/* Construction crane motif background */}
                     <div
-                        className="absolute inset-0 bg-contain bg-no-repeat bg-right opacity-90 pointer-events-none"
-                        style={{ backgroundImage: `url('/assets/Picture4.jpg')` }}
+                       className="absolute inset-0 bg-no-repeat opacity-90 pointer-events-none bg-[25%]"
+                        style={{ backgroundImage: `url('/assets/WorkforceFeature2.jpeg')` }}
                     />
-                    {/* <div className="absolute inset-0 bg-gradient-to-r from-[#040814] via-[#040814]/90 to-transparent pointer-events-none" /> */}
+                    <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-[#0f1d42] via-[#0f1d42]/90 to-transparent pointer-events-none" />
 
                     {/* Dark Glassmorphism container layer */}
-                    <div className="relative z-10 max-w-lg bg-slate-950/60 backdrop-blur-md border border-slate-800/40 p-6 md:p-8 rounded-2xl shadow-2xl space-y-6 border-l-blue-500/20">
+                    <div className="relative z-10 max-w-lg  bg-slate-950/60 backdrop-blur-md border border-slate-800/40 p-6 md:p-8 rounded-2xl shadow-2xl space-y-6 border-l-blue-500/20 md:w-[75%] ">
 
                         {/* Top decorative accent bar */}
                         <div className="w-6 h-[2px] bg-blue-500" />
@@ -138,7 +140,7 @@ export const WorkforceFeature = () => {
 
             </div>
             {/* ================= TRUSTED BY FIXED FOOTER ================= */}
-            <div className="w-full max-w-7xl mx-auto border-t border-slate-900 pt-6 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 text-[11px] font-bold text-slate-500 tracking-widest uppercase select-none">
+            <div className="w-full max-w-7xl mx-auto border-t border-slate-900 pt-6 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 text-[11px] font-bold text-slate-500 tracking-widest uppercase select-none py-8">
                 <span className="text-slate-400">Trusted By</span>
 
                 <div className="hidden md:block h-3 w-[1px] bg-slate-800 mx-2" />
