@@ -39,7 +39,7 @@ export const WorkforceFeature = () => {
                 <div className="relative overflow-hidden rounded-2xl border border-slate-800/50 bg-[#070d1e] p-8 md:p-12 flex flex-col justify-between shadow-2xl">
                     {/* Background image overlay - Fixed size unit and applied clean right-side framing */}
                     <div
-                        className="absolute inset-0 bg-no-repeat opacity-90 pointer-events-none bg-[35%]"
+                        className="absolute inset-0 bg-no-repeat opacity-90 pointer-events-none bg-[20%]"
                         style={{ backgroundImage: `url('/assets/WorkforceFeature1.jpeg')` }}
                     />
 
@@ -55,7 +55,7 @@ export const WorkforceFeature = () => {
                         </div>
 
                         {/* Standardized Heading Spacing */}
-                        <h2 className="text-3xl md:text-5xl font-black tracking-tight leading-[1.15] text-white">
+                        <h2 className="text-3xl md:text-4xl font-black tracking-tight leading-[1.15] text-white">
                             Workforce Solutions.<br />
                             Delivered with{" "}
                             <span className="text-blue-500">Certainty.</span>
