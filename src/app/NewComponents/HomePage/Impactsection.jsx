@@ -108,39 +108,33 @@ const ImpactSection = () => {
                 </div>
 
                 {/* Grid of Sectors Content mapping layer */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12 text-left">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:gap-x-16 lg:gap-y-12 gap-x-4 gap-y-4 text-left  mx-auto">
                     {sectors.map((sector, index) => (
-                        <motion.div
-                            key={index}
-                            initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.5, ease: "easeOut" }}
-                            viewport={{ once: true }}
-                            className="flex gap-6 group"
-                        >
-                            {/* Icon Container with subtle brand blue color isolation layer */}
-                            <div className="flex-shrink-0 mt-1 transition-all group-hover:scale-110 duration-300 p-2 bg-[#041232]/60 rounded-md border border-skin-subtle group-hover:border-skin-borderHover h-fit">
+                        <div className="group relative pt-8 text-center flex flex-col items-center h-full">
+                            {/* Centered Icon Badge floating out of bounds at the top */}
+                            <div className="absolute top-0 left-1/2 -translate-x-1/2 z-20 w-16 h-16 rounded-2xl bg-[white] flex items-center justify-center shadow-lg shadow-skin-logo transform group-hover:-translate-y-1 transition-all duration-300">
                                 <Image
                                     src={sector.img}
-                                    width={44}
-                                    height={44}
+                                    width={36}
+                                    height={36}
                                     alt={sector.title}
-                                    className="object-contain grayscale-0 brightness-100 sepia-0 hue-rotate-[195deg] saturate-[300%] transition-all duration-300 group-hover:grayscale-0 group-hover:sepia-0 group-hover:brightness-100 hover:saturate-[500%]"
+                                    // className="object-contain brightness-100 invert transition-transform duration-300 group-hover:scale-105"
+                                    className='object-contain grayscale-0 brightness-100 sepia-0 hue-rotate-[195deg] saturate-[300%] transition-all duration-300 group-hover:grayscale-0 group-hover:sepia-0 group-hover:brightness-100 hover:saturate-[500%]'
                                 />
                             </div>
 
-                            <div className="flex flex-col w-full">
-                                <h4 className="text-2xl font-bold text-skin-light mb-3 tracking-tight group-hover:text-blue-300 transition-colors duration-300">
+                            {/* Main Card Body */}
+                            <div className="w-full h-full flex-1 p-6 pt-12 rounded-2xl bg-gradient-to-b from-[#041232]/70 to-[#041232]/20 border border-skin-badgeBorder group-hover:border-skin-borderHover transition-all duration-300 relative z-10 flex flex-col items-center justify-start">
+                                <h4 className="md:text-xl text-md font-bold text-skin-light tracking-tight mb-3 group-hover:text-skin-logoHover transition-colors duration-300">
                                     {sector.title}
                                 </h4>
-                                <p className="text-slate-400 font-normal leading-relaxed max-w-sm">
+
+                                {/* Updated Text Layout to occupy full structural width & height */}
+                                <p className="text-slate-400 md:text-sm text-xs leading-relaxed w-full flex-1 flex items-center justify-center px-2">
                                     {sector.description}
                                 </p>
-
-                                {/* Dynamic Gradient Separator Line - Shifted from White to fading Brand Blue */}
-                                <div className="mt-8 h-[1px] w-full bg-gradient-to-r from-skin-logo/30 via-skin-logo/5 to-transparent transition-all duration-500 group-hover:from-skin-logo/60" />
                             </div>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
             </div>
