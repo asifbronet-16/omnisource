@@ -108,7 +108,7 @@ const ImpactSection = () => {
                 </div>
 
                 {/* Grid of Sectors Content mapping layer */}
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:gap-x-16 lg:gap-y-12 gap-x-4 gap-y-4 text-left  mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-3 lg:gap-x-16 lg:gap-y-12 gap-x-4 gap-y-4 text-left  mx-auto">
                     {sectors.map((sector, index) => (
                         <div className="group relative pt-8 text-center flex flex-col items-center h-full">
                             {/* Centered Icon Badge floating out of bounds at the top */}
