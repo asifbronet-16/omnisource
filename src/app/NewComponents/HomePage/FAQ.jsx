@@ -61,13 +61,13 @@ const FAQ = () => {
                                 >
                                     <div className="flex items-center gap-4">
                                         {/* Branded Dynamic Math Control Indicator */}
-                                        <span className={`text-xl font-medium transition-colors duration-300 ${isOpen ? 'text-skin-light' : 'text-light group-hover:text-skin-light'
+                                        <span className={`lg:text-xl text-lg font-medium transition-colors duration-300 ${isOpen ? 'text-skin-light' : 'text-light group-hover:text-skin-light'
                                             }`}>
                                             {isOpen ? '−' : '+'}
                                         </span>
 
                                         {/* Question Label Heading string */}
-                                        <span className={`text-base md:text-lg font-bold tracking-tight transition-colors duration-300 ${isOpen ? 'text-skin-light' : 'text-skin-light group-hover:text-skin-mutedLight'
+                                        <span className={`text-sm md:text-lg font-bold tracking-tight transition-colors duration-300 ${isOpen ? 'text-skin-light' : 'text-skin-light group-hover:text-skin-mutedLight'
                                             }`}>
                                             {item.question}
                                         </span>
