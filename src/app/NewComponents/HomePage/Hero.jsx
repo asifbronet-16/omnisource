@@ -21,7 +21,7 @@ export default function HeroSection() {
                         playsInline
                         className="w-full h-full object-cover opacity-55"
                     >
-                        <source src="/assets/videos/10202777-hd_3842_2160_30fps.mp4" type="video/mp4" />
+                        <source src="/assets/videos/download.webm" type="video/webm" />
                         {/* <source src="https://www.pexels.com/download/video/30810784/" type="video/mp4" /> */}
                         Your browser does not support the video tag.
                     </video>
