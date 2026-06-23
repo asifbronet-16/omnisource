@@ -69,7 +69,7 @@ const ImpactSection = () => {
 
             {/* Background Video Container with Corporate Tint Overlay */}
             <div className="absolute inset-0 z-0">
-                <video
+                {/* <video
                     autoPlay
                     loop
                     muted
@@ -78,7 +78,7 @@ const ImpactSection = () => {
                 >
                     <source src="/assets/videos/GettyImages-626932814-1.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
-                </video>
+                </video> */}
 
                 {/* OmniSource Branded Smooth Gradient Masking Layer */}
                 {/* <div className="absolute inset-0 bg-gradient-to-b from-[#020b1e] via-[#020b1e]/85 to-[#020b1e] z-10" /> */}
