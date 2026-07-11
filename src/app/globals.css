@@ -19,21 +19,21 @@
   /* --display: 'Fraunces', serif;
   --sans: 'Manrope', system-ui, sans-serif;
   --mono: 'JetBrains Mono', monospace; */
-  --color-primary: #1b1a51;
+  --color-primary: #0D0809;
   --color-black: #000000;
-  --color-logo-color: #2d70f7;
-  --color-logo-hover: #0c4ecf;
-  --color-shadow-primary: 0f5cf2#;
+  --color-logo-color: #E22E33;
+  --color-logo-hover: #9F212B;
+  --color-shadow-primary: #E22E33;
   --color-white: #ffffff;
-  --color-border-muted: #0f1d40;
-  --text-muted-light: #bfdbfe;
-  --color-bg-gradient: #020b1e;
+  --color-border-muted: #2a0d0e;
+  --text-muted-light: #f5c2c7;
+  --color-bg-gradient: #0D0809;
 
-  --color-background: #040f21;
-  --color-bg-gradient-alpha: rgba(2, 11, 30, 0.5);
-  --color-badge-background: rgb(15 92 242 / 0.1);
-  --color-border-batch: rgb(30 58 138 / 0.5);
-  --color-border-hover: #0f5cf2;
+  --color-background: #0D0809;
+  --color-bg-gradient-alpha: rgba(13, 8, 9, 0.5);
+  --color-badge-background: rgb(226 46 51 / 0.1);
+  --color-border-batch: rgb(159 33 43 / 0.5);
+  --color-border-hover: #E22E33;
 }
 
 

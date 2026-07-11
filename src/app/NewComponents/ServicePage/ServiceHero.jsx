@@ -4,7 +4,7 @@ import Badge from '../../ReusableComponents/Badge';
 
 const ServiceHero = () => {
     return (
-        <section className="relative h-[440px] w-full overflow-hidden bg-[#020b1e] font-public-sans select-none">
+        <section className="relative h-[440px] w-full overflow-hidden bg-[#0D0809] font-public-sans select-none">
             <Navbar />
             {/* Background Image Container with Corporate Tint Masking */}
             <div

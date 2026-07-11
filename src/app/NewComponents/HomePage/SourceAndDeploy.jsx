@@ -45,7 +45,7 @@ const SourceAndDeploy = () => {
                             Talent and <span className="text-skin-">Opportunity Since</span>
                         </h2>
                         
-                        <p className="text-7xl md:text-9xl font-black tracking-tighter text-skin-logo drop-shadow-lg shadow-blue-500/20">
+                        <p className="text-7xl md:text-9xl font-black tracking-tighter text-skin-logo drop-shadow-lg shadow-[#E22E33]/20">
                             2015
                         </p>
                     </div>
@@ -76,7 +76,7 @@ const SourceAndDeploy = () => {
             </div> */}
 
             </section>
-            <section className="bg-skin-background text-skin-light py-20 px-6 md:px-20 font-public-sans overflow-hidden">
+            <section className="bg-skin-background text-skin-light py-20 px-6 md:px-20 font-public-sans overflow-hidden border-2 border-[#E22E33]">
                 <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
                     {/* Left — Image with motion from left */}
@@ -102,7 +102,7 @@ const SourceAndDeploy = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.7, ease: "easeOut" }}
                         viewport={{ once: true }}
-                        className="flex flex-col gap-4"
+                        className="flex flex-col gap-4 "
                     >
                         <Badge text={"One Source, Every Trade"} />
 

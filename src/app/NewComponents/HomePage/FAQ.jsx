@@ -57,7 +57,7 @@ const FAQ = () => {
                             >
                                 <button
                                     onClick={() => toggleFAQ(index)}
-                                    className="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-[#041232]/60 transition-all group"
+                                    className="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-[#130305]/60 transition-all group"
                                 >
                                     <div className="flex items-center gap-4">
                                         {/* Branded Dynamic Math Control Indicator */}

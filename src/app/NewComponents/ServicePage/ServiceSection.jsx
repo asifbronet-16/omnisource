@@ -8,7 +8,7 @@ const services = [
         id: "civil",
         title: "Civil Construction Workforce Solutions",
         desc: "We supply WPS-compliant, mobilization-ready civil crews, including certified scaffolders, masons, foremen, civil helpers, and site support crews for UAE infrastructure projects.",
-        image: "/assets/magnific_change-the-uniform-and-he_2961257177.jpeg",
+        image: "/assets/magnific_change-the-uniform-and-he_2961257177.webp",
         size: "large"
     },
     {
@@ -22,14 +22,14 @@ const services = [
         id: "cleaning",
         title: "Cleaning Workforce Solutions",
         desc: "Trained and screened personnel across unskilled, semi-skilled, and skilled cleaning roles—ranging from general cleaners and janitors to rope access facade cleaners and marble polishing technicians.",
-        image: "/assets/Picture1.jpg",
+        image: "/assets/cleaning.webp",
         size: "small"
     },
     {
         id: "machinery",
         title: "Machinery & Equipment Rental",
         desc: "Dependable, flexible rental options supporting all construction and industrial scopes. Our fleet includes wheel loaders, mini excavators, dump trucks, terrain cranes, forklifts, and boom/spider lifts.",
-        image: "/assets/magnific_change-the-uniform-and-he_2967867875.png",
+        image: "/assets/magnific_change-the-uniform-and-he_2967867875.webp",
         size: "small"
     }
 ];
@@ -59,9 +59,9 @@ export default function ServiceSection() {
                             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         />
                         {/* Subtle Premium Gradient Overlay Layer */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#020b1e] via-[#020b1e]/70 to-transparent" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#0D0809] via-[#0D0809]/70 to-transparent" />
                         {/* Content wrapper — grows upward on hover */}
-                        <div className="absolute bottom-0 left-0 right-0 h-20 lg:h-28 group-hover:h-[13rem] lg:group-hover:h-[15rem] overflow-hidden transition-all duration-500 ease-out bg-gradient-to-t from-[#020b1e] via-[#020b1e]/80 to-transparent">
+                        <div className="absolute bottom-0 left-0 right-0 h-20 lg:h-28 group-hover:h-[13rem] lg:group-hover:h-[15rem] overflow-hidden transition-all duration-500 ease-out bg-gradient-to-t from-[#0D0809] via-[#0D0809]/80 to-transparent">
                             <div className="lg:p-6 p-3">
                                 {/* Heading always visible */}
                                 <div className="flex items-center justify-between lg:gap-6 gap-0.5">

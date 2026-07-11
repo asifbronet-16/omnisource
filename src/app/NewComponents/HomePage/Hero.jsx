@@ -19,33 +19,26 @@ export default function HeroSection() {
                         loop
                         muted
                         playsInline
-                        className="w-full h-full object-cover opacity-55"
+                        className="w-full h-full object-cover"
                     >
                         <source src="/assets/videos/download.webm" type="video/webm" />
                         {/* <source src="https://www.pexels.com/download/video/30810784/" type="video/mp4" /> */}
                         Your browser does not support the video tag.
                     </video>
-
-                    {/* //new reusable component */}
-                    <div className="absolute inset-0 z-10">
-                        {/* Bottom-to-Top Gradient: Makes the bottom solid navy to match the next section */}
-                        <div className="absolute inset-0 bg-gradient-primary" />
-                        <div className="absolute inset-0 bg-gradient-left hidden lg:block" />
-                    </div>
                 </div>
 
                 {/* Content Container (placed carefully above backdrop at z-20) */}
                 <div className="relative w-full lg:w-3/5 text-skin-light text-center lg:text-start px-6 z-10 h-full flex flex-col justify-center items-center lg:items-start">
 
                     {/* Badge Indicator Pill */}
-                    <Badge text={"One source, Every trade"}/>
+                    <Badge text={"One source, Every trade"} />
 
                     {/* Hero Display Header Text */}
                     <h1 className="text-4xl lg:text-7xl font-extrabold leading-[1.1] mb-6 tracking-tight">
-                       Best Workforce  <br />
-                        <span className="bg-text-gradient-right bg-clip-text text-transparent">
-                            Solutions In UAE
-                        </span>
+                        <span className='bg-text-gradient-right bg-clip-text text-transparent'>
+                            Best Workforce
+                        </span>  <br />
+                        <span className='bg-text-gradient-right bg-clip-text text-transparent'>Solutions In UAE</span>
                     </h1>
 
                     {/* Paragraph Content (Red highlights replaced with custom corporate brand blue tokens) */}
@@ -58,12 +51,18 @@ export default function HeroSection() {
                     </p>
                     {/* Call to Actions Interaction Group */}
                     <div className="flex flex-wrap gap-4 items-center justify-center lg:justify-start mb-16 lg:mb-0 w-full sm:w-auto">
-                        <button className="flex items-center justify-center gap-2 bg-skin-logo text-skin-light lg:px-10 lg:py-4 py-3 px-6 rounded-md font-bold hover:bg-skin-logoHover transition duration-300 shadow-xl shadow-glow/30 w-full sm:w-auto">
-                           Get a Quote <ArrowUpRight size={20} />
-                        </button>
-                        <button className="border border-slate-700 bg-white/5 backdrop-blur-sm lg:px-10 lg:py-4 px-6 py-3 rounded-md font-bold text-skin-light hover:bg-white/10 hover:border-slate-500 transition duration-300 w-full sm:w-auto">
-                            Let's Connect
-                        </button>
+                        <a
+                            href="/contact"
+                            className="flex items-center justify-center gap-2 bg-skin-logo text-skin-light lg:px-10 lg:py-4 py-3 px-6 rounded-md font-bold hover:bg-skin-logoHover transition duration-300 shadow-xl shadow-glow/30 w-full sm:w-auto"
+                        >
+                            Get a Quote <ArrowUpRight size={20} />
+                        </a>
+                        <a
+                            href="tel:+971503441039"
+                            className="flex items-center justify-center gap-2 border border-red-700 bg-white/5 backdrop-blur-sm lg:px-10 lg:py-4 px-6 py-3 rounded-md font-bold text-skin-light hover:bg-white/10 hover:border-slate-500 transition duration-300 w-full sm:w-auto"
+                        >
+                            📞 +971 50 344 1039
+                        </a>
                     </div>
                 </div>
             </section>

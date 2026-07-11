@@ -7,11 +7,11 @@ import { Users2 } from 'lucide-react';
 const logos = [
   { src: "/assets/icons/splash building-ts1633320180.svg", name: "Splash Building Contracting" },
   { src: "/assets/icons/logo.png", name: "City Night Contracting LLC" },
-  { src: "/assets/icons/al-tayer-logo.jpg", name: "Al Tayer" },
+  { src: "/assets/icons/al-tayer-logo.png", name: "Al Tayer" },
   { src: "/assets/icons/SP__Lulu-Group-International.png", name: "LULU Group International" },
   { src: "/assets/icons/Be-Bright-Dark-logo.webp", name: "BeBright" },
-  { src: "/assets/icons/ferrari-logo-png_seeklogo-53764.png", name: "Ferrari" },
-  { src: "/assets/icons/images.png", name: "Samsung" },
+  { src: "/assets/icons/ferrari-logo.png", name: "Ferrari" },
+  { src: "/assets/icons/samsung-logo.png", name: "Samsung" },
 
 ];
 
@@ -34,7 +34,7 @@ const ClientMarquee = () => {
         {/* Header with Animated Number */}
         <div className="flex flex-col items-center mb-12 px-4">
           {/* Swapped to matching brand blue icon styling */}
-          <div className="text-3xl mb-3 text-skin-ogo p-3 bg-skin-backgroundHighlight rounded-full backdrop-blur-sm border border-blue-900/40">
+          <div className="text-3xl mb-3 text-skin-ogo p-3 bg-skin-backgroundHighlight rounded-full backdrop-blur-sm border border-red-900/40">
             <Users2 size={32} strokeWidth={1.5} />
           </div>
           <h2 className="text-4xl font-extrabold tracking-tight">
@@ -46,8 +46,8 @@ const ClientMarquee = () => {
         <div className="relative flex border-y border-skin-subtle bg-skin-backgroundHighlight py-8 backdrop-blur-sm">
 
           {/* Left & Right fading masking elements to make the marquee merge smoothly into the margins */}
-          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#020b1e] to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#020b1e] to-transparent z-10 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#0D0809] to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#0D0809] to-transparent z-10 pointer-events-none" />
 
           <div className="grid grid-cols-3 lg:grid-cols-7 gap-4 lg:px-28 px-10 mx-auto">
             {logos.map((logo, index) => (

@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Target, Eye, Gem } from 'lucide-react';
 import Badge from '../../ReusableComponents/Badge';
 
@@ -85,23 +85,28 @@ const SolutionsSection = () => {
                         </motion.h2>
 
                         {/* Pillars Grid */}
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start relative">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-16 items-start relative">
                             {pillarData.map((item, idx) => (
-                                <AnimatePresence key={idx}>
-                                    <motion.div
-                                        variants={itemVariants}
-                                        className="flex flex-col items-center group relative p-6 border border-transparent bg-skin-backgroundHighlight hover:border-skin-subtle hover:bg-skin-logo rounded-xl transition-all duration-300 backdrop-blur-[2px] group"
-                                    >
-                                        {/* Icon Box with OmniSource Blue Realignment */}
-                                        <div className="text-4xl text-skin-logo  group-hover:text-skin-light mb-6 transition-transform group-hover:scale-110 duration-300 drop-shadow-[0_4px_12px_rgba(15,92,242,0.2)]">
-                                            <item.icon size={48} strokeWidth={1.5} />
-                                        </div>
-                                        <h4 className="text-xl font-bold mb-4 tracking-tight text-skin-light">{item.title}</h4>
-                                        <p className="text-slate-400 text-sm leading-relaxed font-normal">
+                                <motion.div
+                                    key={idx}
+                                    variants={itemVariants}
+                                    className="group relative pt-8 text-center flex flex-col items-center"
+                                >
+                                    {/* Floating icon badge */}
+                                    <div className="absolute top-0 left-1/2 -translate-x-1/2 z-20 w-16 h-16 rounded-2xl bg-white flex items-center justify-center shadow-lg shadow-skin-logo transform group-hover:-translate-y-1 transition-all duration-300">
+                                        <item.icon size={32} strokeWidth={1.5} className="text-skin-logo" />
+                                    </div>
+
+                                    {/* Card body */}
+                                    <div className="w-full h-full flex-1 p-6 pt-12 rounded-2xl bg-gradient-to-b from-[#130305]/70 to-[#130305]/20 border border-skin-badgeBorder group-hover:border-skin-borderHover transition-all duration-300 relative z-10 flex flex-col items-center justify-start">
+                                        <h4 className="text-xl font-bold text-skin-light tracking-tight mb-3 group-hover:text-skin-logoHover transition-colors duration-300">
+                                            {item.title}
+                                        </h4>
+                                        <p className="text-slate-400 text-sm leading-relaxed w-full flex-1 flex items-center justify-center px-2">
                                             {item.desc}
                                         </p>
-                                    </motion.div>
-                                </AnimatePresence>
+                                    </div>
+                                </motion.div>
                             ))}
                         </div>
                     </motion.div>
@@ -110,7 +115,7 @@ const SolutionsSection = () => {
                 </div>
 
                 {/* Bottom Section: Split Call-To-Action Block */}
-                <div className="max-w-7xl mx-auto px-6 pb-24 grid grid-cols-1 lg:grid-cols-2 gap-0 overflow-hidden rounded-xl">
+                <div className="max-w-7xl mx-auto px-6 pb-24 pt-12 grid grid-cols-1 lg:grid-cols-2 gap-0 overflow-hidden rounded-xl">
 
                     {/* Left Side: Deep Branded Corporate Content Box */}
                     <motion.div
@@ -118,7 +123,7 @@ const SolutionsSection = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
-                        className="bg-[#041232] p-12 md:p-16 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-blue-900/30"
+                        className="bg-[#130305] p-12 md:p-16 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-red-900/30"
                     >
                         <h3 className="text-3xl md:text-5xl font-extrabold mb-6 leading-tight tracking-tight">
                             Skilled Manpower When You Need It!
@@ -133,7 +138,7 @@ const SolutionsSection = () => {
                         <motion.button
                             whileHover={{ scale: 1.03 }}
                             whileTap={{ scale: 0.98 }}
-                            className="bg-skin-logo text-skin-light px-7 py-3.5 w-fit rounded-lg flex items-center gap-2 hover:bg-[#0a46b9] shadow-lg shadow-skin-logo/20 transition-all text-sm font-bold tracking-wide"
+                            className="bg-skin-logo text-skin-light px-7 py-3.5 w-fit rounded-lg flex items-center gap-2 hover:bg-skin-logoHover shadow-lg shadow-skin-logo/20 transition-all text-sm font-bold tracking-wide"
                         >
                             Connect With Us <span className="text-base">↗</span>
                         </motion.button>
@@ -145,7 +150,7 @@ const SolutionsSection = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
-                        className="relative h-[400px] lg:h-auto overflow-hidden bg-[#041232]"
+                        className="relative h-[400px] lg:h-auto overflow-hidden bg-[#130305]"
                     >
                         <motion.img
                             initial={{ scale: 1.15 }}
@@ -153,10 +158,10 @@ const SolutionsSection = () => {
                             transition={{ duration: 1.2, ease: "easeOut" }}
                             src='/assets/30640-e1748858511145.webp'
                             alt="Industrial Workers Team"
-                            className="w-full h-full object-cover opacity-85  transition-all duration-1000"
+                            className="w-full h-full object-cover opacity-85 rounded-xl transition-all duration-1000"
                         />
                         {/* Smooth overlay to anchor image to the left background text box */}
-                        <div className="absolute inset-0 bg-gradient-to-r from-[#041232]/30 via-transparent to-transparent pointer-events-none" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-[#130305]/30 via-transparent to-transparent pointer-events-none" />
                     </motion.div>
                 </div>
             </section>

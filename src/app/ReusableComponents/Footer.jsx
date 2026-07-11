@@ -37,12 +37,12 @@ export default function Footer() {
                     {/* Col 1: Logo & Contact */}
                     <div className="flex flex-col gap-8">
                         <Link href="/" className="flex items-center justify-start">
-                            <Image src="/assets/icons/OmniSource-White.png" alt="OmniSource Logo" width={2048} height={354} priority className="h-8 w-auto" />
+                            <Image src="/assets/icons/OmniSource-White.png" alt="OmniSource Logo" width={2048} height={354} priority className="h-8 w-auto" style={{ filter: "hue-rotate(138deg) saturate(0.8)" }} />
                         </Link>
                         <div className="space-y-6">
                             {contacts.map((c, i) => (
                                 <div key={i} className="flex items-start gap-4 group">
-                                    <div className="text-skin-logo mt-1 p-2 bg-skin-logo/10 rounded-md border border-blue-900/30">
+                                    <div className="text-skin-logo mt-1 p-2 bg-skin-logo/10 rounded-md border border-red-900/30">
                                         {c.icon}
                                     </div>
                                     <div>
@@ -127,7 +127,7 @@ export default function Footer() {
                 {/* Middle Section: Hubs */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-sm font-normal leading-relaxed mb-12 text-skin-mutedLight">
                     {locations.map((loc, i) => (
-                        <div key={i} className={i > 0 ? 'border-l border-blue-900/20 pl-0 md:pl-12' : ''}>
+                        <div key={i} className={i > 0 ? 'border-l border-red-900/20 pl-0 md:pl-12' : ''}>
                             <h5 className="text-skin-logo font-bold mb-3 tracking-wide">{loc.title}</h5>
                             <p className="text-xs text-skin-mutedLight">{loc.desc}</p>
                         </div>

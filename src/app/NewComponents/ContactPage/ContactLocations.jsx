@@ -18,7 +18,7 @@ const locations = [
 const ContactLocations = () => {
 
     return (
-        <section className="bg-[#020b1e] py-16 px-6 md:px-20 font-public-sans select-none">
+        <section className="bg-[#0D0809] py-16 px-6 md:px-20 font-public-sans select-none">
             <div className="max-w-7xl mx-auto">
 
                 {/* Top Two Regional Branch Maps Grid (Abu Dhabi & Dubai) */}
@@ -29,10 +29,10 @@ const ContactLocations = () => {
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="relative group rounded-xl overflow-hidden border border-blue-900/20 bg-[#041232]/50 shadow-xl transition-all duration-300 hover:border-blue-900/40"
+                            className="relative group rounded-xl overflow-hidden border border-red-900/20 bg-[#130305]/50 shadow-xl transition-all duration-300 hover:border-red-900/40"
                         >
                             {/* Premium Frosted Floating Information Banner Overlay */}
-                            <div className="absolute top-4 left-4 right-4 z-20 flex justify-between items-start bg-[#041232]/90 backdrop-blur-md p-4 rounded-xl border border-blue-900/40 shadow-2xl">
+                            <div className="absolute top-4 left-4 right-4 z-20 flex justify-between items-start bg-[#130305]/90 backdrop-blur-md p-4 rounded-xl border border-red-900/40 shadow-2xl">
                                 <div className="max-w-[70%]">
                                     <h4 className="text-skin-light font-bold text-sm tracking-tight truncate">{loc.plusCode}</h4>
                                     <p className="text-slate-400 text-[10px] tracking-wide uppercase font-semibold mt-1 truncate">{loc.address}</p>
@@ -40,13 +40,13 @@ const ContactLocations = () => {
                                 <div className="flex gap-2 shrink-0">
                                     <button
                                         onClick={() => window.open(loc.mapUrl, '_blank')}
-                                        className="p-2 bg-[#020b1e]/60 border border-blue-900/30 text-slate-300 hover:text-skin-light hover:bg-skin-logo hover:border-skin-logo rounded-lg transition-all duration-200"
+                                        className="p-2 bg-[#0D0809]/60 border border-red-900/30 text-slate-300 hover:text-skin-light hover:bg-skin-logo hover:border-skin-logo rounded-lg transition-all duration-200"
                                         title="View External Map"
                                     >
                                         <ExternalLink size={15} />
                                     </button>
                                     <button
-                                        className="p-2 bg-[#020b1e]/60 border border-blue-900/30 text-slate-300 hover:text-skin-light hover:bg-skin-logo hover:border-skin-logo rounded-lg transition-all duration-200"
+                                        className="p-2 bg-[#0D0809]/60 border border-red-900/30 text-slate-300 hover:text-skin-light hover:bg-skin-logo hover:border-skin-logo rounded-lg transition-all duration-200"
                                         title="Get Directions"
                                     >
                                         <Navigation size={15} />
@@ -72,12 +72,12 @@ const ContactLocations = () => {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="relative group rounded-xl overflow-hidden border border-blue-900/20 bg-[#041232]/50 shadow-xl transition-all duration-300 hover:border-blue-900/40"
+                    className="relative group rounded-xl overflow-hidden border border-red-900/20 bg-[#130305]/50 shadow-xl transition-all duration-300 hover:border-red-900/40"
                 >
                     {/* Action Hub Overlay Button */}
                     <button
                         onClick={() => window.open(locations[2].mapUrl, '_blank')}
-                        className="absolute top-6 left-6 z-20 bg-[#041232]/90 backdrop-blur-md border border-blue-900/40 px-5 py-2.5 rounded-xl shadow-2xl flex items-center gap-2.5 text-skin-light text-sm font-bold transition-all duration-200 hover:bg-skin-logo hover:border-skin-logo"
+                        className="absolute top-6 left-6 z-20 bg-[#130305]/90 backdrop-blur-md border border-red-900/40 px-5 py-2.5 rounded-xl shadow-2xl flex items-center gap-2.5 text-skin-light text-sm font-bold transition-all duration-200 hover:bg-skin-logo hover:border-skin-logo"
                     >
                         <span>Open Sharjah Branch in Maps</span>
                         <ExternalLink size={14} className="shrink-0" />

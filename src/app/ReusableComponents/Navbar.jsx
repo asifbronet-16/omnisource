@@ -50,7 +50,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 inset-x-0 z-[100] flex items-center justify-between lg:px-24 sm:px-4 px-2 lg:py-4 py-4 w-full transition-colors duration-300 ${isScrolled ? "bg-skin-primary shadow-md" : "bg-transparent"}`}>
+      className={`fixed top-0 inset-x-0 z-[100] flex items-center justify-between lg:px-24 sm:px-4 px-2 lg:py-4 py-4 w-full transition-all duration-300 ${isScrolled ? "bg-[#0D0809]/95 backdrop-blur-md border-b border-[#E22E33]/20 shadow-[0_4px_24px_rgba(13,8,9,0.8)]" : "bg-transparent"}`}>
 
       {/* Brand Logo Container */}
       <div className="flex items-center">
@@ -66,6 +66,7 @@ const Navbar = () => {
             height={354}
             priority
             className="hidden lg:block lg:h-12 lg:w-64 w-auto h-10"
+            style={{ filter: "hue-rotate(138deg) saturate(0.8)" }}
           />
 
           {/* Mobile Logo */}
@@ -80,6 +81,7 @@ const Navbar = () => {
             height={354}
             priority
             className="block lg:hidden lg:h-12 lg:w-64 w-auto h-10"
+            style={{ filter: "hue-rotate(138deg) saturate(0.8)" }}
           />
         </Link>
       </div>
@@ -141,6 +143,7 @@ const Navbar = () => {
             height={354}
             priority
             className="block lg:hidden h-12 w-auto"
+            style={{ filter: "hue-rotate(138deg) saturate(0.8)" }}
           />
 
         </div>

@@ -52,7 +52,7 @@ export const FormField = ({
           value={value}
           placeholder={placeholder}
           onChange={onChange}
-          className="w-full bg-[#020b1e]/40 border border-blue-900/30 rounded-lg px-4 py-3 text-sm focus:border-skin-logo transition-colors outline-none text-skin-light placeholder-slate-500 resize-none"
+          className="w-full bg-[#0D0809]/40 border border-red-900/30 rounded-lg px-4 py-3 text-sm focus:border-skin-logo transition-colors outline-none text-skin-light placeholder-slate-500 resize-none"
         />
       ) : (
         <input
@@ -61,7 +61,7 @@ export const FormField = ({
           value={value}
           placeholder={placeholder}
           onChange={onChange}
-          className="w-full bg-[#020b1e]/40 border border-blue-900/30 rounded-lg px-4 py-3 text-sm focus:border-skin-logo transition-colors outline-none text-skin-light placeholder-slate-500"
+          className="w-full bg-[#0D0809]/40 border border-red-900/30 rounded-lg px-4 py-3 text-sm focus:border-skin-logo transition-colors outline-none text-skin-light placeholder-slate-500"
         />
       )}
     </div>

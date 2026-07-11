@@ -11,10 +11,10 @@ import { Users, LucideIcon, Sparkles } from 'lucide-react';
         // </div>
         <div className="flex items-center w-full max-w-6xl select-none gap-2 px-4 py-1.5 rounded-md mb-6">
             {/* Left decorative line */}
-            <div className="h-[2.5px] flex-grow bg-gradient-to-r from-transparent to-[#3b82f6]" />
+            <div className="h-[2.5px] flex-grow bg-gradient-to-r from-transparent to-[#E22E33]" />
 
             {/* Center Icon Badge */}
-            <div className="flex items-center justify-center p-2 rounded-full border border-skin-muted bg-skin-logo shadow-[0_0_15px_rgba(59,130,246,0.1)] backdrop-blur-sm shrink-0">
+            <div className="flex items-center justify-center p-2 rounded-full border border-skin-muted bg-skin-logo shadow-[0_0_15px_rgba(226,46,51,0.1)] backdrop-blur-sm shrink-0">
                 <Icon className="text-skin-mutedLight" size={16} />
             </div>
 
@@ -32,7 +32,7 @@ import { Users, LucideIcon, Sparkles } from 'lucide-react';
             {/* Right decorative line ending with a dot */}
             <div className="flex items-center gap-1 flex-grow">
                 <div className="w-1.5 h-1.5 rounded-full bg-skin-logo" />
-                <div className="h-[2.5px] w-full bg-gradient-to-l from-transparent to-[#3b82f6]" />
+                <div className="h-[2.5px] w-full bg-gradient-to-l from-transparent to-[#E22E33]" />
             </div>
         </div>
     )

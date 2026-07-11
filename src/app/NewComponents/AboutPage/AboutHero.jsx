@@ -7,9 +7,10 @@ const AboutHero = () => {
         <section className="relative h-[440px] w-full overflow-hidden bg-skin-background font-public-sans select-none">
             <Navbar />
             <div className="absolute inset-0 w-full h-full z-20">
-                {/* Bottom-to-Top Gradient: Makes the bottom solid navy to match the next section */}
-                <div className="absolute inset-0 bg-gradient-primary" />
-                <div className="absolute inset-0 bg-gradient-left hidden lg:block" />
+                {/* Dark overlay for text readability */}
+                <div className="absolute inset-0 bg-black/40" />
+                {/* Bottom fade to match page background */}
+                <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, #0D0809 0%, rgba(13,8,9,0.6) 40%, transparent 100%)' }} />
             </div>
             <div className="absolute inset-0 w-full h-full z-10">
                 <img

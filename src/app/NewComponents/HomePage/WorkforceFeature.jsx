@@ -36,7 +36,7 @@ export const WorkforceFeature = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-8xl w-full mx-auto flex-grow items-stretch mb-10">
 
                 {/* ================= LEFT CARD ================= */}
-                <div className="relative overflow-hidden rounded-2xl border border-slate-800/50 bg-[#070d1e] p-8 md:p-12 flex flex-col justify-between shadow-2xl">
+                <div className="relative overflow-hidden rounded-2xl border border-slate-800/50 bg-[#0D0809] p-8 md:p-12 flex flex-col justify-between shadow-2xl">
                     {/* Background image overlay - Fixed size unit and applied clean right-side framing */}
                     <div
                         className="absolute inset-0 bg-no-repeat opacity-90 pointer-events-none bg-[20%]"
@@ -44,21 +44,21 @@ export const WorkforceFeature = () => {
                     />
 
                     {/* Clean gradient fallback to ensure text legibility over darker image assets */}
-                    <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-[#0f1d42] via-[#0f1d42]/90 to-transparent pointer-events-none" />
+                    <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-[#130305] via-[#130305]/90 to-transparent pointer-events-none" />
 
                     {/* Top text content cluster */}
                     <div className="relative z-10 space-y-6 max-w-xl">
                         {/* Logo placeholder matching layout */}
                         <div className="flex items-center text-2xl font-bold tracking-tight">
                             <span className="text-white">Omni</span>
-                            <span className="text-blue-500 font-extrabold">Source</span>
+                            <span className="text-[#E22E33] font-extrabold">Source</span>
                         </div>
 
                         {/* Standardized Heading Spacing */}
                         <h2 className="text-3xl md:text-4xl font-black tracking-tight leading-[1.15] text-white">
                             Workforce Solutions.<br />
                             Delivered with{" "}
-                            <span className="text-blue-500">Certainty.</span>
+                            <span className="text-[#E22E33]">Certainty.</span>
                         </h2>
 
                         <p className="text-sm md:text-base text-slate-400 leading-relaxed max-w-md">
@@ -67,7 +67,7 @@ export const WorkforceFeature = () => {
 
                         {/* Sub-badge descriptor row */}
                         <div className="flex items-start gap-3 bg-slate-950/40 border border-slate-800/40 p-3.5 rounded-xl max-w-md backdrop-blur-sm">
-                            <div className="p-2 bg-blue-500/10 rounded-lg text-blue-400 shrink-0">
+                            <div className="p-2 bg-[#E22E33]/10 rounded-lg text-[#E22E33] shrink-0">
                                 <Users size={16} />
                             </div>
                             <p className="text-xs md:text-sm text-slate-300 leading-normal">
@@ -81,37 +81,37 @@ export const WorkforceFeature = () => {
                         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                             {metrics.map((m, idx) => (
                                 <div key={idx} className="bg-slate-950/40 border border-slate-800/40 p-4 rounded-xl text-center flex flex-col items-center justify-center backdrop-blur-sm">
-                                    <div className="text-blue-500/80 mb-2 p-1.5 bg-blue-500/5 rounded-md border border-blue-500/10">{m.icon}</div>
+                                    <div className="text-[#E22E33]/80 mb-2 p-1.5 bg-[#E22E33]/5 rounded-md border border-[#E22E33]/10">{m.icon}</div>
                                     <div className="text-xl font-black tracking-tight text-white">{m.value}</div>
                                     <div className="text-[10px] md:text-xs text-slate-400 font-semibold mt-1 leading-tight">{m.label}</div>
                                 </div>
                             ))}
                         </div>
 
-                        <button className="flex items-center gap-2 bg-blue-600 hover:bg-blue-500 active:scale-[0.99] transition-all px-6 py-3 rounded-lg text-sm font-bold tracking-wide w-full sm:w-fit justify-center shadow-lg shadow-blue-600/10">
+                        <button className="flex items-center gap-2 bg-[#E22E33] hover:bg-[#9F212B] active:scale-[0.99] transition-all px-6 py-3 rounded-lg text-sm font-bold tracking-wide w-full sm:w-fit justify-center shadow-lg shadow-[#E22E33]/10">
                             Request Workforce <ArrowUpRight size={15} />
                         </button>
                     </div>
                 </div>
 
                 {/* ================= RIGHT CARD ================= */}
-                <div className="relative overflow-hidden rounded-2xl border border-slate-800/50 bg-[#040814] p-6 md:p-8 flex flex-col justify-center items-start shadow-2xl">
+                <div className="relative overflow-hidden rounded-2xl border border-slate-800/50 bg-[#0D0809] p-6 md:p-8 flex flex-col justify-center items-start shadow-2xl">
                     {/* Construction crane motif background */}
                     <div
                        className="absolute inset-0 bg-no-repeat opacity-90 pointer-events-none bg-[25%]"
                         style={{ backgroundImage: `url('/assets/WorkforceFeature2.jpeg')` }}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-[#0f1d42] via-[#0f1d42]/90 to-transparent pointer-events-none" />
+                    <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-[#130305] via-[#130305]/90 to-transparent pointer-events-none" />
 
                     {/* Dark Glassmorphism container layer */}
-                    <div className="relative z-10 max-w-lg  bg-slate-950/60 backdrop-blur-md border border-slate-800/40 p-6 md:p-8 rounded-2xl shadow-2xl space-y-6 border-l-blue-500/20 md:w-[60%] ">
+                    <div className="relative z-10 max-w-lg  bg-slate-950/60 backdrop-blur-md border border-slate-800/40 p-6 md:p-8 rounded-2xl shadow-2xl space-y-6 border-l-[#E22E33]/20 md:w-[60%] ">
 
                         {/* Top decorative accent bar */}
-                        <div className="w-6 h-[2px] bg-blue-500" />
+                        <div className="w-6 h-[2px] bg-[#E22E33]" />
 
                         <h3 className="text-2xl md:text-3xl font-black tracking-tight leading-snug text-white">
                             Strengthening Your<br />
-                            <span className="text-blue-500">Workforce & Industry Impact</span>
+                            <span className="text-[#E22E33]">Workforce & Industry Impact</span>
                         </h3>
 
                         <p className="text-sm text-slate-400 leading-relaxed">
@@ -122,7 +122,7 @@ export const WorkforceFeature = () => {
                         <ul className="space-y-3.5 pt-1">
                             {benefits.map((b, idx) => (
                                 <li key={idx} className="flex items-center gap-3 text-xs md:text-sm text-slate-300 font-medium">
-                                    <div className="p-1.5 rounded-full border border-blue-500/30 bg-blue-950/50 text-blue-400 shrink-0">
+                                    <div className="p-1.5 rounded-full border border-[#E22E33]/30 bg-[#130305]/50 text-[#E22E33] shrink-0">
                                         {b.icon}
                                     </div>
                                     {b.text}
@@ -131,7 +131,7 @@ export const WorkforceFeature = () => {
                         </ul>
 
                         <div className="pt-2">
-                            <button className="flex items-center gap-2 bg-blue-600 hover:bg-blue-500 active:scale-[0.99] transition-all px-6 py-3 rounded-lg text-sm font-bold tracking-wide w-full sm:w-fit justify-center shadow-lg shadow-blue-600/10">
+                            <button className="flex items-center gap-2 bg-[#E22E33] hover:bg-[#9F212B] active:scale-[0.99] transition-all px-6 py-3 rounded-lg text-sm font-bold tracking-wide w-full sm:w-fit justify-center shadow-lg shadow-[#E22E33]/10">
                                 Speak With Our Team <ArrowUpRight size={15} />
                             </button>
                         </div>
