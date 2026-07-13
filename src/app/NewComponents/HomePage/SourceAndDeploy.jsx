@@ -76,7 +76,7 @@ const SourceAndDeploy = () => {
             </div> */}
 
             </section>
-            <section className="bg-skin-background text-skin-light py-20 px-6 md:px-20 font-public-sans overflow-hidden border-2 border-[#E22E33]">
+            <section className="bg-skin-background text-skin-light py-20 px-6 md:px-20 font-public-sans overflow-hidden">
                 <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
                     {/* Left — Image with motion from left */}

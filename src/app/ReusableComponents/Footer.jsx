@@ -37,7 +37,7 @@ export default function Footer() {
                     {/* Col 1: Logo & Contact */}
                     <div className="flex flex-col gap-8">
                         <Link href="/" className="flex items-center justify-start">
-                            <Image src="/assets/icons/OmniSource-White.png" alt="OmniSource Logo" width={2048} height={354} priority className="h-8 w-auto" style={{ filter: "hue-rotate(138deg) saturate(0.8)" }} />
+                            <Image src="/assets/icons/OmniSource-White.png" alt="OmniSource Logo" width={2048} height={354} priority className="h-8 w-auto"/>
                         </Link>
                         <div className="space-y-6">
                             {contacts.map((c, i) => (

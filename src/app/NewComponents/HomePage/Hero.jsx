@@ -22,6 +22,7 @@ export default function HeroSection() {
                         className="w-full h-full object-cover"
                     >
                         <source src="/assets/videos/download.webm" type="video/webm" />
+                        {/* <source src="/assets/videos/original.webm" type="video/webm" /> */}
                         {/* <source src="https://www.pexels.com/download/video/30810784/" type="video/mp4" /> */}
                         Your browser does not support the video tag.
                     </video>

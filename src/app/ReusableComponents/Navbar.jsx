@@ -66,7 +66,6 @@ const Navbar = () => {
             height={354}
             priority
             className="hidden lg:block lg:h-12 lg:w-64 w-auto h-10"
-            style={{ filter: "hue-rotate(138deg) saturate(0.8)" }}
           />
 
           {/* Mobile Logo */}
@@ -81,7 +80,6 @@ const Navbar = () => {
             height={354}
             priority
             className="block lg:hidden lg:h-12 lg:w-64 w-auto h-10"
-            style={{ filter: "hue-rotate(138deg) saturate(0.8)" }}
           />
         </Link>
       </div>
@@ -143,7 +141,6 @@ const Navbar = () => {
             height={354}
             priority
             className="block lg:hidden h-12 w-auto"
-            style={{ filter: "hue-rotate(138deg) saturate(0.8)" }}
           />
 
         </div>

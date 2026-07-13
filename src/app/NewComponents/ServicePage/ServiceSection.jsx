@@ -8,7 +8,8 @@ const services = [
         id: "civil",
         title: "Civil Construction Workforce Solutions",
         desc: "We supply WPS-compliant, mobilization-ready civil crews, including certified scaffolders, masons, foremen, civil helpers, and site support crews for UAE infrastructure projects.",
-        image: "/assets/magnific_change-the-uniform-and-he_2961257177.webp",
+        // image: "/assets/magnific_change-the-uniform-and-he_2961257177.webp",
+       image: "/assets/01 copy.webp",
         size: "large"
     },
     {
