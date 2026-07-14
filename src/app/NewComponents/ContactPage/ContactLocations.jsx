@@ -9,9 +9,7 @@ const locations = [
         city: "Dubai",
         plusCode: "783H+RC Dubai",
         address: "783H+RC, - Office No: 801, Block B, Centurion Star Tower, Near Deira City Centre Metro Station - Dubai - United Arab Emirates",
-        // For the <iframe> — embeddable endpoint
         embedUrl: "https://maps.google.com/maps?q=25.2545737,55.3285988&z=16&output=embed",
-        // For the external-link button — navigation endpoint
         mapUrl: "https://www.google.com/maps/search/?api=1&query=25.2545737,55.3285988",
         isWide: false
     },
@@ -23,7 +21,7 @@ const ContactLocations = () => {
             <div className="max-w-7xl mx-auto">
 
                 <div className="grid grid-cols-1 gap-6 mb-6">
-                    {locations.map((loc, i) => (
+                    {locations.map((loc) => (
                         <motion.div
                             key={loc.city}
                             initial={{ opacity: 0, y: 20 }}
@@ -31,7 +29,6 @@ const ContactLocations = () => {
                             viewport={{ once: true }}
                             className="relative group rounded-xl overflow-hidden border border-red-900/20 bg-[#130305]/50 shadow-xl transition-all duration-300 hover:border-red-900/40"
                         >
-                            {/* Premium Frosted Floating Information Banner Overlay */}
                             <div className="absolute top-4 left-4 right-4 z-20 flex justify-between items-start bg-[#130305]/90 backdrop-blur-md p-4 rounded-xl border border-red-900/40 shadow-2xl">
                                 <div className="max-w-[70%]">
                                     <h4 className="text-skin-light font-bold text-sm tracking-tight truncate">{loc.plusCode}</h4>
@@ -47,12 +44,10 @@ const ContactLocations = () => {
                                 </div>
                             </div>
 
-                            {/* Clean Full-Color High Fidelity Iframe */}
                             <iframe
                                 src={loc.embedUrl}
                                 className="w-full h-[320px] relative z-10"
                                 style={{ border: 0 }}
-                                // allowFullScreen=""
                                 loading="lazy"
                                 referrerPolicy="no-referrer-when-downgrade"
                             />

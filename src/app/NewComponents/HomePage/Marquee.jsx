@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useEffect, useState } from 'react';
-import { motion, useMotionValue, useTransform, animate } from 'framer-motion';
+import React, { useEffect } from 'react';
+import { useMotionValue, animate } from 'framer-motion';
 import { Users2 } from 'lucide-react';
 
 const logos = [
@@ -18,13 +18,9 @@ const logos = [
 const ClientMarquee = () => {
   // 1. Counter Logic
   const count = useMotionValue(0);
-  const rounded = useTransform(count, (latest) => Math.round(latest));
-  const [displayCount, setDisplayCount] = useState(0);
 
   useEffect(() => {
-    // Animates from 0 to 200 over 2 seconds
-    const controls = animate(count, 200, { duration: 2 });
-    return rounded.on("change", (latest) => setDisplayCount(latest));
+    animate(count, 200, { duration: 2 });
   }, []);
 
   return (

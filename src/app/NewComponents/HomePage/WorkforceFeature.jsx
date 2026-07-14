@@ -9,7 +9,6 @@ import {
     Building2,
     Factory,
     HardHat,
-    Smartphone, // Dynamic replacement helper if needed
 } from 'lucide-react';
 
 export const WorkforceFeature = () => {
