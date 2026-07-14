@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 const services = [
     {
-        id: "civil",
+        id: "civil-construction",
         title: "Civil Construction Workforce Solutions",
         desc: "We supply WPS-compliant, mobilization-ready civil crews, including certified scaffolders, masons, foremen, civil helpers, and site support crews for UAE infrastructure projects.",
         // image: "/assets/magnific_change-the-uniform-and-he_2961257177.webp",
@@ -27,7 +27,7 @@ const services = [
         size: "small"
     },
     {
-        id: "machinery",
+        id: "machinery-rental",
         title: "Machinery & Equipment Rental",
         desc: "Dependable, flexible rental options supporting all construction and industrial scopes. Our fleet includes wheel loaders, mini excavators, dump trucks, terrain cranes, forklifts, and boom/spider lifts.",
         image: "/assets/magnific_change-the-uniform-and-he_2967867875.webp",
@@ -45,7 +45,9 @@ export default function WorkforceServices() {
                 {/* Header Section */}
                 <div className="mb-12 flex flex-col items-center lg:items-start text-center lg:text-left">
                     {/* Badge Indicator Pill updated to corporate blue tints */}
-                    <Badge text={"Expert Talent, Delivered with Precision "} />
+                    <div className='mx-auto w-full flex items-center justify-center'>
+                        <Badge text={"Expert Talent, Delivered with Precision "} />
+                    </div>
                     <h2 className="text-3xl lg:text-5xl font-extrabold tracking-tight">
                         Trusted <span className="text-skin-logo">Workforce Solution</span>
                     </h2>

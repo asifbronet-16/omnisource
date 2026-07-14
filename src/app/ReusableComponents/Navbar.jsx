@@ -73,7 +73,7 @@ const Navbar = () => {
             src={
               isScrolled
                 ? "/assets/icons/OmniSource-White.png"
-                : "/assets/icons/OmniSource-Black.png"
+                : "/assets/icons/OmniSource-White.png"
             }
             alt="OmniSource Logo"
             width={2048}
@@ -114,7 +114,7 @@ const Navbar = () => {
         className="lg:hidden cursor-pointer p-1"
         onClick={() => setIsOpen(true)}
       >
-        <MenuIcon className={`${isScrolled ? "text-skin-light" : "text-skin-dark"}`} size={28} />
+        <MenuIcon className={`${isScrolled ? "text-skin-light" : "text-skin-light"}`} size={28} />
       </div>
       <div
         className={`fixed inset-0 bg-black/50 backdrop-blur-sm z-[150] transition-opacity duration-300 lg:hidden ${isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
@@ -177,7 +177,7 @@ const Navbar = () => {
           <Link
             href="/contact"
             onClick={() => setIsOpen(false)}
-            className="gap-2 flex items-center justify-center bg-skin-logo hover:bg-skin-logoHover px-6 py-2.5 rounded-md text-skin-light transition font-medium text-md shadow-lg shadow-glow"
+            className="gap-2 flex items-center justify-center bg-skin-logo hover:bg-skin-logoHover px-6 py-2.5 rounded-md text-skin-light transition font-medium text-md shadow-lg"
           >
             <span>Get in Touch</span>
             <ArrowUpRight size={18} />

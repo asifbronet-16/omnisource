@@ -95,7 +95,7 @@ const ImpactSection = () => {
                 {/* Header Container Layout */}
                 <div className="mb-20">
                     {/* Branded Pill Tagline updated to matching blue tones */}
-                    <div className='mx-auto'>
+                    <div className='mx-auto flex items-center justify-center'>
                         <Badge text={"Real People. Real Results. Real Difference."} />
                     </div>
                     <h2 className="text-4xl md:text-6xl font-extrabold text-skin-light mb-2 tracking-tight">

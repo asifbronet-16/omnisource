@@ -84,34 +84,40 @@ export default function ServiceDetailPage() {
         <>
             <section className="relative h-[440px] w-full overflow-hidden bg-skin-background font-public-sans select-none">
                 <Navbar />
+                <div
+                    className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-90 mix-blend-luminosity"
+                    style={{
+                        backgroundImage: `url('/assets/267-1.webp')`,
+                    }}
+                />
 
-                {/* Background Image */}
-                <div className="absolute inset-0 w-full h-full z-10">
-                    <img
-                        src="/assets/267-1.webp"
-                        alt="services background"
-                        className="w-full h-full object-cover opacity-90"
-                    />
-                </div>
-
-                {/* Gradient Overlays */}
-                <div className="absolute inset-0 w-full h-full z-20">
-                    <div className="absolute inset-0 bg-gradient-primary" />
+                {/* OmniSource Gradient and Ambient Color Overlays */}
+                <div className="absolute inset-0 z-10">
+                    {/* Bottom-to-Top Gradient: Makes the bottom solid navy to match the next section */}
+                    <div className="absolute inset-0 bg-gradient-primary opacity-70" />
                     <div className="absolute inset-0 bg-gradient-left hidden lg:block" />
                 </div>
 
-                {/* Page Header Content */}
-                <div className="relative z-30 flex h-full items-center justify-center px-4 pt-16">
+                {/* Global Context Navigation Layout */}
+
+
+                {/* Page Header Content Container */}
+                <div className="relative z-20 flex flex-col h-full items-center justify-center px-4 pt-16">
+                    <Badge text="Certified Across Every Trade" className='text-[white]'/>
                     <div className="text-center">
-                        <div className=" mx-auto">
-                            <Badge text={"Certified Across Every Trade"} />
-                        </div>
+                        {/* Main Page Title String */}
                         <h1 className="text-4xl md:text-6xl font-extrabold text-skin-light tracking-tight leading-none mb-3">
                             Our <span className="text-skin-logo">Services</span>
                         </h1>
+
+                        {/* Centered Decorative Accent Line */}
                         <div className="w-12 h-1 bg-skin-logo mx-auto rounded-full" />
+
                     </div>
                 </div>
+
+
+
             </section>
             <section className="bg-skin-background text-skin-light py-12 md:py-24 px-4 md:px-20 font-public-sans min-h-screen relative">
                 {/* Outer wrapper switches flex layout on lg breakpoint */}
@@ -121,7 +127,7 @@ export default function ServiceDetailPage() {
                     <div
                         className="absolute right-0 lg:right-[20%] top-0 lg:top-[10%] w-[300px] sm:w-[600px] lg:w-[800px] h-[300px] sm:h-[600px] lg:h-[800px] rounded-full pointer-events-none select-none z-0 opacity-40 lg:opacity-60 mix-blend-screen blur-[60px] sm:blur-[120px]"
                         style={{
-                            background: 'radial-gradient(circle, rgba(10,70,185,1) 0%, rgba(10,70,185,0.4) 40%, rgba(0,0,0,0) 70%)'
+                            background: 'radial-gradient(circle, rgba(226,46,51,1) 0%, rgba(226,46,51,0.4) 40%, rgba(0,0,0,0) 70%)'
                         }}
                     />
 

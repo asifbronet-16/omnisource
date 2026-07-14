@@ -1,15 +1,9 @@
 import React from 'react'
-import { Users, LucideIcon, Sparkles } from 'lucide-react';
+import { Users } from 'lucide-react';
 
- const Badge = ({ text, Icon=Users }) => {
+ const Badge = ({ text, Icon=Users, className="" }) => {
     return (
-        // <div className="flex items-center gap-2 border border-skin-muted  px-4 py-1.5 rounded-md w-fit mb-6 backdrop-blur-md bg-skin-backgroundHighlight">
-        //     <Sparkles className="text-skin-logo" size={14} />
-        //     <span className="text-xs lg:text-sm text-skin-mutedLight tracking-widest font-semibold">
-        //         {text}
-        //     </span>
-        // </div>
-        <div className="flex items-center w-full max-w-6xl select-none gap-2 px-4 py-1.5 rounded-md mb-6">
+        <div className={`flex items-center w-full max-w-6xl select-none gap-2 px-4 py-1.5 rounded-md mb-6`}>
             {/* Left decorative line */}
             <div className="h-[2.5px] flex-grow bg-gradient-to-r from-transparent to-[#E22E33]" />
 
@@ -25,7 +19,7 @@ import { Users, LucideIcon, Sparkles } from 'lucide-react';
             </div>
 
             {/* Section Text - Forced to uppercase and solid white */}
-            <span className="text-xs lg:text-sm text-skin-mutedLight tracking-widest font-semibold">
+            <span className={`text-xs lg:text-sm text-skin-mutedLight tracking-widest font-semibold ${className}`}>
                 {text}
             </span>
 

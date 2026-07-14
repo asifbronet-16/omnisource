@@ -17,7 +17,7 @@ const ServiceHero = () => {
             {/* OmniSource Gradient and Ambient Color Overlays */}
             <div className="absolute inset-0 z-10">
                 {/* Bottom-to-Top Gradient: Makes the bottom solid navy to match the next section */}
-                <div className="absolute inset-0 bg-gradient-primary" />
+                <div className="absolute inset-0 bg-gradient-primary opacity-50" />
                 <div className="absolute inset-0 bg-gradient-left hidden lg:block" />
             </div>
 

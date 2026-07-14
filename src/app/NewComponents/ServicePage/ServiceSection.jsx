@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 const services = [
     {
-        id: "civil",
+        id: "civil-construction",
         title: "Civil Construction Workforce Solutions",
         desc: "We supply WPS-compliant, mobilization-ready civil crews, including certified scaffolders, masons, foremen, civil helpers, and site support crews for UAE infrastructure projects.",
         // image: "/assets/magnific_change-the-uniform-and-he_2961257177.webp",
@@ -27,7 +27,7 @@ const services = [
         size: "small"
     },
     {
-        id: "machinery",
+        id: "machinery-rental",
         title: "Machinery & Equipment Rental",
         desc: "Dependable, flexible rental options supporting all construction and industrial scopes. Our fleet includes wheel loaders, mini excavators, dump trucks, terrain cranes, forklifts, and boom/spider lifts.",
         image: "/assets/magnific_change-the-uniform-and-he_2967867875.webp",

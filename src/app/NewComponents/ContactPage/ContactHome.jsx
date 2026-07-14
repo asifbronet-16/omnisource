@@ -16,12 +16,12 @@ const ContactHome = () => {
             {/* OmniSource Gradient and Ambient Tone Overlays */}
             <div className="absolute inset-0 z-10">
                 {/* Bottom-to-Top Gradient: Makes the bottom solid navy to match the next section */}
-                <div className="absolute inset-0 bg-gradient-primary" />
+                <div className="absolute inset-0 bg-gradient-primary opacity-50" />
                 <div className="absolute inset-0 bg-gradient-left hidden lg:block" />
             </div>
             {/* Page Header Content Container */}
             <div className="relative z-20 flex flex-col h-full items-center justify-center px-4 pt-16">
-                <Badge text={"Get in Touch"}/>
+                <Badge text={"Get in Touch"} className='text-white'/>
                 <div className="text-center">
                     {/* Context Identity Tag */}
                   

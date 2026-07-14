@@ -6,12 +6,6 @@ const AboutHero = () => {
     return (
         <section className="relative h-[440px] w-full overflow-hidden bg-skin-background font-public-sans select-none">
             <Navbar />
-            <div className="absolute inset-0 w-full h-full z-20">
-                {/* Dark overlay for text readability */}
-                <div className="absolute inset-0 bg-black/40" />
-                {/* Bottom fade to match page background */}
-                <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, #0D0809 0%, rgba(13,8,9,0.6) 40%, transparent 100%)' }} />
-            </div>
             <div className="absolute inset-0 w-full h-full z-10">
                 <img
                     // autoPlay
@@ -25,10 +19,15 @@ const AboutHero = () => {
                 {/* //new reusable component */}
             </div>
 
+            <div className="absolute inset-0 z-20">
+                {/* Bottom-to-Top Gradient: Makes the bottom solid navy to match the next section */}
+                <div className="absolute inset-0 bg-gradient-primary opacity-50" />
+                <div className="absolute inset-0 bg-gradient-left hidden lg:block" />
+            </div>
 
             {/* Page Header Content Container */}
             <div className="relative z-20 flex flex-col h-full items-center justify-center px-4 pt-16">
-                <Badge text={"Corporate Profile"} />
+                <Badge text={"Corporate Profile"} className="text-[red]" />
                 <div className="text-center">
                     {/* Main Page Title String */}
                     <h1 className="text-4xl md:text-6xl font-extrabold text-skin-light tracking-tight leading-none mb-3">
