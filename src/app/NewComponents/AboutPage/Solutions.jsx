@@ -49,16 +49,22 @@ const SolutionsSection = () => {
                 {/* Top Section: Solutions Pillars */}
                 <div className="relative pt-24 pb-20 px-6 z-10">
                     <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-                        <video
+                        {/* <video
                             autoPlay
                             loop
                             muted
                             playsInline
                             className="w-full h-full object-cover grayscale opacity-50"
                         >
-                            <source src="/assets/videos/GettyImages-626932814-1.mp4" type="video/mp4" />
-                            <img src="/assets/30640-e1748858511145.webp" alt="Background Fallback" />
-                        </video>
+                            <source src="/assets/videos/pexels-mhmtork-31516263.jpg" type="video/mp4" />
+                            <img src="/assets/videos/pexels-mhmtork-31516263.jpg" alt="Background Fallback" />
+                        </video> */}
+
+                        <img 
+                        src="assets/pexels-charlier-9241959.jpg" 
+                        // src="assets/silhouette-workers-sunset.jpg"
+                        alt="solutions section background"
+                         className='w-full h-full object-cover object-[center_80%] opacity-60' />
                        
 
                         <div className="absolute inset-0 z-10">
@@ -114,53 +120,47 @@ const SolutionsSection = () => {
                     
                 </div>
 
-                {/* Bottom Section: Split Call-To-Action Block */}
-                <div className="max-w-7xl mx-auto px-6 pb-24 pt-12 grid grid-cols-1 lg:grid-cols-2 gap-0 overflow-hidden rounded-xl">
+                {/* Bottom Section: Layered Feature Showcase */}
+                <div className="max-w-7xl mx-auto px-6 pb-24 pt-16">
+                    <div className="relative">
+                        {/* Soft layered background shape (desktop only, mirrors the reference layout) */}
+                        <div className="hidden lg:block absolute -top-10 -bottom-10 left-[32%] right-0 rounded-[2.5rem] bg-gradient-to-br from-[#3a1114] via-[#24080a] to-[#1a0507] border border-skin-badgeBorder shadow-2xl shadow-black/70" />
 
-                    {/* Left Side: Deep Branded Corporate Content Box */}
-                    <motion.div
-                        initial={{ opacity: 0, x: -60 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8, ease: "easeOut" }}
-                        className="bg-[#130305] p-12 md:p-16 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-red-900/30"
-                    >
-                        <h3 className="text-3xl md:text-5xl font-extrabold mb-6 leading-tight tracking-tight">
-                           Our Skills
-                        </h3>
-                        <p className="text-slate-300 font-normal leading-relaxed mb-10 text-base">
-                            At OmniSource, we execute every client requirement with precision — matching the right worker to the right role across construction, MEP, manufacturing, facilities, and industrial operations. Our vetted, document-complete workforce is mobilized to your requirement, so your site runs without delays or legal exposure. Powered by smart workforce management systems and built on a foundation of commitment and reliability, we give our clients full operational visibility and a workforce partner that scales as fast as their business grows — across the UAE.
-                        </p>
+                        <div className="relative flex flex-col lg:flex-row items-center">
+                            {/* Image Card - overlaps the shape */}
+                            <div className="relative z-10 w-full lg:w-[44%] lg:mr-[-2.5rem] rounded-3xl overflow-hidden shadow-2xl shadow-black/70 border border-skin-badgeBorder">
+                                <motion.img
+                                    initial={{ scale: 1.15 }}
+                                    whileInView={{ scale: 1 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 1.2, ease: "easeOut" }}
+                                    // src='/assets/industrial-workforce-team.jpg'
+                                    src={'assets/pexels-harrun-muhammad-116282236-37198880.jpg'}
+                                    alt="Industrial Workers Team"
+                                    className="w-full h-[300px] lg:h-[440px] object-cover"
+                                />
+                            </div>
 
-                        {/* Modern Action Button */}
-                        <motion.button
-                            whileHover={{ scale: 1.03 }}
-                            whileTap={{ scale: 0.98 }}
-                            className="bg-skin-logo text-skin-light px-7 py-3.5 w-fit rounded-lg flex items-center gap-2 hover:bg-skin-logoHover shadow-lg shadow-skin-logo/20 transition-all text-sm font-bold tracking-wide"
-                        >
-                            Connect With Us <span className="text-base">↗</span>
-                        </motion.button>
-                    </motion.div>
+                            {/* Text Content - sits over the shape */}
+                            <div className="relative z-10 w-full lg:w-[56%] pt-8 lg:pt-0 lg:pl-20 pr-4 lg:pr-16">
+                                <h3 className="text-3xl md:text-5xl font-extrabold mb-6 leading-tight tracking-tight">
+                                   Our Skills
+                                </h3>
+                                <p className="text-slate-300 font-normal leading-relaxed mb-10 text-base">
+                                    At OmniSource, we execute every client requirement with precision — matching the right worker to the right role across construction, MEP, manufacturing, facilities, and industrial operations. Our vetted, document-complete workforce is mobilized to your requirement, so your site runs without delays or legal exposure. Powered by smart workforce management systems and built on a foundation of commitment and reliability, we give our clients full operational visibility and a workforce partner that scales as fast as their business grows — across the UAE.
+                                </p>
 
-                    {/* Right Side: Visual Image Asset Box */}
-                    <motion.div
-                        initial={{ opacity: 0, x: 60 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8, ease: "easeOut" }}
-                        className="relative h-[400px] lg:h-auto overflow-hidden bg-[#130305]"
-                    >
-                        <motion.img
-                            initial={{ scale: 1.15 }}
-                            whileInView={{ scale: 1 }}
-                            transition={{ duration: 1.2, ease: "easeOut" }}
-                            src='/assets/30640-e1748858511145.webp'
-                            alt="Industrial Workers Team"
-                            className="w-full h-full object-cover opacity-85 rounded-xl transition-all duration-1000"
-                        />
-                        {/* Smooth overlay to anchor image to the left background text box */}
-                        <div className="absolute inset-0 bg-gradient-to-r from-[#130305]/30 via-transparent to-transparent pointer-events-none" />
-                    </motion.div>
+                                {/* Modern Action Button */}
+                                <motion.button
+                                    whileHover={{ scale: 1.03 }}
+                                    whileTap={{ scale: 0.98 }}
+                                    className="bg-skin-logo text-skin-light px-8 py-3.5 w-fit rounded-full flex items-center gap-2 hover:bg-skin-logoHover shadow-lg shadow-skin-logo/20 transition-all text-sm font-bold tracking-wide"
+                                >
+                                    Connect With Us <span className="text-base">↗</span>
+                                </motion.button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
         </>

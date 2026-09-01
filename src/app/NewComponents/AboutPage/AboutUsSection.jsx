@@ -40,9 +40,10 @@ const AboutUsSection = () => {
                         className="rounded-xl overflow-hidden border border-skin-badgeBorder h-full"
                     >
                         <img
-                            src="/assets/14331-1.webp"
+                            // src="/assets/engineer-with-laptop.jpg"
+                            src={"/assets/pexels-aboodi-16494364.jpg"}
                             alt="Workers using laptop"
-                            className="h-full w-full object-cover opacity-80 transition-all duration-700"
+                            className="h-full w-full object-cover  transition-all duration-700"
                         />
                     </motion.div>
 
@@ -54,9 +55,10 @@ const AboutUsSection = () => {
                         className="rounded-xl overflow-hidden border border-skin-badgeBorder h-full"
                     >
                         <img
-                            src="/assets/181-1.webp"
+                            // src="/assets/industrial-machine-operator.jpg"
+                            src={"/assets/pexels-infinity-lifespaces-1420423121-30580530.jpg"}
                             alt="Worker in factory"
-                            className="h-full w-full object-cover opacity-80  transition-all duration-700"
+                            className="h-full w-full object-cover object-[85%_center] opacity-80 scale-85 transition-all duration-700"
                         />
                     </motion.div>
                 </div>

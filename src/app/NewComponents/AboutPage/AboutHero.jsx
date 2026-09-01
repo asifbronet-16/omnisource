@@ -12,9 +12,10 @@ const AboutHero = () => {
                     // loop
                     // muted
                     // playsInline
-                    src="/assets/267-1.webp"
+                    // src="/assets/silhouette-workers-sunset.jpg"
+                    src={"/assets/pexels-mhmtork-31516263.jpg"}
                     alt='about background'
-                    className="w-full h-full object-cover opacity-90 mix-blend-mode"
+                    className="w-full h-full object-cover object-[center_80%] opacity-80 mix-blend-mode"
                 />
                 {/* //new reusable component */}
             </div>
