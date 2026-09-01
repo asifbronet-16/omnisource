@@ -8,17 +8,17 @@ import Badge from '../../ReusableComponents/Badge';
 const pillarData = [
     {
         title: "Mission",
-        desc: "Deliver tailored staffing solutions that meet client needs, enhance productivity, and support sustainable business growth.",
+        desc: "To deliver precision-matched workforce solutions across every trade and industry — powered by technology, driven by accountability, and built around the exact operational needs of every client we serve.",
         icon: Target
     },
     {
         title: "Vision",
-        desc: "To be the leading provider of smart, reliable workforce solutions across construction, logistics, and maintenance industries.",
+        desc: "To become the GCC's most trusted and technologically advanced workforce solutions company — where every deployment is seamless, every worker is the right fit, and every client operates at full capacity without the burden of manpower complexity.",
         icon: Eye
     },
     {
         title: "Values",
-        desc: "Commitment, reliability, teamwork, innovation, and client focus in every staffing solution we deliver.",
+        desc: "Built on commitment, driven by reliability, and powered by technology — OmniSource doesn't just supply workers, we build workforce systems that keep your operations running at full capacity, every single day.",
         icon: Gem
     }
 ];
@@ -81,7 +81,7 @@ const SolutionsSection = () => {
 
                         {/* Section Header Title */}
                         <motion.h2 variants={itemVariants} className="text-4xl md:text-5xl font-extrabold mb-20 tracking-tight">
-                            Solutions Built <span className="text-skin-logo">Around You</span>
+                           Your Most <span className="text-skin-logo">Reliable Source </span>
                         </motion.h2>
 
                         {/* Pillars Grid */}
@@ -126,12 +126,10 @@ const SolutionsSection = () => {
                         className="bg-[#130305] p-12 md:p-16 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-red-900/30"
                     >
                         <h3 className="text-3xl md:text-5xl font-extrabold mb-6 leading-tight tracking-tight">
-                            Skilled Manpower When You Need It!
+                           Our Skills
                         </h3>
                         <p className="text-slate-300 font-normal leading-relaxed mb-10 text-base">
-                            We provide fast, reliable access to skilled manpower across industries,
-                            ensuring your projects stay on track with minimal delays. From short-term
-                            needs to long-term industrial deployments, we've got your workforce covered.
+                            At OmniSource, we execute every client requirement with precision — matching the right worker to the right role across construction, MEP, manufacturing, facilities, and industrial operations. Our vetted, document-complete workforce is mobilized to your requirement, so your site runs without delays or legal exposure. Powered by smart workforce management systems and built on a foundation of commitment and reliability, we give our clients full operational visibility and a workforce partner that scales as fast as their business grows — across the UAE.
                         </p>
 
                         {/* Modern Action Button */}
