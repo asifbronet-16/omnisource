@@ -123,7 +123,7 @@ const Navbar = () => {
       />
       {/* Slide-out Sidebar Panel */}
       <div
-        className={`fixed top-0 right-0 h-full w-[75%] bg-skin-primary shadow-2xl z-[200] transform transition-transform duration-300 ease-in-out lg:hidden flex flex-col p-6 ${isOpen ? "translate-x-0" : "translate-x-full"
+        className={`fixed top-0 right-0 h-[100vh] w-[75%] bg-skin-primary shadow-2xl z-[200] transform transition-transform duration-300 ease-in-out lg:hidden flex flex-col p-6 ${isOpen ? "translate-x-0" : "translate-x-full"
           }`}
       >
         <button
