@@ -23,6 +23,7 @@ const TrustedSection = () => {
                         src="/assets/illustration-construction-site.jpg"
                         alt="bg"
                         fill
+                        priority
                         className="object-cover opacity-50 mix-blend-luminosity"
                     />
                     <div className="absolute inset-0 bg-skin-background mix-blend-color" />

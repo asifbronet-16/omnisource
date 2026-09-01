@@ -91,6 +91,7 @@ const SourceAndDeploy = () => {
                             src="/assets/magnific_change-the-uniform-and-he_2961257177.jpeg"
                             alt="Labor Worker"
                             fill
+                            sizes="(min-width: 1024px) 50vw, 100vw"
                             className="object-cover"
                         />
                         <div className="absolute inset-0 bg-gradient-to-r from-transparent to-skin-background" />

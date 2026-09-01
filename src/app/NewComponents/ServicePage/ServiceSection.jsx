@@ -23,7 +23,7 @@ const services = [
         id: "cleaning",
         title: "Cleaning Workforce Solutions",
         desc: "Trained and screened personnel across unskilled, semi-skilled, and skilled cleaning roles—ranging from general cleaners and janitors to rope access facade cleaners and marble polishing technicians.",
-        image: "/assets/cleaning.webp",
+        image: "/assets/Cleaning.webp",
         size: "small"
     },
     {

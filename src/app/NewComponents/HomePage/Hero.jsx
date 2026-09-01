@@ -13,7 +13,7 @@ export default function HeroSection() {
             <section className="relative min-h-[100vh] lg:px-24 flex flex-col lg:flex-row justify-between lg:gap-10 pt-[10rem] lg:py-[14rem] overflow-hidden">
 
                 {/* Background Video Container Layer */}
-                <div className="absolute inset-0 w-full h-full z-0">
+                <div className="absolute inset-0 w-full h-full z-0 bg-skin-logo/40">
                     <video
                         autoPlay
                         loop

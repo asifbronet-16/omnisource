@@ -2,6 +2,7 @@ import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import Badge from '../../ReusableComponents/Badge';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const services = [
     {
@@ -62,10 +63,13 @@ export default function WorkforceServices() {
                             href={`/services/${service.id}`}
                         >
                             {/* Image Layer with Zoom Hover Animation */}
-                            <img
+                            <Image
                                 src={service.image}
                                 alt={service.title}
-                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                fill
+                                priority={index < 2}
+                                sizes="(max-width: 1024px) 50vw, 25vw"
+                                className="object-cover transition-transform duration-700 group-hover:scale-105"
                             />
                             {/* Subtle Premium Gradient Overlay Layer */}
                             <div className="absolute inset-0 bg-gradient-to-t from-[#0D0809] via-[#0D0809]/70 to-transparent" />
