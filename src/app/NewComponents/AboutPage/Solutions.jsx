@@ -60,12 +60,12 @@ const SolutionsSection = () => {
                             <img src="/assets/videos/pexels-mhmtork-31516263.jpg" alt="Background Fallback" />
                         </video> */}
 
-                        <img 
-                        src="assets/pexels-charlier-9241959.jpg" 
-                        // src="assets/silhouette-workers-sunset.jpg"
-                        alt="solutions section background"
-                         className='w-full h-full object-cover object-[center_80%] opacity-60' />
-                       
+                        <img
+                            src="assets/pexels-charlier-9241959.jpg"
+                            // src="assets/silhouette-workers-sunset.jpg"
+                            alt="solutions section background"
+                            className='w-full h-full object-cover object-[center_80%] opacity-60' />
+
 
                         <div className="absolute inset-0 z-10">
                             <div className="absolute inset-0 bg-gradient-primary" />
@@ -81,13 +81,13 @@ const SolutionsSection = () => {
                     >
                         {/* Section Tag Pill */}
                         <motion.div variants={itemVariants}>
-                            <div className=' mx-auto'><Badge text={"Scaling Success Together"}/></div>
-                        
+                            <div className=' mx-auto'><Badge text={"Scaling Success Together"} /></div>
+
                         </motion.div>
 
                         {/* Section Header Title */}
                         <motion.h2 variants={itemVariants} className="text-4xl md:text-5xl font-extrabold mb-20 tracking-tight">
-                           Your Most <span className="text-skin-logo">Reliable Source </span>
+                            Your Most <span className="text-skin-logo">Reliable Source </span>
                         </motion.h2>
 
                         {/* Pillars Grid */}
@@ -117,7 +117,7 @@ const SolutionsSection = () => {
                         </div>
                     </motion.div>
 
-                    
+
                 </div>
 
                 {/* Bottom Section: Layered Feature Showcase */}
@@ -135,7 +135,7 @@ const SolutionsSection = () => {
                                     viewport={{ once: true }}
                                     transition={{ duration: 1.2, ease: "easeOut" }}
                                     // src='/assets/industrial-workforce-team.jpg'
-                                    src={'assets/pexels-harrun-muhammad-116282236-37198880.jpg'}
+                                    src={'assets/construction-site.jpeg'}
                                     alt="Industrial Workers Team"
                                     className="w-full h-[300px] lg:h-[440px] object-cover"
                                 />
@@ -144,7 +144,7 @@ const SolutionsSection = () => {
                             {/* Text Content - sits over the shape */}
                             <div className="relative z-10 w-full lg:w-[56%] pt-8 lg:pt-0 lg:pl-20 pr-4 lg:pr-16">
                                 <h3 className="text-3xl md:text-5xl font-extrabold mb-6 leading-tight tracking-tight">
-                                   Our Skills
+                                    Our Skills
                                 </h3>
                                 <p className="text-slate-300 font-normal leading-relaxed mb-10 text-base">
                                     At OmniSource, we execute every client requirement with precision — matching the right worker to the right role across construction, MEP, manufacturing, facilities, and industrial operations. Our vetted, document-complete workforce is mobilized to your requirement, so your site runs without delays or legal exposure. Powered by smart workforce management systems and built on a foundation of commitment and reliability, we give our clients full operational visibility and a workforce partner that scales as fast as their business grows — across the UAE.

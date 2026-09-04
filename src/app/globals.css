@@ -34,6 +34,8 @@
   --color-badge-background: rgb(226 46 51 / 0.1);
   --color-border-batch: rgb(159 33 43 / 0.5);
   --color-border-hover: #E22E33;
+  /* Lighter brand red used for the document canvas / first paint */
+  --color-logo-light: #EA5257;
 }
 
 
@@ -44,6 +46,8 @@
 }
 
 html {
+  background-color: var(--color-logo-light);
+  color-scheme: dark;
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -54,9 +58,9 @@ html[data-scroll-behavior="smooth"] {
 }
 
 body {
-  /* background: var(--bg);
-  color: var(--text);
-  font-family: var(--sans);
+  background-color: var(--color-logo-light);
+  color: var(--color-white);
+  /* font-family: var(--sans);
   font-weight: 400;
   line-height: 1.55; */
   overflow-x: hidden;

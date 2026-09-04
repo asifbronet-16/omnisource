@@ -41,7 +41,7 @@ const AboutUsSection = () => {
                     >
                         <img
                             // src="/assets/engineer-with-laptop.jpg"
-                            src={"/assets/pexels-aboodi-16494364.jpg"}
+                            src={"/assets/welding.jpeg"}
                             alt="Workers using laptop"
                             className="h-full w-full object-cover  transition-all duration-700"
                         />
@@ -56,7 +56,8 @@ const AboutUsSection = () => {
                     >
                         <img
                             // src="/assets/industrial-machine-operator.jpg"
-                            src={"/assets/pexels-infinity-lifespaces-1420423121-30580530.jpg"}
+                            src={"/assets/rebar-tying.jpeg"}
+
                             alt="Worker in factory"
                             className="h-full w-full object-cover object-[85%_center] opacity-80 scale-85 transition-all duration-700"
                         />
@@ -77,7 +78,7 @@ const AboutUsSection = () => {
                             </p>
                         </div> */}
                         <div className=' mx-auto'>
-                        <Badge text="One Source. Every Trade. Total Reliability"/>
+                            <Badge text="One Source. Every Trade. Total Reliability" />
                         </div>
 
                         <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight mb-6">
