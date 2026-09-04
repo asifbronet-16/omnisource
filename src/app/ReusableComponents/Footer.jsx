@@ -53,7 +53,7 @@ export default function Footer() {
                                             <a
                                                 key={j}
                                                 href={v.href}
-                                                className="block text-sm font-normal text-slate-200 hover:text-skin-light transition-colors duration-200 cursor-pointer"
+                                                className="block text-sm font-normal text-slate-200 hover:text-skin-logo transition-colors duration-200 cursor-pointer"
                                             >
                                                 {v.text}
                                             </a>
