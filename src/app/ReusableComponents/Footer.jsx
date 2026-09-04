@@ -74,7 +74,7 @@ export default function Footer() {
                                 { name: 'Services Portfolio', href: '/services' },
                                 { name: 'Contact Us', href: '/contact' },
                             ].map((link, i) => (
-                                <li key={i}><Link href={link.href} className="hover:text-skin-light transition-colors">{link.name}</Link></li>
+                                <li key={i}><Link href={link.href} className="hover:text-skin-logo transition-colors">{link.name}</Link></li>
                             ))}
                         </ul>
                     </div>
@@ -92,7 +92,7 @@ export default function Footer() {
                                 <li key={i}>
                                     <Link
                                         href={`/services/${solution.id}`}
-                                        className="hover:text-skin-light transition-colors"
+                                        className="hover:text-skin-logo transition-colors"
                                     >
                                         {solution.label}
                                     </Link>
