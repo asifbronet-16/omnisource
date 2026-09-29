@@ -139,7 +139,7 @@ export default function ServiceDetailPage() {
                             return (
                                 <button
                                     key={tab.id}
-                                    onClick={() => router.push(`/services/${tab.id}`)}
+                                    onClick={() => router.push(`/services/${tab.id}`, { scroll: false })}
                                     className={`inline-block lg:block text-center lg:text-left px-4 lg:px-4 py-2.5 lg:py-4 rounded-xs transition-all duration-300 font-medium text-xs lg:text-sm border snap-center shrink-0 lg:shrink ${isSelected
                                         ? 'bg-skin-backgroundHighlight text-skin-light border-skin-borderHover'
                                         : 'bg-skin-backgroundHighlight text-zinc-400 border-skin-subtle lg:border-skin-subtle hover:border-skin-borderHover hover:text-skin-light'

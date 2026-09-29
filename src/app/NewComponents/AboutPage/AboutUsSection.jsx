@@ -59,7 +59,7 @@ const AboutUsSection = () => {
                             src={"/assets/rebar-tying.jpeg"}
 
                             alt="Worker in factory"
-                            className="h-full w-full object-cover object-[85%_center] opacity-80 scale-85 transition-all duration-700"
+                            className="h-full w-full object-cover object-[85%_center] opacity-80 transition-all duration-700"
                         />
                     </motion.div>
                 </div>
