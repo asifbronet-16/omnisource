@@ -30,7 +30,7 @@ const ClientMarquee = () => {
         {/* Header with Animated Number */}
         <div className="flex flex-col items-center mb-12 px-4">
           {/* Swapped to matching brand blue icon styling */}
-          <div className="text-3xl mb-3 text-skin-ogo p-3 bg-skin-backgroundHighlight rounded-full backdrop-blur-xs border border-red-900/40">
+          <div className="text-3xl mb-3 text-skin-logo p-3 bg-skin-backgroundHighlight rounded-full backdrop-blur-xs border border-red-900/40">
             <Users2 size={32} strokeWidth={1.5} />
           </div>
           <h2 className="text-4xl font-extrabold tracking-tight">

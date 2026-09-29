@@ -15,7 +15,7 @@ const AboutHero = () => {
                     // src="/assets/silhouette-workers-sunset.jpg"
                     src={"/assets/pexels-mhmtork-31516263.jpg"}
                     alt='about background'
-                    className="w-full h-full object-cover object-[center_80%] opacity-80 mix-blend-mode"
+                    className="w-full h-full object-cover object-[center_80%] opacity-80"
                 />
                 {/* //new reusable component */}
             </div>

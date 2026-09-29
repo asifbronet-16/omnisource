@@ -52,7 +52,7 @@ const FAQ = () => {
                         return (
                             <div
                                 key={index}
-                                className={`border-b border-skin-subtle last:border-b-0 transition-colors duration-300 ${isOpen ? 'bg-skin-backgrounHighlight' : ''
+                                className={`border-b border-skin-subtle last:border-b-0 transition-colors duration-300 ${isOpen ? 'bg-skin-backgroundHighlight' : ''
                                     }`}
                             >
                                 <button

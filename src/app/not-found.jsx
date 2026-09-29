@@ -76,7 +76,7 @@ export default function NotFound() {
           This page is off-site.
         </h1>
         <p className="mt-4 max-w-md text-sm leading-relaxed text-white/60 sm:text-base">
-          The page you're looking for isn't on this site. It may have
+          The page you&apos;re looking for isn&apos;t on this site. It may have
           been moved, renamed, or never deployed to this site.
         </p>
 

@@ -32,7 +32,7 @@ export const WorkforceFeature = () => {
     return (
         <div className="w-full  bg-skin-background text-skin-light p-4 md:p-8 flex flex-col justify-between font-sans lg:px-24">
             {/* 2-Column Main Section */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-8xl w-full mx-auto grow items-stretch mb-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-7xl w-full mx-auto grow items-stretch mb-10">
 
                 {/* ================= LEFT CARD ================= */}
                 <div className="relative overflow-hidden rounded-2xl border border-slate-800/50 bg-[#0D0809] p-8 md:p-12 flex flex-col justify-between shadow-2xl">
@@ -114,7 +114,7 @@ export const WorkforceFeature = () => {
                         </h3>
 
                         <p className="text-sm text-slate-400 leading-relaxed">
-                            Whether you're building infrastructure or streamlining operations, we connect you with the manpower that drives growth.
+                            Whether you&apos;re building infrastructure or streamlining operations, we connect you with the manpower that drives growth.
                         </p>
 
                         {/* List entries with circular icons matching image_e7f53f.png */}

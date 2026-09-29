@@ -46,7 +46,7 @@ const TrustedSection = () => {
                 {/* Main Heading Graphic Accentuation */}
                 <h1 className="text-4xl md:text-7xl font-extrabold mb-8 tracking-tight max-w-4xl leading-[1.1]">
                     The  <span className="bg-text-gradient-right bg-clip-text text-transparent">
-                        UAE's {" "}
+                        UAE&apos;s {" "}
                     </span>
                     Most Reliable Workforce Solution Provider<br />
 
@@ -58,7 +58,7 @@ const TrustedSection = () => {
                     <span className="font-bold text-skin-logo"> Dubai, </span><span className="font-bold text-skin-logo">Sharjah </span>and <span className="font-bold text-skin-logo">Abu Dhabi</span>. With over a decade of experience, we
                     specialize in connecting premier businesses with verified skilled and technical trade labor supply
                     chains across the UAE. */}
-                    <span className="font-bold text-skin-logo">OmniSource</span> stands as one of the <span className="font-bold text-skin-logo"> UAE's, </span> most experienced workforce solutions providers, with a legacy of connecting businesses in vast industries to verified, skilled and technical trade labor. Operating across <span className="font-bold text-skin-logo"> Dubai </span>,<span className="font-bold text-skin-logo">Sharjah </span>, <span className="font-bold text-skin-logo">Ajman </span>   and <span className="font-bold text-skin-logo">Abu Dhabi</span>, we bring depth, reliability, and expertise to every manpower partnership.
+                    <span className="font-bold text-skin-logo">OmniSource</span> stands as one of the <span className="font-bold text-skin-logo"> UAE&apos;s, </span> most experienced workforce solutions providers, with a legacy of connecting businesses in vast industries to verified, skilled and technical trade labor. Operating across <span className="font-bold text-skin-logo"> Dubai </span>,<span className="font-bold text-skin-logo">Sharjah </span>, <span className="font-bold text-skin-logo">Ajman </span>   and <span className="font-bold text-skin-logo">Abu Dhabi</span>, we bring depth, reliability, and expertise to every manpower partnership.
                 </p>
 
                 {/* Custom Brand CTA Button Layout */}

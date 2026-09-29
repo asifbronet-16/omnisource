@@ -92,7 +92,7 @@ const Navbar = () => {
             <Link
               key={link.name}
               href={link.href}
-              className={`text-md font-semibold transition-colors duration-300 font- ${isActive ? 'text-skin-logo' : 'text-skin-primary hover:text-skin-logo'
+              className={`text-base font-semibold transition-colors duration-300 ${isActive ? 'text-skin-logo' : 'text-skin-primary hover:text-skin-logo'
                 }`}
             >
               {link.name}
@@ -104,7 +104,7 @@ const Navbar = () => {
       {/* Corporate Action Button */}
       <Link
         href="/contact"
-        className="hidden lg:flex items-center gap-2 bg-skin-logo hover:bg-skin-logoHover px-6 py-2.5 rounded-md text-skin-light transition font-medium text-md shadow-lg shadow-glow/20"
+        className="hidden lg:flex items-center gap-2 bg-skin-logo hover:bg-skin-logoHover px-6 py-2.5 rounded-md text-skin-light transition font-medium text-base shadow-lg shadow-glow/20"
       >
         <span>Contact Us</span>
         <ArrowUpRight size={16} />
@@ -162,7 +162,7 @@ const Navbar = () => {
 
                 {/* Animated Underline Span */}
                 <span
-                  className={`absolute bottom-0 left-0 h-[2px]  transition-all duration-300 ease-out-expo ${isActive
+                  className={`absolute bottom-0 left-0 h-[2px]  transition-all duration-300 ${isActive
                       ? 'w-full bg-skin-light' // Full width if active
                       : 'w-0 group-hover:w-full bg-skin-logo' // Starts at 0, grows to 100% on hover
                     }`}
@@ -177,7 +177,7 @@ const Navbar = () => {
           <Link
             href="/contact"
             onClick={() => setIsOpen(false)}
-            className="gap-2 flex items-center justify-center bg-skin-logo hover:bg-skin-logoHover px-6 py-2.5 rounded-md text-skin-light transition font-medium text-md shadow-lg"
+            className="gap-2 flex items-center justify-center bg-skin-logo hover:bg-skin-logoHover px-6 py-2.5 rounded-md text-skin-light transition font-medium text-base shadow-lg"
           >
             <span>Get in Touch</span>
             <ArrowUpRight size={18} />

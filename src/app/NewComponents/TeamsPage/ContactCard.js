@@ -157,7 +157,7 @@ export default function ContactCard({ member }) {
               alt={member.name}
               width={1195}
               height={1500}
-              sizes="(max-width: 620px) 44vw, 280px"
+              sizes="(min-width: 64rem) and (orientation: landscape) 5vw, (max-width: 620px) 44vw, 280px"
               priority
               className="w-full h-auto aspect-612/651 object-cover mask-[linear-gradient(to_bottom,black_80%,transparent)]"
             />
@@ -245,7 +245,7 @@ export default function ContactCard({ member }) {
               alt={member.name}
               width={1195}
               height={1500}
-              sizes="60vh"
+              sizes="(min-width: 64rem) and (orientation: landscape) 60vh, 5vw"
               loading="eager"
               className="h-[calc(var(--u)*64)] w-auto aspect-612/651 object-cover mask-[radial-gradient(ellipse_75%_65%_at_50%_42%,black_70%,transparent_100%)]"
             />

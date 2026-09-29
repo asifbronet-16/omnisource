@@ -61,7 +61,7 @@ const SolutionsSection = () => {
                         </video> */}
 
                         <img
-                            src="assets/pexels-charlier-9241959.jpg"
+                            src="/assets/pexels-charlier-9241959.jpg"
                             // src="assets/silhouette-workers-sunset.jpg"
                             alt="solutions section background"
                             className='w-full h-full object-cover object-[center_80%] opacity-60' />
@@ -135,7 +135,7 @@ const SolutionsSection = () => {
                                     viewport={{ once: true }}
                                     transition={{ duration: 1.2, ease: "easeOut" }}
                                     // src='/assets/industrial-workforce-team.jpg'
-                                    src={'assets/construction-site.jpeg'}
+                                    src={'/assets/construction-site.jpeg'}
                                     alt="Industrial Workers Team"
                                     className="w-full h-[300px] lg:h-[440px] object-cover"
                                 />

@@ -124,7 +124,7 @@ const ImpactSection = () => {
 
                             {/* Main Card Body */}
                             <div className="w-full h-full flex-1 p-6 pt-12 rounded-2xl bg-linear-to-b from-skin-primaryCard/70 to-skin-primaryCard/20 border border-skin-badgeBorder group-hover:border-skin-borderHover transition-all duration-300 relative z-10 flex flex-col items-center justify-start">
-                                <h4 className="md:text-xl text-md font-bold text-skin-light tracking-tight mb-3 group-hover:text-skin-logoHover transition-colors duration-300">
+                                <h4 className="md:text-xl text-base font-bold text-skin-light tracking-tight mb-3 group-hover:text-skin-logoHover transition-colors duration-300">
                                     {sector.title}
                                 </h4>
 
