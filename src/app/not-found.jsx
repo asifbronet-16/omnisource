@@ -10,38 +10,19 @@ const ONYX = "#0D0809";
 const CRIMSON = "#E22E33";
 const DEEP_RED = "#9F212B";
 
-/* The "0" of 404 — the OmniSource interlocking arcs */
+/* The "0" of 404 — the OmniSource brand mark */
 function ArcZero({ className }) {
   return (
-    <Image src="/assets/icons/brand_icon.webp" alt="0" width={200} height={200} className={className} />
-    // <svg
-    //   viewBox="0 0 200 200"
-    //   className={className}
-    //   role="img"
-    //   aria-label="0"
-    //   fill="none"
-    // >
-    //   <defs>
-    //     <linearGradient id="os-arc" x1="0%" y1="0%" x2="100%" y2="100%">
-    //       <stop offset="0%" stopColor={CRIMSON} />
-    //       <stop offset="100%" stopColor={DEEP_RED} />
-    //     </linearGradient>
-    //   </defs>
-    //   {/* top arc */}
-    //   <path
-    //     d="M 148 52 A 62 62 0 1 0 96 130"
-    //     stroke="url(#os-arc)"
-    //     strokeWidth="30"
-    //     strokeLinecap="butt"
-    //   />
-    //   {/* bottom arc (rotated mirror) */}
-    //   <path
-    //     d="M 52 148 A 62 62 0 1 0 104 70"
-    //     stroke="url(#os-arc)"
-    //     strokeWidth="30"
-    //     strokeLinecap="butt"
-    //   />
-    // </svg>
+    <Image
+      src="/assets/icons/brand-icon.png"
+      alt="0"
+      width={1500}
+      height={1500}
+      priority
+      // object-contain keeps the square mark from stretching into the
+      // taller box it shares with the two 4s
+      className={`object-contain ${className}`}
+    />
   );
 }
 
