@@ -1,6 +1,6 @@
 export const ContactCard = ({ icon: Icon, title, children }) => (
     <div className="flex gap-4 group">
-        <div className="w-10 h-10 border border-skin-subtle rounded-xl flex items-center justify-center flex-shrink-0 bg-skin-primary text-skin-muted group-hover:text-skin-logo group-hover:border-skin-logo/40 transition-colors duration-300">
+        <div className="w-10 h-10 border border-skin-subtle rounded-xl flex items-center justify-center shrink-0 bg-skin-primary text-skin-muted group-hover:text-skin-logo group-hover:border-skin-logo/40 transition-colors duration-300">
             <Icon size={18} />
         </div>
 
@@ -18,7 +18,7 @@ export const ContactCard = ({ icon: Icon, title, children }) => (
 export const ContactInfoItem = ({ icon: Icon, children }) => {
   return (
     <div className="flex items-center gap-4 group">
-      <div className="w-10 h-10 border border-skin-subtle rounded-xl flex items-center justify-center flex-shrink-0 bg-skin-primary text-skin-muted group-hover:text-skin-logo group-hover:border-skin-logo/40 transition-colors duration-300">
+      <div className="w-10 h-10 border border-skin-subtle rounded-xl flex items-center justify-center shrink-0 bg-skin-primary text-skin-muted group-hover:text-skin-logo group-hover:border-skin-logo/40 transition-colors duration-300">
         <Icon size={18} />
       </div>
 
@@ -52,7 +52,7 @@ export const FormField = ({
           value={value}
           placeholder={placeholder}
           onChange={onChange}
-          className="w-full bg-[#0D0809]/40 border border-red-900/30 rounded-lg px-4 py-3 text-sm focus:border-skin-logo transition-colors outline-none text-skin-light placeholder-slate-500 resize-none"
+          className="w-full bg-[#0D0809]/40 border border-red-900/30 rounded-lg px-4 py-3 text-sm focus:border-skin-logo transition-colors outline-hidden text-skin-light placeholder-slate-500 resize-none"
         />
       ) : (
         <input
@@ -61,7 +61,7 @@ export const FormField = ({
           value={value}
           placeholder={placeholder}
           onChange={onChange}
-          className="w-full bg-[#0D0809]/40 border border-red-900/30 rounded-lg px-4 py-3 text-sm focus:border-skin-logo transition-colors outline-none text-skin-light placeholder-slate-500"
+          className="w-full bg-[#0D0809]/40 border border-red-900/30 rounded-lg px-4 py-3 text-sm focus:border-skin-logo transition-colors outline-hidden text-skin-light placeholder-slate-500"
         />
       )}
     </div>

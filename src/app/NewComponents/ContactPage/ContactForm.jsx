@@ -42,7 +42,7 @@ const ContactSection = () => {
                     <img
                         src="/assets/Frame.png"
                         alt="Skyline Graphic"
-                        className="w-full h-full object-contain object-right-bottom grayscale invert"
+                        className="w-full h-full object-contain object-bottom-right grayscale invert"
                     />
                 </div>
 

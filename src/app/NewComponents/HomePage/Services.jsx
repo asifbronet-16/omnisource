@@ -41,7 +41,7 @@ export default function WorkforceServices() {
 
     return (
         <>
-            <section className="bg-skin-background text-skin-light lg:py-20 py-16 px-6 lg:px-[7.5rem]">
+            <section className="bg-skin-background text-skin-light lg:py-20 py-16 px-6 lg:px-30">
 
                 {/* Header Section */}
                 <div className="mb-12 flex flex-col items-center lg:items-start text-center lg:text-left">
@@ -72,9 +72,9 @@ export default function WorkforceServices() {
                                 className="object-cover transition-transform duration-700 group-hover:scale-105"
                             />
                             {/* Subtle Premium Gradient Overlay Layer */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-[#0D0809] via-[#0D0809]/70 to-transparent" />
+                            <div className="absolute inset-0 bg-linear-to-t from-[#0D0809] via-[#0D0809]/70 to-transparent" />
                             {/* Content wrapper — grows upward on hover */}
-                            <div className="absolute bottom-0 left-0 right-0 h-20 lg:h-28 group-hover:h-[13rem] lg:group-hover:h-[15rem] overflow-hidden transition-all duration-500 ease-out bg-gradient-to-t from-[#0D0809] via-[#0D0809]/80 to-transparent">
+                            <div className="absolute bottom-0 left-0 right-0 h-20 lg:h-28 group-hover:h-52 lg:group-hover:h-60 overflow-hidden transition-all duration-500 ease-out bg-linear-to-t from-[#0D0809] via-[#0D0809]/80 to-transparent">
                                 <div className="lg:p-6 p-3">
                                     {/* Heading always visible */}
                                     <div className="flex items-center justify-between lg:gap-6 gap-0.5">

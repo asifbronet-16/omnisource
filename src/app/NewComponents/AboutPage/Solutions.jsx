@@ -104,7 +104,7 @@ const SolutionsSection = () => {
                                     </div>
 
                                     {/* Card body */}
-                                    <div className="w-full h-full flex-1 p-6 pt-12 rounded-2xl bg-gradient-to-b from-[#130305]/70 to-[#130305]/20 border border-skin-badgeBorder group-hover:border-skin-borderHover transition-all duration-300 relative z-10 flex flex-col items-center justify-start">
+                                    <div className="w-full h-full flex-1 p-6 pt-12 rounded-2xl bg-linear-to-b from-skin-primaryCard/70 to-skin-primaryCard/20 border border-skin-badgeBorder group-hover:border-skin-borderHover transition-all duration-300 relative z-10 flex flex-col items-center justify-start">
                                         <h4 className="text-xl font-bold text-skin-light tracking-tight mb-3 group-hover:text-skin-logoHover transition-colors duration-300">
                                             {item.title}
                                         </h4>
@@ -124,11 +124,11 @@ const SolutionsSection = () => {
                 <div className="max-w-7xl mx-auto px-6 pb-24 pt-16">
                     <div className="relative">
                         {/* Soft layered background shape (desktop only, mirrors the reference layout) */}
-                        <div className="hidden lg:block absolute -top-10 -bottom-10 left-[32%] right-0 rounded-[2.5rem] bg-gradient-to-br from-[#3a1114] via-[#24080a] to-[#1a0507] border border-skin-badgeBorder shadow-2xl shadow-black/70" />
+                        <div className="hidden lg:block absolute -top-10 -bottom-10 left-[32%] right-0 rounded-[2.5rem] bg-linear-to-br from-[#3a1114] via-[#24080a] to-[#1a0507] border border-skin-badgeBorder shadow-2xl shadow-black/70" />
 
                         <div className="relative flex flex-col lg:flex-row items-center">
                             {/* Image Card - overlaps the shape */}
-                            <div className="relative z-10 w-full lg:w-[44%] lg:mr-[-2.5rem] rounded-3xl overflow-hidden shadow-2xl shadow-black/70 border border-skin-badgeBorder">
+                            <div className="relative z-10 w-full lg:w-[44%] lg:-mr-10 rounded-3xl overflow-hidden shadow-2xl shadow-black/70 border border-skin-badgeBorder">
                                 <motion.img
                                     initial={{ scale: 1.15 }}
                                     whileInView={{ scale: 1 }}

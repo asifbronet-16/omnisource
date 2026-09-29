@@ -122,7 +122,7 @@ export default function Footer() {
                     </div>
                 </div>
 
-                <div className="w-full h-[1px] bg-skin-logo mb-12" />
+                <div className="w-full h-px bg-skin-logo mb-12" />
 
                 {/* Middle Section: Hubs */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-sm font-normal leading-relaxed mb-12 text-skin-mutedLight">
@@ -134,7 +134,7 @@ export default function Footer() {
                     ))}
                 </div>
 
-                <div className="w-full h-[1px] bg-skin-logo mb-8" />
+                <div className="w-full h-px bg-skin-logo mb-8" />
 
                 {/* Bottom Section */}
                 <div className="text-center text-xs text-skin-mutedLight font-normal tracking-wide">

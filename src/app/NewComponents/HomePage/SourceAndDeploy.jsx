@@ -60,7 +60,7 @@ const SourceAndDeploy = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: i * 0.1, duration: 0.5 }}
                             viewport={{ once: true }}
-                            className={`border border-skin-subtle p-8 flex flex-col justify-center items-center text-center bg-skin-backgroundHighlight backdrop-blur-sm rounded-md hover:border-skin-logo/50 hover:bg-skin-primary transition-all duration-500 ${stat.className}`}
+                            className={`border border-skin-subtle p-8 flex flex-col justify-center items-center text-center bg-skin-backgroundHighlight backdrop-blur-xs rounded-md hover:border-skin-logo/50 hover:bg-skin-primary transition-all duration-500 ${stat.className}`}
                         >
                             <h3 className={`text-4xl md:text-5xl font-extrabold mb-2 tracking-tight ${
                                 stat.color && !stat.color.includes('red') ? stat.color : 'text-skin-light'
@@ -94,7 +94,7 @@ const SourceAndDeploy = () => {
                             sizes="(min-width: 1024px) 50vw, 100vw"
                             className="object-cover"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-r from-transparent to-skin-background" />
+                        <div className="absolute inset-0 bg-linear-to-r from-transparent to-skin-background" />
                     </motion.div>
 
                     {/* Right — Text with motion from right */}

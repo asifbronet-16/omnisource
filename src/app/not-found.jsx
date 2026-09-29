@@ -85,7 +85,7 @@ export default function NotFound() {
           <span className="text-[7rem] font-extrabold leading-none text-white sm:text-[10rem]">
             4
           </span>
-          <ArcZero className="h-[10rem] w-[8rem]" />
+          <ArcZero className="h-40 w-32" />
           <span className="text-[7rem] font-extrabold leading-none text-white sm:text-[10rem]">
             4
           </span>
@@ -103,7 +103,7 @@ export default function NotFound() {
         <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row">
           <Link
             href="/"
-            className="rounded-md px-7 py-3 text-sm font-semibold text-white transition-transform duration-150 hover:scale-[1.03] focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
+            className="rounded-md px-7 py-3 text-sm font-semibold text-white transition-transform duration-150 hover:scale-[1.03] focus:outline-hidden focus-visible:ring-2 focus-visible:ring-white/70"
             style={{
               background: `linear-gradient(135deg, ${CRIMSON}, ${DEEP_RED})`,
             }}
@@ -112,7 +112,7 @@ export default function NotFound() {
           </Link>
           <Link
             href="/contact"
-            className="rounded-md border border-white/25 px-7 py-3 text-sm font-semibold text-white/90 transition-colors duration-150 hover:border-white/60 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
+            className="rounded-md border border-white/25 px-7 py-3 text-sm font-semibold text-white/90 transition-colors duration-150 hover:border-white/60 hover:text-white focus:outline-hidden focus-visible:ring-2 focus-visible:ring-white/70"
           >
             Contact us
           </Link>

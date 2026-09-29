@@ -1,9 +1,5 @@
 import { Geist, Geist_Mono, Fraunces, Manrope, JetBrains_Mono, Public_Sans } from "next/font/google";
 import "./globals.css";
-import ScrollToTop from "./ReusableComponents/ScrollToTop";
-import Footer from "./ReusableComponents/Footer";
-import ScrollOnNavigation from "./ReusableComponents/ScrollOnNavigation";
-import WhatsAppButton from "./ReusableComponents/WhatsAppButton";
 
 const fraunces = Fraunces({
   subsets: ['latin'],
@@ -49,13 +45,7 @@ export default function RootLayout({ children }) {
       data-scroll-behavior="smooth"
       className={`${publicSans.variable} ${geistSans.variable} ${geistMono.variable} ${fraunces.variable} ${manrope.variable} ${jetbrains.variable} h-full antialiased font-sans`}
     >
-      <body className="min-h-full flex flex-col relative">
-        <ScrollOnNavigation />
-        {children}
-        <Footer/>
-        <ScrollToTop />
-        <WhatsAppButton/>
-      </body>
+      <body className="min-h-full flex flex-col relative">{children}</body>
     </html>
   );
 }

@@ -32,18 +32,18 @@ export const WorkforceFeature = () => {
     return (
         <div className="w-full  bg-skin-background text-skin-light p-4 md:p-8 flex flex-col justify-between font-sans lg:px-24">
             {/* 2-Column Main Section */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-8xl w-full mx-auto flex-grow items-stretch mb-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-8xl w-full mx-auto grow items-stretch mb-10">
 
                 {/* ================= LEFT CARD ================= */}
                 <div className="relative overflow-hidden rounded-2xl border border-slate-800/50 bg-[#0D0809] p-8 md:p-12 flex flex-col justify-between shadow-2xl">
                     {/* Background image overlay - Fixed size unit and applied clean right-side framing */}
                     <div
-                        className="absolute inset-0 bg-no-repeat opacity-90 pointer-events-none bg-[20%]"
+                        className="absolute inset-0 bg-no-repeat opacity-90 pointer-events-none bg-position-[20%]"
                         style={{ backgroundImage: `url('/assets/WorkforceFeature1.jpeg')` }}
                     />
 
                     {/* Clean gradient fallback to ensure text legibility over darker image assets */}
-                    <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-[#130305] via-[#130305]/90 to-transparent pointer-events-none" />
+                    <div className="absolute inset-0 bg-linear-to-t md:bg-linear-to-r from-skin-primaryCard via-skin-primaryCard/90 to-transparent pointer-events-none" />
 
                     {/* Top text content cluster */}
                     <div className="relative z-10 space-y-6 max-w-xl">
@@ -65,7 +65,7 @@ export const WorkforceFeature = () => {
                         </p>
 
                         {/* Sub-badge descriptor row */}
-                        <div className="flex items-start gap-3 bg-slate-950/40 border border-slate-800/40 p-3.5 rounded-xl max-w-md backdrop-blur-sm">
+                        <div className="flex items-start gap-3 bg-slate-950/40 border border-slate-800/40 p-3.5 rounded-xl max-w-md backdrop-blur-xs">
                             <div className="p-2 bg-[#E22E33]/10 rounded-lg text-[#E22E33] shrink-0">
                                 <Users size={16} />
                             </div>
@@ -79,7 +79,7 @@ export const WorkforceFeature = () => {
                     <div className="relative z-10 mt-12 space-y-6">
                         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                             {metrics.map((m, idx) => (
-                                <div key={idx} className="bg-slate-950/40 border border-slate-800/40 p-4 rounded-xl text-center flex flex-col items-center justify-center backdrop-blur-sm">
+                                <div key={idx} className="bg-slate-950/40 border border-slate-800/40 p-4 rounded-xl text-center flex flex-col items-center justify-center backdrop-blur-xs">
                                     <div className="text-[#E22E33]/80 mb-2 p-1.5 bg-[#E22E33]/5 rounded-md border border-[#E22E33]/10">{m.icon}</div>
                                     <div className="text-xl font-black tracking-tight text-white">{m.value}</div>
                                     <div className="text-[10px] md:text-xs text-slate-400 font-semibold mt-1 leading-tight">{m.label}</div>
@@ -97,10 +97,10 @@ export const WorkforceFeature = () => {
                 <div className="relative overflow-hidden rounded-2xl border border-slate-800/50 bg-[#0D0809] p-6 md:p-8 flex flex-col justify-center items-start shadow-2xl">
                     {/* Construction crane motif background */}
                     <div
-                       className="absolute inset-0 bg-no-repeat opacity-90 pointer-events-none bg-[25%]"
+                       className="absolute inset-0 bg-no-repeat opacity-90 pointer-events-none bg-position-[25%]"
                         style={{ backgroundImage: `url('/assets/WorkforceFeature2.jpeg')` }}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-[#130305] via-[#130305]/90 to-transparent pointer-events-none" />
+                    <div className="absolute inset-0 bg-linear-to-t md:bg-linear-to-r from-skin-primaryCard via-skin-primaryCard/90 to-transparent pointer-events-none" />
 
                     {/* Dark Glassmorphism container layer */}
                     <div className="relative z-10 max-w-lg  bg-slate-950/60 backdrop-blur-md border border-slate-800/40 p-6 md:p-8 rounded-2xl shadow-2xl space-y-6 border-l-[#E22E33]/20 md:w-[60%] ">
@@ -121,7 +121,7 @@ export const WorkforceFeature = () => {
                         <ul className="space-y-3.5 pt-1">
                             {benefits.map((b, idx) => (
                                 <li key={idx} className="flex items-center gap-3 text-xs md:text-sm text-slate-300 font-medium">
-                                    <div className="p-1.5 rounded-full border border-[#E22E33]/30 bg-[#130305]/50 text-[#E22E33] shrink-0">
+                                    <div className="p-1.5 rounded-full border border-[#E22E33]/30 bg-skin-primaryCard/50 text-[#E22E33] shrink-0">
                                         {b.icon}
                                     </div>
                                     {b.text}
@@ -142,7 +142,7 @@ export const WorkforceFeature = () => {
             <div className="w-full max-w-7xl mx-auto border-t border-slate-900 pt-6 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 text-[11px] font-bold text-slate-500 tracking-widest uppercase select-none py-8">
                 <span className="text-slate-400">Trusted By</span>
 
-                <div className="hidden md:block h-3 w-[1px] bg-slate-800 mx-2" />
+                <div className="hidden md:block h-3 w-px bg-slate-800 mx-2" />
 
                 {/* Layout items broken up with visual pipeline separators */}
                 <div className="flex flex-wrap items-center justify-center gap-y-3 gap-x-4">

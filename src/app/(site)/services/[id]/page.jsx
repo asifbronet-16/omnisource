@@ -4,8 +4,8 @@ import React from 'react';
 import { useRouter, useParams } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { HardHat } from 'lucide-react';
-import Navbar from '../../ReusableComponents/Navbar';
-import Badge from '../../ReusableComponents/Badge';
+import Navbar from '../../../ReusableComponents/Navbar';
+import Badge from '../../../ReusableComponents/Badge';
 
 
 const servicesData = [
@@ -132,7 +132,7 @@ export default function ServiceDetailPage() {
                     />
 
                     {/* 1. Services Navigation: Scrollable row on mobile, Vertical list on desktop */}
-                    <div className="w-full lg:w-[28%] bg-skin-backgroundHighlight lg:bg-skin-backgroundHighlight border-b lg:border border-skin-borderHover lg:border-skin-borderHover p-2 sm:p-4 lg:p-6 lg:rounded-sm z-20 overflow-x-auto lg:overflow-x-visible scrollbar-none snap-x whitespace-nowrap lg:whitespace-normal flex lg:flex-col gap-2 sm:gap-3">
+                    <div className="w-full lg:w-[28%] bg-skin-backgroundHighlight lg:bg-skin-backgroundHighlight border-b lg:border border-skin-borderHover lg:border-skin-borderHover p-2 sm:p-4 lg:p-6 lg:rounded-xs z-20 overflow-x-auto lg:overflow-x-visible scrollbar-none snap-x whitespace-nowrap lg:whitespace-normal flex lg:flex-col gap-2 sm:gap-3">
                         <h2 className="hidden lg:block text-2xl font-bold tracking-tight mb-3 px-2">Services</h2>
                         {servicesData.map((tab) => {
                             const isSelected = currentId === tab.id;
@@ -140,7 +140,7 @@ export default function ServiceDetailPage() {
                                 <button
                                     key={tab.id}
                                     onClick={() => router.push(`/services/${tab.id}`)}
-                                    className={`inline-block lg:block text-center lg:text-left px-4 lg:px-4 py-2.5 lg:py-4 rounded-sm transition-all duration-300 font-medium text-xs lg:text-sm border snap-center flex-shrink-0 lg:flex-shrink-1 ${isSelected
+                                    className={`inline-block lg:block text-center lg:text-left px-4 lg:px-4 py-2.5 lg:py-4 rounded-xs transition-all duration-300 font-medium text-xs lg:text-sm border snap-center shrink-0 lg:shrink ${isSelected
                                         ? 'bg-skin-backgroundHighlight text-skin-light border-skin-borderHover'
                                         : 'bg-skin-backgroundHighlight text-zinc-400 border-skin-subtle lg:border-skin-subtle hover:border-skin-borderHover hover:text-skin-light'
                                         }`}
@@ -162,7 +162,7 @@ export default function ServiceDetailPage() {
                             {/* Image Grid Layout */}
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8 lg:mb-10">
                                 {currentService.images.map((imgSrc, index) => (
-                                    <div key={index} className="h-48 sm:h-64 md:h-80 w-full rounded-sm overflow-hidden bg-skin-primary">
+                                    <div key={index} className="h-48 sm:h-64 md:h-80 w-full rounded-xs overflow-hidden bg-skin-primary">
                                         <img
                                             src={imgSrc}
                                             alt={`${currentService.heading} ${index + 1}`}
@@ -186,7 +186,7 @@ export default function ServiceDetailPage() {
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 sm:gap-y-4 gap-x-12">
                                     {currentService.whyChoose.map((point, index) => (
                                         <div key={index} className="flex items-center gap-3">
-                                            <HardHat size={16} className="text-skin-logo flex-shrink-0" strokeWidth={2.5} />
+                                            <HardHat size={16} className="text-skin-logo shrink-0" strokeWidth={2.5} />
                                             <span className="text-xs sm:text-sm md:text-base font-medium text-skin-light">{point}</span>
                                         </div>
                                     ))}

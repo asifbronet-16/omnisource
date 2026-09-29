@@ -1,6 +1,120 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+/* Team cards (/teams/<slug>). Must be `inline`: next/font scopes --font-sora and
+   --font-great-day to the wrapper div in src/app/teams/layout.jsx, not to :root.
+   A non-inline @theme would emit `--font-card: var(--font-sora), ...` at :root,
+   where --font-sora is undefined — the declaration computes to guaranteed-invalid
+   and the font silently falls back to whatever is inherited. */
+@theme inline {
+  --font-card: var(--font-sora), system-ui, sans-serif;
+  --font-script: var(--font-great-day);
+}
+
+/* Team cards' laptop/desktop layout: lg width and wider than tall */
+@custom-variant desk (@media (min-width: 64rem) and (orientation: landscape));
+
+@theme {
+  --background-color-skin-primary: var(--color-primary);
+  --background-color-skin-black: var(--color-black);
+  --background-color-skin-logo: var(--color-logo-color);
+  --background-color-skin-logoHover: var(--color-logo-hover);
+  --background-color-skin-light: var(--color-white);
+  --background-color-skin-background: var(--color-background);
+  --background-color-skin-primaryCard: #130305;
+  --background-color-skin-backgroundHighlight: rgb(226 46 51 / 0.1);
+
+  --text-color-skin-default: var(--text-bright);
+  --text-color-skin-primary: var(--color-primary);
+  --text-color-skin-logo: var(--color-logo-color);
+  --text-color-skin-logoHover: var(--color-logo-hover);
+  --text-color-skin-light: var(--color-white);
+  --text-color-skin-dark: var(--color-black);
+  --text-color-skin-mutedLight: var(--text-muted-light);
+  --text-color-skin-badgeBG: var(--color-badge-background);
+
+  --background-image-skin-gradient-primary: linear-gradient(
+    to right,
+    #0d0809,
+    #9f212b,
+    #e22e33
+  );
+  --background-image-skin-navy-scale: linear-gradient(
+    to right,
+    #9f212b,
+    #e22e33
+  );
+  --background-image-text-gradient-primary: linear-gradient(
+    to right,
+    #ffffff 0%,
+    #e5e7eb 45%,
+    #e22e33 100%
+  );
+  --background-image-gradient-primary: linear-gradient(
+    to top,
+    rgba(159, 33, 43, 0.95) 0%,
+    rgba(226, 46, 51, 0.3) 40%,
+    transparent 100%
+  );
+  --background-image-gradient-left: linear-gradient(
+    to right,
+    0%,
+    transparent 70%
+  );
+  --background-image-gradient-cinematic: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0.3) 50%,
+    transparent 100%
+  );
+  --background-image-text-gradient-right: linear-gradient(
+    to right,
+    #ffffff 0%,
+    #e5e7eb 45%,
+    #e22e33 100%
+  );
+
+  --color-glow: var(--color-shadow-primary);
+  --color-mutedLight: var(--text-muted-light);
+
+  --border-color-skin-muted: var(--color-border-muted);
+  --border-color-skin-badgeBorder: var(--color-border-batch);
+  --border-color-skin-subtle: rgba(255, 255, 255, 0.05);
+  --border-color-skin-borderHover: var(--color-border-hover);
+
+  --font-display: var(--display);
+  --font-sans: var(--sans);
+  --font-mono: var(--mono);
+  --font-public: var(--font-public-sans), sans-serif;
+
+  --animate-marquee: marquee 25s linear infinite;
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
 
 :root {
   /* --bg: #0E1110;
@@ -39,34 +153,37 @@
 }
 
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+/* These must stay inside @layer base. Tailwind v4 puts all of its own CSS in
+   cascade layers, and unlayered CSS beats layered CSS whatever the specificity —
+   so an unlayered `* { margin: 0; padding: 0 }` silently overrides every padding
+   and margin utility on the site. */
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
 
-html {
-  background-color: var(--color-logo-light);
-  color-scheme: dark;
-  scroll-behavior: smooth;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+  html {
+    background-color: var(--color-logo-light);
+    color-scheme: dark;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 
-html[data-scroll-behavior="smooth"] {
-  scroll-behavior: smooth;
-}
+  html[data-scroll-behavior="smooth"] {
+    scroll-behavior: smooth;
+  }
 
-body {
-  background-color: var(--color-logo-light);
-  color: var(--color-white);
+  body {
+    background-color: var(--color-logo-light);
+    color: var(--color-white);
   /* font-family: var(--sans);
   font-weight: 400;
   line-height: 1.55; */
-  overflow-x: hidden;
-  /* background-image:
-    radial-gradient(circle at 20% 0%, rgba(194, 136, 90, 0.05), transparent 50%),
-    radial-gradient(circle at 80% 100%, rgba(194, 136, 90, 0.03), transparent 60%); */
+    overflow-x: hidden;
+  }
 }
 
 /* Subtle film grain */
@@ -153,4 +270,45 @@ body::before {
 .reveal.in {
   /* opacity: 1;
   transform: translateY(0); */
+}
+
+
+/* ====== TEAM CARDS ====== */
+/* The cards ship their own full-screen dark world, exactly as they did in the
+   standalone app: html/body there were #080405. This only matches pages that
+   actually render a card, so the marketing site keeps its own canvas colour. */
+html:has(.teams-root),
+html:has(.teams-root) body {
+  background-color: #080405;
+}
+
+/* ====== TEAM CARDS (scrollbars) ====== */
+/* Dark track, red gradient thumb (matches the Save Contact button). Chrome, Edge
+   and Safari use the ::-webkit-scrollbar rules; Chrome ignores them if
+   scrollbar-color is set, so that is only applied for Firefox. Scoped to
+   .teams-root so the marketing site keeps the browser's default scrollbars. */
+.teams-root ::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+.teams-root ::-webkit-scrollbar-track {
+  background: #0b0405;
+}
+.teams-root ::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #a31a10, #580608);
+  border: 2px solid #0b0405;
+  border-radius: 999px;
+}
+.teams-root ::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #c9261a, #7a0c0c);
+}
+.teams-root ::-webkit-scrollbar-corner {
+  background: #0b0405;
+}
+
+@supports (-moz-appearance: none) {
+  .teams-root * {
+    scrollbar-width: thin;
+    scrollbar-color: #a31a10 #0b0405;
+  }
 }

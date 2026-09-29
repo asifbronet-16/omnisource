@@ -63,7 +63,7 @@ const IndustryFAQ = () => {
                             >
                                 <button
                                     onClick={() => setActiveId(isOpen ? "" : item.id)}
-                                    className="w-full flex items-center justify-between p-6 text-left focus:outline-none"
+                                    className="w-full flex items-center justify-between p-6 text-left focus:outline-hidden"
                                     aria-expanded={isOpen}
                                 >
                                     <span className={`text-sm md:text-base font-bold pr-4 transition-colors duration-300 ${isOpen ? "text-skin-logo" : "text-skin-light group-hover:text-skin-light"
@@ -72,7 +72,7 @@ const IndustryFAQ = () => {
                                     </span>
 
                                     {/* Animated Modern Chevron Icon */}
-                                    <div className={`flex-shrink-0 w-6 h-6 flex items-center justify-center rounded-full border transition-all duration-300 ${isOpen
+                                    <div className={`shrink-0 w-6 h-6 flex items-center justify-center rounded-full border transition-all duration-300 ${isOpen
                                             ? "border-skin-badgeBorder bg-skin-background text-skin-logo rotate-180"
                                             : "border-skin-muted  text-skin-light group-hover:text-skin-muted group-hover:border-skin-badgeBorder"
                                         }`}>

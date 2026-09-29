@@ -46,7 +46,7 @@ const FAQ = () => {
                 </div>
 
                 {/* Premium Corporate Accordion Container */}
-                <div className="border border-skin-subtle rounded-lg bg-skin-primaryCard backdrop-blur-sm overflow-hidden shadow-xl shadow-glow">
+                <div className="border border-skin-subtle rounded-lg bg-skin-primaryCard backdrop-blur-xs overflow-hidden shadow-xl shadow-glow">
                     {faqData.map((item, index) => {
                         const isOpen = activeIndex === index;
                         return (
@@ -57,7 +57,7 @@ const FAQ = () => {
                             >
                                 <button
                                     onClick={() => toggleFAQ(index)}
-                                    className="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-[#130305]/60 transition-all group"
+                                    className="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-skin-primaryCard/60 transition-all group"
                                 >
                                     <div className="flex items-center gap-4">
                                         {/* Branded Dynamic Math Control Indicator */}

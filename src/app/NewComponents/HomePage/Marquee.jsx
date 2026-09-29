@@ -30,7 +30,7 @@ const ClientMarquee = () => {
         {/* Header with Animated Number */}
         <div className="flex flex-col items-center mb-12 px-4">
           {/* Swapped to matching brand blue icon styling */}
-          <div className="text-3xl mb-3 text-skin-ogo p-3 bg-skin-backgroundHighlight rounded-full backdrop-blur-sm border border-red-900/40">
+          <div className="text-3xl mb-3 text-skin-ogo p-3 bg-skin-backgroundHighlight rounded-full backdrop-blur-xs border border-red-900/40">
             <Users2 size={32} strokeWidth={1.5} />
           </div>
           <h2 className="text-4xl font-extrabold tracking-tight">
@@ -39,11 +39,11 @@ const ClientMarquee = () => {
         </div>
 
         {/* 2. Seamless Infinite Marquee with Corporate Framing */}
-        <div className="relative flex border-y border-skin-subtle bg-skin-backgroundHighlight py-8 backdrop-blur-sm">
+        <div className="relative flex border-y border-skin-subtle bg-skin-backgroundHighlight py-8 backdrop-blur-xs">
 
           {/* Left & Right fading masking elements to make the marquee merge smoothly into the margins */}
-          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#0D0809] to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#0D0809] to-transparent z-10 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-24 bg-linear-to-r from-[#0D0809] to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-24 bg-linear-to-l from-[#0D0809] to-transparent z-10 pointer-events-none" />
 
           <div className="grid grid-cols-3 lg:grid-cols-7 gap-4 lg:px-28 px-10 mx-auto">
             {logos.map((logo, index) => (

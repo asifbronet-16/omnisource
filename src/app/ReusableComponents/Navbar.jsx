@@ -50,7 +50,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 inset-x-0 z-[100] flex items-center justify-between lg:px-24 sm:px-4 px-2 lg:py-4 py-4 w-full transition-all duration-300 ${isScrolled ? "bg-[#0D0809]/95 backdrop-blur-md border-b border-[#E22E33]/20 shadow-[0_4px_24px_rgba(13,8,9,0.8)]" : "bg-transparent"}`}>
+      className={`fixed top-0 inset-x-0 z-100 flex items-center justify-between lg:px-24 sm:px-4 px-2 lg:py-4 py-4 w-full transition-all duration-300 ${isScrolled ? "bg-[#0D0809]/95 backdrop-blur-md border-b border-[#E22E33]/20 shadow-[0_4px_24px_rgba(13,8,9,0.8)]" : "bg-transparent"}`}>
 
       {/* Brand Logo Container */}
       <div className="flex items-center">
@@ -117,13 +117,13 @@ const Navbar = () => {
         <MenuIcon className={`${isScrolled ? "text-skin-light" : "text-skin-light"}`} size={28} />
       </div>
       <div
-        className={`fixed inset-0 bg-black/50 backdrop-blur-sm z-[150] transition-opacity duration-300 lg:hidden ${isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        className={`fixed inset-0 bg-black/50 backdrop-blur-xs z-150 transition-opacity duration-300 lg:hidden ${isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
           }`}
         onClick={() => setIsOpen(false)}
       />
       {/* Slide-out Sidebar Panel */}
       <div
-        className={`fixed top-0 right-0 h-[100vh] w-[75%] bg-skin-primary shadow-2xl z-[200] transform transition-transform duration-300 ease-in-out lg:hidden flex flex-col p-6 ${isOpen ? "translate-x-0" : "translate-x-full"
+        className={`fixed top-0 right-0 h-screen w-[75%] bg-skin-primary shadow-2xl z-200 transform transition-transform duration-300 ease-in-out lg:hidden flex flex-col p-6 ${isOpen ? "translate-x-0" : "translate-x-full"
           }`}
       >
         <button

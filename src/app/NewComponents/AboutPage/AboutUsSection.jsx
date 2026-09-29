@@ -18,7 +18,7 @@ const AboutUsSection = () => {
         <section className="relative bg-skin-background text-skin-light py-24 px-6 md:px-20 font-public-sans overflow-hidden">
 
             {/* Background City Silhouette (Right Aligned) */}
-            <div className="absolute right-[10%] bottom-0 h-[65%] pointer-events-none select-none z-2 opacity-20 invert brightness-0 saturate-100 sepia-[100%] hue-rotate-[190deg] contrast-[250%]">
+            <div className="absolute right-[10%] bottom-0 h-[65%] pointer-events-none select-none z-2 opacity-20 invert brightness-0 saturate-100 sepia-100 hue-rotate-190 contrast-250">
                 <img
                     src="/assets/Frame.png"
                     alt="UAE Skyline"
@@ -27,7 +27,7 @@ const AboutUsSection = () => {
             </div>
 
             {/* OmniSource Ambient Subtle Blue Bottom Glow */}
-            <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-skin-logo/10 from-20% via-transparent to-transparent z-0 pointer-events-none" />
+            <div className="absolute inset-x-0 bottom-0 h-1/2 bg-linear-to-t from-skin-logo/10 from-20% via-transparent to-transparent z-0 pointer-events-none" />
 
             <div className="relative z-10 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
 
@@ -72,7 +72,7 @@ const AboutUsSection = () => {
                         viewport={{ once: true }}
                     >
                         {/* Branded pill tag */}
-                        {/* <div className="inline-block px-4 py-1.5 border border-skin-muted rounded-full mb-6 bg-skin-logo/10 backdrop-blur-sm">
+                        {/* <div className="inline-block px-4 py-1.5 border border-skin-muted rounded-full mb-6 bg-skin-logo/10 backdrop-blur-xs">
                             <p className="text-xs uppercase tracking-widest text-skin-muted font-semibold">
                                 <span className="text-skin-logo mr-1">✳</span> Your Trusted Partner in Skilled Manpower Solutions.
                             </p>
@@ -102,7 +102,7 @@ const AboutUsSection = () => {
                                     className="flex items-center gap-3 group"
                                 >
                                     {/* OmniSource Branded Blue Feature Checked Circle */}
-                                    <div className="flex-shrink-0 w-5 h-5 bg-skin-logo rounded-full flex items-center justify-center p-1 group-hover:scale-110 group-hover:bg-skin-hover transition-all duration-300 shadow-md shadow-glow">
+                                    <div className="shrink-0 w-5 h-5 bg-skin-logo rounded-full flex items-center justify-center p-1 group-hover:scale-110 group-hover:bg-skin-hover transition-all duration-300 shadow-md shadow-glow">
                                         <svg className="text-skin-light w-full h-full" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15l-5-5 1.41-1.41L10 13.17l7.59-7.59L19 7l-9 9z" />
                                         </svg>

@@ -27,9 +27,9 @@ const ContactLocations = () => {
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="relative group rounded-xl overflow-hidden border border-red-900/20 bg-[#130305]/50 shadow-xl transition-all duration-300 hover:border-red-900/40"
+                            className="relative group rounded-xl overflow-hidden border border-red-900/20 bg-skin-primaryCard/50 shadow-xl transition-all duration-300 hover:border-red-900/40"
                         >
-                            <div className="absolute top-4 left-4 right-4 z-20 flex justify-between items-start bg-[#130305]/90 backdrop-blur-md p-4 rounded-xl border border-red-900/40 shadow-2xl">
+                            <div className="absolute top-4 left-4 right-4 z-20 flex justify-between items-start bg-skin-primaryCard/90 backdrop-blur-md p-4 rounded-xl border border-red-900/40 shadow-2xl">
                                 <div className="max-w-[70%]">
                                     <h4 className="text-skin-light font-bold text-sm tracking-tight truncate">{loc.plusCode}</h4>
                                     <p className="text-slate-400 text-[10px] tracking-wide uppercase font-semibold mt-1 truncate">{loc.address}</p>

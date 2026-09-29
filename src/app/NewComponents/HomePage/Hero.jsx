@@ -4,16 +4,16 @@ import Navbar from '../../ReusableComponents/Navbar';
 import Badge from '../../ReusableComponents/Badge';
 export default function HeroSection() {
     return (
-        <section className="w-full bg-cover bg-[25%_50%] lg:bg-[50%_50%] bg-no-repeat overflow-hidden z-20"
+        <section className="w-full bg-cover bg-position-[25%_50%] lg:bg-position-[50%_50%] bg-no-repeat overflow-hidden z-20"
         // style={{
         //     backgroundImage: `url('https://bestmanpower.ae/wp-content/uploads/2025/05/Hero-Section-1-1-scaled.webp')`
         // }}
         >
             <Navbar />
-            <section className="relative min-h-[100vh] lg:px-24 flex flex-col lg:flex-row justify-between lg:gap-10 pt-[10rem] lg:py-[14rem] overflow-hidden">
+            <section className="relative min-h-screen lg:px-24 flex flex-col lg:flex-row justify-between lg:gap-10 pt-40 lg:py-56 overflow-hidden">
 
                 {/* Background Video Container Layer */}
-                <div className="absolute inset-0 w-full h-full z-0 bg-skin-logo/40">
+                <div className="absolute inset-0 w-full h-full z-0 bg-skin-background">
                     <video
                         autoPlay
                         loop
@@ -58,7 +58,7 @@ export default function HeroSection() {
                         </a>
                         <a
                             href="tel:+971503441039"
-                            className="flex items-center justify-center gap-2 border border-red-700 bg-white/5 backdrop-blur-sm lg:px-10 lg:py-4 px-6 py-3 rounded-md font-bold text-skin-light hover:bg-white/10 hover:border-slate-500 transition duration-300 w-full sm:w-auto"
+                            className="flex items-center justify-center gap-2 border border-red-700 bg-white/5 backdrop-blur-xs lg:px-10 lg:py-4 px-6 py-3 rounded-md font-bold text-skin-light hover:bg-white/10 hover:border-slate-500 transition duration-300 w-full sm:w-auto"
                         >
                             📞 +971 50 344 1039
                         </a>

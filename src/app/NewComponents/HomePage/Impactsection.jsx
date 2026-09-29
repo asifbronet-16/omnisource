@@ -80,7 +80,7 @@ const ImpactSection = () => {
                 </video> */}
 
                 {/* OmniSource Branded Smooth Gradient Masking Layer */}
-                {/* <div className="absolute inset-0 bg-gradient-to-b from-[#020b1e] via-[#020b1e]/85 to-[#020b1e] z-10" /> */}
+                {/* <div className="absolute inset-0 bg-linear-to-b from-[#020b1e] via-[#020b1e]/85 to-[#020b1e] z-10" /> */}
                 <div className="absolute inset-0 z-10">
                     {/* Bottom-to-Top Gradient: Makes the bottom solid navy to match the next section */}
                     <div className="absolute inset-0 bg-gradient-primary" />
@@ -118,12 +118,12 @@ const ImpactSection = () => {
                                     height={36}
                                     alt={sector.title}
                                     // className="object-contain brightness-100 invert transition-transform duration-300 group-hover:scale-105"
-                                    className='object-contain grayscale-0 brightness-100 sepia-[1] hue-rotate-[315deg] saturate-[500%] transition-all duration-300 group-hover:grayscale-0 group-hover:brightness-100 hover:saturate-[700%]'
+                                    className='object-contain grayscale-0 brightness-100 sepia-[1] hue-rotate-315 saturate-500 transition-all duration-300 group-hover:grayscale-0 group-hover:brightness-100 hover:saturate-700'
                                 />
                             </div>
 
                             {/* Main Card Body */}
-                            <div className="w-full h-full flex-1 p-6 pt-12 rounded-2xl bg-gradient-to-b from-[#130305]/70 to-[#130305]/20 border border-skin-badgeBorder group-hover:border-skin-borderHover transition-all duration-300 relative z-10 flex flex-col items-center justify-start">
+                            <div className="w-full h-full flex-1 p-6 pt-12 rounded-2xl bg-linear-to-b from-skin-primaryCard/70 to-skin-primaryCard/20 border border-skin-badgeBorder group-hover:border-skin-borderHover transition-all duration-300 relative z-10 flex flex-col items-center justify-start">
                                 <h4 className="md:text-xl text-md font-bold text-skin-light tracking-tight mb-3 group-hover:text-skin-logoHover transition-colors duration-300">
                                     {sector.title}
                                 </h4>

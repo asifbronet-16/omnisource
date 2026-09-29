@@ -37,7 +37,7 @@ const services = [
 
 export default function ServiceSection() {
     return (
-        <section className="bg-skin-background text-skin-light py-20 px-6 lg:px-[7.5rem] w-full max-w-[100rem] mx-auto font-public-sans select-none">
+        <section className="bg-skin-background text-skin-light py-20 px-6 lg:px-30 w-full max-w-[100rem] mx-auto font-public-sans select-none">
             {/* Header Section */}
             <div className="mb-14 flex flex-col items-center text-center">
                 {/* <Badge text={"Scaling Success Together"} /> */}
@@ -60,9 +60,9 @@ export default function ServiceSection() {
                             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         />
                         {/* Subtle Premium Gradient Overlay Layer */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#0D0809] via-[#0D0809]/70 to-transparent" />
+                        <div className="absolute inset-0 bg-linear-to-t from-[#0D0809] via-[#0D0809]/70 to-transparent" />
                         {/* Content wrapper — grows upward on hover */}
-                        <div className="absolute bottom-0 left-0 right-0 h-20 lg:h-28 group-hover:h-[13rem] lg:group-hover:h-[15rem] overflow-hidden transition-all duration-500 ease-out bg-gradient-to-t from-[#0D0809] via-[#0D0809]/80 to-transparent">
+                        <div className="absolute bottom-0 left-0 right-0 h-20 lg:h-28 group-hover:h-52 lg:group-hover:h-60 overflow-hidden transition-all duration-500 ease-out bg-linear-to-t from-[#0D0809] via-[#0D0809]/80 to-transparent">
                             <div className="lg:p-6 p-3">
                                 {/* Heading always visible */}
                                 <div className="flex items-center justify-between lg:gap-6 gap-0.5">
