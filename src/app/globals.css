@@ -279,6 +279,18 @@ html[data-nav-hidden] [data-svc-layout] {
   padding-top: 2rem;
 }
 
+/* ====== HOME PAGE MARQUEE OUTLINE TEXT ====== */
+/* The site font is variable, and its letters are built from overlapping
+   shapes. A plain transparent text-stroke traces every shape, so the R and A
+   showed stray lines where their parts cross. Painting the stroke first and
+   filling the letter with the section background on top hides those inner
+   lines and keeps only the outer edge (half the stroke width shows). */
+.marquee-outline {
+  color: #0d0809;
+  -webkit-text-stroke: 3px #e22e33;
+  paint-order: stroke fill;
+}
+
 /* ====== ANIMATIONS ====== */
 @keyframes fadeUp {
   /* from {

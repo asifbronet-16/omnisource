@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useRef } from 'react';
+import Image from 'next/image';
 import { Users2 } from 'lucide-react';
 import { gsap, ScrollTrigger, useGSAP, MOTION_OK } from './motion/gsap';
 
@@ -14,7 +15,7 @@ const logos = [
   { src: "/assets/icons/samsung-logo.png", name: "Samsung" },
 ];
 
-const phrases = ["One Source", "Every Trade", "All Industries", "UAE Wide"];
+const phrases = ["One Source", "Every trade", "All Industries", "UAE Wide"];
 
 // Each track holds its content twice; moving it by exactly half its width and
 // repeating makes the loop seamless. The second copy is hidden from screen readers.
@@ -114,21 +115,26 @@ const ClientMarquee = () => {
         </Track>
       </div>
 
-      {/* Oversized tagline band running the other way */}
-      <div aria-hidden="true" className="relative mt-14 overflow-hidden select-none">
+      {/* Tagline band running the other way, separated by the OmniSource mark */}
+      <div data-marquee-band aria-hidden="true" className="relative mt-10 overflow-hidden py-3 select-none lg:py-5">
         <Track direction="reverse" duration={40}>
           {phrases.map((phrase, i) => (
             <span key={phrase} className="flex items-center">
               <span
-                className={`px-6 text-6xl lg:text-[8.5rem] font-extrabold uppercase leading-none tracking-tight whitespace-nowrap ${
-                  i % 2 === 0
-                    ? 'text-transparent [-webkit-text-stroke:1.5px_#E22E33]'
-                    : 'text-skin-light/90'
+                className={`px-5 lg:px-8 text-4xl sm:text-5xl lg:text-[5.5rem] font-extrabold leading-tight tracking-tight whitespace-nowrap ${
+                  i % 2 === 0 ? 'marquee-outline' : 'text-skin-light/90'
                 }`}
               >
                 {phrase}
               </span>
-              <span className="text-skin-logo text-4xl lg:text-7xl">✦</span>
+              <Image
+                src="/assets/icons/brand-icon.png"
+                alt=""
+                width={72}
+                height={72}
+                sizes="72px"
+                className="h-9 w-9 shrink-0 sm:h-11 sm:w-11 lg:h-[4.5rem] lg:w-[4.5rem]"
+              />
             </span>
           ))}
         </Track>
