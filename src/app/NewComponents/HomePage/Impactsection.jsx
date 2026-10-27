@@ -3,6 +3,7 @@
 import React, { useRef, useState } from 'react';
 import Image from 'next/image';
 import Badge from '../../ReusableComponents/Badge';
+import { GUTTER } from '../../ReusableComponents/gutter';
 import { gsap, useGSAP, MOTION_OK } from './motion/gsap';
 
 const sectors = [
@@ -131,7 +132,7 @@ const ImpactSection = () => {
                     <div className="absolute -right-24 bottom-0 h-[28rem] w-[28rem] rounded-full bg-[#9F212B]/25 blur-[140px]" />
                 </div>
 
-                <div className="relative z-20 mx-auto flex max-w-7xl flex-col items-center gap-10 px-6 py-24 lg:flex-row lg:items-start lg:gap-12 [.is-pile_&]:items-center [.is-pile_&]:h-full [.is-pile_&]:gap-4 [.is-pile_&]:pt-24 [.is-pile_&]:pb-8 lg:[.is-pile_&]:py-0">
+                <div className={`relative z-20 flex flex-col items-center gap-10 ${GUTTER} py-24 lg:flex-row lg:items-start lg:gap-12 [.is-pile_&]:items-center [.is-pile_&]:h-full [.is-pile_&]:gap-4 [.is-pile_&]:pt-24 [.is-pile_&]:pb-8 lg:[.is-pile_&]:py-0`}>
 
                     {/* Heading + progress */}
                     <div className="w-full text-center lg:sticky lg:top-28 lg:w-5/12 lg:text-left [.is-pile_&]:static [.is-pile_&]:shrink-0">

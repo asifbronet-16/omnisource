@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { GUTTER } from './gutter';
 import Image from 'next/image';
 import { Phone, Mail, MessageSquare } from 'lucide-react';
 
@@ -30,8 +31,8 @@ export default function Footer() {
     ];
 
     return (
-        <footer className="bg-skin-background text-skin-light pt-20 pb-10 px-6 md:px-20 font-public-sans border-t border-skin-subtle">
-            <div className="max-w-7xl mx-auto">
+        <footer className={`bg-skin-background text-skin-light pt-20 pb-10 ${GUTTER} font-public-sans border-t border-skin-subtle`}>
+            <div>
                 {/* Top Section */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
                     {/* Col 1: Logo & Contact */}

@@ -3,6 +3,7 @@ import { useRef } from 'react';
 import { ArrowUpRight, Phone, Users, ShieldCheck, Clock } from 'lucide-react';
 import Navbar from '../../ReusableComponents/Navbar';
 import Badge from '../../ReusableComponents/Badge';
+import { GUTTER } from '../../ReusableComponents/gutter';
 import { gsap, SplitText, useGSAP, MOTION_OK } from './motion/gsap';
 import { badgeTimeline } from './motion/badge';
 
@@ -100,7 +101,7 @@ export default function HeroSection() {
     return (
         <section ref={root} data-hero className="relative w-full overflow-hidden z-20 bg-skin-background">
             <Navbar />
-            <section data-hero-stage className="relative min-h-screen lg:px-24 flex flex-col lg:flex-row justify-between lg:items-center lg:gap-10 pt-40 pb-24 lg:py-56 overflow-hidden">
+            <section data-hero-stage className={`relative min-h-screen ${GUTTER} flex flex-col lg:flex-row justify-between lg:items-center lg:gap-10 pt-40 pb-24 lg:py-56 overflow-hidden`}>
 
                 {/* Background video, masked in on load */}
                 <div data-hero-media className="absolute inset-0 w-full h-full z-0 overflow-hidden bg-skin-background">
@@ -131,7 +132,7 @@ export default function HeroSection() {
                 />
 
                 {/* Copy */}
-                <div data-hero-content className="relative w-full lg:w-3/5 text-skin-light text-center lg:text-start px-6 z-10 h-full flex flex-col justify-center items-center lg:items-start">
+                <div data-hero-content className="relative w-full lg:w-3/5 text-skin-light text-center lg:text-start z-10 h-full flex flex-col justify-center items-center lg:items-start">
 
                     <div data-hero-hide data-hero-badge className="w-full">
                         <Badge text={"One source, Every trade"} />

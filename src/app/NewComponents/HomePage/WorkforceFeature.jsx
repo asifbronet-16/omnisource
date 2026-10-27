@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { GUTTER } from '../../ReusableComponents/gutter';
 import {
     Users,
     ShieldCheck,
@@ -51,8 +52,8 @@ const tile = "relative overflow-hidden rounded-3xl border border-[#E22E33]/15";
 */
 export const WorkforceFeature = () => {
     return (
-        <section className="w-full bg-skin-background px-4 py-10 text-skin-light md:px-8 lg:px-24 lg:py-16">
-            <div className="mx-auto grid max-w-7xl grid-cols-1 gap-4 lg:grid-cols-12 lg:gap-5">
+        <section className={`w-full bg-skin-background ${GUTTER} py-10 text-skin-light lg:py-16`}>
+            <div className="grid grid-cols-1 gap-4 lg:grid-cols-12 lg:gap-5">
 
                 {/* ===== Promise: engineer photo, headline at the bottom ===== */}
                 <div data-reveal="up" className={`${tile} min-h-[560px] lg:col-span-7 lg:row-span-2 lg:min-h-[640px]`}>

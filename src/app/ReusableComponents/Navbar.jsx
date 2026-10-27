@@ -4,6 +4,7 @@ import { ArrowUpRight, MenuIcon, X } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
+import { GUTTER } from './gutter';
 
 
 const Navbar = () => {
@@ -63,7 +64,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 inset-x-0 z-100 flex items-center justify-between lg:px-24 sm:px-4 px-2 lg:py-4 py-4 w-full transition-all duration-300 ${isHidden ? "-translate-y-full" : ""} ${isScrolled ? "bg-[#0D0809]/95 backdrop-blur-md border-b border-[#E22E33]/20 shadow-[0_4px_24px_rgba(13,8,9,0.8)]" : "bg-transparent"}`}>
+      className={`fixed top-0 inset-x-0 z-100 flex items-center justify-between ${GUTTER} lg:py-4 py-4 w-full transition-all duration-300 ${isHidden ? "-translate-y-full" : ""} ${isScrolled ? "bg-[#0D0809]/95 backdrop-blur-md border-b border-[#E22E33]/20 shadow-[0_4px_24px_rgba(13,8,9,0.8)]" : "bg-transparent"}`}>
 
       {/* Brand Logo Container */}
       <div className="flex items-center">

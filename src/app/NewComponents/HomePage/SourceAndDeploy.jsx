@@ -4,6 +4,7 @@ import React, { useRef } from 'react';
 import Image from 'next/image';
 import { UserSearch, ShieldCheck, HardHat, MapPin } from 'lucide-react';
 import Badge from '../../ReusableComponents/Badge';
+import { GUTTER } from '../../ReusableComponents/gutter';
 import { gsap, useGSAP, MOTION_OK } from './motion/gsap';
 
 // The three stages the company manages, taken from its own description of the
@@ -72,8 +73,8 @@ const SourceAndDeploy = () => {
     }, { scope: root });
 
     return (
-        <section ref={root} className="bg-skin-background text-skin-light py-20 px-6 md:px-20 font-public-sans overflow-hidden">
-            <div className="max-w-7xl mx-auto">
+        <section ref={root} className={`bg-skin-background text-skin-light py-20 ${GUTTER} font-public-sans overflow-hidden`}>
+            <div>
 
                 {/* Intro beside the photo */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">

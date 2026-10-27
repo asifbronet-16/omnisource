@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { ArrowUpRight } from 'lucide-react';
 import { useLenis } from 'lenis/react';
 import Badge from '../../ReusableComponents/Badge';
+import { GUTTER } from '../../ReusableComponents/gutter';
 import { gsap, ScrollTrigger, SplitText, CustomEase, useGSAP, MOTION_OK } from './motion/gsap';
 
 const services = [
@@ -251,7 +252,7 @@ export default function WorkforceServices() {
                 <div data-svc-layout className="relative z-20 flex h-full flex-col pt-24 pb-6 lg:pt-28 lg:pb-10">
 
                 {/* Header */}
-                <div className="relative z-20 mb-5 px-6 text-center lg:mb-7">
+                <div className={`relative z-20 mb-5 ${GUTTER} text-center lg:mb-7`}>
                     <div className="mx-auto flex w-full items-center justify-center">
                         <Badge text={"Expert Talent, Delivered with Precision "} />
                     </div>
@@ -261,7 +262,7 @@ export default function WorkforceServices() {
                 </div>
 
                 {/* Middle: names | card | roles */}
-                <div className="relative z-20 flex min-h-0 flex-1 flex-col items-center justify-center gap-4 px-4 lg:flex-row lg:justify-between lg:gap-8 lg:px-10 xl:px-16">
+                <div className={`relative z-20 flex min-h-0 flex-1 flex-col items-center justify-center gap-4 ${GUTTER} lg:flex-row lg:justify-between lg:gap-8`}>
 
                     {/* Left: service names (desktop) */}
                     <ul className="hidden w-[27%] flex-col gap-4 lg:flex">
@@ -287,7 +288,7 @@ export default function WorkforceServices() {
                     <Link
                         href={`/services/${current.id}`}
                         data-svc-card
-                        className="group relative min-h-[280px] w-full max-w-md flex-1 overflow-hidden rounded-3xl border border-white/10 bg-[#0D0809] shadow-[0_30px_90px_-30px_rgba(226,46,51,0.6)] lg:h-full lg:max-h-[680px] lg:w-[min(38vw,580px)] lg:max-w-none lg:flex-none lg:shrink-0"
+                        className="group relative min-h-[280px] w-full max-w-md md:max-w-none flex-1 overflow-hidden rounded-3xl border border-white/10 bg-[#0D0809] shadow-[0_30px_90px_-30px_rgba(226,46,51,0.6)] lg:h-full lg:max-h-[680px] lg:w-[min(38vw,580px)] lg:max-w-none lg:flex-none lg:shrink-0"
                     >
                         <div className="absolute inset-0">
                             {services.map((s, i) => (
@@ -361,7 +362,7 @@ export default function WorkforceServices() {
                     </ul>
 
                     {/* Mobile: names as chips under the card */}
-                    <ul className="grid w-full max-w-md grid-cols-2 gap-2 lg:hidden">
+                    <ul className="grid w-full max-w-md grid-cols-2 gap-2 md:max-w-none md:grid-cols-4 lg:hidden">
                         {services.map((s, i) => (
                             <li key={s.id} data-svc-item>
                                 <button
