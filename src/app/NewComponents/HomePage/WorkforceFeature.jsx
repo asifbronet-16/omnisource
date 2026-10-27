@@ -1,4 +1,6 @@
 import React from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 import {
     Users,
     ShieldCheck,
@@ -9,168 +11,199 @@ import {
     Building2,
     Factory,
     HardHat,
+    Quote,
 } from 'lucide-react';
 
+// Same number as the hero and the floating WhatsApp button.
+const WHATSAPP_HREF = "https://wa.me/971503441039";
+
+const metrics = [
+    // `count` makes the number tick up when it scrolls into view.
+    { icon: Users, value: "500+", count: 500, suffix: "+", label: "Skilled Professionals" },
+    { icon: ShieldCheck, value: "100%", count: 100, suffix: "%", label: "Verified & Compliant" },
+    { icon: Clock, value: "24/7", label: "Support & Assistance" },
+    { icon: MapPin, value: "UAE Wide", label: "Workforce Coverage" },
+];
+
+const benefits = [
+    { icon: Users, text: "Skilled & Verified Personnel" },
+    { icon: Clock, text: "Fast Mobilisation" },
+    { icon: Briefcase, text: "Flexible Workforce Solutions" },
+    { icon: ShieldCheck, text: "Safety, Compliance & Reliability" },
+    { icon: MapPin, text: "Ongoing Operational Support" },
+];
+
+const trustedBy = [
+    { icon: HardHat, label: "Contractors" },
+    { icon: Building2, label: "Developers" },
+    { icon: Briefcase, label: "Facility Operators" },
+    { icon: Factory, label: "Industrial Clients" },
+];
+
+const tile = "relative overflow-hidden rounded-3xl border border-[#E22E33]/15";
+
+/*
+  Bento layout. Same content and photos as before, arranged as tiles:
+  the engineer photo with the main promise, four stat tiles, a red quote
+  tile, the night-site photo with the benefits, and a "Trusted By" tile.
+  Animation hooks (data-reveal, data-zoom, data-count, data-tilt,
+  data-magnetic, data-split, data-stagger) are handled by HomeMotion.
+*/
 export const WorkforceFeature = () => {
-    // Metrics Grid (Left Card Bottom)
-    const metrics = [
-        // `count` makes the number tick up when it scrolls into view.
-        { icon: <Users size={20} />, value: "500+", count: 500, suffix: "+", label: "Skilled Professionals" },
-        { icon: <ShieldCheck size={20} />, value: "100%", count: 100, suffix: "%", label: "Verified & Compliant" },
-        { icon: <Clock size={20} />, value: "24/7", label: "Support & Assistance" },
-        { icon: <MapPin size={20} />, value: "UAE Wide", label: "Workforce Coverage" },
-    ];
-
-    // List Items (Right Card) - Circular themed outline icons
-    const benefits = [
-        { icon: <Users size={14} />, text: "Skilled & Verified Personnel" },
-        { icon: <Clock size={14} />, text: "Fast Mobilisation" },
-        { icon: <Briefcase size={14} />, text: "Flexible Workforce Solutions" },
-        { icon: <ShieldCheck size={14} />, text: "Safety, Compliance & Reliability" },
-        { icon: <MapPin size={14} />, text: "Ongoing Operational Support" }
-    ];
-
     return (
-        <div className="w-full overflow-x-clip bg-skin-background text-skin-light p-4 md:p-8 flex flex-col justify-between font-sans lg:px-24">
-            {/* 2-Column Main Section */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-7xl w-full mx-auto grow items-stretch mb-10">
+        <section className="w-full bg-skin-background px-4 py-10 text-skin-light md:px-8 lg:px-24 lg:py-16">
+            <div className="mx-auto grid max-w-7xl grid-cols-1 gap-4 lg:grid-cols-12 lg:gap-5">
 
-                {/* ================= LEFT CARD ================= */}
-                <div data-reveal="left" className="relative overflow-hidden rounded-2xl border border-slate-800/50 bg-[#0D0809] p-8 md:p-12 flex flex-col justify-between shadow-2xl">
-                    {/* Background image overlay - Fixed size unit and applied clean right-side framing */}
-                    <div
-                        data-zoom
-                        className="absolute inset-0 bg-no-repeat opacity-90 pointer-events-none bg-position-[20%]"
-                        style={{ backgroundImage: `url('/assets/WorkforceFeature1.jpeg')` }}
-                    />
-
-                    {/* Clean gradient fallback to ensure text legibility over darker image assets */}
-                    <div className="absolute inset-0 bg-linear-to-t md:bg-linear-to-r from-skin-primaryCard via-skin-primaryCard/90 to-transparent pointer-events-none" />
-
-                    {/* Top text content cluster */}
-                    <div className="relative z-10 space-y-6 max-w-xl">
-                        {/* Logo placeholder matching layout */}
-                        <div className="flex items-center text-2xl font-bold tracking-tight">
-                            <span className="text-white">Omni</span>
-                            <span className="text-[#E22E33] font-extrabold">Source</span>
-                        </div>
-
-                        {/* Standardized Heading Spacing */}
-                        <h2 className="text-3xl md:text-4xl font-black tracking-tight leading-[1.15] text-white">
-                            Workforce Solutions.<br />
-                            Delivered with{" "}
-                            <span className="text-[#E22E33]">Certainty.</span>
-                        </h2>
-
-                        <p className="text-sm md:text-base text-slate-400 leading-relaxed max-w-md">
-                            OmniSource provides premium workforce solutions across construction, MEP, facilities management and industrial operations.
-                        </p>
-
-                        {/* Sub-badge descriptor row */}
-                        <div className="flex items-start gap-3 bg-slate-950/40 border border-slate-800/40 p-3.5 rounded-xl max-w-md backdrop-blur-xs">
-                            <div className="p-2 bg-[#E22E33]/10 rounded-lg text-[#E22E33] shrink-0">
-                                <Users size={16} />
-                            </div>
-                            <p className="text-xs md:text-sm text-slate-300 leading-normal">
-                                From a single professional to full-scale deployments, we ensure the right people, on time, every time.
-                            </p>
-                        </div>
+                {/* ===== Promise: engineer photo, headline at the bottom ===== */}
+                <div data-reveal="up" className={`${tile} min-h-[560px] lg:col-span-7 lg:row-span-2 lg:min-h-[640px]`}>
+                    <div data-zoom className="absolute inset-0">
+                        <Image
+                            src="/assets/WorkforceFeature1.jpeg"
+                            alt="OmniSource engineer on a UAE construction site"
+                            fill
+                            sizes="(min-width: 1024px) 58vw, 100vw"
+                            className="object-cover object-[60%_30%]"
+                        />
                     </div>
+                    <div className="absolute inset-0 bg-linear-to-t from-[#0D0809] via-[#0D0809]/60 via-45% to-transparent" />
+                    <div className="absolute inset-0 bg-linear-to-r from-[#0D0809]/70 via-transparent to-transparent" />
 
-                    {/* Metrics grids matching the bottom boxes */}
-                    <div className="relative z-10 mt-12 space-y-6">
-                        <div data-stagger className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                            {metrics.map((m, idx) => (
-                                <div key={idx} className="bg-slate-950/40 border border-slate-800/40 p-4 rounded-xl text-center flex flex-col items-center justify-center backdrop-blur-xs">
-                                    <div className="text-[#E22E33]/80 mb-2 p-1.5 bg-[#E22E33]/5 rounded-md border border-[#E22E33]/10">{m.icon}</div>
-                                    <div className="text-xl font-black tracking-tight text-white">
-                                        {m.count ? (<><span data-count={m.count}>{m.count}</span>{m.suffix}</>) : m.value}
-                                    </div>
-                                    <div className="text-[10px] md:text-xs text-slate-400 font-semibold mt-1 leading-tight">{m.label}</div>
-                                </div>
-                            ))}
+                    <div className="relative z-10 flex h-full min-h-[inherit] flex-col justify-between p-7 md:p-10">
+                        <div className="w-fit rounded-full border border-white/15 bg-[#0D0809]/60 px-4 py-1.5 text-lg font-bold tracking-tight backdrop-blur-md">
+                            <span className="text-white">Omni</span>
+                            <span className="font-extrabold text-[#E22E33]">Source</span>
                         </div>
 
-                        <button data-magnetic className="flex items-center gap-2 bg-[#E22E33] hover:bg-[#9F212B] transition-colors px-6 py-3 rounded-lg text-sm font-bold tracking-wide w-full sm:w-fit justify-center shadow-lg shadow-[#E22E33]/10">
-                            Request Workforce <ArrowUpRight size={15} />
-                        </button>
+                        <div className="max-w-xl space-y-5">
+                            <h2 data-split className="text-3xl md:text-5xl font-black leading-[1.1] tracking-tight text-white">
+                                Workforce Solutions.<br />
+                                Delivered with <span className="text-[#E22E33]">Certainty.</span>
+                            </h2>
+                            <p className="max-w-md text-sm md:text-base leading-relaxed text-slate-300">
+                                OmniSource provides premium workforce solutions across construction, MEP, facilities management and industrial operations.
+                            </p>
+                            <Link
+                                href="/contact"
+                                data-magnetic
+                                className="group relative inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-lg bg-[#E22E33] px-7 py-3.5 text-sm font-bold tracking-wide text-white shadow-lg shadow-[#E22E33]/25 sm:w-fit"
+                            >
+                                <span aria-hidden="true" className="absolute inset-0 -translate-x-full bg-[#9F212B] transition-transform duration-500 ease-out group-hover:translate-x-0" />
+                                <span className="relative">Request Workforce</span>
+                                <ArrowUpRight size={15} className="relative" />
+                            </Link>
+                        </div>
                     </div>
                 </div>
 
-                {/* ================= RIGHT CARD ================= */}
-                <div data-reveal="right" data-reveal-delay="0.15" className="relative overflow-hidden rounded-2xl border border-slate-800/50 bg-[#0D0809] p-6 md:p-8 flex flex-col justify-center items-start shadow-2xl">
-                    {/* Construction crane motif background */}
-                    <div
-                       data-zoom
-                       className="absolute inset-0 bg-no-repeat opacity-90 pointer-events-none bg-position-[25%]"
-                        style={{ backgroundImage: `url('/assets/WorkforceFeature2.jpeg')` }}
-                    />
-                    <div className="absolute inset-0 bg-linear-to-t md:bg-linear-to-r from-skin-primaryCard via-skin-primaryCard/90 to-transparent pointer-events-none" />
+                {/* ===== Four stat tiles ===== */}
+                <div className="grid grid-cols-2 gap-4 lg:col-span-5 lg:gap-5">
+                    {metrics.map(({ icon: Icon, value, count, suffix, label }, i) => (
+                        <div
+                            key={label}
+                            data-reveal="up"
+                            data-reveal-delay={String(0.08 * i)}
+                            data-tilt
+                            className={`${tile} group flex flex-col justify-between gap-6 bg-linear-to-br from-[#1f080a] to-[#120405] p-5 md:p-6`}
+                        >
+                            {/* Red light that follows the pointer (set by HomeMotion) */}
+                            <div aria-hidden="true" className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100 bg-[radial-gradient(260px_circle_at_var(--mx,50%)_var(--my,50%),rgba(226,46,51,0.35),transparent_65%)]" />
+                            <span className="relative w-fit rounded-xl border border-[#E22E33]/25 bg-[#E22E33]/10 p-2.5 text-[#E22E33]">
+                                <Icon size={20} />
+                            </span>
+                            <div className="relative">
+                                <div className="text-3xl md:text-4xl font-black tracking-tight text-white">
+                                    {count ? (<><span data-count={count}>{count}</span>{suffix}</>) : value}
+                                </div>
+                                <div className="mt-1 text-xs md:text-sm font-semibold text-slate-400">{label}</div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
 
-                    {/* Dark Glassmorphism container layer */}
-                    <div className="relative z-10 max-w-lg  bg-slate-950/60 backdrop-blur-md border border-slate-800/40 p-6 md:p-8 rounded-2xl shadow-2xl space-y-6 border-l-[#E22E33]/20 md:w-[60%] ">
+                {/* ===== Quote tile ===== */}
+                <div data-reveal="up" data-reveal-delay="0.15" className={`${tile} flex flex-col justify-between gap-6 border-transparent bg-linear-to-br from-[#E22E33] to-[#9F212B] p-7 md:p-8 lg:col-span-5`}>
+                    <Quote aria-hidden="true" size={120} strokeWidth={1} className="pointer-events-none absolute -right-4 -top-6 text-white/15" />
+                    <span className="relative w-fit rounded-xl bg-white/15 p-2.5 text-white">
+                        <Users size={18} />
+                    </span>
+                    <p className="relative text-lg md:text-2xl font-bold leading-snug tracking-tight text-white">
+                        From a single professional to full-scale deployments, we ensure the right people, on time, every time.
+                    </p>
+                </div>
 
-                        {/* Top decorative accent bar */}
-                        <div className="w-6 h-[2px] bg-[#E22E33]" />
+                {/* ===== Strengthening: night-site photo with the benefits ===== */}
+                <div data-reveal="up" className={`${tile} min-h-[520px] lg:col-span-8 lg:min-h-[480px]`}>
+                    <div data-zoom className="absolute inset-0">
+                        <Image
+                            src="/assets/WorkforceFeature2.jpeg"
+                            alt="OmniSource team reviewing plans on a night-time construction site"
+                            fill
+                            sizes="(min-width: 1024px) 66vw, 100vw"
+                            className="object-cover object-[40%_50%]"
+                        />
+                    </div>
+                    <div className="absolute inset-0 bg-linear-to-t from-[#0D0809] via-[#0D0809]/85 to-[#0D0809]/30 md:bg-linear-to-r md:from-[#0D0809] md:from-25% md:via-[#0D0809]/75 md:via-50% md:to-transparent md:to-80%" />
 
-                        <h3 className="text-2xl md:text-3xl font-black tracking-tight leading-snug text-white">
+                    <div className="relative z-10 flex h-full min-h-[inherit] flex-col justify-end gap-6 p-7 md:max-w-[62%] md:justify-center md:p-10">
+                        <div className="h-[2px] w-8 bg-[#E22E33]" />
+                        <h3 className="text-2xl md:text-4xl font-black leading-tight tracking-tight text-white">
                             Strengthening Your<br />
                             <span className="text-[#E22E33]">Workforce & Industry Impact</span>
                         </h3>
-
-                        <p className="text-sm text-slate-400 leading-relaxed">
+                        <p className="max-w-md text-sm md:text-base leading-relaxed text-slate-300">
                             Whether you&apos;re building infrastructure or streamlining operations, we connect you with the manpower that drives growth.
                         </p>
-
-                        {/* List entries with circular icons matching image_e7f53f.png */}
-                        <ul data-stagger className="space-y-3.5 pt-1">
-                            {benefits.map((b, idx) => (
-                                <li key={idx} className="flex items-center gap-3 text-xs md:text-sm text-slate-300 font-medium">
-                                    <div className="p-1.5 rounded-full border border-[#E22E33]/30 bg-skin-primaryCard/50 text-[#E22E33] shrink-0">
-                                        {b.icon}
-                                    </div>
-                                    {b.text}
+                        <ul data-stagger className="grid gap-2.5 sm:grid-cols-2">
+                            {benefits.map(({ icon: Icon, text }) => (
+                                <li key={text} className="flex items-center gap-3 rounded-xl border border-white/10 bg-[#0D0809]/60 px-3 py-2.5 text-xs md:text-sm font-medium text-slate-200 backdrop-blur-sm">
+                                    <span className="shrink-0 rounded-full border border-[#E22E33]/30 bg-[#E22E33]/10 p-1.5 text-[#E22E33]">
+                                        <Icon size={14} />
+                                    </span>
+                                    {text}
                                 </li>
                             ))}
                         </ul>
-
-                        <div className="pt-2">
-                            <button data-magnetic className="flex items-center gap-2 bg-[#E22E33] hover:bg-[#9F212B] transition-colors px-6 py-3 rounded-lg text-sm font-bold tracking-wide w-full sm:w-fit justify-center shadow-lg shadow-[#E22E33]/10">
-                                Speak With Our Team <ArrowUpRight size={15} />
-                            </button>
-                        </div>
+                        <a
+                            href={WHATSAPP_HREF}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            data-magnetic
+                            className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-[#E22E33]/60 bg-[#E22E33]/10 px-7 py-3.5 text-sm font-bold tracking-wide text-white transition-colors hover:bg-[#E22E33] sm:w-fit"
+                        >
+                            Speak With Our Team <ArrowUpRight size={15} />
+                        </a>
                     </div>
                 </div>
 
-            </div>
-            {/* ================= TRUSTED BY FIXED FOOTER ================= */}
-            <div className="w-full max-w-7xl mx-auto border-t border-slate-900 pt-6 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 text-[11px] font-bold text-slate-500 tracking-widest uppercase select-none py-8">
-                <span className="text-slate-400">Trusted By</span>
-
-                <div className="hidden md:block h-3 w-px bg-slate-800 mx-2" />
-
-                {/* Layout items broken up with visual pipeline separators */}
-                <div data-stagger className="flex flex-wrap items-center justify-center gap-y-3 gap-x-4">
-                    <div className="flex items-center gap-2 text-slate-400">
-                        <HardHat size={14} className="text-slate-600" /> <span>Contractors</span>
+                {/* ===== Trusted By ===== */}
+                <div data-reveal="up" data-reveal-delay="0.15" className={`${tile} flex flex-col justify-between gap-8 bg-linear-to-b from-[#1f080a] to-[#120405] p-7 md:p-8 lg:col-span-4`}>
+                    <Image
+                        src="/assets/icons/brand-icon.png"
+                        alt=""
+                        aria-hidden="true"
+                        width={220}
+                        height={220}
+                        className="pointer-events-none absolute -right-10 -top-8 h-56 w-56 opacity-[0.08]"
+                    />
+                    <div className="relative">
+                        <p className="text-[11px] font-bold uppercase tracking-[0.3em] text-slate-400">Trusted By</p>
+                        <div className="mt-3 h-[2px] w-8 bg-[#E22E33]" />
                     </div>
-                    <span className="text-slate-800 font-normal">|</span>
-
-                    <div className="flex items-center gap-2 text-slate-400">
-                        <Building2 size={14} className="text-slate-600" /> <span>Developers</span>
-                    </div>
-                    <span className="text-slate-800 font-normal">|</span>
-
-                    <div className="flex items-center gap-2 text-slate-400">
-                        <Briefcase size={14} className="text-slate-600" /> <span>Facility Operators</span>
-                    </div>
-                    <span className="text-slate-800 font-normal">|</span>
-
-                    <div className="flex items-center gap-2 text-slate-400">
-                        <Factory size={14} className="text-slate-600" /> <span>Industrial Clients</span>
-                    </div>
+                    <ul data-stagger className="relative space-y-3">
+                        {trustedBy.map(({ icon: Icon, label }) => (
+                            <li
+                                key={label}
+                                className="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3.5 transition-colors duration-300 hover:border-[#E22E33]/50 hover:bg-[#E22E33]/10"
+                            >
+                                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#E22E33]/15 text-[#E22E33]">
+                                    <Icon size={18} />
+                                </span>
+                                <span className="text-sm md:text-base font-bold uppercase tracking-widest text-white">{label}</span>
+                            </li>
+                        ))}
+                    </ul>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
