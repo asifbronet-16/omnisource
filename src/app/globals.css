@@ -266,6 +266,19 @@ body::before {
   }
 }
 
+/* ====== HOME PAGE SERVICES SHOWCASE ====== */
+/* The pinned stage keeps room for the fixed navbar at the top. When the navbar
+   tucks away on scroll down (Navbar.jsx sets data-nav-hidden on <html>), the
+   stage gives that room to the card, which grows to fill it. Unlayered on
+   purpose so it beats the Tailwind padding utilities on the element. */
+[data-svc-layout] {
+  transition: padding-top 0.4s ease;
+}
+
+html[data-nav-hidden] [data-svc-layout] {
+  padding-top: 2rem;
+}
+
 /* ====== ANIMATIONS ====== */
 @keyframes fadeUp {
   /* from {

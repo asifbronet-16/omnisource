@@ -9,7 +9,10 @@ import { useEffect, useState } from 'react';
 const Navbar = () => {
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isHiddenOnScroll, setIsHiddenOnScroll] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  // Never tuck the bar away while the mobile menu is open.
+  const isHidden = isHiddenOnScroll && !isOpen;
 
   const navLinks = [
     { name: "Home", href: "/" },
@@ -20,13 +23,17 @@ const Navbar = () => {
   ];
 
   useEffect(() => {
+    // Hide the bar while scrolling down (more room for the page), bring it
+    // back as soon as the visitor scrolls up. Small movements are ignored so
+    // smooth-scroll easing does not make it flicker.
+    let lastY = window.scrollY;
     const handleScroll = () => {
-      // If the page is scrolled down more than 20 pixels, set isScrolled to true
-      if (window.scrollY > 20) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      const y = window.scrollY;
+      setIsScrolled(y > 20);
+      const delta = y - lastY;
+      if (Math.abs(delta) < 8) return;
+      setIsHiddenOnScroll(delta > 0 && y > 120);
+      lastY = y;
     };
 
     // Add scroll event listener when component mounts
@@ -37,6 +44,12 @@ const Navbar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+  // Exposed on <html> so sections can use the freed-up space (globals.css).
+  useEffect(() => {
+    document.documentElement.toggleAttribute('data-nav-hidden', isHidden);
+    return () => document.documentElement.removeAttribute('data-nav-hidden');
+  }, [isHidden]);
+
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
@@ -50,7 +63,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 inset-x-0 z-100 flex items-center justify-between lg:px-24 sm:px-4 px-2 lg:py-4 py-4 w-full transition-all duration-300 ${isScrolled ? "bg-[#0D0809]/95 backdrop-blur-md border-b border-[#E22E33]/20 shadow-[0_4px_24px_rgba(13,8,9,0.8)]" : "bg-transparent"}`}>
+      className={`fixed top-0 inset-x-0 z-100 flex items-center justify-between lg:px-24 sm:px-4 px-2 lg:py-4 py-4 w-full transition-all duration-300 ${isHidden ? "-translate-y-full" : ""} ${isScrolled ? "bg-[#0D0809]/95 backdrop-blur-md border-b border-[#E22E33]/20 shadow-[0_4px_24px_rgba(13,8,9,0.8)]" : "bg-transparent"}`}>
 
       {/* Brand Logo Container */}
       <div className="flex items-center">
