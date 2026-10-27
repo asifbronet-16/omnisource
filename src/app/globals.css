@@ -247,6 +247,25 @@ body::before {
 }
 
 
+/* ====== HOME PAGE HERO INTRO ====== */
+/* Hero pieces start hidden so the server-rendered page does not flash before
+   the GSAP intro in Hero.jsx takes over (it sets inline visibility, which wins).
+   If the script never runs, the fallback animation shows them after 3s.
+   Visitors who prefer reduced motion get the page as-is with no intro. */
+@media (prefers-reduced-motion: no-preference) {
+  [data-hero] [data-hero-hide],
+  [data-hero] > nav {
+    visibility: hidden;
+    animation: hero-reveal-fallback 0s linear 3s forwards;
+  }
+}
+
+@keyframes hero-reveal-fallback {
+  to {
+    visibility: visible;
+  }
+}
+
 /* ====== ANIMATIONS ====== */
 @keyframes fadeUp {
   /* from {

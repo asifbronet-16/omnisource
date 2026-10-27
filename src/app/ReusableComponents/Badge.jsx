@@ -3,12 +3,12 @@ import { Users } from 'lucide-react';
 
  const Badge = ({ text, Icon=Users, className="" }) => {
     return (
-        <div className={`flex items-center w-full max-w-6xl select-none gap-2 px-4 py-1.5 rounded-md mb-6`}>
+        <div data-badge className={`flex items-center w-full max-w-6xl select-none gap-2 px-4 py-1.5 rounded-md mb-6`}>
             {/* Left decorative line */}
-            <div className="h-[2.5px] grow bg-linear-to-r from-transparent to-[#E22E33]" />
+            <div data-badge-line="left" className="h-[2.5px] grow bg-linear-to-r from-transparent to-[#E22E33]" />
 
             {/* Center Icon Badge */}
-            <div className="flex items-center justify-center p-2 rounded-full border border-skin-muted bg-skin-logo shadow-[0_0_15px_rgba(226,46,51,0.1)] backdrop-blur-xs shrink-0">
+            <div data-badge-icon className="flex items-center justify-center p-2 rounded-full border border-skin-muted bg-skin-logo shadow-[0_0_15px_rgba(226,46,51,0.1)] backdrop-blur-xs shrink-0">
                 <Icon className="text-skin-mutedLight" size={16} />
             </div>
 
@@ -19,12 +19,12 @@ import { Users } from 'lucide-react';
             </div>
 
             {/* Section Text - Forced to uppercase and solid white */}
-            <span className={`text-xs lg:text-sm text-skin-mutedLight tracking-widest font-semibold ${className}`}>
+            <span data-badge-text className={`text-xs lg:text-sm text-skin-mutedLight tracking-widest font-semibold ${className}`}>
                 {text}
             </span>
 
             {/* Right decorative line ending with a dot */}
-            <div className="flex items-center gap-1 grow">
+            <div data-badge-line="right" className="flex items-center gap-1 grow">
                 <div className="w-1.5 h-1.5 rounded-full bg-skin-logo" />
                 <div className="h-[2.5px] w-full bg-linear-to-l from-transparent to-[#E22E33]" />
             </div>

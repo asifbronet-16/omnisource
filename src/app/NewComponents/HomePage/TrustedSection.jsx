@@ -4,7 +4,11 @@ import React from 'react';
 
 const TrustedSection = () => {
     return (
-        <section className="relative h-screen w-full flex items-center justify-center text-center text-skin-light overflow-hidden bg-skin-background">
+        // Plain wrapper: ScrollTrigger turns off pin spacing when the pinned
+        // element's parent is flex (the body is), which made the next section
+        // slide underneath while this one was pinned.
+        <div>
+        <section data-pin-scene className="relative h-screen w-full flex items-center justify-center text-center text-skin-light overflow-hidden bg-skin-background">
 
             {/* Video Background Container */}
             <div className="absolute inset-0 z-0">
@@ -18,12 +22,12 @@ const TrustedSection = () => {
                     <source src="/assets/videos/1675350_Abu-Dhabi_Cityscape_3840x2160-1-1-1-1.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                 </video> */}
-                <div className="relative w-full h-full">
+                <div data-pin-bg className="relative w-full h-full">
                     <Image
                         src="/assets/illustration-construction-site.jpg"
                         alt="bg"
                         fill
-                        priority
+                        sizes="100vw"
                         className="object-cover opacity-50 mix-blend-luminosity"
                     />
                     <div className="absolute inset-0 bg-skin-background mix-blend-color" />
@@ -41,19 +45,20 @@ const TrustedSection = () => {
             <div className="relative z-10 max-w-5xl px-6 flex flex-col items-center">
 
 
-                <Badge text={"Skilled, Vetted, Delivered "} />
+                <div data-pin-fade className="w-full flex justify-center">
+                    <Badge text={"Skilled, Vetted, Delivered "} />
+                </div>
 
                 {/* Main Heading Graphic Accentuation */}
-                <h1 className="text-4xl md:text-7xl font-extrabold mb-8 tracking-tight max-w-4xl leading-[1.1]">
-                    The  <span className="bg-text-gradient-right bg-clip-text text-transparent">
-                        UAE&apos;s {" "}
-                    </span>
-                    Most Reliable Workforce Solution Provider<br />
-
-                </h1>
+                <h2 data-pin-heading className="text-4xl md:text-7xl font-extrabold mb-8 tracking-tight max-w-4xl leading-[1.1]">
+                    The  <span data-split-ignore className="inline-block bg-text-gradient-right bg-clip-text text-transparent">
+                        UAE&apos;s
+                    </span>{" "}
+                    Most Reliable Workforce Solution Provider
+                </h2>
 
                 {/* Description Text - Upgraded branding tokens */}
-                <p className="text-sm md:text-lg leading-relaxed text-slate-300 max-w-3xl mb-10 font-normal">
+                <p data-pin-fade className="text-sm md:text-lg leading-relaxed text-slate-300 max-w-3xl mb-10 font-normal">
                     {/* Since 2015, <span className="font-bold text-skin-logo">OmniSource</span> has been a trusted name in workforce solutions across
                     <span className="font-bold text-skin-logo"> Dubai, </span><span className="font-bold text-skin-logo">Sharjah </span>and <span className="font-bold text-skin-logo">Abu Dhabi</span>. With over a decade of experience, we
                     specialize in connecting premier businesses with verified skilled and technical trade labor supply
@@ -68,6 +73,7 @@ const TrustedSection = () => {
                 </button> */}
             </div>
         </section>
+        </div>
     );
 };
 

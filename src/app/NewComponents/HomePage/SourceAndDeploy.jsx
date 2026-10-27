@@ -1,7 +1,6 @@
 "use client";
 
 import React from 'react';
-import { motion } from 'framer-motion';
 import Badge from '../../ReusableComponents/Badge';
 import Image from 'next/image';
 
@@ -79,31 +78,30 @@ const SourceAndDeploy = () => {
             <section className="bg-skin-background text-skin-light py-20 px-6 md:px-20 font-public-sans overflow-hidden">
                 <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
-                    {/* Left — Image with motion from left */}
-                    <motion.div
-                        initial={{ opacity: 0, x: -80 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.7, ease: "easeOut" }}
-                        viewport={{ once: true }}
-                        className="relative h-[600px] rounded-md overflow-hidden"
-                    >
-                        <Image
-                            src="/assets/magnific_change-the-uniform-and-he_2961257177.jpeg"
-                            alt="Labor Worker"
-                            fill
-                            sizes="(min-width: 1024px) 50vw, 100vw"
-                            className="object-cover"
-                        />
-                    </motion.div>
+                    {/* Left — image wipes up into view, then drifts as you scroll */}
+                    <div data-clip className="relative h-[600px] rounded-md overflow-hidden">
+                        <div data-clip-img className="absolute inset-x-0 -top-[8%] h-[116%]">
+                            <Image
+                                src="/assets/magnific_change-the-uniform-and-he_2961257177.jpeg"
+                                alt="Labor Worker"
+                                fill
+                                sizes="(min-width: 1024px) 50vw, 100vw"
+                                className="object-cover"
+                            />
+                        </div>
+                        <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-[#0D0809]/60 via-transparent to-transparent" />
+                        {/* Corner tag */}
+                        <div data-reveal="up" data-reveal-delay="0.9" className="absolute bottom-6 left-6 flex items-center gap-3 rounded-full border border-white/15 bg-[#0D0809]/60 px-4 py-2 backdrop-blur-md">
+                            <span className="relative flex h-2.5 w-2.5">
+                                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-skin-logo opacity-75" />
+                                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-skin-logo" />
+                            </span>
+                            <span className="text-xs font-semibold uppercase tracking-widest text-white">Source · Screen · Deploy</span>
+                        </div>
+                    </div>
 
-                    {/* Right — Text with motion from right */}
-                    <motion.div
-                        initial={{ opacity: 0, x: 80 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.7, ease: "easeOut" }}
-                        viewport={{ once: true }}
-                        className="flex flex-col gap-4 "
-                    >
+                    {/* Right — headline lights up word by word, copy follows */}
+                    <div className="flex flex-col gap-4">
                         <Badge text={"One Source, Every Trade"} />
 
                         {/* <h2 className="text-2xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white">
@@ -114,18 +112,18 @@ const SourceAndDeploy = () => {
                         <p className="text-sm text-skin-light font-semibold leading-relaxed uppercase tracking-widest border-l-2 border-skin-logo pl-4">
                             One Source, Every Trade – For All Industries.
                         </p> */}
-                        <h2 className="text-4xl md:text-6xl font-extrabold text-skin-light tracking-tight">
+                        <h2 data-scrub-words className="text-4xl md:text-6xl font-extrabold text-skin-light tracking-tight">
                             We source, screen and deploy{" "}
                             <span className="text-skin-logo">
                                 verified, skilled & experienced
                             </span>{" "}
                             trade labor
                         </h2>
-                        <h3 className="text-2xl md:text-3xl font-black text-skin-logo drop-shadow-md tracking-tight">
+                        <h3 data-reveal="left" className="text-2xl md:text-3xl font-black text-skin-logo drop-shadow-md tracking-tight">
                             One Source, Every Trade – For All Industries.
                         </h3>
 
-                        <p className="text-base text-skin-light leading-relaxed">
+                        <p data-reveal="up" className="text-base text-skin-light leading-relaxed">
                             OmniSource is a UAE-based workforce solutions company serving{" "}
                             <span className="font-bold">
                                 commercial, construction, facilities management, retail, hospitality
@@ -134,7 +132,7 @@ const SourceAndDeploy = () => {
                             Sharjah, Ajman and Abu Dhabi.
                         </p>
 
-                        <p className="text-base text-skin-light leading-relaxed">
+                        <p data-reveal="up" data-reveal-delay="0.1" className="text-base text-skin-light leading-relaxed">
                             We <span className="font-bold">source</span>,{" "}
                             <span className="font-bold">screen</span>, and{" "}
                             <span className="font-bold">deploy</span>{" "}
@@ -148,12 +146,12 @@ const SourceAndDeploy = () => {
                             brief to final handover.
                         </p>
 
-                        <p className="text-base text-skin-light leading-relaxed">
+                        <p data-reveal="up" data-reveal-delay="0.2" className="text-base text-skin-light leading-relaxed">
                             We do not just fill positions. We design the complete workforce supply
                             chain, coordinate the logistics, and stay accountable for the people
                             we place — long after the contract begins.
                         </p>
-                    </motion.div>
+                    </div>
 
                 </div>
             </section>

@@ -14,8 +14,9 @@ import {
 export const WorkforceFeature = () => {
     // Metrics Grid (Left Card Bottom)
     const metrics = [
-        { icon: <Users size={20} />, value: "500+", label: "Skilled Professionals" },
-        { icon: <ShieldCheck size={20} />, value: "100%", label: "Verified & Compliant" },
+        // `count` makes the number tick up when it scrolls into view.
+        { icon: <Users size={20} />, value: "500+", count: 500, suffix: "+", label: "Skilled Professionals" },
+        { icon: <ShieldCheck size={20} />, value: "100%", count: 100, suffix: "%", label: "Verified & Compliant" },
         { icon: <Clock size={20} />, value: "24/7", label: "Support & Assistance" },
         { icon: <MapPin size={20} />, value: "UAE Wide", label: "Workforce Coverage" },
     ];
@@ -30,14 +31,15 @@ export const WorkforceFeature = () => {
     ];
 
     return (
-        <div className="w-full  bg-skin-background text-skin-light p-4 md:p-8 flex flex-col justify-between font-sans lg:px-24">
+        <div className="w-full overflow-x-clip bg-skin-background text-skin-light p-4 md:p-8 flex flex-col justify-between font-sans lg:px-24">
             {/* 2-Column Main Section */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-7xl w-full mx-auto grow items-stretch mb-10">
 
                 {/* ================= LEFT CARD ================= */}
-                <div className="relative overflow-hidden rounded-2xl border border-slate-800/50 bg-[#0D0809] p-8 md:p-12 flex flex-col justify-between shadow-2xl">
+                <div data-reveal="left" className="relative overflow-hidden rounded-2xl border border-slate-800/50 bg-[#0D0809] p-8 md:p-12 flex flex-col justify-between shadow-2xl">
                     {/* Background image overlay - Fixed size unit and applied clean right-side framing */}
                     <div
+                        data-zoom
                         className="absolute inset-0 bg-no-repeat opacity-90 pointer-events-none bg-position-[20%]"
                         style={{ backgroundImage: `url('/assets/WorkforceFeature1.jpeg')` }}
                     />
@@ -77,26 +79,29 @@ export const WorkforceFeature = () => {
 
                     {/* Metrics grids matching the bottom boxes */}
                     <div className="relative z-10 mt-12 space-y-6">
-                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                        <div data-stagger className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                             {metrics.map((m, idx) => (
                                 <div key={idx} className="bg-slate-950/40 border border-slate-800/40 p-4 rounded-xl text-center flex flex-col items-center justify-center backdrop-blur-xs">
                                     <div className="text-[#E22E33]/80 mb-2 p-1.5 bg-[#E22E33]/5 rounded-md border border-[#E22E33]/10">{m.icon}</div>
-                                    <div className="text-xl font-black tracking-tight text-white">{m.value}</div>
+                                    <div className="text-xl font-black tracking-tight text-white">
+                                        {m.count ? (<><span data-count={m.count}>{m.count}</span>{m.suffix}</>) : m.value}
+                                    </div>
                                     <div className="text-[10px] md:text-xs text-slate-400 font-semibold mt-1 leading-tight">{m.label}</div>
                                 </div>
                             ))}
                         </div>
 
-                        <button className="flex items-center gap-2 bg-[#E22E33] hover:bg-[#9F212B] active:scale-[0.99] transition-all px-6 py-3 rounded-lg text-sm font-bold tracking-wide w-full sm:w-fit justify-center shadow-lg shadow-[#E22E33]/10">
+                        <button data-magnetic className="flex items-center gap-2 bg-[#E22E33] hover:bg-[#9F212B] transition-colors px-6 py-3 rounded-lg text-sm font-bold tracking-wide w-full sm:w-fit justify-center shadow-lg shadow-[#E22E33]/10">
                             Request Workforce <ArrowUpRight size={15} />
                         </button>
                     </div>
                 </div>
 
                 {/* ================= RIGHT CARD ================= */}
-                <div className="relative overflow-hidden rounded-2xl border border-slate-800/50 bg-[#0D0809] p-6 md:p-8 flex flex-col justify-center items-start shadow-2xl">
+                <div data-reveal="right" data-reveal-delay="0.15" className="relative overflow-hidden rounded-2xl border border-slate-800/50 bg-[#0D0809] p-6 md:p-8 flex flex-col justify-center items-start shadow-2xl">
                     {/* Construction crane motif background */}
                     <div
+                       data-zoom
                        className="absolute inset-0 bg-no-repeat opacity-90 pointer-events-none bg-position-[25%]"
                         style={{ backgroundImage: `url('/assets/WorkforceFeature2.jpeg')` }}
                     />
@@ -118,7 +123,7 @@ export const WorkforceFeature = () => {
                         </p>
 
                         {/* List entries with circular icons matching image_e7f53f.png */}
-                        <ul className="space-y-3.5 pt-1">
+                        <ul data-stagger className="space-y-3.5 pt-1">
                             {benefits.map((b, idx) => (
                                 <li key={idx} className="flex items-center gap-3 text-xs md:text-sm text-slate-300 font-medium">
                                     <div className="p-1.5 rounded-full border border-[#E22E33]/30 bg-skin-primaryCard/50 text-[#E22E33] shrink-0">
@@ -130,7 +135,7 @@ export const WorkforceFeature = () => {
                         </ul>
 
                         <div className="pt-2">
-                            <button className="flex items-center gap-2 bg-[#E22E33] hover:bg-[#9F212B] active:scale-[0.99] transition-all px-6 py-3 rounded-lg text-sm font-bold tracking-wide w-full sm:w-fit justify-center shadow-lg shadow-[#E22E33]/10">
+                            <button data-magnetic className="flex items-center gap-2 bg-[#E22E33] hover:bg-[#9F212B] transition-colors px-6 py-3 rounded-lg text-sm font-bold tracking-wide w-full sm:w-fit justify-center shadow-lg shadow-[#E22E33]/10">
                                 Speak With Our Team <ArrowUpRight size={15} />
                             </button>
                         </div>
@@ -145,7 +150,7 @@ export const WorkforceFeature = () => {
                 <div className="hidden md:block h-3 w-px bg-slate-800 mx-2" />
 
                 {/* Layout items broken up with visual pipeline separators */}
-                <div className="flex flex-wrap items-center justify-center gap-y-3 gap-x-4">
+                <div data-stagger className="flex flex-wrap items-center justify-center gap-y-3 gap-x-4">
                     <div className="flex items-center gap-2 text-slate-400">
                         <HardHat size={14} className="text-slate-600" /> <span>Contractors</span>
                     </div>

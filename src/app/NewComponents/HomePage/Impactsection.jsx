@@ -86,6 +86,9 @@ const ImpactSection = () => {
                     <div className="absolute inset-0 bg-gradient-primary" />
                     <div className="absolute inset-0 bg-gradient-left hidden lg:block" />
                 </div>
+                {/* Drifting glows for depth */}
+                <div data-parallax="40" aria-hidden="true" className="absolute -left-32 top-10 z-10 h-96 w-96 rounded-full bg-[#E22E33]/20 blur-[120px]" />
+                <div data-parallax="-30" aria-hidden="true" className="absolute -right-24 bottom-0 z-10 h-[28rem] w-[28rem] rounded-full bg-[#9F212B]/25 blur-[140px]" />
             </div>
 
             {/* Content Box (Z-indexed above backdrop layers) */}
@@ -97,7 +100,7 @@ const ImpactSection = () => {
                     <div className='mx-auto flex items-center justify-center'>
                         <Badge text={"Real People. Real Results. Real Difference."} />
                     </div>
-                    <h2 className="text-4xl md:text-6xl font-extrabold text-skin-light mb-2 tracking-tight">
+                    <h2 data-split className="text-4xl md:text-6xl font-extrabold text-skin-light mb-2 tracking-tight">
                         Industries
                         <span className="text-4xl md:text-6xl font-black text-skin-logo drop-shadow-md tracking-tight">
                             {" We Power"}
@@ -107,9 +110,9 @@ const ImpactSection = () => {
                 </div>
 
                 {/* Grid of Sectors Content mapping layer */}
-                <div className="flex flex-wrap justify-center lg:gap-x-16 lg:gap-y-12 gap-x-4 gap-y-4 text-left  mx-auto">
+                <div data-stagger className="flex flex-wrap justify-center lg:gap-x-16 lg:gap-y-12 gap-x-4 gap-y-4 text-left  mx-auto">
                     {sectors.map((sector, index) => (
-                        <div className="group relative pt-8 text-center flex flex-col items-center w-full md:w-[calc(33.333%-2.67rem)]" key={index}>
+                        <div data-tilt className="group relative pt-8 text-center flex flex-col items-center w-full md:w-[calc(33.333%-2.67rem)]" key={index}>
                             {/* Centered Icon Badge floating out of bounds at the top */}
                             <div className="absolute top-0 left-1/2 -translate-x-1/2 z-20 w-16 h-16 rounded-2xl bg-[white] flex items-center justify-center shadow-lg shadow-skin-logo transform group-hover:-translate-y-1 transition-all duration-300">
                                 <Image
@@ -124,12 +127,14 @@ const ImpactSection = () => {
 
                             {/* Main Card Body */}
                             <div className="w-full h-full flex-1 p-6 pt-12 rounded-2xl bg-linear-to-b from-skin-primaryCard/70 to-skin-primaryCard/20 border border-skin-badgeBorder group-hover:border-skin-borderHover transition-all duration-300 relative z-10 flex flex-col items-center justify-start">
-                                <h4 className="md:text-xl text-base font-bold text-skin-light tracking-tight mb-3 group-hover:text-skin-logoHover transition-colors duration-300">
+                                {/* Spotlight that follows the pointer (position set by HomeMotion) */}
+                                <div aria-hidden="true" className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100 bg-[radial-gradient(360px_circle_at_var(--mx,50%)_var(--my,50%),rgba(226,46,51,0.2),transparent_65%)]" />
+                                <h4 className="relative md:text-xl text-base font-bold text-skin-light tracking-tight mb-3 group-hover:text-skin-logoHover transition-colors duration-300">
                                     {sector.title}
                                 </h4>
 
                                 {/* Updated Text Layout to occupy full structural width & height */}
-                                <p className="text-slate-400 md:text-sm text-xs leading-relaxed w-full flex-1 flex items-center justify-center px-2">
+                                <p className="relative text-slate-400 md:text-sm text-xs leading-relaxed w-full flex-1 flex items-center justify-center px-2">
                                     {sector.description}
                                 </p>
                             </div>

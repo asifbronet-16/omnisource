@@ -40,13 +40,13 @@ const FAQ = () => {
                     <div className='mx-auto'>
                         <Badge text={"Clarity and Operational Compliance"}/>
                     </div>
-                    <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight text-skin-light">
+                    <h2 data-split className="text-4xl md:text-6xl font-extrabold tracking-tight text-skin-light">
                         Frequently Asked <span className="text-skin-logo">Questions</span>
                     </h2>
                 </div>
 
                 {/* Premium Corporate Accordion Container */}
-                <div className="border border-skin-subtle rounded-lg bg-skin-primaryCard backdrop-blur-xs overflow-hidden shadow-xl shadow-glow">
+                <div data-stagger className="border border-skin-subtle rounded-lg bg-skin-primaryCard backdrop-blur-xs overflow-hidden shadow-xl shadow-glow">
                     {faqData.map((item, index) => {
                         const isOpen = activeIndex === index;
                         return (

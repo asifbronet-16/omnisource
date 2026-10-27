@@ -3,9 +3,12 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronUp } from 'lucide-react';
+import { useLenis } from 'lenis/react';
 
 const ScrollToTop = () => {
     const [isVisible, setIsVisible] = useState(false);
+    // Present only on pages running Lenis smooth scroll (the home page).
+    const lenis = useLenis();
 
     // Show button when page is scrolled down
     const toggleVisibility = () => {
@@ -17,6 +20,10 @@ const ScrollToTop = () => {
     };
 
     const scrollToTop = () => {
+        if (lenis) {
+            lenis.scrollTo(0, { duration: 1.6 });
+            return;
+        }
         window.scrollTo({
             top: 0,
             behavior: 'smooth',

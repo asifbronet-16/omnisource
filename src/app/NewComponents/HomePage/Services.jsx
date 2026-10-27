@@ -49,16 +49,17 @@ export default function WorkforceServices() {
                     <div className='mx-auto w-full flex items-center justify-center'>
                         <Badge text={"Expert Talent, Delivered with Precision "} />
                     </div>
-                    <h2 className="text-3xl lg:text-5xl font-extrabold tracking-tight">
+                    <h2 data-split className="text-3xl lg:text-5xl font-extrabold tracking-tight">
                         Trusted <span className="text-skin-logo">Workforce Solution</span>
                     </h2>
                 </div>
 
                 {/* Grid Section */}
-                <div className="grid lg:grid-cols-4 grid-cols-2 gap-4 ">
+                <div data-stagger className="grid lg:grid-cols-4 grid-cols-2 gap-4">
                     {services.map((service, index) => (
                         <Link
                             key={index}
+                            data-tilt
                             className="group relative overflow-hidden rounded-md cursor-pointer border border-skin-subtle bg-skin-primaryCard lg:h-96 md:h-72 h-60"
                             href={`/services/${service.id}`}
                         >
@@ -73,6 +74,8 @@ export default function WorkforceServices() {
                             />
                             {/* Subtle Premium Gradient Overlay Layer */}
                             <div className="absolute inset-0 bg-linear-to-t from-[#0D0809] via-[#0D0809]/70 to-transparent" />
+                            {/* Spotlight that follows the pointer (position set by HomeMotion) */}
+                            <div aria-hidden="true" className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100 bg-[radial-gradient(420px_circle_at_var(--mx,50%)_var(--my,50%),rgba(226,46,51,0.28),transparent_60%)]" />
                             {/* Content wrapper — grows upward on hover */}
                             <div className="absolute bottom-0 left-0 right-0 h-20 lg:h-28 group-hover:h-52 lg:group-hover:h-60 overflow-hidden transition-all duration-500 ease-out bg-linear-to-t from-[#0D0809] via-[#0D0809]/80 to-transparent">
                                 <div className="lg:p-6 p-3">
