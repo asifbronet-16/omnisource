@@ -1,148 +1,208 @@
 "use client";
 
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import Image from 'next/image';
 import Badge from '../../ReusableComponents/Badge';
+import { gsap, useGSAP, MOTION_OK } from './motion/gsap';
 
 const sectors = [
     {
         title: "Civil Construction",
         description: "WPS-compliant, mobilization-ready manpower including certified scaffolders, masons, foremen, and support crews for infrastructure and fit-out contractors.",
-        icon: (
-            <svg className="w-10 h-10 text-[#E22E33]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M2 11a10 10 0 0 1 20 0v2H2v-2z" />
-                <path d="M12 2v9M5 4.5l5 4M19 4.5l-5 4" />
-                <path d="M2 13h20v2H2z" />
-            </svg>
-        ),
-        img: "/assets/icons/g2289.png.webp"
+        img: "/assets/icons/g2289.png.webp",
     },
     {
         title: "MEP Services",
         description: "Comprehensive technical workforces covering commercial and industrial electricians, HVAC technicians, pipe fitters, and specialized MEP supervisors.",
-        icon: (
-            <svg className="w-10 h-10 text-[#E22E33]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-            </svg>
-        ),
-        img: "/assets/icons/g15-1.png.webp"
+        img: "/assets/icons/g15-1.png.webp",
     },
-
     {
         title: "Machinery & Equipment Rental",
         description: "Flexible, dependable fleet rental options including wheel loaders, excavators, dump trucks, cranes, and access solutions across all project scopes.",
-        icon: (
-            <svg className="w-10 h-10 text-[#E22E33]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M5 2h14M12 2v8M12 10a3 3 0 0 0-3 3v2a2 2 0 0 0 4 0v-2a1 1 0 0 1 2 0v1" />
-                <circle cx="12" cy="10" r="1" fill="currentColor" />
-            </svg>
-        ),
-        img: "/assets/icons/Group.png.webp"
+        img: "/assets/icons/Group.png.webp",
     },
     {
         title: "Facilities & Cleaning Staffing",
         description: "Trained corporate and site personnel from general janitors and housekeeping attendants to highly specialized rope-access facade cleaners.",
-        icon: (
-            <svg className="w-10 h-10 text-[#E22E33]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1" />
-            </svg>
-        ),
-        img: "/assets/icons/Group-1.png.webp"
+        img: "/assets/icons/Group-1.png.webp",
     },
     {
         title: "Manufacturing & Industrial",
         description: "Skilled production-ready manpower including machine operators, assembly line workers, quality control inspectors, warehouse staff, and shift supervisors for factories, plants, and industrial facilities across all manufacturing sectors.",
-        icon: (
-            <svg className="w-10 h-10 text-[#E22E33]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M5 2h14M12 2v8M12 10a3 3 0 0 0-3 3v2a2 2 0 0 0 4 0v-2a1 1 0 0 1 2 0v1" />
-                <circle cx="12" cy="10" r="1" fill="currentColor" />
-            </svg>
-        ),
-        img: "/assets/icons/Group.png.webp"
+        img: "/assets/icons/Group.png.webp",
     }
 ];
 
+const COUNT = sectors.length;
+const pad = (n) => String(n).padStart(2, '0');
+
+// Where each card lands on the pile, relative to the pile's centre:
+// x/y in px, r in degrees. Later cards land on top.
+const SPOTS = {
+    desktop: [
+        { x: -150, y: -40, r: -9 },
+        { x: 125, y: -70, r: 7 },
+        { x: -60, y: 35, r: -3 },
+        { x: 150, y: 45, r: 10 },
+        { x: 15, y: 10, r: -4 },
+    ],
+    mobile: [
+        { x: -28, y: -18, r: -7 },
+        { x: 30, y: -26, r: 6 },
+        { x: -18, y: 8, r: -3 },
+        { x: 26, y: 16, r: 8 },
+        { x: 0, y: 6, r: -2 },
+    ],
+};
+
+/*
+  Industries We Power: a pile of sector cards. The first card lands while the
+  section scrolls into view, then the section pins and each scroll step
+  throws the next card in from below, spinning, until it settles at its own
+  slightly rotated spot on top of the pile.
+
+  The pile layout only exists while the animation runs (the "is-pile" class).
+  Without it (reduced motion, or before JavaScript) the cards are a plain,
+  fully readable grid.
+*/
 const ImpactSection = () => {
+    const root = useRef(null);
+    const [top, setTop] = useState(0);
+
+    useGSAP(() => {
+        const section = root.current;
+        const cards = gsap.utils.toArray('[data-industry-card]', section);
+        const mm = gsap.matchMedia();
+
+        mm.add({ motion: MOTION_OK, desktop: '(min-width: 1024px)' }, ({ conditions }) => {
+            if (!conditions.motion) return;
+            section.classList.add('is-pile');
+            setTop(0);
+
+            const spots = conditions.desktop ? SPOTS.desktop : SPOTS.mobile;
+            const swing = conditions.desktop ? 260 : 120;
+            gsap.set(cards, { xPercent: -50, yPercent: -50 });
+
+            // Each card starts below the screen, off to one side and spun.
+            const flyIn = (card, i) => {
+                const spot = spots[i % spots.length];
+                const side = i % 2 ? 1 : -1;
+                return gsap.fromTo(card,
+                    { x: spot.x + side * swing, y: () => window.innerHeight * 0.95, rotation: spot.r + side * 28, scale: 1.06 },
+                    { x: spot.x, y: spot.y, rotation: spot.r, scale: 1, ease: 'power3.out', duration: 1, immediateRender: true });
+            };
+
+            // First card lands while the section scrolls up into view.
+            gsap.timeline({
+                scrollTrigger: { trigger: section, start: 'top 75%', end: 'top top', scrub: 1, invalidateOnRefresh: true },
+            }).add(flyIn(cards[0], 0));
+
+            // The rest land one per scroll step while the section is pinned.
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: section,
+                    start: 'top top',
+                    end: `+=${(COUNT - 1) * 70}%`,
+                    pin: true,
+                    scrub: 1,
+                    anticipatePin: 1,
+                    invalidateOnRefresh: true,
+                    onUpdate: (self) => setTop(Math.round(self.progress * (COUNT - 1))),
+                },
+            });
+            cards.slice(1).forEach((card, k) => tl.add(flyIn(card, k + 1), k));
+
+            return () => section.classList.remove('is-pile');
+        });
+    }, { scope: root });
+
     return (
-        <section className="relative isolate  min-h-screen w-full flex items-center py-24 overflow-hidden font-public-sans bg-skin-background">
-
-            {/* Background Video Container with Corporate Tint Overlay */}
-            <div className="absolute inset-0 z-0">
-                {/* <video
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="w-full h-full object-cover opacity-40 mix-blend-luminosity"
-                >
-                    <source src="/assets/videos/GettyImages-626932814-1.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                </video> */}
-
-                {/* OmniSource Branded Smooth Gradient Masking Layer */}
-                {/* <div className="absolute inset-0 bg-linear-to-b from-[#020b1e] via-[#020b1e]/85 to-[#020b1e] z-10" /> */}
-                <div className="absolute inset-0 z-10">
-                    {/* Bottom-to-Top Gradient: Makes the bottom solid navy to match the next section */}
+        // Plain wrapper: ScrollTrigger turns off pin spacing when the pinned
+        // element's parent is flex (the body is).
+        <div>
+            <section
+                ref={root}
+                className="relative isolate w-full overflow-clip bg-skin-background font-public-sans [&.is-pile]:h-svh"
+            >
+                {/* Brand gradient backdrop */}
+                <div aria-hidden="true" className="absolute inset-0 z-0">
                     <div className="absolute inset-0 bg-gradient-primary" />
-                    <div className="absolute inset-0 bg-gradient-left hidden lg:block" />
-                </div>
-                {/* Drifting glows for depth */}
-                <div data-parallax="40" aria-hidden="true" className="absolute -left-32 top-10 z-10 h-96 w-96 rounded-full bg-[#E22E33]/20 blur-[120px]" />
-                <div data-parallax="-30" aria-hidden="true" className="absolute -right-24 bottom-0 z-10 h-[28rem] w-[28rem] rounded-full bg-[#9F212B]/25 blur-[140px]" />
-            </div>
-
-            {/* Content Box (Z-indexed above backdrop layers) */}
-            <div className="relative z-20  mx-auto px-6 text-center">
-
-                {/* Header Container Layout */}
-                <div className="mb-20">
-                    {/* Branded Pill Tagline updated to matching blue tones */}
-                    <div className='mx-auto flex items-center justify-center'>
-                        <Badge text={"Real People. Real Results. Real Difference."} />
-                    </div>
-                    <h2 data-split className="text-4xl md:text-6xl font-extrabold text-skin-light mb-2 tracking-tight">
-                        Industries
-                        <span className="text-4xl md:text-6xl font-black text-skin-logo drop-shadow-md tracking-tight">
-                            {" We Power"}
-                        </span>
-                    </h2>
-
+                    <div className="absolute -left-32 top-10 h-96 w-96 rounded-full bg-[#E22E33]/20 blur-[120px]" />
+                    <div className="absolute -right-24 bottom-0 h-[28rem] w-[28rem] rounded-full bg-[#9F212B]/25 blur-[140px]" />
                 </div>
 
-                {/* Grid of Sectors Content mapping layer */}
-                <div data-stagger className="flex flex-wrap justify-center lg:gap-x-16 lg:gap-y-12 gap-x-4 gap-y-4 text-left  mx-auto">
-                    {sectors.map((sector, index) => (
-                        <div data-tilt className="group relative pt-8 text-center flex flex-col items-center w-full md:w-[calc(33.333%-2.67rem)]" key={index}>
-                            {/* Centered Icon Badge floating out of bounds at the top */}
-                            <div className="absolute top-0 left-1/2 -translate-x-1/2 z-20 w-16 h-16 rounded-2xl bg-[white] flex items-center justify-center shadow-lg shadow-skin-logo transform group-hover:-translate-y-1 transition-all duration-300">
-                                <Image
-                                    src={sector.img}
-                                    width={36}
-                                    height={36}
-                                    alt={sector.title}
-                                    // className="object-contain brightness-100 invert transition-transform duration-300 group-hover:scale-105"
-                                    className='object-contain grayscale-0 brightness-100 sepia-[1] hue-rotate-315 saturate-500 transition-all duration-300 group-hover:grayscale-0 group-hover:brightness-100 hover:saturate-700'
-                                />
-                            </div>
+                <div className="relative z-20 mx-auto flex max-w-7xl flex-col items-center gap-10 px-6 py-24 lg:flex-row lg:items-start lg:gap-12 [.is-pile_&]:items-center [.is-pile_&]:h-full [.is-pile_&]:gap-4 [.is-pile_&]:pt-24 [.is-pile_&]:pb-8 lg:[.is-pile_&]:py-0">
 
-                            {/* Main Card Body */}
-                            <div className="w-full h-full flex-1 p-6 pt-12 rounded-2xl bg-linear-to-b from-skin-primaryCard/70 to-skin-primaryCard/20 border border-skin-badgeBorder group-hover:border-skin-borderHover transition-all duration-300 relative z-10 flex flex-col items-center justify-start">
-                                {/* Spotlight that follows the pointer (position set by HomeMotion) */}
-                                <div aria-hidden="true" className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100 bg-[radial-gradient(360px_circle_at_var(--mx,50%)_var(--my,50%),rgba(226,46,51,0.2),transparent_65%)]" />
-                                <h4 className="relative md:text-xl text-base font-bold text-skin-light tracking-tight mb-3 group-hover:text-skin-logoHover transition-colors duration-300">
-                                    {sector.title}
-                                </h4>
-
-                                {/* Updated Text Layout to occupy full structural width & height */}
-                                <p className="relative text-slate-400 md:text-sm text-xs leading-relaxed w-full flex-1 flex items-center justify-center px-2">
-                                    {sector.description}
-                                </p>
-                            </div>
+                    {/* Heading + progress */}
+                    <div className="w-full text-center lg:sticky lg:top-28 lg:w-5/12 lg:text-left [.is-pile_&]:static [.is-pile_&]:shrink-0">
+                        <div className="flex items-center justify-center lg:justify-start">
+                            <Badge text={"Real People. Real Results. Real Difference."} />
                         </div>
-                    ))}
+                        <h2 data-split className="text-4xl md:text-6xl font-extrabold text-skin-light tracking-tight">
+                            Industries <span className="text-skin-logo">We Power</span>
+                        </h2>
+
+                        {/* Only shown while the pile is animating */}
+                        <div className="mt-6 hidden flex-col items-center gap-3 lg:mt-10 lg:items-start [.is-pile_&]:flex">
+                            <div className="flex items-baseline gap-2 font-extrabold text-white">
+                                <span className="text-3xl lg:text-5xl tabular-nums">{pad(top + 1)}</span>
+                                <span className="text-sm text-slate-400">/ {pad(COUNT)}</span>
+                            </div>
+                            <p className="hidden text-xl font-bold text-skin-mutedLight lg:block">{sectors[top].title}</p>
+                            <div className="flex gap-1.5">
+                                {sectors.map((s, i) => (
+                                    <span
+                                        key={s.title}
+                                        className={`h-1 rounded-full transition-all duration-500 ${i <= top ? 'w-8 bg-skin-logo' : 'w-4 bg-white/20'}`}
+                                    />
+                                ))}
+                            </div>
+                            <span className="hidden text-[11px] uppercase tracking-[0.3em] text-slate-400 lg:block">Scroll to stack</span>
+                        </div>
+                    </div>
+
+                    {/* The pile (a grid when not animating) */}
+                    <div className="grid w-full justify-items-center gap-6 sm:grid-cols-2 lg:w-7/12 [.is-pile_&]:relative [.is-pile_&]:block [.is-pile_&]:min-h-0 [.is-pile_&]:flex-1 lg:[.is-pile_&]:h-full">
+                        {sectors.map((sector) => (
+                            <article
+                                key={sector.title}
+                                data-industry-card
+                                data-tilt
+                                className="group relative flex w-[270px] flex-col items-center pt-8 text-center sm:w-[300px] lg:w-[360px] [.is-pile_&]:absolute [.is-pile_&]:left-1/2 [.is-pile_&]:top-1/2"
+                            >
+                                {/* Icon badge floating over the top edge */}
+                                <div className="absolute left-1/2 top-0 z-20 flex h-16 w-16 -translate-x-1/2 items-center justify-center rounded-2xl bg-white shadow-lg shadow-skin-logo ring-4 ring-[#2b0d10] transition-all duration-300 group-hover:-translate-y-1">
+                                    <Image
+                                        src={sector.img}
+                                        width={36}
+                                        height={36}
+                                        alt={sector.title}
+                                        className="object-contain grayscale-0 brightness-100 sepia-[1] hue-rotate-315 saturate-500 transition-all duration-300 hover:saturate-700"
+                                    />
+                                </div>
+
+                                {/* Thin white frame around the card */}
+                                <div className="relative z-10 flex w-full flex-1 rounded-[1.4rem] bg-[#f7f4f2] p-1.5 shadow-[0_30px_60px_-20px_rgba(0,0,0,0.85)]">
+                                    {/* Card body. Solid (not see-through like before) so
+                                        stacked cards do not show through each other. */}
+                                    <div className="relative flex min-h-[230px] w-full flex-col items-center justify-start overflow-hidden rounded-2xl border border-skin-badgeBorder bg-linear-to-b from-[#2b0d10] to-[#150406] p-6 pt-12 transition-colors duration-300 group-hover:border-skin-borderHover lg:min-h-[250px]">
+                                        {/* Red light that follows the pointer (position set by
+                                            HomeMotion's data-tilt handler, along with the tilt) */}
+                                        <div aria-hidden="true" className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100 bg-[radial-gradient(420px_circle_at_var(--mx,50%)_var(--my,50%),rgba(226,46,51,0.42),transparent_65%)]" />
+                                        <h3 className="relative mb-3 text-base md:text-xl font-bold tracking-tight text-skin-light transition-colors duration-300 group-hover:text-skin-logoHover">
+                                            {sector.title}
+                                        </h3>
+                                        <p className="relative w-full px-2 text-xs md:text-sm leading-relaxed text-slate-400">
+                                            {sector.description}
+                                        </p>
+                                    </div>
+                                </div>
+                            </article>
+                        ))}
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
     );
 };
 
