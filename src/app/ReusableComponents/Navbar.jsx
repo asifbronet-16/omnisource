@@ -4,7 +4,7 @@ import { ArrowUpRight, MenuIcon, X } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import { GUTTER } from './gutter';
+import { ISLAND_INSET, ISLAND_PAD } from './gutter';
 
 
 const Navbar = () => {
@@ -63,73 +63,86 @@ const Navbar = () => {
   }, [isOpen]);
 
   return (
-    <nav
-      className={`fixed top-0 inset-x-0 z-100 flex items-center justify-between ${GUTTER} lg:py-4 py-4 w-full transition-all duration-300 ${isHidden ? "-translate-y-full" : ""} ${isScrolled ? "bg-[#0D0809]/95 backdrop-blur-md border-b border-[#E22E33]/20 shadow-[0_4px_24px_rgba(13,8,9,0.8)]" : "bg-transparent"}`}>
+    <>
+      {/* Floating island bar. Detached from the screen edges, rounded, white
+          glass so it stands out against the dark pages (slightly more solid
+          once scrolled); slides up out of view on scroll down and back on
+          scroll up. The outline is an inset
+          ring, not a border, so it takes no space and the logo stays exactly
+          on the page's alignment line. */}
+      <nav
+        className={`fixed top-2 lg:top-4 ${ISLAND_INSET} z-100 flex items-center justify-between ${ISLAND_PAD} py-3 rounded-lg lg:rounded-xl ring-1 ring-inset backdrop-blur-lg transition-[translate,background-color,box-shadow] duration-500 ease-out ${isHidden ? "-translate-y-[calc(100%+1.5rem)]" : ""} ${isScrolled
+          ? "bg-white/97 ring-[#E22E33]/20 shadow-[0_16px_44px_-12px_rgba(0,0,0,0.85)]"
+          : "bg-white/92 ring-black/5 shadow-[0_12px_36px_-12px_rgba(0,0,0,0.7)]"}`}>
 
-      {/* Brand Logo Container */}
-      <div className="flex items-center">
+        {/* Brand Logo Container */}
+        <div className="flex items-center">
+          <Link
+            href="/"
+            className="flex items-center justify-start"
+          >
+            {/* Desktop Logo */}
+            <Image
+              src="/assets/icons/OmniSource-Dark.png"
+              alt="OmniSource Logo"
+              width={2048}
+              height={354}
+              priority
+              className="hidden lg:block lg:h-12 lg:w-64 w-auto h-10"
+            />
+
+            {/* Mobile Logo */}
+            <Image
+              src="/assets/icons/OmniSource-Dark.png"
+              alt="OmniSource Logo"
+              width={2048}
+              height={354}
+              priority
+              className="block lg:hidden lg:h-12 lg:w-64 w-auto h-10"
+            />
+          </Link>
+        </div>
+
+        {/* Navigation Pill Container */}
+        <div className="hidden lg:flex items-center rounded-full px-6 py-2.5 gap-6 bg-[#0D0809] shadow-[inset_0_0_0_1px_rgba(255,255,255,0.06)]">
+          {navLinks.map((link) => {
+            const isActive = pathname === link.href;
+            return (
+              <Link
+                key={link.name}
+                href={link.href}
+                className={`text-base font-semibold transition-colors duration-300 ${isActive ? 'text-skin-logo' : 'text-white hover:text-skin-logo'
+                  }`}
+              >
+                {link.name}
+              </Link>
+            );
+          })}
+        </div>
+
+        {/* Corporate Action Button */}
         <Link
-          href="/"
-          className="flex items-center justify-start"
+          href="/contact"
+          className="hidden lg:flex items-center gap-2 bg-skin-logo hover:bg-skin-logoHover px-6 py-2.5 rounded-md text-skin-light transition font-medium text-base shadow-lg shadow-glow/20"
         >
-          {/* Desktop Logo */}
-          <Image
-            src="/assets/icons/OmniSource-White.png"
-            alt="OmniSource Logo"
-            width={2048}
-            height={354}
-            priority
-            className="hidden lg:block lg:h-12 lg:w-64 w-auto h-10"
-          />
-
-          {/* Mobile Logo */}
-          <Image
-            src={
-              isScrolled
-                ? "/assets/icons/OmniSource-White.png"
-                : "/assets/icons/OmniSource-White.png"
-            }
-            alt="OmniSource Logo"
-            width={2048}
-            height={354}
-            priority
-            className="block lg:hidden lg:h-12 lg:w-64 w-auto h-10"
-          />
+          <span>Contact Us</span>
+          <ArrowUpRight size={16} />
         </Link>
-      </div>
 
-      {/* Navigation Pill Container */}
-      <div className="hidden lg:flex items-center rounded-full px-6 py-2.5 gap-6 bg-skin-light backdrop-blur-md">
-        {navLinks.map((link) => {
-          const isActive = pathname === link.href;
-          return (
-            <Link
-              key={link.name}
-              href={link.href}
-              className={`text-base font-semibold transition-colors duration-300 ${isActive ? 'text-skin-logo' : 'text-skin-primary hover:text-skin-logo'
-                }`}
-            >
-              {link.name}
-            </Link>
-          );
-        })}
-      </div>
+        <button
+          type="button"
+          aria-label="Open menu"
+          aria-expanded={isOpen}
+          className="lg:hidden cursor-pointer p-1"
+          onClick={() => setIsOpen(true)}
+        >
+          <MenuIcon className="text-[#0D0809]" size={28} />
+        </button>
+      </nav>
 
-      {/* Corporate Action Button */}
-      <Link
-        href="/contact"
-        className="hidden lg:flex items-center gap-2 bg-skin-logo hover:bg-skin-logoHover px-6 py-2.5 rounded-md text-skin-light transition font-medium text-base shadow-lg shadow-glow/20"
-      >
-        <span>Contact Us</span>
-        <ArrowUpRight size={16} />
-      </Link>
-
-      <div
-        className="lg:hidden cursor-pointer p-1"
-        onClick={() => setIsOpen(true)}
-      >
-        <MenuIcon className={`${isScrolled ? "text-skin-light" : "text-skin-light"}`} size={28} />
-      </div>
+      {/* The menu overlay and drawer sit outside the island on purpose: the
+          island's glass blur would otherwise trap these full-screen layers
+          inside its own small box. */}
       <div
         className={`fixed inset-0 bg-black/50 backdrop-blur-xs z-150 transition-opacity duration-300 lg:hidden ${isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
           }`}
@@ -141,6 +154,8 @@ const Navbar = () => {
           }`}
       >
         <button
+          type="button"
+          aria-label="Close menu"
           onClick={() => setIsOpen(false)}
           className="p-1 rounded-full hover:bg-skin-backgroundHighlight text-skin-light transition absolute top-4 right-4"
         >
@@ -159,7 +174,6 @@ const Navbar = () => {
 
         </div>
 
-        {/* Mobile Navigation Links List */}
         {/* Mobile Navigation Links List */}
         <div className="flex flex-col gap-4 flex-1">
           {navLinks.map((link) => {
@@ -198,7 +212,7 @@ const Navbar = () => {
           </Link>
         </div>
       </div>
-    </nav>
+    </>
   );
 };
 

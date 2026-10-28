@@ -125,11 +125,14 @@ export default function HeroSection() {
                 </div>
 
                 {/* Red glow that trails the pointer */}
-                <div
-                    aria-hidden="true"
-                    data-hero-glow
-                    className="pointer-events-none absolute -left-40 top-1/3 z-0 h-[520px] w-[520px] rounded-full bg-[#E22E33]/20 blur-[130px] mix-blend-screen"
-                />
+                {/* Wrapper fades the glow out at the bottom so it never ends on a
+                    hard line where the hero meets the next section. */}
+                <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-0 overflow-hidden fade-edge-b">
+                    <div
+                        data-hero-glow
+                        className="absolute -left-40 top-1/3 h-[520px] w-[520px] rounded-full bg-[#E22E33]/20 blur-[130px]"
+                    />
+                </div>
 
                 {/* Copy */}
                 <div data-hero-content className="relative w-full lg:w-3/5 text-skin-light text-center lg:text-start z-10 h-full flex flex-col justify-center items-center lg:items-start">
