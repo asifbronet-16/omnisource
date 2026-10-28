@@ -29,7 +29,7 @@ const ContactSection = () => {
     };
 
     return (
-        <section className="bg-skin-background text-skin-light py-24 px-6 md:px-20 font-public-sans overflow-hidden selection:bg-skin-logo/30">
+        <section className="text-skin-light py-24 px-6 md:px-20 font-public-sans overflow-hidden selection:bg-skin-logo/30">
             <div className="max-w-7xl mx-auto text-center mb-16">
                 <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight">
                     Get in Touch <span className="text-skin-logo">With Us</span>

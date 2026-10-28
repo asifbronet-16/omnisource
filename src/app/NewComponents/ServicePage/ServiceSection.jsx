@@ -37,7 +37,7 @@ const services = [
 
 export default function ServiceSection() {
     return (
-        <section className="bg-skin-background text-skin-light py-20 px-6 lg:px-30 w-full max-w-[100rem] mx-auto font-public-sans select-none">
+        <section className="text-skin-light py-20 px-6 lg:px-30 w-full max-w-[100rem] mx-auto font-public-sans select-none">
             {/* Header Section */}
             <div className="mb-14 flex flex-col items-center text-center">
                 {/* <Badge text={"Scaling Success Together"} /> */}

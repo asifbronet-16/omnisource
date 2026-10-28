@@ -31,7 +31,7 @@ const IndustryFAQ = () => {
     const [activeId, setActiveId] = useState("1");
 
     return (
-        <section className="bg-skin-background text-skin-light py-24 px-6 md:px-20 font-public-sans selection:bg-skin-logo/30">
+        <section className="text-skin-light py-24 px-6 md:px-20 font-public-sans selection:bg-skin-logo/30">
             <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
                 {/* Left Side: Content Box (Stays anchored during scroll) */}

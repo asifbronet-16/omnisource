@@ -227,11 +227,11 @@ export default function WorkforceServices() {
     const current = services[active];
 
     return (
-        <section ref={root} className="relative bg-skin-background text-skin-light">
+        <section ref={root} className="relative text-skin-light">
             <div data-svc-stage className="relative h-svh w-full overflow-hidden">
 
                 {/* Full-bleed backdrop, dimmed */}
-                <div aria-hidden="true" className="absolute inset-0 z-0 overflow-hidden">
+                <div aria-hidden="true" className="absolute inset-0 z-0 overflow-hidden fade-edges-y">
                     {services.map((s, i) => (
                         <div key={s.id} data-svc-bg className={`absolute inset-x-0 -top-[8%] h-[116%] ${hiddenUnlessFirst(i)}`}>
                             <div data-svc-bg-zoom className="absolute inset-0">

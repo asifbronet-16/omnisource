@@ -49,10 +49,14 @@
     #e5e7eb 45%,
     #e22e33 100%
   );
+  /* Red wash for section backdrops. It peaks a little above the bottom edge
+     and clears to transparent at the edge itself, so sections melt into the
+     ambient background instead of ending on a red band. */
   --background-image-gradient-primary: linear-gradient(
     to top,
-    rgba(159, 33, 43, 0.95) 0%,
-    rgba(226, 46, 51, 0.3) 40%,
+    rgba(159, 33, 43, 0) 0%,
+    rgba(159, 33, 43, 0.85) 24%,
+    rgba(226, 46, 51, 0.3) 58%,
     transparent 100%
   );
   --background-image-gradient-left: linear-gradient(
@@ -148,7 +152,7 @@
   --color-badge-background: rgb(226 46 51 / 0.1);
   --color-border-batch: rgb(159 33 43 / 0.5);
   --color-border-hover: #E22E33;
-  /* Lighter brand red used for the document canvas / first paint */
+  /* Lighter brand red (no longer the page canvas; see html below) */
   --color-logo-light: #EA5257;
 }
 
@@ -164,8 +168,11 @@
     padding: 0;
   }
 
+  /* The canvas is the brand's near-black, so nothing red flashes while a
+     page loads or when the page is overscrolled. The site's ambient layer
+     (ReusableComponents/AmbientBackground.jsx) paints on top of it. */
   html {
-    background-color: var(--color-logo-light);
+    background-color: var(--color-background);
     color-scheme: dark;
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
@@ -176,8 +183,9 @@
     scroll-behavior: smooth;
   }
 
+  /* Transparent so the fixed ambient layer behind the page shows through. */
   body {
-    background-color: var(--color-logo-light);
+    background-color: transparent;
     color: var(--color-white);
   /* font-family: var(--sans);
   font-weight: 400;
@@ -289,6 +297,87 @@ html[data-nav-hidden] [data-svc-layout] {
   color: #0d0809;
   -webkit-text-stroke: 3px #e22e33;
   paint-order: stroke fill;
+}
+
+/* ====== AMBIENT SITE BACKGROUND ====== */
+/* One fixed layer behind every marketing page: the dark base, soft brand-red
+   glows, a faint grid and film grain. Sections are transparent, so the whole
+   page reads as one surface. Plain gradients only (no blur filters) to keep
+   it cheap on phones. Rendered by AmbientBackground.jsx. */
+.ambient {
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  overflow: hidden;
+  pointer-events: none;
+  background-color: var(--color-background);
+}
+
+.ambient-glow {
+  position: absolute;
+  border-radius: 9999px;
+  will-change: transform, opacity;
+}
+
+.ambient-glow--a {
+  width: 75vmax;
+  height: 75vmax;
+  top: -30vmax;
+  right: -22vmax;
+  background: radial-gradient(closest-side, rgba(226, 46, 51, 0.17), transparent);
+}
+
+.ambient-glow--b {
+  width: 85vmax;
+  height: 85vmax;
+  bottom: -40vmax;
+  left: -32vmax;
+  background: radial-gradient(closest-side, rgba(159, 33, 43, 0.24), transparent);
+}
+
+.ambient-glow--c {
+  width: 55vmax;
+  height: 55vmax;
+  top: 30%;
+  left: 38%;
+  background: radial-gradient(closest-side, rgba(226, 46, 51, 0.07), transparent);
+}
+
+.ambient-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.028) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.028) 1px, transparent 1px);
+  background-size: 72px 72px;
+  -webkit-mask-image: radial-gradient(ellipse 85% 75% at 50% 35%, #000 25%, transparent 75%);
+  mask-image: radial-gradient(ellipse 85% 75% at 50% 35%, #000 25%, transparent 75%);
+}
+
+.ambient-grain {
+  position: absolute;
+  inset: 0;
+  opacity: 0.06;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Edge fades: let a section's photo or red wash melt into the ambient
+   background instead of ending on a hard line. Put them on the backdrop
+   layers, never on a section that contains the fixed navbar (a mask on an
+   ancestor would fade the navbar too). */
+.fade-edges-y {
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 20%, #000 80%, transparent);
+  mask-image: linear-gradient(to bottom, transparent, #000 20%, #000 80%, transparent);
+}
+
+.fade-edge-b {
+  -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent);
+  mask-image: linear-gradient(to bottom, #000 55%, transparent);
+}
+
+.fade-edges-x {
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
 }
 
 /* ====== ANIMATIONS ====== */

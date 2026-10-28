@@ -4,8 +4,10 @@ import Badge from '../../ReusableComponents/Badge';
 
 const ServiceHero = () => {
     return (
-        <section className="relative h-[440px] w-full overflow-hidden bg-[#0D0809] font-public-sans select-none">
+        <section className="relative h-[440px] w-full overflow-hidden font-public-sans select-none">
             <Navbar />
+            {/* Backdrop: photo and tint, fading into the site background at the bottom */}
+            <div className="absolute inset-0 isolate bg-[#0D0809] fade-edge-b">
             {/* Background Image Container with Corporate Tint Masking */}
             <div
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-90 mix-blend-luminosity"
@@ -21,6 +23,7 @@ const ServiceHero = () => {
                 <div className="absolute inset-0 bg-gradient-left hidden lg:block" />
             </div>
 
+            </div>
             {/* Global Context Navigation Layout */}
 
 

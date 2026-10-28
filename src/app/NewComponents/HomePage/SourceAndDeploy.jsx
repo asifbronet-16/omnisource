@@ -73,7 +73,7 @@ const SourceAndDeploy = () => {
     }, { scope: root });
 
     return (
-        <section ref={root} className={`bg-skin-background text-skin-light py-20 ${GUTTER} font-public-sans overflow-hidden`}>
+        <section ref={root} className={`text-skin-light py-20 ${GUTTER} font-public-sans overflow-hidden`}>
             <div>
 
                 {/* Intro beside the photo */}

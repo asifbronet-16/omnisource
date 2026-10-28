@@ -4,8 +4,10 @@ import Badge from '../../ReusableComponents/Badge';
 
 const AboutHero = () => {
     return (
-        <section className="relative h-[440px] w-full overflow-hidden bg-skin-background font-public-sans select-none">
+        <section className="relative h-[440px] w-full overflow-hidden font-public-sans select-none">
             <Navbar />
+            {/* Backdrop: photo and tint, fading into the site background at the bottom */}
+            <div className="absolute inset-0 isolate bg-[#0D0809] fade-edge-b">
             <div className="absolute inset-0 w-full h-full z-10">
                 <img
                     // autoPlay
@@ -26,6 +28,7 @@ const AboutHero = () => {
                 <div className="absolute inset-0 bg-gradient-left hidden lg:block" />
             </div>
 
+            </div>
             {/* Page Header Content Container */}
             <div className="relative z-20 flex flex-col h-full items-center justify-center px-4 pt-16">
                 <Badge text={"Corporate Profile"} className="text-white" />

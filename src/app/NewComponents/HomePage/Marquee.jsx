@@ -84,7 +84,7 @@ const ClientMarquee = () => {
   }, { scope: root });
 
   return (
-    <section ref={root} className="bg-skin-background py-20 overflow-hidden font-public-sans text-skin-light text-center">
+    <section ref={root} className="py-20 overflow-hidden font-public-sans text-skin-light text-center">
 
       {/* Header */}
       <div className="flex flex-col items-center mb-12 px-4">
@@ -97,9 +97,8 @@ const ClientMarquee = () => {
       </div>
 
       {/* Client logos */}
-      <div className="relative flex overflow-hidden border-y border-skin-subtle bg-skin-backgroundHighlight py-8 backdrop-blur-xs">
-        <div className="absolute left-0 top-0 bottom-0 w-24 lg:w-48 bg-linear-to-r from-[#0D0809] to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-24 lg:w-48 bg-linear-to-l from-[#0D0809] to-transparent z-10 pointer-events-none" />
+      {/* Sides fade out with a mask, so the strip melts into the site background */}
+      <div className="relative flex overflow-hidden border-y border-skin-subtle bg-skin-backgroundHighlight py-8 backdrop-blur-xs fade-edges-x">
 
         <Track direction="forward" duration={28}>
           {logos.map((logo) => (
@@ -116,7 +115,7 @@ const ClientMarquee = () => {
       </div>
 
       {/* Tagline band running the other way, separated by the OmniSource mark */}
-      <div data-marquee-band aria-hidden="true" className="relative mt-10 overflow-hidden py-3 select-none lg:py-5">
+      <div data-marquee-band aria-hidden="true" className="relative mt-10 overflow-hidden border-y border-white/5 bg-[#0D0809] py-3 select-none lg:py-5 fade-edges-x">
         <Track direction="reverse" duration={40}>
           {phrases.map((phrase, i) => (
             <span key={phrase} className="flex items-center">

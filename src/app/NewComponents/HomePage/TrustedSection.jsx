@@ -8,10 +8,12 @@ const TrustedSection = () => {
         // element's parent is flex (the body is), which made the next section
         // slide underneath while this one was pinned.
         <div>
-        <section data-pin-scene className="relative h-screen w-full flex items-center justify-center text-center text-skin-light overflow-hidden bg-skin-background">
+        <section data-pin-scene className="relative h-screen w-full flex items-center justify-center text-center text-skin-light overflow-hidden">
 
-            {/* Video Background Container */}
-            <div className="absolute inset-0 z-0">
+            {/* Backdrop: dark base + photo + red tint, fading out at the top and
+                bottom. Isolated so the photo's blend modes mix with its own dark
+                base, not with the site background behind. */}
+            <div className="absolute inset-0 z-0 isolate bg-[#0D0809] fade-edges-y">
                 {/* <video
                     autoPlay
                     loop

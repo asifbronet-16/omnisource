@@ -17,7 +17,7 @@ const locations = [
 const ContactLocations = () => {
 
     return (
-        <section className="bg-[#0D0809] py-16 px-6 md:px-20 font-public-sans select-none">
+        <section className="py-16 px-6 md:px-20 font-public-sans select-none">
             <div className="max-w-7xl mx-auto">
 
                 <div className="grid grid-cols-1 gap-6 mb-6">

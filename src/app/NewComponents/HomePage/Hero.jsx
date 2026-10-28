@@ -99,12 +99,12 @@ export default function HeroSection() {
     }, { scope: root });
 
     return (
-        <section ref={root} data-hero className="relative w-full overflow-hidden z-20 bg-skin-background">
+        <section ref={root} data-hero className="relative w-full overflow-hidden z-20">
             <Navbar />
             <section data-hero-stage className={`relative min-h-screen ${GUTTER} flex flex-col lg:flex-row justify-between lg:items-center lg:gap-10 pt-40 pb-24 lg:py-56 overflow-hidden`}>
 
                 {/* Background video, masked in on load */}
-                <div data-hero-media className="absolute inset-0 w-full h-full z-0 overflow-hidden bg-skin-background">
+                <div data-hero-media className="absolute inset-0 w-full h-full z-0 overflow-hidden bg-skin-background fade-edge-b">
                     <div data-hero-parallax className="absolute inset-0">
                         <video
                             data-hero-video

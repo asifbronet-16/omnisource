@@ -123,10 +123,10 @@ const ImpactSection = () => {
         <div>
             <section
                 ref={root}
-                className="relative isolate w-full overflow-clip bg-skin-background font-public-sans [&.is-pile]:h-svh"
+                className="relative isolate w-full overflow-clip font-public-sans [&.is-pile]:h-svh"
             >
-                {/* Brand gradient backdrop */}
-                <div aria-hidden="true" className="absolute inset-0 z-0">
+                {/* Brand gradient backdrop, fading out at the top and bottom */}
+                <div aria-hidden="true" className="absolute inset-0 z-0 fade-edges-y">
                     <div className="absolute inset-0 bg-gradient-primary" />
                     <div className="absolute -left-32 top-10 h-96 w-96 rounded-full bg-[#E22E33]/20 blur-[120px]" />
                     <div className="absolute -right-24 bottom-0 h-[28rem] w-[28rem] rounded-full bg-[#9F212B]/25 blur-[140px]" />

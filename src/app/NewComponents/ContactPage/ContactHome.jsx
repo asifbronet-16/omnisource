@@ -4,8 +4,10 @@ import Badge from '../../ReusableComponents/Badge'
 
 const ContactHome = () => {
     return (
-        <section className="relative h-[440px] w-full overflow-hidden bg-skin-background font-public-sans select-none">
+        <section className="relative h-[440px] w-full overflow-hidden font-public-sans select-none">
             <Navbar />
+            {/* Backdrop: photo and tint, fading into the site background at the bottom */}
+            <div className="absolute inset-0 isolate bg-[#0D0809] fade-edge-b">
             {/* Background Image Container with Premium Tint Treatment */}
             <div
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat mix-blend-luminosity"
@@ -18,6 +20,7 @@ const ContactHome = () => {
                 {/* Bottom-to-Top Gradient: Makes the bottom solid navy to match the next section */}
                 <div className="absolute inset-0 bg-gradient-primary opacity-50" />
                 <div className="absolute inset-0 bg-gradient-left hidden lg:block" />
+            </div>
             </div>
             {/* Page Header Content Container */}
             <div className="relative z-20 flex flex-col h-full items-center justify-center px-4 pt-16">

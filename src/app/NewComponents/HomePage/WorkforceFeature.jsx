@@ -52,7 +52,7 @@ const tile = "relative overflow-hidden rounded-3xl border border-[#E22E33]/15";
 */
 export const WorkforceFeature = () => {
     return (
-        <section className={`w-full bg-skin-background ${GUTTER} py-10 text-skin-light lg:py-16`}>
+        <section className={`w-full ${GUTTER} py-10 text-skin-light lg:py-16`}>
             <div className="grid grid-cols-1 gap-4 lg:grid-cols-12 lg:gap-5">
 
                 {/* ===== Promise: engineer photo, headline at the bottom ===== */}

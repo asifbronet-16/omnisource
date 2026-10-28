@@ -82,8 +82,10 @@ export default function ServiceDetailPage() {
     const currentService = servicesData.find(s => s.id === currentId) || servicesData[0];
     return (
         <>
-            <section className="relative h-[440px] w-full overflow-hidden bg-skin-background font-public-sans select-none">
+            <section className="relative h-[440px] w-full overflow-hidden font-public-sans select-none">
                 <Navbar />
+                {/* Backdrop: photo and tint, fading into the site background at the bottom */}
+                <div className="absolute inset-0 isolate bg-[#0D0809] fade-edge-b">
                 <div
                     className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-90 mix-blend-luminosity"
                     style={{
@@ -98,6 +100,7 @@ export default function ServiceDetailPage() {
                     <div className="absolute inset-0 bg-gradient-left hidden lg:block" />
                 </div>
 
+                </div>
                 {/* Global Context Navigation Layout */}
 
 
@@ -119,7 +122,7 @@ export default function ServiceDetailPage() {
 
 
             </section>
-            <section className="bg-skin-background text-skin-light py-12 md:py-24 px-4 md:px-20 font-public-sans min-h-screen relative">
+            <section className="text-skin-light py-12 md:py-24 px-4 md:px-20 font-public-sans min-h-screen relative">
                 {/* Outer wrapper switches flex layout on lg breakpoint */}
                 <div className="relative max-w-7xl mx-auto flex flex-col lg:flex-row-reverse gap-8 lg:gap-12 items-start">
 

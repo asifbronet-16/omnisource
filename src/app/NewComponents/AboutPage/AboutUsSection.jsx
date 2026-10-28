@@ -15,7 +15,7 @@ const features = [
 
 const AboutUsSection = () => {
     return (
-        <section className="relative bg-skin-background text-skin-light py-24 px-6 md:px-20 font-public-sans overflow-hidden">
+        <section className="relative text-skin-light py-24 px-6 md:px-20 font-public-sans overflow-hidden">
 
             {/* Background City Silhouette (Right Aligned) */}
             <div className="absolute right-[10%] bottom-0 h-[65%] pointer-events-none select-none z-2 opacity-20 invert brightness-0 saturate-100 sepia-100 hue-rotate-190 contrast-250">
@@ -27,7 +27,7 @@ const AboutUsSection = () => {
             </div>
 
             {/* OmniSource Ambient Subtle Blue Bottom Glow */}
-            <div className="absolute inset-x-0 bottom-0 h-1/2 bg-linear-to-t from-skin-logo/10 from-20% via-transparent to-transparent z-0 pointer-events-none" />
+            <div className="absolute inset-x-0 bottom-0 h-1/2 bg-linear-to-t from-transparent via-skin-logo/10 to-transparent z-0 pointer-events-none" />
 
             <div className="relative z-10 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
 

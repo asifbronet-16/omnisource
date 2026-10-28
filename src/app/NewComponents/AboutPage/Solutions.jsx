@@ -45,10 +45,10 @@ const itemVariants = {
 const SolutionsSection = () => {
     return (
         <>
-            <section className=" relative bg-skin-background text-skin-light font-public-sans overflow-hidden">
+            <section className="relative text-skin-light font-public-sans overflow-hidden">
                 {/* Top Section: Solutions Pillars */}
                 <div className="relative pt-24 pb-20 px-6 z-10">
-                    <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+                    <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none bg-[#0D0809] fade-edges-y">
                         {/* <video
                             autoPlay
                             loop

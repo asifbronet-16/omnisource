@@ -123,7 +123,7 @@ const FAQ = () => {
         <section
             ref={root}
             id="faq"
-            className={`relative overflow-hidden bg-skin-background py-24 ${GUTTER} font-public-sans text-skin-light`}
+            className={`relative overflow-hidden py-24 ${GUTTER} font-public-sans text-skin-light`}
         >
             {/* Giant outlined question mark behind the heading (desktop) */}
             <span
